@@ -9,13 +9,15 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>World - Blog &amp; Magazine Template</title>
+    <title>Cabo Find &amp; Aqui encontrarás lo que buscas</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+
 
 </head>
 
@@ -65,17 +67,19 @@
                                   </div>
                               </li>
                                                    
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Quejas y sugerencias</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contacto</a>
-                                </li>
+                              
                                 <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contacto</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="index.html">Quejas y sugerencias</a>
+                                      <a class="dropdown-item" href="catagory.html">¿Quieres trabajar con nosotros?</a>
+                                  </div>
+                              </li>
+                                <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil <i class="ti-user"></i></a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                       <a class="dropdown-item" onclick="login();">Iniciar sesion</a>
-                                      <a class="dropdown-item" href="catagory.html">Registrarse</a>
+                                      <a class="dropdown-item" onclick="registro();">Registrarse</a>
                                       <a class="dropdown-item" href="single-blog.html">Recuperar contraseña</a>
                                       
                                   </div>
@@ -2859,7 +2863,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Mad
       swal({
       title: 'Iniciar Sesión',
       html:
-      '<div class="col-lg-12">  <form class="login-form" action="manejador.php" method="post">'+
+      '<div class="col-lg-12">  <form class="login-form" action="method_login.php" method="post">'+
           ' <div class="form-group">'+
               '   <label class="control-label">Usuario</label>'+
               '<input name="user" class="form-control" type="text" placeholder="Email" autofocus>'+
@@ -2899,6 +2903,63 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Mad
       
       };
       </script>
+
+<script type="text/javascript">
+    
+  function registro(){
+  
+  
+  swal({
+  title: 'Registrarse',
+  html:
+  '<div class="col-lg-12">  <form class="login-form" action="method_register.php" method="post">'+
+      ' <div class="form-group">'+
+          '   <label class="control-label">Usuario</label>'+
+          '<input name="user" class="form-control" type="text" required placeholder="Nombre de usuario" autofocus>'+
+          '</div>'+
+          '<div class="form-group">'+
+          '<label class="control-label">Correo</label>'+
+          '<input name="user" class="form-control" type="mail" required placeholder="Email" autofocus>'+
+          '</div>'+
+          '<div class="form-group">'+
+          '<label class="control-label">Celular</label>'+
+          '<input name="user" class="form-control" type="number" required placeholder="Celular" autofocus>'+
+          '</div>'+
+          '<div class="form-group">'+
+          '<label class="control-label">Localidad</label>'+
+          '<select class="form-control form-control-sm" textalign="center"  required name="sucu" id="sucu">'+
+          '<option value="Cabo San Lucas" >Cabo San Lucas</option>'+
+          '<option value="San Jose del Cabo" >San José del Cabo</option>'+
+          '<option value="Los Bariles" >Los Barriles</option>'+
+          '<option value="Todos Santos" >Todos Santos</option>'+
+          '</select>' +
+
+          '</div>'+
+          '<div class="form-group">'+
+          '<label class="control-label">Contraseña</label>'+
+          '<input name="pass" class="form-control" type="password" required placeholder="Password">'+
+          '</div>'+
+       
+          ' <div class="form-group btn-container">'+
+          ' <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>Registrarse</button></br>'+
+
+          ' </div>'+
+     ' </form>'+
+     '</div>',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: '</form> Actualizar solicitud',
+  cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+  showConfirmButton: false,
+  focusConfirm: false,
+  buttonsStyling: false,
+  reverseButtons: true
+  })
+  
+  };
+  </script>
+
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="js/jquery/jquery-2.2.4.min.js"></script>
     <!-- Popper js -->
