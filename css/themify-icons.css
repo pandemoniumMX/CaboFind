@@ -13,7 +13,7 @@
 	font-family: 'themify';
 	speak: none;
 	font-style: normal;
-	font-weight: bold;
+	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
@@ -576,7 +576,6 @@
 	content: "\e6b7";
 }
 .ti-bell:before {
-	
 	content: "\e6b8";
 }
 .ti-basketball:before {
