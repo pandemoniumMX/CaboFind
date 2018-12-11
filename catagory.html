@@ -127,21 +127,7 @@
 
                                     <!-- Single Blog Post -->
                                     <div class="single-blog-post post-style-4 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b24.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
+                                    <canvas id="myChart" width="200" height="200"></canvas>
                                     </div>
                                 </div>
 
@@ -782,6 +768,54 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Mad
     <script src="assets/js/plugins.js"></script>
     <!-- Active js -->
     <script src="assets/js/active.js"></script>
+<!-- chart js -->
+<script src="assets/js/chartjs/Chart.bundle.js"></script>
+<script src="assets/js/chartjs/Chart.bundle.min.js"></script>
+<script src="assets/js/chartjs/Chart.js"></script>
+<script src="assets/js/chartjs/Chart.min.js"></script>
+    <script src="assets/js/chartjs-conf.js"></script>
+
+
+
+    <script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
 
 </body>
 
