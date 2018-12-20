@@ -451,44 +451,218 @@
                       <div id="step-44">
                         <h2 class="StepTitle">Paso 4 Etiquetas</h2>
                         <p>Selecciona las etiquetas dependiendo el ramo:</p>
-                          <div class="col-md-4 col-sm-4">
+                          <div class="col-md-9 col-sm-9">
                               <input class="form-group" name="eti" id="etiq" readonly></input>
+                              <!-- panel actividades -->
+                            <div id="pan_act" style='display:none; '>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac1" checked value="Paseo al arco" data-parsley-mincheck="2" required class="flat" /> Paseo al arco
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac2" value="Paseo a caballo" class="flat" /> Paseo a caballo
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac3" value="Paseo a camello" class="flat" /> Paseo a camello
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac4" value="Paseo cuatrimoto" class="flat" /> Paseo cuatrimoto
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac5" value="Buggy" data-parsley-mincheck="2" required class="flat" /> Buggy
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac6" value="Paseo al arco" class="flat" /> Paseo al arco
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac7" value="Buceo" class="flat" /> Buceo
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac8" value="Kayaks" class="flat" /> Kayak's
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac9" value="Salto en paracaidas" data-parsley-mincheck="2" required class="flat" /> Salto en paracaidas
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac10" value="Carro volador" class="flat" /> Carro volador
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac11" value="otro" class="flat" /> otro
+                                <br />
+                              </div>
+                              <!--fin div de columnas -->
 
-                            <div id="pan_act" style="visibility: hidden;">
-                              <label>Caracteristicas (2 minimum):</label>
-                              <p style="padding: 5px;">
-                                <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2" required class="flat" /> Skiing
-                                <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby2" value="run" class="flat" /> Running
-                                <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby3" value="eat" class="flat" /> Eating
-                                <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby4" value="sleep" class="flat" /> Sleeping
-                                <br />
                             </div>
-                            <div id="pan_comida" style="visibility: hidden;">
-                              <label>Caracteristicas (2 minimum):</label>
+                            <!-- panel comida -->
+                            <div id="pan_comida" style='display:none; '>
+                              <div class="col-md-4 col-sm-4">
                               <p style="padding: 5px;">
-                                <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2" required class="flat" /> Skiing
+                                <input type="checkbox" name="carac[]" id="carac12" value="Desayunos" data-parsley-mincheck="2" required class="flat" /> Desayunos
                                 <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby2" value="run" class="flat" /> Running
+                                <input type="checkbox" name="carac[]" id="carac13" value="Cenas" class="flat" /> Cenas
                                 <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby3" value="eat" class="flat" /> Eating
+                                <input type="checkbox" name="carac[]" id="carac14" value="Comidas" class="flat" /> Comidas
+                                <
+                                <input type="checkbox" name="carac[]" id="carac15" value="Buffet" class="flat" /> Buffet
                                 <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby4" value="sleep" class="flat" /> Sleeping
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac16" value="" data-parsley-mincheck="2" required class="flat" /> otro
                                 <br />
+                                <input type="checkbox" name="carac[]" id="carac17" value="Paseo al arco" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac18" value="Buceo" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac19" value="Kayaks" class="flat" /> otro
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac20" value="Salto en paracaidas" data-parsley-mincheck="2" required class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac21" value="Carro volador" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac22" value="otro" class="flat" /> otro
+                                <br />
+                              </div>
+                              <!--fin div de columnas -->
                             </div>
-                            <div id="pan_entre" style="visibility: hidden;">
-                              <label>Caracteristicas (2 minimum):</label>
+                            <!-- panel entretenimiento -->
+                            <div id="pan_entre" style='display:none; '>
+                              <div class="col-md-4 col-sm-4">
                               <p style="padding: 5px;">
-                                <input type="checkbox" name="hobbies[]" id="hobby1" value="ski" data-parsley-mincheck="2" required class="flat" /> Skiing
+                                <input type="checkbox" name="carac[]" id="carac23" value="Comida" data-parsley-mincheck="2" required class="flat" /> Comida
                                 <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby2" value="run" class="flat" /> Running
+                                <input type="checkbox" name="carac[]" id="carac24" value="snack" class="flat" /> snack
                                 <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby3" value="eat" class="flat" /> Eating
+                                <input type="checkbox" name="carac[]" id="carac25" value="Solo adultos" class="flat" /> Solo adultos
                                 <br />
-                                <input type="checkbox" name="hobbies[]" id="hobby4" value="sleep" class="flat" /> Sleeping
+                                <input type="checkbox" name="carac[]" id="carac26" value="Musica en vivo" class="flat" /> Musica en vivo
                                 <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac27" value="Solo para mujeres" data-parsley-mincheck="2" required class="flat" /> Solo para mujeres
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac28" value="Paseo al arco" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac29" value="Buceo" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac30" value="Kayaks" class="flat" /> otro
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac31" value="Salto en paracaidas" data-parsley-mincheck="2" required class="flat" />otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac32" value="Carro volador" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac33" value="otro" class="flat" /> otro
+                                <br />
+                              </div>
+                              <!--fin div de columnas -->
+                            </div>
+                            <!-- panel servicios -->
+                            <div id="pan_serv" style='display:none; '>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac34" value="Compra y venta" data-parsley-mincheck="2" required class="flat" /> Compra y venta
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac35" value="especializado" class="flat" /> especializado
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac36" value="Dentista" class="flat" /> Dentista
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac37" value="Doctor gral" class="flat" /> Doctor gral
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac38" value="Servicio 24hrs" data-parsley-mincheck="2" required class="flat" /> Servicio 24hrs
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac39" value="otro" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac40" value="Buceo" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac41" value="Kayaks" class="flat" /> otro
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac42" value="Salto en paracaidas" data-parsley-mincheck="2" required class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac43" value="Carro volador" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac44" value="otro" class="flat" /> otro
+                                <br />
+                              </div>
+                              <!--fin div de columnas -->
+                            </div>
+                            <!-- panel nightclub -->
+                            <div id="pan_night" style='display:none; '>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac45" value="Paseo al arco" data-parsley-mincheck="2" required class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac46" value="Paseo a caballo" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac47" value="Paseo a camello" class="flat" /> otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac48" value="Paseo cuatrimoto" class="flat" /> otro
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac49" value="Buggy" data-parsley-mincheck="2" required class="flat" />otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac50" value="Paseo al arco" class="flat" />otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac51" value="Buceo" class="flat" />otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac52" value="Kayaks" class="flat" />otro
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac53" value="Salto en paracaidas" data-parsley-mincheck="2" required class="flat" />otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac54" value="Carro volador" class="flat" />otro
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac55" value="otro" class="flat" /> otro
+                                <br />
+                              </div>
+                              <!--fin div de columnas -->
+                            </div>
+                            <!-- panel comercios -->
+                            <div id="pan_comerc" style='display:none; '>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac56" value="Compra y venta" data-parsley-mincheck="2" required class="flat" /> Compra y venta
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac57" value="Damas" class="flat" /> Damas
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac58" value="Caballeros" class="flat" /> Caballeros
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac59" value="Bebes" class="flat" /> Bebes
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac60" value="Tallas grandes" data-parsley-mincheck="2" required class="flat" /> Tallas grandes
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac61" value="Vestidos de novia" class="flat" /> Vestidos de novia
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac62" value="Vestidos de xv" class="flat" /> Vestidos de xv
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac63" value="Trajes de vestir" class="flat" /> Trajes de vestir
+                                <br />
+                              </div>
+                              <div class="col-md-4 col-sm-4">
+                              <p style="padding: 5px;">
+                                <input type="checkbox" name="carac[]" id="carac64" value="Servicio 24hrs" data-parsley-mincheck="2" required class="flat" /> Servicio 24hrs
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac65" value="Sistema de apartado" class="flat" /> Sistema de apartado
+                                <br />
+                                <input type="checkbox" name="carac[]" id="carac66" value="otro" class="flat" /> otro
+                                <br />
+                              </div>
+                              <!--fin div de columnas -->
                             </div>
                       </div>
 
@@ -655,7 +829,12 @@ $("#select").append(new Option("Seleccione...", ""));
   var check = $("#activi:checked"). val();
   document.getElementById("ramo").value = check;
   document.getElementById("etiq").value = "actividades";
-  document.getElementById("pan_act").style.visibility="visible";
+  $("#pan_act").show();
+  $("#pan_comida").hide();
+  $("#pan_entre").hide();
+  $("#pan_serv").hide();
+  $("#pan_comerc").hide();
+  $("#pan_night").hide();
 }
 
     });
@@ -674,7 +853,12 @@ $("#select").append(new Option("Seleccione...", ""));
     var check = $("#comida:checked"). val();
     document.getElementById("ramo").value = check;
     document.getElementById("etiq").value = "comida";
-    document.getElementById("pan_comida").style.visibility="visible";
+    $("#pan_comida").show();
+    $("#pan_act").hide();
+    $("#pan_entre").hide();
+    $("#pan_serv").hide();
+    $("#pan_comerc").hide();
+    $("#pan_night").hide();
   }
       });
 
@@ -690,7 +874,12 @@ $("#select").append(new Option("Seleccione...", ""));
       var check = $("#servicio:checked"). val();
       document.getElementById("ramo").value = check;
       document.getElementById("etiq").value = "servicio";
-      document.getElementById("pan_serv").style.visibility="visible";
+      $("#pan_serv").show();
+      $("#pan_comida").hide();
+      $("#pan_entre").hide();
+      $("#pan_act").hide();
+      $("#pan_comerc").hide();
+      $("#pan_night").hide();
     }
         });
 
@@ -705,7 +894,12 @@ $("#select").append(new Option("Seleccione...", ""));
             var check = $("#entretenimiento:checked"). val();
             document.getElementById("ramo").value = check;
             document.getElementById("etiq").value = "Entretenimiento";
-            document.getElementById("pan_entre").style.visibility="visible";
+            $("#pan_entre").show();
+            $("#pan_comida").hide();
+            $("#pan_act").hide();
+            $("#pan_serv").hide();
+            $("#pan_comerc").hide();
+            $("#pan_night").hide();
           }
           });
 
@@ -720,7 +914,12 @@ $("#select").append(new Option("Seleccione...", ""));
         var check = $("#nightclub:checked"). val();
         document.getElementById("ramo").value = check;
         document.getElementById("etiq").value = "nightclub";
-        document.getElementById("pan_night").style.visibility="visible";
+        $("#pan_night").show();
+        $("#pan_comida").hide();
+        $("#pan_entre").hide();
+        $("#pan_serv").hide();
+        $("#pan_comerc").hide();
+        $("#pan_act").hide();
       }
             });
 
@@ -735,7 +934,12 @@ $("#select").append(new Option("Seleccione...", ""));
           var check = $("#comercio:checked"). val();
           document.getElementById("ramo").value = check;
           document.getElementById("etiq").value = "comercio";
-          document.getElementById("pan_comerc").style.visibility="visible";
+          $("#pan_comerc").show();
+          $("#pan_comida").hide();
+          $("#pan_entre").hide();
+          $("#pan_serv").hide();
+          $("#pan_act").hide();
+          $("#pan_night").hide();
         }
               });
             //terminan las categorias
