@@ -1,10 +1,8 @@
-<?php	
+<?php
+	
     include'conexion.php';
-    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
-    $categoria = "SELECT * From categorias where CAT_estatus='A'";
-    $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
-
-
+    $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+    $specs="SELECT * FROM  `caracteristicas` ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +39,35 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <script language="javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
+
+
+    <script type="text/javascript">
+
+            $(document).ready(function(){
+				$("#ramo").click(function () {
+                $("#ramo option:selected").each(function () {
+				ID_RAMO = $(this).val();
+				$.post("registro_negocio_combo_cat.php", { ID_RAMO: ID_RAMO }, function(data){
+				$("#categoria").html(data);
+                      });            
+					});
+				})
+            });
+            
+            $(document).ready(function(){
+				$("#categoria").click(function () {
+                $("#categoria option:selected").each(function () {
+                    ID_CATEGORIA = $(this).val();
+				$.post("registro_negocio_combo_subcat.php", { ID_CATEGORIA: ID_CATEGORIA }, function(data){
+				$("#subcategoria").html(data);
+                      });            
+					});
+				})
+			});
+
+        </script>
+        
 
 </head>
 
@@ -67,13 +94,13 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="registro negocio.php">Nuevo registro empresa</a>
+                                    <a href="index.html">Dashboard 1</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                    <a href="index2.html">Dashboard 2</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -83,33 +110,79 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active">
-                            <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
-                            <a href="caracteristicas.php">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Tables</a>
                         </li>
                         <li>
-                            <a href="menu_precios.php">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
-                        <a href="exposicion_precios.php">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
-                        <li>                     
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li>
                             <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -129,13 +202,13 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="registro_negocio.php">Nuevo registro</a>
+                                    <a href="index.html">Dashboard 1</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                    <a href="index2.html">Dashboard 2</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -145,34 +218,79 @@
                                 </li>
                             </ul>
                         </li>
-                    
-                        <li class="active">
-                            <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
                         </li>
                         <li>
                             <a href="table.html">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                                <i class="fas fa-table"></i>Tables</a>
                         </li>
                         <li>
                             <a href="form.html">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
+                                <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
-                        <li>                     
+                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+                        </li>
+                        <li class="active">
                             <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                                <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                                <i class="fas fa-copy"></i>Pages</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="login.html">Login</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Register</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Forget Password</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                                <i class="fas fa-desktop"></i>UI Elements</a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="button.html">Button</a>
+                                </li>
+                                <li>
+                                    <a href="badge.html">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="tab.html">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="card.html">Cards</a>
+                                </li>
+                                <li>
+                                    <a href="alert.html">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="progress-bar.html">Progress Bars</a>
+                                </li>
+                                <li>
+                                    <a href="modal.html">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="switch.html">Switchs</a>
+                                </li>
+                                <li>
+                                    <a href="grid.html">Grids</a>
+                                </li>
+                                <li>
+                                    <a href="fontawesome.html">Fontawesome Icon</a>
+                                </li>
+                                <li>
+                                    <a href="typo.html">Typography</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -354,180 +472,219 @@
                     </div>
                 </div>
             </header>
-            <!-- END HEADER DESKTOP-->
+            <!-- primer vista-->
 
-            <div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                    <div class="card">
-                                    <div class="card-header">
-                                        <strong>Modificación de tablas </strong>
-                                      
-                                    </div>
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-success active" id="watch-me">Nueva categoría/subcategoría</button>
-                                        <button type="button" class="btn btn-secondary" id="see-me">Tabla Categoría</button>
-                                        <button type="button" class="btn btn-primary" id="look-me">Tabla Subcategoría</button>
-                                    </div>
-                                </div>
+    <div class="main-content">
+    <div class="row">
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
 
-                                <div id='show-me'>
-                    <div class="row">
-                            <div class="col-md-4">
+         <div class="form-group">
+         <label>Nombre del negocio</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
 
-                                <div class="card">
-                                <div class="card-header">Registro de nueva categoría</div>
-                                <div class="card-body">
+         </div>
+         </div>
+         </div>
+         </div>
 
-                                <strong class="card-title mb-3">Ramo</strong>
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+         <div class="form-group">
+         <label>Razón social</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+         </div>
+         </div>
+         </div>
+         </div>
 
-                                <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
-                                        <option value="" ></option>
-                                        <?php
-                                        $ejec7 = mysqli_query($conn, $ramo);
-                                        while($fila=mysqli_fetch_array($ejec7)){?>
-                                        <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
-                                        <?php } ?>
-                                        </select>
-
-                                        <strong class="card-title mb-3">Nueva categoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'Reparacion'" class="form-control">
-
-
-                                        <strong class="card-title mb-3">URL de la nueva categoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'reparacion.php'" class="form-control">
-                                        </br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar categoría</button>
-
-                                        </div>
-
-                                </div>
-                                </div>
-
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                <div class="card-header">Registro de nueva subcategoría</div>
-                                <div class="card-body">
-
-                                <strong class="card-title mb-3">Categorías</strong>
-
-                                <select class="form-control form-control-sm" textalign="center" required name="categoria" id="categoria" placeholder="Ej. 'Reparación'">
-                                        <option value="" ></option>
-                                        <?php
-                                        $ejec = mysqli_query($conn, $categoria);
-                                        while($fila=mysqli_fetch_array($ejec)){?>
-                                        <?php echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>'; ?>
-                                        <?php } ?>
-                                        </select>
-
-                                        <strong class="card-title mb-3">Nueva subcategoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'Reparación zapatos'" class="form-control">
-
-
-                                        </br></br></br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar subcategoría</button>
-
- </div>
-                                </div>
-                            </div>
-
-                    </div>
-
-                </div>   
-                <div id='show-me-two' style='display:none; border:2px solid #ccc'>
-
-                <table id="a-tables" class="table table-hover table-dark table-responsive">
-    <thead>
-
-        <th data-field="id">ID</th>
-      <th data-field="fecha" data-sortable="true">Nombre</th>
-      <th data-field="estatus" data-sortable="true">ID RAMO</th>
-      <th data-field="estatus" data-sortable="true">STATUS</th>
-      <th data-field="estatus" data-sortable="true">URL</th>
-      <th class="disabled-sorting">Acción</th>
-
-    </thead>
-    <?php
-      $ejecutar = mysqli_query($conn, $categoria);
-    while($fila=mysqli_fetch_array($ejecutar)){
-        $id          = $fila['ID_CATEGORIA'];
-        $nom           = $fila['CAT_NOMBRE'];
-        $ape          = $fila['ID_RAMO'];
-        $dir          = $fila['CAT_ESTATUS'];
-        $cel        = $fila['CAT_URL'];
-
-
-?>
-                    <tr>
-                        <td width="8%"><?php echo $id ?></td>
-                        <td width="14%"><?php echo $nom ?></td>
-                        <td width="14%"><?php echo $ape ?></td>
-                        <td width="14%"><?php echo $dir ?></td>
-                        <td width="14%"><?php echo $cel ?></td>
-                        <td width="14%">
-                          <?php
-                          
-                      ?>
-
-          </tr>
-        <?php } ?>
-        <tbody></br>
-            Resultado de tabla categoría
-      </tbody>
-  </table>
-  </div>
-
-  <div id='show-me-three' style='display:none; border:2px solid #ccc'>
-
-<table id="a-tables2" class="table table-hover table-dark table-responsive">
-<thead>
-
-<th data-field="id">ID</th>
-<th data-field="fecha" data-sortable="true">Nombre</th>
-<th data-field="estatus" data-sortable="true">ID CATEGORIA</th>
-<th data-field="estatus" data-sortable="true">STATUS</th>
-<th class="disabled-sorting">Acción</th>
-
-</thead>
-<?php
-$ejecutar = mysqli_query($conn, $subcategoria);
-while($fila=mysqli_fetch_array($ejecutar)){
-$id          = $fila['ID_SUBCATEGORIA'];
-$nom           = $fila['SUB_NOMBRE'];
-$ape          = $fila['ID_CATEGORIA'];
-$dir          = $fila['SUB_ESTATUS'];
-
-
-?>
-    <tr>
-        <td width="8%"><?php echo $id ?></td>
-        <td width="14%"><?php echo $nom ?></td>
-        <td width="14%"><?php echo $ape ?></td>
-        <td width="14%"><?php echo $dir ?></td>
-        <td width="14%">
-          <?php
-          
-      ?>
-
-</tr>
-<?php } ?>
-<tbody></br>
-Resultado de tabla subcategoría
-</tbody>
-</table>
-</div>
+            <div class="col-md-4">
+            <div class="card">
+            <div class="card-body">
+            <div class="form-group">
 
 
 
+         <label>RFC</label>
+         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
 
-            </div>
-        </div>
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
 
-    </div>
+
+         <div class="row">
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+
+         <div class="form-group">
+         <label>Nombre del negocio</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+         <div class="form-group">
+         <label>Razón social</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+         </div>
+         </div>
+         </div>
+         </div>
+
+            <div class="col-md-4">
+            <div class="card">
+            <div class="card-body">
+            <div class="form-group">
+
+
+
+         <label>RFC</label>
+         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="row">
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+
+         <div class="form-group">
+         <label>Nombre del negocio</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+         <div class="form-group">
+         <label>Razón social</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+         </div>
+         </div>
+         </div>
+         </div>
+
+            <div class="col-md-4">
+            <div class="card">
+            <div class="card-body">
+            <div class="form-group">
+
+
+
+         <label>RFC</label>
+         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="row">
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+
+         <div class="form-group">
+         <label>Nombre del negocio</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+         <div class="form-group">
+         <label>Razón social</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+         </div>
+         </div>
+         </div>
+         </div>
+
+            <div class="col-md-4">
+            <div class="card">
+            <div class="card-body">
+            <div class="form-group">
+
+
+
+         <label>RFC</label>
+         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="row">
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+
+         <div class="form-group">
+         <label>Nombre del negocio</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+
+         <div class="col-md-4">
+         <div class="card">
+            <div class="card-body">
+         <div class="form-group">
+         <label>Razón social</label>
+         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+         </div>
+         </div>
+         </div>
+         </div>
+
+            <div class="col-md-4">
+            <div class="card">
+            <div class="card-body">
+            <div class="form-group">
+
+
+
+         <label>RFC</label>
+         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
+
+         </div>
+         </div>
+         </div>
+         </div>
+         </div>
+
+   </div>     
+   
+   <!-- Div que cierra-->
+
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
@@ -562,11 +719,6 @@ Resultado de tabla subcategoría
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
-    <!-- Data table plugin-->
-    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">$('#a-tables').DataTable();</script>
 
     
     <script src="js/sweetalert2.all.min.js"></script>
@@ -717,14 +869,18 @@ Resultado de tabla subcategoría
 
   </script>
 
-<script>
-            $(document).ready(function() {
-                $('#a-tables').DataTable();
-                $('#a-tables2').DataTable();
-                $('#tabla4').DataTable();
-                $('#tabla5').DataTable();
-            } );
-    </script>
+<script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
 
 </body>
 

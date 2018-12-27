@@ -417,7 +417,7 @@
 
                     <div id='show-me-two' style='display:none; border:2px solid #ccc'>
 
-                        <table id="a-tables" class="table table-hover table-dark table-responsive">
+                        <table id="a-tables2" class="table table-hover table-dark table-responsive">
                         <thead>
 
                         <th data-field="id">Nombre</th>
@@ -498,6 +498,25 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
+
+    
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+
+    
+
+    <script>
+            $(document).ready(function() {
+                $('#a-tables2').DataTable();
+                $('#tabla4').DataTable();
+                $('#tabla5').DataTable();
+            } );
+    </script>
+
 
     <script type="text/javascript">
   $(document).ready(function ()

@@ -46,10 +46,7 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
 
 
-    <!-- Data table plugin-->
-    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">$('#a-tables').DataTable();</script>
+  
 </head>
 
 <body class="animsition">
@@ -380,7 +377,7 @@
                                             
                     <div id='show-me'>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-success" id="watch-me">Nueva caracteristica</button>
+                                        <button type="button" class="btn btn-success" onclick='nueva();'>Nueva caracteristica<i class="fa fa-check"></i></button>
                                     </div>
                             <table id="a-tables" class="table table-hover table-dark table-responsive">
                             <thead>
@@ -409,8 +406,11 @@
                                     <td width="14%"><?php echo $ape ?></td>
                                     <td width="14%">
                                     <?php
-                                    
-                                ?>
+                                    echo "        
+                                    <a href='#' onclick='nueva(), enviarmod();' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
+                                                                                                             
+                                    </td>"; 
+                                    ?>
 
                             </tr>
                             <?php } ?>
@@ -454,7 +454,7 @@
                                 <td width="14%">
                                 <?php
                                 
-                            ?>
+                               ?>
 
                         </tr>
                         <?php } ?>
@@ -504,6 +504,62 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+  <!-- Data table plugin-->
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
+
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+
+
+    <script type="text/javascript">
+    //ventana actualizar cliente
+    function nueva(){
+      
+    swal({
+    title: 'Nueva característica',
+    html:
+    '<div class="card-body"> <form action="caracteristicas_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
+    //Manda Llamar id,nombre y apellido
+    '<div class="col-md-12">'+
+      '<div class="form-group">'+
+
+      '<label>Nombre general</label>'+
+      '<input input type="text" name="nombre" id="nombre" class="form-control border-input required>' +     
+     
+      '</div>'+
+    '</div>'+
+
+    '<div class="col-md-12">'+
+      '<div class="form-group">'+    
+
+      '<label>Descripción</label>'+
+         '<textarea type="text" name="descripcion" id="descripcion"  class="form-control border-input" rows="5"></textarea>'+
+        '</div>'+
+    '</div>'+
+
+    '<div class="col-md-12">'+
+    '</br>'+
+    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar característica</Button>'+
+
+    '</form></div>',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '</form> Actualizar solicitud',
+    cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+    showConfirmButton: false,
+    focusConfirm: false,
+    buttonsStyling: false,
+    reverseButtons: true, allowOutsideClick: false
+    })
+
+    };
+
+    </script>
+
+
 
     <script type="text/javascript">
   $(document).ready(function ()
@@ -647,6 +703,7 @@
 
 
   </script>
+
 
     <script>
             $(document).ready(function() {

@@ -404,6 +404,17 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
+
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+
+
+
+
     <script type="text/javascript">
   $(document).ready(function ()
    {

@@ -1,10 +1,8 @@
-<?php	
+<?php
+	
     include'conexion.php';
-    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
-    $categoria = "SELECT * From categorias where CAT_estatus='A'";
-    $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
-
-
+    $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+    $specs="SELECT * FROM  `caracteristicas` ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,13 +39,42 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+
+            $(document).ready(function(){
+				$("#ramo").click(function () {
+                $("#ramo option:selected").each(function () {
+				ID_RAMO = $(this).val();
+				$.post("registro_negocio_combo_cat.php", { ID_RAMO: ID_RAMO }, function(data){
+				$("#categoria").html(data);
+                      });            
+					});
+				})
+            });
+            
+            $(document).ready(function(){
+				$("#categoria").click(function () {
+                $("#categoria option:selected").each(function () {
+                    ID_CATEGORIA = $(this).val();
+				$.post("registro_negocio_combo_subcat.php", { ID_CATEGORIA: ID_CATEGORIA }, function(data){
+				$("#subcategoria").html(data);
+                      });            
+					});
+				})
+			});
+
+        </script>
+        
 
 </head>
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
+         <!-- HEADER MOBILE-->
+         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
@@ -69,10 +96,10 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
+                                <li class="active">
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
-                                <li>
+                                <li >
                                     <a href="index2.html">Modificar empresa</a>
                                 </li>
                                 <li>
@@ -83,7 +110,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="categorias.php">
                                 <i class="fas fa-chart-bar"></i>Categorias</a>
                         </li>
@@ -131,7 +158,7 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
+                                <li class="active">
                                     <a href="registro_negocio.php">Nuevo registro</a>
                                 </li>
                                 <li>
@@ -146,7 +173,7 @@
                             </ul>
                         </li>
                     
-                        <li class="active">
+                        <li>
                             <a href="categorias.php">
                                 <i class="fas fa-chart-bar"></i>Categorias</a>
                         </li>
@@ -357,177 +384,274 @@
             <!-- END HEADER DESKTOP-->
 
             <div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
-                    <div class="card">
-                                    <div class="card-header">
-                                        <strong>Modificación de tablas </strong>
-                                      
-                                    </div>
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-success active" id="watch-me">Nueva categoría/subcategoría</button>
-                                        <button type="button" class="btn btn-secondary" id="see-me">Tabla Categoría</button>
-                                        <button type="button" class="btn btn-primary" id="look-me">Tabla Subcategoría</button>
-                                    </div>
-                                </div>
+            <div class="card-body"> <form action="registro_negocio_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
 
-                                <div id='show-me'>
-                    <div class="row">
-                            <div class="col-md-4">
+                <div id='show-me'>
 
-                                <div class="card">
-                                <div class="card-header">Registro de nueva categoría</div>
+                    <div class="col-lg-6">
+                        <div class="card">
+
                                 <div class="card-body">
+                                     <strong class="card-title mb-3">Datos de la empresa</strong>
 
-                                <strong class="card-title mb-3">Ramo</strong>
-
-                                <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
-                                        <option value="" ></option>
-                                        <?php
-                                        $ejec7 = mysqli_query($conn, $ramo);
-                                        while($fila=mysqli_fetch_array($ejec7)){?>
-                                        <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
-                                        <?php } ?>
-                                        </select>
-
-                                        <strong class="card-title mb-3">Nueva categoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'Reparacion'" class="form-control">
-
-
-                                        <strong class="card-title mb-3">URL de la nueva categoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'reparacion.php'" class="form-control">
-                                        </br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar categoría</button>
-
+                                     <div class="form-group">
+                                            <label for="company" class=" form-control-label">Nombre completo de la empresa</label>
+                                            <input type="text" id="company" class="form-control">
                                         </div>
+                                        <div class="form-group">
+                                            <label for="vat" class=" form-control-label">Razón social</label>
+                                            <input type="text" id="vat" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">RFC</label>
+                                            <input type="text" id="street" placeholder="RFC" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Responsable</label>
+                                            <input type="text" id="street" placeholder="Persona a cargo" class="form-control">                                           
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Descripcion</label>
+                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Descripcion" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Dirección</label>
+                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Dirección y horario" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="textarea-input" class=" form-control-label">Etiquetas</label>
+                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Separadas con una coma..." class="form-control"></textarea>
+                                        </div>
+        </br>
+                                            <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Siguiente</button>
 
                                 </div>
-                                </div>
+                        </div>
+                    </div>                        
+                </div>
+                         <div id='show-me-two' style='display:none; border:2px solid #ccc'>
+                           <div class="col-md-4">
+                             <div class="card">
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Categoría</strong>
 
+                                            <div>Selecciona Ramo : 
+                                            <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
+                                            <option value="" ></option>
+                                            <?php
+                                            $ejec7 = mysqli_query($conn, $ramos);
+                                            while($fila=mysqli_fetch_array($ejec7)){?>
+                                            <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
+                                            <?php } ?>
+                                            </select></div>
+                        
+                                                <br />
+                                                
+                                                <div>Selecciona categoria : <select name="categoria" id="categoria"></select></div>
+                                                
+                                                <br />
+                                                
+                                                <div>Selecciona subcategoria : <select name="subcategoria" id="subcategoria"></select></div>
+                                                
+                                                <br />
+                                                <div class="row">
+
+                                                    <div class="col-lg-6">
+                                                    <button type="button"  id='watch-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                    <button type="button" id='look-me' class="btn btn-success btn-lg btn-block">Siguiente</button>
+                                                    </div>
+                                                
+                                                </div> 
+
+                                            </div>                      
+                                      </div>
+                                    </div>
+                                </div>
+                         
+                 
+<div id='show-me-three' style='display:none; border:2px solid #ccc'>
+
+<div class="col-lg-6">
+    <div class="card">
+
+            <div class="card-body">
+                 <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
+
+
+                 <div class="form-group">
+
+                 <label>
+                 <?php
+                $ejec1 = mysqli_query($conn, $specs);
+                while($fila=mysqli_fetch_array($ejec1)){ ?>
+               
+                      <input type="checkbox"> <?php echo $fila['CAR_NOMBRE']; ?>
+                </br>
+                   
+
+              <?php } ?>
+              </div>            
+  
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                        <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                        </div>
+                        <div class="col-lg-6">
+                        <button type="button" id='look-me2' class="btn btn-success btn-lg btn-block">Siguiente</button>
+                        </div>
+
+                    </div>   
+
+</div> 
+</div>
+
+</div>   
+</div>   
+
+
+
+<div id='show-me-three2' style='display:none; border:2px solid #ccc'>
+                        <div class="row">
                             <div class="col-md-4">
 
                                 <div class="card">
-                                <div class="card-header">Registro de nueva subcategoría</div>
-                                <div class="card-body">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Card Image Title</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
 
-                                <strong class="card-title mb-3">Categorías</strong>
-
-                                <select class="form-control form-control-sm" textalign="center" required name="categoria" id="categoria" placeholder="Ej. 'Reparación'">
-                                        <option value="" ></option>
-                                        <?php
-                                        $ejec = mysqli_query($conn, $categoria);
-                                        while($fila=mysqli_fetch_array($ejec)){?>
-                                        <?php echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>'; ?>
-                                        <?php } ?>
-                                        </select>
-
-                                        <strong class="card-title mb-3">Nueva subcategoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'Reparación zapatos'" class="form-control">
-
-
-                                        </br></br></br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar subcategoría</button>
-
- </div>
+                                    </div>
                                 </div>
                             </div>
 
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Card Image Title</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Card Image Title</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Card Image Title</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Card Image Title</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                                <div class="col-lg-6">
+                                <button type="button"  id='look-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                                </div>
+                                <div class="col-lg-6">
+                                <button type="button" id='look-me3' class="btn btn-success btn-lg btn-block">Siguiente</button>
+                                </div>
+
+
+                            </div>
+    </div>
+    
+
+    <div id='show-me-three3' style='display:none; border:2px solid #ccc'>
+
+<div class="col-lg-6">
+    <div class="card">
+
+            <div class="card-body">
+                 <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
+
+          
+<div class="row">
+                         <div class="col-md-4">
+                        <div class="card">
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Nivel de publicidad</strong>
+
+
+                                        <select class="form-control form-control-sm" textalign="center" required name="destino" id="destino"><option value="" >
+                                        </option><option value="Almacen" >Normal</option>
+                                        <option value="Cliente">Alta</option>
+                                        <option value="Cliente">Máxima</option>
+                                        </select>
+
+                                        </div>
+                                    </div>
+                                        </div>
+                                        <div class="col-md-4">
+                        <div class="card">
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Rango de precios</strong>
+
+
+                                        <select class="form-control form-control-sm" textalign="center" required name="destino" id="destino"><option value="" >
+                                        </option><option value="$$" >$$</option>
+                                        <option value="$$$">$$$</option>
+                                        <option value="$$$$">$$$$</option>
+                                        </select>
+
+                                        </div>
+                                    </div>
+                                        </div>
+
+  
+
+                        <div class="col-lg-6">
+                        <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                        </div>
+                        <div class="col-lg-6">
+                        <button type="submit" id='look-me2' class="btn btn-success btn-lg btn-block">Agregar empresa</button>
+                        </div>
+
+
+                    </div> 
                     </div>
 
-                </div>   
-                <div id='show-me-two' style='display:none; border:2px solid #ccc'>
-
-                <table id="a-tables" class="table table-hover table-dark table-responsive">
-    <thead>
-
-        <th data-field="id">ID</th>
-      <th data-field="fecha" data-sortable="true">Nombre</th>
-      <th data-field="estatus" data-sortable="true">ID RAMO</th>
-      <th data-field="estatus" data-sortable="true">STATUS</th>
-      <th data-field="estatus" data-sortable="true">URL</th>
-      <th class="disabled-sorting">Acción</th>
-
-    </thead>
-    <?php
-      $ejecutar = mysqli_query($conn, $categoria);
-    while($fila=mysqli_fetch_array($ejecutar)){
-        $id          = $fila['ID_CATEGORIA'];
-        $nom           = $fila['CAT_NOMBRE'];
-        $ape          = $fila['ID_RAMO'];
-        $dir          = $fila['CAT_ESTATUS'];
-        $cel        = $fila['CAT_URL'];
-
-
-?>
-                    <tr>
-                        <td width="8%"><?php echo $id ?></td>
-                        <td width="14%"><?php echo $nom ?></td>
-                        <td width="14%"><?php echo $ape ?></td>
-                        <td width="14%"><?php echo $dir ?></td>
-                        <td width="14%"><?php echo $cel ?></td>
-                        <td width="14%">
-                          <?php
-                          
-                      ?>
-
-          </tr>
-        <?php } ?>
-        <tbody></br>
-            Resultado de tabla categoría
-      </tbody>
-  </table>
-  </div>
-
-  <div id='show-me-three' style='display:none; border:2px solid #ccc'>
-
-<table id="a-tables2" class="table table-hover table-dark table-responsive">
-<thead>
-
-<th data-field="id">ID</th>
-<th data-field="fecha" data-sortable="true">Nombre</th>
-<th data-field="estatus" data-sortable="true">ID CATEGORIA</th>
-<th data-field="estatus" data-sortable="true">STATUS</th>
-<th class="disabled-sorting">Acción</th>
-
-</thead>
-<?php
-$ejecutar = mysqli_query($conn, $subcategoria);
-while($fila=mysqli_fetch_array($ejecutar)){
-$id          = $fila['ID_SUBCATEGORIA'];
-$nom           = $fila['SUB_NOMBRE'];
-$ape          = $fila['ID_CATEGORIA'];
-$dir          = $fila['SUB_ESTATUS'];
-
-
-?>
-    <tr>
-        <td width="8%"><?php echo $id ?></td>
-        <td width="14%"><?php echo $nom ?></td>
-        <td width="14%"><?php echo $ape ?></td>
-        <td width="14%"><?php echo $dir ?></td>
-        <td width="14%">
-          <?php
-          
-      ?>
-
-</tr>
-<?php } ?>
-<tbody></br>
-Resultado de tabla subcategoría
-</tbody>
-</table>
-</div>
+                    </div>   
+                    </div>  
 
 
 
+                                </div>
+                                </form>
+            </div>    <!-- Div que cierra-->
 
-            </div>
-        </div>
-
-    </div>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
@@ -562,11 +686,6 @@ Resultado de tabla subcategoría
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
-    <!-- Data table plugin-->
-    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">$('#a-tables').DataTable();</script>
 
     
     <script src="js/sweetalert2.all.min.js"></script>
@@ -717,14 +836,18 @@ Resultado de tabla subcategoría
 
   </script>
 
-<script>
-            $(document).ready(function() {
-                $('#a-tables').DataTable();
-                $('#a-tables2').DataTable();
-                $('#tabla4').DataTable();
-                $('#tabla5').DataTable();
-            } );
-    </script>
+<script type='text/javascript'>
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
 
 </body>
 

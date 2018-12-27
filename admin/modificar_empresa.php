@@ -1,8 +1,8 @@
 <?php	
     include'conexion.php';
-    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
-    $categoria = "SELECT * From categorias where CAT_estatus='A'";
-    $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
+    $empresa ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, n.NEG_RAZONSOCIAL, e.ID_EXPOSICION, e.EXP_NIVEL, e.EXP_FECHA_ALTA, e.EXP_FECHA_CADUCIDAD
+    FROM   negocios  n, exposicion e
+    WHERE n.ID_NEGOCIO = e.ID_NEGOCIO ";
 
 
 ?>
@@ -18,7 +18,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Maps</title>
+    <title>Modifica empresas</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -360,174 +360,64 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                     <div class="card">
-                                    <div class="card-header">
-                                        <strong>Modificación de tablas </strong>
-                                      
-                                    </div>
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-success active" id="watch-me">Nueva categoría/subcategoría</button>
-                                        <button type="button" class="btn btn-secondary" id="see-me">Tabla Categoría</button>
-                                        <button type="button" class="btn btn-primary" id="look-me">Tabla Subcategoría</button>
-                                    </div>
-                                </div>
+                                   
 
                                 <div id='show-me'>
-                    <div class="row">
-                            <div class="col-md-4">
+                                    
 
-                                <div class="card">
-                                <div class="card-header">Registro de nueva categoría</div>
-                                <div class="card-body">
+                                <table id="a-tables" class="table table-hover table-dark table-responsive">
+                                                    <thead>
 
-                                <strong class="card-title mb-3">Ramo</strong>
+                                                        <th data-field="id">ID</th>
+                                                    <th data-field="fecha" data-sortable="true">Nombre</th>
+                                                    <th data-field="estatus" data-sortable="true">Razón social</th>
+                                                    <th data-field="estatus" data-sortable="true">Nivel de exposición</th>
+                                                    <th class="disabled-sorting">Acción</th>
 
-                                <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
-                                        <option value="" ></option>
-                                        <?php
-                                        $ejec7 = mysqli_query($conn, $ramo);
-                                        while($fila=mysqli_fetch_array($ejec7)){?>
-                                        <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
-                                        <?php } ?>
-                                        </select>
-
-                                        <strong class="card-title mb-3">Nueva categoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'Reparacion'" class="form-control">
+                                                    </thead>
+                                                    <?php
+                                                    $ejecutar = mysqli_query($conn, $empresa);
+                                                    while($fila=mysqli_fetch_array($ejecutar)){
+                                                        $id          = $fila['ID_NEGOCIO'];
+                                                        $nom           = $fila['NEG_NOMBRE'];
+                                                        $dir          = $fila['NEG_RAZONSOCIAL'];
+                                                        $ape          = $fila['EXP_NIVEL'];
 
 
-                                        <strong class="card-title mb-3">URL de la nueva categoría</strong>
+                                                ?>
+                                                                    <tr>
+                                                                        <td width="8%"><?php echo $id ?></td>
+                                                                        <td width="14%"><?php echo $nom ?></td>
+                                                                        <td width="14%"><?php echo $dir ?></td>
+                                                                        <td width="14%"><?php echo $ape ?></td>
+                                                                        <td width="14%">
+                                                                        <?php
+                                                                            echo "        
+                                                                            <a href='#' onclick='modificar($id), enviarmod( $id);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                                                                            <a href='#' onclick='expo($id), enviarmod( $id);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>    
+                                                                            <a href='#' onclick='alerta1($id), enviarmod( $id);' title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>                                                      
+                                                                                                                 
+                                                                            <a href='recepcion_historial_cliente.php?id=", base64_encode($id), "'  title='Modificar galería'><i class='btn-sm btn-primary fa fa-picture-o'></i></a>
+                                                                            </td>"; 
+                                                                    ?>
 
-                                        <input type="text" id="street" placeholder="Ej. 'reparacion.php'" class="form-control">
-                                        </br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar categoría</button>
-
-                                        </div>
-
-                                </div>
-                                </div>
-
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                <div class="card-header">Registro de nueva subcategoría</div>
-                                <div class="card-body">
-
-                                <strong class="card-title mb-3">Categorías</strong>
-
-                                <select class="form-control form-control-sm" textalign="center" required name="categoria" id="categoria" placeholder="Ej. 'Reparación'">
-                                        <option value="" ></option>
-                                        <?php
-                                        $ejec = mysqli_query($conn, $categoria);
-                                        while($fila=mysqli_fetch_array($ejec)){?>
-                                        <?php echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>'; ?>
-                                        <?php } ?>
-                                        </select>
-
-                                        <strong class="card-title mb-3">Nueva subcategoría</strong>
-
-                                        <input type="text" id="street" placeholder="Ej. 'Reparación zapatos'" class="form-control">
-
-
-                                        </br></br></br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar subcategoría</button>
-
- </div>
+                                                        </tr>
+                                                        <?php } ?>
+                                                        <tbody></br>
+                                                            Resultado de tabla categoría
+                                                    </tbody>
+                                                </table>
                                 </div>
                             </div>
 
                     </div>
 
-                </div>   
-                <div id='show-me-two' style='display:none; border:2px solid #ccc'>
-
-                <table id="a-tables" class="table table-hover table-dark table-responsive">
-    <thead>
-
-        <th data-field="id">ID</th>
-      <th data-field="fecha" data-sortable="true">Nombre</th>
-      <th data-field="estatus" data-sortable="true">ID RAMO</th>
-      <th data-field="estatus" data-sortable="true">STATUS</th>
-      <th data-field="estatus" data-sortable="true">URL</th>
-      <th class="disabled-sorting">Acción</th>
-
-    </thead>
-    <?php
-      $ejecutar = mysqli_query($conn, $categoria);
-    while($fila=mysqli_fetch_array($ejecutar)){
-        $id          = $fila['ID_CATEGORIA'];
-        $nom           = $fila['CAT_NOMBRE'];
-        $ape          = $fila['ID_RAMO'];
-        $dir          = $fila['CAT_ESTATUS'];
-        $cel        = $fila['CAT_URL'];
-
-
-?>
-                    <tr>
-                        <td width="8%"><?php echo $id ?></td>
-                        <td width="14%"><?php echo $nom ?></td>
-                        <td width="14%"><?php echo $ape ?></td>
-                        <td width="14%"><?php echo $dir ?></td>
-                        <td width="14%"><?php echo $cel ?></td>
-                        <td width="14%">
-                          <?php
-                          
-                      ?>
-
-          </tr>
-        <?php } ?>
-        <tbody></br>
-            Resultado de tabla categoría
-      </tbody>
-  </table>
-  </div>
-
-  <div id='show-me-three' style='display:none; border:2px solid #ccc'>
-
-<table id="a-tables2" class="table table-hover table-dark table-responsive">
-<thead>
-
-<th data-field="id">ID</th>
-<th data-field="fecha" data-sortable="true">Nombre</th>
-<th data-field="estatus" data-sortable="true">ID CATEGORIA</th>
-<th data-field="estatus" data-sortable="true">STATUS</th>
-<th class="disabled-sorting">Acción</th>
-
-</thead>
-<?php
-$ejecutar = mysqli_query($conn, $subcategoria);
-while($fila=mysqli_fetch_array($ejecutar)){
-$id          = $fila['ID_SUBCATEGORIA'];
-$nom           = $fila['SUB_NOMBRE'];
-$ape          = $fila['ID_CATEGORIA'];
-$dir          = $fila['SUB_ESTATUS'];
-
-
-?>
-    <tr>
-        <td width="8%"><?php echo $id ?></td>
-        <td width="14%"><?php echo $nom ?></td>
-        <td width="14%"><?php echo $ape ?></td>
-        <td width="14%"><?php echo $dir ?></td>
-        <td width="14%">
-          <?php
-          
-      ?>
-
-</tr>
-<?php } ?>
-<tbody></br>
-Resultado de tabla subcategoría
-</tbody>
-</table>
-</div>
-
-
-
-
-            </div>
+                </div>
         </div>
 
     </div>
+
+
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
@@ -574,7 +464,176 @@ Resultado de tabla subcategoría
 
     
 
-    <script type="text/javascript">
+    
+
+<script>
+            $(document).ready(function() {
+                $('#a-tables').DataTable();
+                $('#a-tables2').DataTable();
+                $('#tabla4').DataTable();
+                $('#tabla5').DataTable();
+            } );
+    </script>
+
+
+<script type="text/javascript">
+//ventana actualizar cliente
+function modificar(){
+
+
+    swal({
+         title: 'Modificar empresa',
+         html:
+         '<div class="card-body"> <form action="admin_agregar_emp.php" method="post" name="data">'+
+         '<div class="row">'+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+         '<label>Nombre del negocio</label>'+
+         '<input input type="text" name="usu" id="usu" class="form-control border-input maxlength="25" required>' +
+
+         '</div>'+
+          '</div>'+
+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+         '<label>Razón social</label>' +
+         '<input input type="text" name="usu" id="usu" class="form-control border-input maxlength="25" required>' +
+         '</div>'+
+         '</div>'+
+
+            '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+
+
+         '<label>RFC</label>' +
+         '<input input type="password" name="pass" id="pass" class="form-control border-input maxlength="25" required>' +
+
+          '</div>'+
+         '</div>'+
+         '</div>'+
+
+         '<div class="row">'+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+         '<label>Responsable</label>' +
+         '<input input type="text" name="nom" id="nom" class="form-control border-input maxlength="25" required>' +
+         '</div>'+
+         '</div>'+
+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+         '<label>Subcategoría</label>' +
+         '<input input type="text" name="ape" id="ape" class="form-control border-input maxlength="25" required>' +
+         '</div>'+
+         '</div>'+
+         '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+         '<label>Status</label>' +
+         '<input input type="text" name="cor" id="cor" class="form-control border-input maxlength="25" required>' +
+         '</div>'+
+         '</div>'+
+         '</div>'+        
+
+         '<div class="row">'+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+       
+         '<label>Dirección</label>' +
+         '<textarea type="text" name="comen" id="comen"  class="form-control border-input" rows="5"></textarea>'+
+         '</div>'+
+         '</div>'+
+
+         '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+         '<label>Descripción</label>' +     
+         '<textarea type="text" name="comen" id="comen"  class="form-control border-input" rows="5"></textarea>'+
+ 
+        '</div>'+
+         '</div>'+
+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+         '<label>Etiquetas</label>' +     
+         '<textarea type="text" name="comen" id="comen"  class="form-control" rows="5"></textarea>'+
+ 
+        '</div>'+
+         '</div>'+
+         '</div>'+
+
+
+         '<Button type="submit" id="confirmar" name="confirmar" class= "btn btn-info btn-fill btn-wd">Actualizar empresa</Button>'+
+         '</form></div>',
+
+showCancelButton: true,
+confirmButtonColor: '#3085d6',
+cancelButtonColor: '#d33',
+confirmButtonText:  '</form> Registrar y generar reporte',
+cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+showConfirmButton: false,
+focusConfirm: false,
+buttonsStyling: false,
+reverseButtons: true, 
+customClass: 'swal-wide',
+allowOutsideClick: false
+
+})
+
+};
+
+</script>
+
+<script type="text/javascript">
+    //ventana actualizar cliente
+    function expo(){
+      
+    swal({
+    title: 'Exposición',
+    html:
+    '<div class="card-body"> <form target="_blank" action="recepcion_pdf_abono.php" method="post" name="data" content="text/html; charset=utf-8" >'+
+    //Manda Llamar id,nombre y apellido
+    '<div class="col-md-12">'+
+      '<div class="form-group">'+
+
+      '<label>Nivel de exposicion</label>'+
+      '<select class="form-control form-control-sm" textalign="center" required name="destino" id="destino"><option value="" >'+
+        '</option><option value="Normal" >Normal</option>'+
+        '<option value="Alta">Alta</option>'+
+        '<option value="Maxima">Máxima</option>'+
+        '</select>' +
+      '<label>Fecha límite de exposicion</label>'+
+            '<input type="date" name="swal-input21" id="swal-input21"   class="form-control border-input">'+
+          
+        '</div>'+
+    '</div>'+
+
+
+    '<div class="col-md-12">'+
+    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar exposición</Button>'+
+
+    '</form></div>',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '</form> Actualizar solicitud',
+    cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+    showConfirmButton: false,
+    focusConfirm: false,
+    buttonsStyling: false,
+    reverseButtons: true, allowOutsideClick: false
+    })
+
+    };
+
+    </script>
+
+<script type="text/javascript">
   $(document).ready(function ()
    {
      //primero
@@ -716,15 +775,12 @@ Resultado de tabla subcategoría
 
 
   </script>
+<style>
+.swal-wide{
+    width:60% !important;
+}
+</style>
 
-<script>
-            $(document).ready(function() {
-                $('#a-tables').DataTable();
-                $('#a-tables2').DataTable();
-                $('#tabla4').DataTable();
-                $('#tabla5').DataTable();
-            } );
-    </script>
 
 </body>
 
