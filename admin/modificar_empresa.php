@@ -132,7 +132,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="registro_negocio.php">Nuevo registro</a>
+                                <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
                                     <a href="index2.html">Modificar empresa</a>
