@@ -1,7 +1,7 @@
 <?php	
     include'conexion.php';
 
-    $empresa ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, e.USU_NOMBRE, e.USU_APATERNO, e.USU_USUARIO, e.USU_CELULAR ,e.USU_CORREO
+    $empresa ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, e.ID_USUARIO, e.USU_NOMBRE, e.USU_APATERNO, e.USU_USUARIO, e.USU_CELULAR ,e.USU_CORREO
     FROM   negocios  n, usuarios e
     WHERE n.ID_NEGOCIO = e.ID_NEGOCIO and USU_ROLL='Empresa'";
 
@@ -393,6 +393,7 @@
                             <?php
                             $ejecutar = mysqli_query($conn, $clientes);
                             while($fila=mysqli_fetch_array($ejecutar)){
+                            $id          = $fila['ID_USUARIO'];
                             $nombre          = $fila['USU_NOMBRE'];
                             $razon          = $fila['USU_APATERNO'];    
                             $nom           = $fila['USU_USUARIO'];
@@ -411,7 +412,7 @@
                                     <td width="14%">
                                     <?php
                                     echo "        
-                                    <a href='#' onclick='nueva(), enviarmod();' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
+                                    <a href='#' onclick='actualizar($id), usuario($id);' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
                                                                                                              
                                     </td>"; 
                                     ?>
@@ -443,6 +444,7 @@
                         <?php
                         $ejecutar = mysqli_query($conn, $empresa);
                         while($fila=mysqli_fetch_array($ejecutar)){
+                            $id          = $fila['ID_USUARIO'];
                             $negocio          = $fila['NEG_NOMBRE'];
                             $nombre          = $fila['USU_NOMBRE'];
                             $razon          = $fila['USU_APATERNO'];    
@@ -463,7 +465,7 @@
                                 <td width="14%">
                                 <?php
                                     echo "        
-                                    <a href='#' onclick='nueva(), enviarmod();' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
+                                    <a href='#' onclick='actualizar($id), usuario($id);' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
                                                                                                              
                                     </td>"; 
                                     ?>
@@ -525,6 +527,53 @@
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
+    <script>
+
+        //Script para mandar ID para generar la orden
+        function usuario(id){
+        $.ajax({
+
+            // la URL para la petición
+            url : 'usuarios_get_fn.php',
+            // la información a enviar
+            // (también es posible utilizar una cadena de datos)
+            data : {
+            id : id
+            },
+            // especifica si será una petición POST o GET
+            type : 'POST',
+            // el tipo de información que se espera de respuesta
+            dataType : 'json',
+            // código a ejecutar si la petición es satisfactoria;
+            // la respuesta es pasada como argumento a la función
+            success : function(data) {
+            //Manda Llamar id,nombre y apellido
+            $("#roll").val(data.data.roll);
+            $("#sta").val(data.data.sta);
+            $("#nom").val(data.data.nom);
+            $("#apep").val(data.data.apep);
+            $("#apem").val(data.data.apem);
+            $("#usu").val(data.data.usu);
+            $("#pass").val(data.data.pas);
+            $("#mail").val(data.data.mail);
+            $("#cel").val(data.data.cel);    
+            },
+            // código a ejecutar si la petición falla;
+            // son pasados como argumentos a la función
+            // el objeto de la petición en crudo y código de estatus de la petición
+            error : function(xhr, status) {
+
+            },
+            // código a ejecutar sin importar si la petición falló o no
+            complete : function(xhr, status) {
+
+            }
+        });
+        }
+
+    </script>
+
+
     <script type="text/javascript">
 //ventana de nuevo cliente
     function nuevo_cliente(){
@@ -533,23 +582,23 @@
    swal({
    title: 'Nuevo usuario',
    html:
-   '<div class="col-lg-12"> <form action="recepcion_cliente.php" method="post" name="data">'+
+   '<div class="col-lg-12"> <form action="usuarios_insert_fn.php" method="post" name="data">'+
    '<label>Nombre(s)</label>' +
    '<input input type="text" name="nom" id="nom" pattern="[A-Za-z ]+" title="Sólo letras" class="form-control border-input maxlength="25" required>' +
    '<label>Apellidos Paterno</label>' +
-   '<input input type="text" name="ape" id="ape" pattern="[A-Za-z ]+" title="Sólo letras" class="form-control border-input maxlength="25" required>' +
+   '<input input type="text" name="apep" id="apep" pattern="[A-Za-z ]+" title="Sólo letras" class="form-control border-input maxlength="25" required>' +
    '<label>Apellido Materno</label>' +
-   '<input input type="text" name="dire" id="dire" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input maxlength="25" required>' +
+   '<input input type="text" name="apem" id="apem" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input maxlength="25" required>' +
    '<label>Usuario</label>' +
-   '<input input type="text" name="cor" id="cor" class="form-control border-input">' +
+   '<input input type="text" name="usu" id="usu" class="form-control border-input">' +
    '<label>Contraseña</label>' +
-   '<input input type="password" name="cor1" id="cor1" class="form-control border-input">' +
+   '<input input type="password" name="pas" id="pas" class="form-control border-input">' +
    '<label>Correo</label>' +
-   '<input input type="email" name="asd" id="asd" class="form-control border-input">' +
+   '<input input type="email" name="mail" id="mail" class="form-control border-input">' +
    '<label>Celular</label>' +
    '<input input type="number" name="cel" id="cel" class="form-control border-input type="number" required>'+
    '<label>Roll</label>' +
-   '<select class="form-control form-control-sm" required textalign="center" name="conocio" id="conocio"><option value="" ></option><option value="Cliente" >Cliente</option><option value="Empresa">Empresa</option></select></br>'+   
+   '<select class="form-control form-control-sm" required textalign="center" name="roll" id="roll"><option value="" ></option><option value="Cliente" >Cliente</option><option value="Empresa">Empresa</option></select></br>'+   
    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar cliente</Button>'+
    '</form></div>',
    showCancelButton: true,
@@ -568,50 +617,51 @@
   </script>
 
 <script type="text/javascript">
-    //ventana actualizar cliente
-    function nueva(){
-      
-    swal({
-    title: 'Nueva característica',
-    html:
-    '<div class="card-body"> <form action="caracteristicas_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
-    //Manda Llamar id,nombre y apellido
-    '<div class="col-md-12">'+
-      '<div class="form-group">'+
+//ventana de nuevo cliente
+    function actualizar(id){
 
-      '<label>Nombre general</label>'+
-      '<input input type="text" name="nombre" id="nombre" class="form-control border-input required>' +     
-     
-      '</div>'+
-    '</div>'+
 
-    '<div class="col-md-12">'+
-      '<div class="form-group">'+    
+   swal({
+   title: 'Actualizar usuario',
+   html:
+   '<div class="col-lg-12"> <form action="usuarios_update_fn.php" method="post" name="data">'+
+   '<input input type="hidden" name="id" id="id" value='+id+'  class="form-control border-input" required>' +
+   '<label>Nombre(s)</label>' +
+   '<input input type="text" name="nom" id="nom" pattern="[A-Za-z ]+" title="Sólo letras" class="form-control border-input maxlength="25" required>' +
+   '<label>Apellidos Paterno</label>' +
+   '<input input type="text" name="apep" id="apep" pattern="[A-Za-z ]+" title="Sólo letras" class="form-control border-input maxlength="25" required>' +
+   '<label>Apellido Materno</label>' +
+   '<input input type="text" name="apem" id="apem" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input maxlength="25" required>' +
+   '<label>Usuario</label>' +
+   '<input input type="text" name="usu" id="usu" class="form-control border-input">' +
+   '<label>Contraseña</label>' +
+   '<input input type="password" name="pass" id="pass" class="form-control border-input">' +
+   '<label>Correo</label>' +
+   '<input input type="email" name="mail" id="mail" class="form-control border-input">' +
+   '<label>Celular</label>' +
+   '<input input type="number" name="cel" id="cel" class="form-control border-input type="number" required>'+
+   '<label>Roll</label>' +   
+   '<select class="form-control form-control-sm" required textalign="center" name="roll" id="roll"  ><option value="" ></option><option value="Cliente" >Cliente</option><option value="Empresa">Empresa</option></select>'+   
+   '<label>Status</label>' +
+   '<select class="form-control form-control-sm" required textalign="center" name="sta" id="sta"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
 
-      '<label>Descripción</label>'+
-         '<textarea type="text" name="descripcion" id="descripcion"  class="form-control border-input" rows="5"></textarea>'+
-        '</div>'+
-    '</div>'+
+   '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar cliente</Button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
 
-    '<div class="col-md-12">'+
-    '</br>'+
-    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar característica</Button>'+
+})
+};
+  </script>
 
-    '</form></div>',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: '</form> Actualizar solicitud',
-    cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
-    showConfirmButton: false,
-    focusConfirm: false,
-    buttonsStyling: false,
-    reverseButtons: true, allowOutsideClick: false
-    })
-
-    };
-
-    </script>
 
 
     <script type="text/javascript">
