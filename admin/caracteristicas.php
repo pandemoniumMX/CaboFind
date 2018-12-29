@@ -78,7 +78,7 @@
                                     <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                    <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -140,7 +140,7 @@
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
