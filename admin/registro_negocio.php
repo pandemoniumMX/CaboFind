@@ -41,8 +41,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
 
     <script type="text/javascript">
 
@@ -102,7 +102,7 @@
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li >
-                                    <a href="index2.html">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -164,7 +164,7 @@
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -447,17 +447,14 @@
                                             <?php } ?>
                                             </select></div>
                         
-                                                <br />
                                                 
-                                                <div>Selecciona categoria : <select name="categoria" id="categoria"></select></div>
+                                                <div>Selecciona categoria : </br><select name="categoria" id="categoria"></select></div>
                                                 
-                                                <br />
                                                 
-                                                <div>Selecciona subcategoria : <select name="subcategoria" id="subcategoria"></select></div>
+                                                <div>Selecciona subcategoria : </br><select name="subcategoria" id="subcategoria"></select></div>
                                                 
-                                                <br />
 
-                                                <div>Asociar cliente: 
+                                                <div>Usuario de cliente: 
                                             <select class="form-control form-control-sm" textalign="center" required name="usuario" id="usuario">
                                             <option value="" ></option>
                                             <?php
@@ -666,8 +663,7 @@
             </div>    <!-- Div que cierra-->
 
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
+
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>

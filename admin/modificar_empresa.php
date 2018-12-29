@@ -4,12 +4,16 @@
     FROM   negocios  n, exposicion e
     WHERE n.ID_NEGOCIO = e.ID_NEGOCIO ";
 
-
+    $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+    $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
+
+
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,6 +45,36 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+
+$(document).ready(function(){
+    $("#ramo").click(function () {
+    $("#ramo option:selected").each(function () {
+    ID_RAMO = $(this).val();
+    $.post("registro_negocio_combo_cat.php", { ID_RAMO: ID_RAMO }, function(data){
+    $("#categoria").html(data);
+          });            
+        });
+    })
+});
+
+$(document).ready(function(){
+    $("#categoria").click(function () {
+    $("#categoria option:selected").each(function () {
+        ID_CATEGORIA = $(this).val();
+    $.post("registro_negocio_combo_subcat.php", { ID_CATEGORIA: ID_CATEGORIA }, function(data){
+    $("#subcategoria").html(data);
+          });            
+        });
+    })
+});
+
+</script>
+        
+
 
 </head>
 
@@ -73,7 +107,7 @@
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -135,7 +169,7 @@
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -393,7 +427,7 @@
                                                                         <td width="14%">
                                                                         <?php
                                                                             echo "        
-                                                                            <a href='#' onclick='modificar($id), enviarmod( $id);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                                                                            <a href='#' onclick='modificar();' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
                                                                             <a href='#' onclick='expo($id), enviarmod( $id);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>    
                                                                             <a href='#' onclick='alerta1($id), enviarmod( $id);' title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>                                                      
                                                                                                                  
@@ -419,8 +453,8 @@
 
 
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
+
+
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -461,19 +495,10 @@
     
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
+ 
 
-    
+        
 
-    
-
-<script>
-            $(document).ready(function() {
-                $('#a-tables').DataTable();
-                $('#a-tables2').DataTable();
-                $('#tabla4').DataTable();
-                $('#tabla5').DataTable();
-            } );
-    </script>
 
 
 <script type="text/javascript">
@@ -497,7 +522,7 @@ function modificar(){
           '<div class="col-md-4">'+
             '<div class="form-group">'+
          '<label>Razón social</label>' +
-         '<input input type="text" name="usu" id="usu" class="form-control border-input maxlength="25" required>' +
+         '<input input type="text" name="usu1" id="usu1" class="form-control border-input maxlength="25" required>' +
          '</div>'+
          '</div>'+
 
@@ -541,12 +566,14 @@ function modificar(){
          '<div class="row">'+
           '<div class="col-md-4">'+
             '<div class="form-group">'+
+             '<label>Dirección</label>' +      
+                 '<textarea type="text" name="comen2" id="comen2"  class="form-control border-input" rows="5"></textarea>'+
 
-       
-         '<label>Dirección</label>' +
-         '<textarea type="text" name="comen" id="comen"  class="form-control border-input" rows="5"></textarea>'+
+                      
+        '</div>'+
          '</div>'+
-         '</div>'+
+
+                 
 
          '<div class="col-md-4">'+
             '<div class="form-group">'+
@@ -561,11 +588,52 @@ function modificar(){
             '<div class="form-group">'+
 
          '<label>Etiquetas</label>' +     
-         '<textarea type="text" name="comen" id="comen"  class="form-control" rows="5"></textarea>'+
+         '<textarea type="text" name="comen1" id="comen1"  class="form-control" rows="5"></textarea>'+
  
         '</div>'+
          '</div>'+
          '</div>'+
+
+         '<div class="row">'+
+          '<div class="col-md-4">'+
+            '<div class="form-group">'+
+
+       
+         '<div>Selecciona Ramo : '+
+            '<select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">' +
+            '<option value="" ></option>'+
+            <?php
+            $ejec7 = mysqli_query($conn, $ramos);
+            while($fila=mysqli_fetch_array($ejec7)){?>
+            '<?php echo '<option value="'.$fila['ID_RAMO'].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>'+
+            <?php } ?>
+            '</select></div>'+
+
+            '<div>Selecciona categoria : '+
+            '<select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">' +
+            '<option value="" ></option>'+
+            <?php
+            $categoria = "SELECT ID_CATEGORIA, CAT_NOMBRE From categorias where cat_estatus='A'";
+            $ejec1 = mysqli_query($conn, $categoria);
+            while($fila=mysqli_fetch_array($ejec1)){?>
+            '<?php echo '<option value="'.$fila['ID_CATEGORIA'].'">'.$fila["CAT_NOMBRE"].'</option>'; ?>'+
+            <?php } ?>
+            '</select></div>'+
+
+                   '<div>Selecciona subcategoria : '+
+            '<select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">' +
+            '<option value="" ></option>'+
+            <?php
+            $ejec2 = mysqli_query($conn, $subcategoria);
+            while($fila=mysqli_fetch_array($ejec2)){?>
+            '<?php echo '<option value="'.$fila['ID_SUBCATEGORIA'].'">'.$fila["SUB_NOMBRE"].'</option>'; ?>'+
+            <?php } ?>
+            '</select></div>'+
+         '</div>'+
+         '</div>'+
+         '</div>'+
+
+
 
 
          '<Button type="submit" id="confirmar" name="confirmar" class= "btn btn-info btn-fill btn-wd">Actualizar empresa</Button>'+
@@ -574,7 +642,7 @@ function modificar(){
 showCancelButton: true,
 confirmButtonColor: '#3085d6',
 cancelButtonColor: '#d33',
-confirmButtonText:  '</form> Registrar y generar reporte',
+confirmButtonText:  'Registrar y generar reporte',
 cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
 showConfirmButton: false,
 focusConfirm: false,
@@ -632,6 +700,10 @@ allowOutsideClick: false
     };
 
     </script>
+
+
+
+
 
 <script type="text/javascript">
   $(document).ready(function ()
@@ -775,6 +847,17 @@ allowOutsideClick: false
 
 
   </script>
+
+  <script>
+            $(document).ready(function() {
+                $('#a-tables').DataTable();
+                $('#a-tables2').DataTable();
+                $('#tabla4').DataTable();
+                $('#tabla5').DataTable();
+            } );
+    </script>
+
+
 <style>
 .swal-wide{
     width:60% !important;
