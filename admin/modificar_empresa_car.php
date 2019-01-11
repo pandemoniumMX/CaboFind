@@ -1,12 +1,28 @@
 <?php	
     include'conexion.php';
-    $exposicion ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, n.NEG_RAZONSOCIAL, e.ID_EXPOSICION, e.EXP_NIVEL, e.EXP_FECHA_ALTA, e.EXP_FECHA_CADUCIDAD
-    FROM   negocios  n, exposicion e
-    WHERE n.ID_NEGOCIO = e.ID_NEGOCIO ";
+    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+    $id = base64_decode($_GET ['id']);
 
-    $caracteristicas ="SELECT * from caracteristicas";
-   
+    $empresa="SELECT * from negocios where ID_NEGOCIO=$id";
+    
+      $ejecutar = mysqli_query($conn, $empresa);
+      while($fila=mysqli_fetch_array($ejecutar)){
+      $nom           = $fila['NEG_NOMBRE'];
+      }
 
+
+                                                
+
+
+    $car="SELECT n.CAR_NOMBRE, e.CXN_ESTATUS
+    FROM   caracteristicas  n, caracteristicaxnegocio e
+    WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
+
+    $car3="SELECT n.CAR_NOMBRE
+    FROM   caracteristicas  n, caracteristicaxnegocio e
+    WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
+
+    $car2="SELECT * from caracteristicas where CAR_ESTATUS='A' and CAR_NOMBRE <> '$car3' ";
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +37,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Caracteristicas generales</title>
+    <title>Modificar empresa caracteristicas</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -44,9 +60,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-
-
   
+
 </head>
 
 <body class="animsition">
@@ -75,10 +90,10 @@
                                 <i class="fas fa-tachometer-alt"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="registro_negocio.php">Nuevo registro empresa</a>
+                                    <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="modificar_empresa.php">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                                 <li>
                                     <a href="index3.html">Dashboard 3</a>
@@ -93,15 +108,15 @@
                                 <i class="fas fa-chart-bar"></i>Categorias</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="caracteristicas.php">
                                 <i class="fas fa-table"></i>Caracteristicas</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="menu_precios.php">
                                 <i class="far fa-check-square"></i>Menú de precios</a>
                         </li>
                         <li>
-                            <a href="#">
+                        <a href="exposicion_precios.php">
                                 <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
                         </li>  
                         <li>                     
@@ -151,20 +166,20 @@
                             </ul>
                         </li>
                     
-                        <li >
+                        <li class="active">
                             <a href="categorias.php">
                                 <i class="fas fa-chart-bar"></i>Categorias</a>
                         </li>
-                        <li class="active">
-                        <a href="caracteristicas.php">
+                        <li>
+                            <a href="table.html">
                                 <i class="fas fa-table"></i>Caracteristicas</a>
                         </li>
                         <li>
-                        <a href="menu_precios.php">
+                            <a href="form.html">
                                 <i class="far fa-check-square"></i>Menú de precios</a>
                         </li>
-                        <li >
-                            <a href="exposicion_precios.php">
+                        <li>
+                            <a href="#">
                                 <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
                         </li>  
                         <li>                     
@@ -366,61 +381,54 @@
                     <div class="container-fluid">
                     <div class="card">
                                     <div class="card-header">
-                                        <strong>Caracteristicas de las empresas</strong>
+                                      Caracteristicas de la empresa: <strong> <?php echo $nom ?> </strong>
                                       
                                     </div>
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-success" id="watch-me">Todas las características</button>
+                                        <button type="button" class="btn btn-success active" onclick="add_caract();">Agregar caracteristica al negocio</button>
+                                       
                                     </div>
                                 </div>
-                                            
-                    <div id='show-me'>
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-info" onclick='nueva();'>Nueva caracteristica<i class="fa fa-check"></i></button>
-                                    </div>
-                            <table id="a-tables" class="table table-hover table-dark table-responsive">
-                            <thead>
+                                <div id='show-me'>
+                   
 
-                            <th data-field="id">ID</th>
-                            <th data-field="fecha" data-sortable="true">Nombre</th>
-                            <th data-field="fecha" data-sortable="true">Descripcion</th>
-                            <th data-field="estatus" data-sortable="true">Status</th>
-                            <th class="disabled-sorting">Acción</th>
+                <table id="a-tables" class="table table-hover table-dark table-responsive">
+    <thead>
 
-                            </thead>
-                            <?php
-                            $ejecutar = mysqli_query($conn, $caracteristicas);
-                            while($fila=mysqli_fetch_array($ejecutar)){
-                            $nombre          = $fila['ID_CARACTERISTICA'];
-                            $razon          = $fila['CAR_NOMBRE'];    
-                            $nom           = $fila['CAR_DESCRIPCION'];
-                            $ape          = $fila['CAR_ESTATUS'];
+        <th data-field="id">Característica</th>
+      <th data-field="fecha" data-sortable="true">Estado</th>
+      
+      <th class="disabled-sorting">Acción</th>
 
+    </thead>
+    <?php
+      $ejecutar = mysqli_query($conn, $car);
+    while($fila=mysqli_fetch_array($ejecutar)){
+        $id          = $fila['CAR_NOMBRE'];
+        $nom           = $fila['CXN_ESTATUS'];
+      
 
-                            ?>
-                                <tr>
-                                    <td width="8%"><?php echo $nombre ?></td>
-                                    <td width="14%"><?php echo $razon ?></td>
-                                    <td width="14%"><?php echo $nom ?></td>
-                                    <td width="14%"><?php echo $ape ?></td>
-                                    <td width="14%">
-                                    <?php
-                                    echo "        
-                                    <a href='#' onclick='nueva(), enviarmod();' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
-                                                                                                             
-                                    </td>"; 
-                                    ?>
+?>
+                    <tr>
+                        <td width="8%"><?php echo $id ?></td>
+                        <td width="14%"><?php echo $nom ?></td>
+                      
+                        <td width="14%">
+                          <?php echo"
+                     <a href='#' onclick='update_car($id), get_car($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                        "
+                      ?>
 
-                            </tr>
-                            <?php } ?>
-                            <tbody></br>
-                            Resultado de tabla caracteristicas
-                            </tbody>
-                            </table>
+          </tr>
+        <?php } ?>
+        <tbody></br>
+            Resultado de tabla categoría
+      </tbody>
+  </table>
+  </div>
 
-                    </div>               
+ 
 
-                  
 
 
             </div>
@@ -461,62 +469,145 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-  <!-- Data table plugin-->
-  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#a-tables').DataTable();</script>
 
+    
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
+    <script>
+        //Script para mandar ID para generar la orden
+        function get_car(id){
+        $.ajax({
 
-    <script type="text/javascript">
-    //ventana actualizar cliente
-    function nueva(){
-      
-    swal({
-    title: 'Nueva característica',
-    html:
-    '<div class="card-body"> <form action="caracteristicas_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
-    //Manda Llamar id,nombre y apellido
-    '<div class="col-md-12">'+
-      '<div class="form-group">'+
+        // la URL para la petición
+        url : 'modificar_empresa_car_get_fn.php',
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data : {
+        id : id
+        },
+        // especifica si será una petición POST o GET
+        type : 'POST',
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(data) {
+        //Manda Llamar id,nombre y apellido
+        $("#nom").val(data.data.nom);
+        $("#est").val(data.data.est);
+        $("#car").val(data.data.id_car);
 
-      '<label>Nombre general</label>'+
-      '<input input type="text" name="nombre" id="nombre" class="form-control border-input required>' +     
      
-      '</div>'+
-    '</div>'+
+        },
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto de la petición en crudo y código de estatus de la petición
+        error : function(xhr, status) {
 
-    '<div class="col-md-12">'+
-      '<div class="form-group">'+    
+        },
+        // código a ejecutar sin importar si la petición falló o no
+        complete : function(xhr, status) {
 
-      '<label>Descripción</label>'+
-         '<textarea type="text" name="descripcion" id="descripcion"  class="form-control border-input" rows="5"></textarea>'+
-        '</div>'+
-    '</div>'+
-
-    '<div class="col-md-12">'+
-    '</br>'+
-    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar característica</Button>'+
-
-    '</form></div>',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: '</form> Actualizar solicitud',
-    cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
-    showConfirmButton: false,
-    focusConfirm: false,
-    buttonsStyling: false,
-    reverseButtons: true, allowOutsideClick: false
-    })
-
-    };
+        }
+        });
+        }
 
     </script>
 
+ 
 
+  <script type="text/javascript">
+//ventana de nuevo cliente
+    function add_caract(id){
+
+
+   swal({
+   title: 'Características ',
+   html:
+   '<div class="col-lg-12"> <form action="modificar_empresa_car_insert_fn.php" method="post" name="data">'+
+   <?php
+                $ejec1 = mysqli_query($conn, $empresa);
+                while($fila=mysqli_fetch_array($ejec1)){ ?>               
+                '<input type="hidden" name="id" id="id" value="<?php echo $fila["ID_NEGOCIO"]; ?>" '+//obtener solo id
+    <?php } ?>
+
+
+   '<strong class="card-title mb-3">Asignar caracteristica a empresa</strong> </br>'+
+    '<select class="form-control form-control-sm" textalign="center" required name="car" id="car" placeholder="Ej. Reparación">'+
+    '<option value="" ></option>'+
+    <?php
+    $ejec = mysqli_query($conn, $car2);
+    while($fila=mysqli_fetch_array($ejec)){?>
+    '<?php echo '<option value="'.$fila["ID_CARACTERISTICA"].'">'.$fila["CAR_NOMBRE"].'</option>'; ?>'+
+    <?php } ?>
+    '</select>'+
+
+    '</br>'+
+    '<button type="submit"  class="btn btn-success btn-lg btn-block">Agregar</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+
+})
+};
+  </script>
+
+
+  <script type="text/javascript">
+//ventana de nuevo cliente
+    function update_car(id){
+
+
+   swal({
+   title: 'Características ',
+   html:
+   '<div class="col-lg-12"> <form action="modificar_empresa_car_insert_fn.php" method="post" name="data">'+
+   '<input  type="text" name="id" id="id" value='+id+' class="form-control border-input maxlength="25" required>' +
+
+   '<strong class="card-title mb-3">Asignar caracteristica a empresa</strong> </br>'+
+    '<select class="form-control form-control-sm" textalign="center" required name="car" id="car" placeholder="Ej. Reparación">'+
+    '<option value="" ></option>'+
+    <?php
+    $ejec = mysqli_query($conn, $car2);
+    while($fila=mysqli_fetch_array($ejec)){?>
+    '<?php echo '<option value="'.$fila["ID_CARACTERISTICA"].'">'.$fila["CAR_NOMBRE"].'</option>'; ?>'+
+    <?php } ?>
+    '</select>'+
+    '<label>Estatus</label>' +
+
+    '<select class="form-control form-control-sm" required textalign="center" name="est" id="sta"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
+
+    '</br>'+
+    '<button type="submit"  class="btn btn-success btn-lg btn-block">Agregar</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+
+})
+};
+  </script>
 
     <script type="text/javascript">
   $(document).ready(function ()
@@ -661,11 +752,10 @@
 
   </script>
 
-
-    <script>
+<script>
             $(document).ready(function() {
-                $('#tabla2').DataTable();
-                $('#tabla3').DataTable();
+                $('#a-tables').DataTable();
+                $('#a-tables2').DataTable();
                 $('#tabla4').DataTable();
                 $('#tabla5').DataTable();
             } );

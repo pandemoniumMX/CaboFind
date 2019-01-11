@@ -429,7 +429,7 @@ $(document).ready(function(){
                                                                             echo "        
                                                                             <a href='#' onclick='modificar($id), update_em_fn($id);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
                                                                             <a href='#' onclick='expo($id), update_ex_fn($id);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>    
-                                                                            <a href='#' onclick='alerta1($id), enviarmod( $id);' title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>                                                      
+                                                                            <a href='modificar_empresa_car.php?id=", base64_encode($id), "'  title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>                                                      
                                                                                                                  
                                                                             <a href='recepcion_historial_cliente.php?id=", base64_encode($id), "'  title='Modificar galería'><i class='btn-sm btn-primary fa fa-picture-o'></i></a>
                                                                             </td>"; 
@@ -595,7 +595,7 @@ function modificar(id){
          title: 'Modificar empresa',
          html:
          '<div class="card-body"> <form action="modificar_empresa_updateem_fn.php" method="post" name="data">'+
-         '<input input type="hidden" name="id" id="id" value='+id+' class="form-control border-input maxlength="25" required>' +
+         '<input  type="hidden" name="id" id="id" value='+id+' class="form-control border-input maxlength="25" required>' +
 
          '<div class="row">'+
           '<div class="col-md-4">'+

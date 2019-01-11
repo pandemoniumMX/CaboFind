@@ -488,33 +488,24 @@
 
             <div class="card-body">
                  <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
-
-
                  <div class="form-group">
-
                  <label>
                  <?php
                 $ejec1 = mysqli_query($conn, $specs);
-                while($fila=mysqli_fetch_array($ejec1)){ ?>
-               
+                while($fila=mysqli_fetch_array($ejec1)){ ?>               
                       <input type="checkbox"> <?php echo $fila['CAR_NOMBRE']; ?>
-                </br>
-                   
+                </br>                  
 
               <?php } ?>
-              </div>            
-  
+              </div>              
                     <div class="row">
-
                         <div class="col-lg-6">
                         <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
                         </div>
                         <div class="col-lg-6">
                         <button type="button" id='look-me2' class="btn btn-success btn-lg btn-block">Siguiente</button>
                         </div>
-
                     </div>   
-
 </div> 
 </div>
 
