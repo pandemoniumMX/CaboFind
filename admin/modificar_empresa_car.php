@@ -14,9 +14,9 @@
                                                 
 
 
-    $car="SELECT n.CAR_NOMBRE, e.CXN_ESTATUS
-    FROM   caracteristicas  n, caracteristicaxnegocio e
-    WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
+      $car="SELECT n.ID_CARACTERISTICA, n.CAR_NOMBRE, e.ID_CXN, e.CXN_ESTATUS
+      FROM   caracteristicas  n, caracteristicaxnegocio e
+      WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
 
     $car3="SELECT n.CAR_NOMBRE
     FROM   caracteristicas  n, caracteristicaxnegocio e
@@ -395,27 +395,30 @@
                 <table id="a-tables" class="table table-hover table-dark table-responsive">
     <thead>
 
+    <th data-field="id">ID</th>
         <th data-field="id">Característica</th>
-      <th data-field="fecha" data-sortable="true">Estado</th>
-      
-      <th class="disabled-sorting">Acción</th>
+        <th data-field="fecha" data-sortable="true">Estado</th>      
+        <th class="disabled-sorting">Acción</th>
 
     </thead>
     <?php
       $ejecutar = mysqli_query($conn, $car);
     while($fila=mysqli_fetch_array($ejecutar)){
-        $id          = $fila['CAR_NOMBRE'];
-        $nom           = $fila['CXN_ESTATUS'];
+        $id          = $fila['ID_CXN'];
+        $nom          = $fila['CAR_NOMBRE'];
+        $est           = $fila['CXN_ESTATUS'];
       
 
 ?>
                     <tr>
                         <td width="8%"><?php echo $id ?></td>
-                        <td width="14%"><?php echo $nom ?></td>
+                        <td width="8%"><?php echo $nom ?></td>
+                        <td width="14%"><?php echo $est ?></td>
                       
                         <td width="14%">
                           <?php echo"
                      <a href='#' onclick='update_car($id), get_car($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                     <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
                         "
                       ?>
 
@@ -499,9 +502,10 @@
         // la respuesta es pasada como argumento a la función
         success : function(data) {
         //Manda Llamar id,nombre y apellido
-        $("#nom").val(data.data.nom);
-        $("#est").val(data.data.est);
         $("#car").val(data.data.id_car);
+        $("#est").val(data.data.est);
+        $("#idn").val(data.data.idn);
+
 
      
         },
@@ -575,8 +579,9 @@
    swal({
    title: 'Características ',
    html:
-   '<div class="col-lg-12"> <form action="modificar_empresa_car_insert_fn.php" method="post" name="data">'+
-   '<input  type="text" name="id" id="id" value='+id+' class="form-control border-input maxlength="25" required>' +
+   '<div class="col-lg-12"> <form action="modificar_empresa_car_update_fn.php" method="post" name="data">'+
+   '<input  type="hidden" name="id" id="id" readonly value='+id+' class="form-control border-input maxlength="25" required>' +
+   '<input  type="hidden" name="idn" id="idn" readonly class="form-control border-input maxlength="25" required>' +
 
    '<strong class="card-title mb-3">Asignar caracteristica a empresa</strong> </br>'+
     '<select class="form-control form-control-sm" textalign="center" required name="car" id="car" placeholder="Ej. Reparación">'+
@@ -589,7 +594,7 @@
     '</select>'+
     '<label>Estatus</label>' +
 
-    '<select class="form-control form-control-sm" required textalign="center" name="est" id="sta"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
+    '<select class="form-control form-control-sm" required textalign="center" name="est" id="est"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
 
     '</br>'+
     '<button type="submit"  class="btn btn-success btn-lg btn-block">Agregar</button>'+

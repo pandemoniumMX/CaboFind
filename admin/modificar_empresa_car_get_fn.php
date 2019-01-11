@@ -7,9 +7,9 @@ $response = array();
 if(isset($_POST['id'])){
   $id = $_POST['id'];
 
-  $consulta = "SELECT n.ID_CARACTERISTICA, n.CAR_NOMBRE, e.ID_CXN, e.CXN_ESTATUS
+  $consulta = "SELECT n.ID_CARACTERISTICA, n.CAR_NOMBRE, e.CXN_ESTATUS, e.CXN_ID_NEGOCIO
   FROM   caracteristicas  n, caracteristicaxnegocio e
-  WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
+  WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.ID_CXN=$id";
    $resultado = $conn->query($consulta);
 
 
@@ -18,9 +18,9 @@ if(isset($_POST['id'])){
     while($row = $resultado->fetch_assoc()) {
   $response['data'] = array (
     //"id"          =>  $id,
-    "nom"        =>  $row["CAR_NOMBRE"],
-    "est"       =>  $row["CXN_ESTATUS"],   
     "id_car"       =>  $row["ID_CARACTERISTICA"],   
+    "est"       =>  $row["CXN_ESTATUS"], 
+    "idn"        =>  $row["CXN_ID_NEGOCIO"],
 
 
   );
