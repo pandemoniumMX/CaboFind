@@ -625,7 +625,7 @@
    title: 'Actualizar usuario',
    html:
    '<div class="col-lg-12"> <form action="usuarios_update_fn.php" method="post" name="data">'+
-   '<input input type="hidden" name="id" id="id" value='+id+'  class="form-control border-input" required>' +
+   '<input input type="hidden" name="id" id="id"   class="form-control border-input" required>' +
    '<label>Nombre(s)</label>' +
    '<input input type="text" name="nom" id="nom" pattern="[A-Za-z ]+" title="Sólo letras" class="form-control border-input maxlength="25" required>' +
    '<label>Apellidos Paterno</label>' +

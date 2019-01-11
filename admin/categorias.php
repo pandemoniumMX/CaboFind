@@ -41,6 +41,7 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+  
 
 </head>
 
@@ -377,11 +378,11 @@
 
                                 <div class="card">
                                 <div class="card-header">Registro de nueva categoría</div>
-                                <div class="card-body">
+                                <div class="card-body"> <form  action="categorias_insert_cat_fn.php"  method="post" name="data">
 
-                                <strong class="card-title mb-3">Ramo</strong>
+                                        <strong class="card-title mb-3">Ramo</strong>
 
-                                <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
+                                        <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
                                         <option value="" ></option>
                                         <?php
                                         $ejec7 = mysqli_query($conn, $ramo);
@@ -392,16 +393,16 @@
 
                                         <strong class="card-title mb-3">Nueva categoría</strong>
 
-                                        <input type="text" id="street" placeholder="Ej. 'Reparacion'" class="form-control">
+                                        <input type="text" id="cat" name="cat" required placeholder="Ej. 'Reparacion'" class="form-control">
 
 
                                         <strong class="card-title mb-3">URL de la nueva categoría</strong>
 
-                                        <input type="text" id="street" placeholder="Ej. 'reparacion.php'" class="form-control">
+                                        <input type="text" id="url" name="url" required placeholder="Ej. 'reparacion.php'" class="form-control">
                                         </br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar categoría</button>
+                                        <button type="submit" class="btn btn-success btn-lg btn-block">Registrar categoría</button>
 
-                                        </div>
+                                        </form></div>
 
                                 </div>
                                 </div>
@@ -410,11 +411,12 @@
 
                                 <div class="card">
                                 <div class="card-header">Registro de nueva subcategoría</div>
-                                <div class="card-body">
+                                <div class="card-body"> <form action="categorias_insert_sub_fn.php" method="post" name="data">
 
-                                <strong class="card-title mb-3">Categorías</strong>
 
-                                <select class="form-control form-control-sm" textalign="center" required name="categoria" id="categoria" placeholder="Ej. 'Reparación'">
+                                        <strong class="card-title mb-3">Categorías</strong>
+
+                                        <select class="form-control form-control-sm" textalign="center" required name="categoria" id="categoria" placeholder="Ej. 'Reparación'">
                                         <option value="" ></option>
                                         <?php
                                         $ejec = mysqli_query($conn, $categoria);
@@ -425,13 +427,13 @@
 
                                         <strong class="card-title mb-3">Nueva subcategoría</strong>
 
-                                        <input type="text" id="street" placeholder="Ej. 'Reparación zapatos'" class="form-control">
+                                        <input type="text" id="subcat" name="subcat" required placeholder="Ej. 'Reparación zapatos'" class="form-control">
 
 
                                         </br></br></br>
-                                        <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Registrar subcategoría</button>
+                                        <button type="submit"  class="btn btn-success btn-lg btn-block">Registrar subcategoría</button>
 
- </div>
+                                        </form></div>
                                 </div>
                             </div>
 
@@ -469,8 +471,9 @@
                         <td width="14%"><?php echo $dir ?></td>
                         <td width="14%"><?php echo $cel ?></td>
                         <td width="14%">
-                          <?php
-                          
+                          <?php echo"
+                     <a href='#' onclick='update_cat($id), update_cat_fn($id);' title='Modificar Categoría' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                        "
                       ?>
 
           </tr>
@@ -509,7 +512,9 @@ $dir          = $fila['SUB_ESTATUS'];
         <td width="14%"><?php echo $ape ?></td>
         <td width="14%"><?php echo $dir ?></td>
         <td width="14%">
-          <?php
+          <?php echo"
+        <a href='#' onclick='update_sub(), update_cat_fn();' title='Modificar Subcategoría' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                 "
           
       ?>
 
@@ -572,7 +577,132 @@ Resultado de tabla subcategoría
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
-    
+    <script>
+        //Script para mandar ID para generar la orden
+        function update_cat_fn(id){
+        $.ajax({
+
+        // la URL para la petición
+        url : 'categorias_getcat_fn.php',
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data : {
+        id : id
+        },
+        // especifica si será una petición POST o GET
+        type : 'POST',
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(data) {
+        //Manda Llamar id,nombre y apellido
+        $("#cat").val(data.data.cat);
+        $("#ramo").val(data.data.ramo);
+        $("#sta").val(data.data.sta);
+        $("#url").val(data.data.url);
+        },
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto de la petición en crudo y código de estatus de la petición
+        error : function(xhr, status) {
+
+        },
+        // código a ejecutar sin importar si la petición falló o no
+        complete : function(xhr, status) {
+
+        }
+        });
+        }
+
+    </script>
+
+    <script type="text/javascript">
+//ventana de nuevo cliente
+    function update_cat(id){
+
+
+   swal({
+   title: 'Modificar categoría ',
+   html:
+   '<div class="col-lg-12"> <form action="usuarios_insert_fn.php" method="post" name="data">'+
+   '<input type="text" id="id" name="id" value='+id+' required placeholder="Ej. Reparacion" class="form-control">'+
+   '<label>Ramo</label>' +
+    '<select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">'+
+    '<option value="" ></option>'+
+    <?php
+    $ejec7 = mysqli_query($conn, $ramo);
+    while($fila=mysqli_fetch_array($ejec7)){?>
+    '<?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>'+
+    <?php } ?>
+    '</select>'+
+    '<label>Categoría</label>' +
+    '<input type="text"  name="cat" id="cat" required class="form-control">'+
+    '<label>Url</label>' +
+    '<input type="text" name="url" id="url"  required  class="form-control">'+   
+    '<label>Estatus</label>' +
+    '<select class="form-control form-control-sm" required textalign="center" name="sta" id="sta"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
+   
+    '<button type="submit" class="btn btn-success btn-lg btn-block">Actualizar categoría</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+
+    })
+    };
+  </script>
+
+  <script type="text/javascript">
+//ventana de nuevo cliente
+    function update_sub(){
+
+
+   swal({
+   title: 'Modificar categoría ',
+   html:
+   '<div class="col-lg-12"> <form action="usuarios_insert_fn.php" method="post" name="data">'+
+   '<strong class="card-title mb-3">Categorías</strong>'+
+
+    '<select class="form-control form-control-sm" textalign="center" required name="categoria" id="categoria" placeholder="Ej. Reparación">'+
+    '<option value="" ></option>'+
+    <?php
+    $ejec = mysqli_query($conn, $categoria);
+    while($fila=mysqli_fetch_array($ejec)){?>
+    '<?php echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>'; ?>'+
+    <?php } ?>
+    '</select>'+
+
+    '<strong class="card-title mb-3">Nueva subcategoría</strong>'+
+
+    '<input type="text" id="subcat" name="subcat" required placeholder="Ej. Reparación zapatos" class="form-control">'+
+
+
+    '</br></br></br>'+
+    '<button type="submit"  class="btn btn-success btn-lg btn-block">Registrar subcategoría</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+
+})
+};
+  </script>
+
 
     <script type="text/javascript">
   $(document).ready(function ()
