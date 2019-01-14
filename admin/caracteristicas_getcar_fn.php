@@ -7,7 +7,7 @@ $response = array();
 if(isset($_POST['id'])){
   $id = $_POST['id'];
 
-  $consulta = "SELECT * FROM categorias where ID_CATEGORIA=$id";
+  $consulta = "SELECT * FROM caracteristicas where ID_CARACTERISTICA=$id";
    $resultado = $conn->query($consulta);
 
 
@@ -15,12 +15,9 @@ if(isset($_POST['id'])){
 
     while($row = $resultado->fetch_assoc()) {
   $response['data'] = array (
-    "id"        =>  $row["ID_CATEGORIA"],
-    "cat"        =>  $row["CAT_NOMBRE"],
-    "ramo"       =>  $row["ID_RAMO"],
-    "sta"        =>  $row["CAT_ESTATUS"],
-    "url"         =>  $row["CAT_URL"],    
-
+    "nom"        =>  $row["CAR_NOMBRE"],
+    "des"        =>  $row["CAR_DESCRIPCION"],
+    "est"        =>  $row["CAR_ESTATUS"],
   );
    }
    }

@@ -4,10 +4,12 @@ include 'conexion.php';
 $id = $_POST ['id'];
 $expn = $_POST ['expn'];
 $expf = $_POST ['expf'];
+$expr = $_POST ['expr'];
 
 
 
-$sql = "UPDATE exposicion set EXP_NIVEL = '$expn',EXP_FECHA_CADUCIDAD='$expf' Where ID_NEGOCIO='$id' ";
+
+$sql = "UPDATE exposicion set EXP_NIVEL = '$expn', EXP_RANGO='$expr', EXP_FECHA_CADUCIDAD='$expf' Where ID_NEGOCIO='$id' ";
 $res = $conn->query($sql);
 
 

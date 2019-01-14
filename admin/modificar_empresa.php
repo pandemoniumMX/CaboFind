@@ -15,7 +15,7 @@
 
 
     <!-- Required meta tags-->
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
@@ -101,49 +101,37 @@ $(document).ready(function(){
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                              
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                            <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
                             <a href="caracteristicas.php">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                                <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li>
-                            <a href="menu_precios.php">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
-                        </li>
-                        <li>
-                        <a href="exposicion_precios.php">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a class="js-arrow" href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+                            <a class="js-arrow" href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li>
+                        <a href="usuarios.php">
+                            <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </div>
@@ -163,50 +151,39 @@ $(document).ready(function(){
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                             
                             </ul>
                         </li>
                     
-                        <li class="active">
+                        <li>
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                                <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                            <a href="caracteristicas.php">
+                            <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                      
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+
+                            <a  href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li>
+                        <a href="usuarios.php">
+                                <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </nav>
@@ -567,6 +544,7 @@ $(document).ready(function(){
         //Manda Llamar id,nombre y apellido
        // $("#cat").val(data.data.id);
         $("#expn").val(data.data.expn);
+        $("#expr").val(data.data.expr);
         $("#expf").val(data.data.expf);
     
         },
@@ -759,7 +737,14 @@ allowOutsideClick: false
         '</select>' +
       '<label>Fecha límite de exposicion</label>'+
       '<input type="text" id="expf" name="expf" placeholder="Formato dd/mm/yyyy" required class="form-control border-input" pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}">'+//validacion fecha
-                
+      '<label>Rango de precios</label>'+
+
+      '<select class="form-control form-control-sm" textalign="center" required name="expr" id="expr"><option value="" >'+
+        '</option><option value="$$" >Hasta $99.00</option>'+
+        '<option value="$$$">Hasta $999.00</option>'+
+        '<option value="$$$$">Hasta $9999.00</option>'+
+        '<option value="$$$$$">Hasta $99999.00</option>'+
+        '</select>' +          
         '</div>'+
     '</div>'+
 

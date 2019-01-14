@@ -11,7 +11,7 @@
 
 <head>
     <!-- Required meta tags-->
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
@@ -47,8 +47,8 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
+    <!-- HEADER MOBILE-->
+    <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
@@ -68,7 +68,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
@@ -76,41 +76,29 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                              
                             </ul>
                         </li>
                         <li class="active">
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                            <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
                             <a href="caracteristicas.php">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                                <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li>
-                            <a href="menu_precios.php">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
-                        </li>
-                        <li>
-                        <a href="exposicion_precios.php">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a class="js-arrow" href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+                            <a class="js-arrow" href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li>
+                        <a href="usuarios.php">
+                            <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </div>
@@ -130,7 +118,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
@@ -138,42 +126,31 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                             
                             </ul>
                         </li>
                     
                         <li class="active">
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                                <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                            <a href="caracteristicas.php">
+                            <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                      
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+
+                            <a  href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li>
+                        <a href="usuarios.php">
+                                <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </nav>
@@ -513,7 +490,7 @@ $dir          = $fila['SUB_ESTATUS'];
         <td width="14%"><?php echo $dir ?></td>
         <td width="14%">
           <?php echo"
-        <a href='#' onclick='update_sub(), update_cat_fn();' title='Modificar Subcategoría' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+        <a href='#' onclick='update_sub(), update_sub_fn();' title='Modificar Subcategoría' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
                  "
           
       ?>
@@ -597,6 +574,7 @@ Resultado de tabla subcategoría
         // la respuesta es pasada como argumento a la función
         success : function(data) {
         //Manda Llamar id,nombre y apellido
+        $("#id").val(data.data.id);
         $("#cat").val(data.data.cat);
         $("#ramo").val(data.data.ramo);
         $("#sta").val(data.data.sta);
@@ -620,13 +598,13 @@ Resultado de tabla subcategoría
     <script type="text/javascript">
 //ventana de nuevo cliente
     function update_cat(id){
-
-
    swal({
    title: 'Modificar categoría ',
    html:
    '<div class="col-lg-12"> <form action="usuarios_insert_fn.php" method="post" name="data">'+
-   '<input type="text" id="id" name="id" value='+id+' required placeholder="Ej. Reparacion" class="form-control">'+
+   '<input type="text" id="id" name="id"  required placeholder="Ej. Reparacion" class="form-control">'+
+   '<label>Categoría</label>' +
+    '<input type="text"  name="cat" id="cat" required class="form-control">'+
    '<label>Ramo</label>' +
     '<select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">'+
     '<option value="" ></option>'+
@@ -636,8 +614,7 @@ Resultado de tabla subcategoría
     '<?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>'+
     <?php } ?>
     '</select>'+
-    '<label>Categoría</label>' +
-    '<input type="text"  name="cat" id="cat" required class="form-control">'+
+    
     '<label>Url</label>' +
     '<input type="text" name="url" id="url"  required  class="form-control">'+   
     '<label>Estatus</label>' +
@@ -658,6 +635,7 @@ Resultado de tabla subcategoría
 
     })
     };
+    
   </script>
 
   <script type="text/javascript">

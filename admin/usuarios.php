@@ -17,7 +17,7 @@
 
 <head>
     <!-- Required meta tags-->
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
@@ -54,8 +54,8 @@
 
 <body class="animsition">
     <div class="page-wrapper">
-        <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
+      <!-- HEADER MOBILE-->
+      <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
@@ -75,7 +75,7 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
@@ -83,41 +83,29 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                              
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                            <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                            <a href="caracteristicas.php">
+                                <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a class="js-arrow" href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+                            <a class="js-arrow" href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li class="active">
+                        <a href="usuarios.php">
+                            <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </div>
@@ -129,7 +117,8 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                <a href="index.php">CaboFind</a>
+
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -137,7 +126,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
@@ -145,42 +134,31 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                             
                             </ul>
                         </li>
                     
-                        <li >
+                        <li>
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
-                        </li>
-                        <li class="active">
-                        <a href="caracteristicas.php">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                                <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
-                        <a href="menu_precios.php">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
+                            <a href="caracteristicas.php">
+                            <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li >
-                            <a href="exposicion_precios.php">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                      
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+
+                            <a  href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="usuarios.php">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li class="active">
+                        <a href="usuarios.php">
+                                <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </nav>
@@ -369,7 +347,7 @@
                     <div class="container-fluid">
                     <div class="card">
                                     <div class="card-header">
-                                        <strong>Caracteristicas de las empresas</strong>
+                                        <strong>Administración de usuarios</strong>
                                       
                                     </div>
                                     <div class="card-body">
@@ -420,7 +398,7 @@
                             </tr>
                             <?php } ?>
                             <tbody></br>
-                            Resultado de tabla caracteristicas
+                            Resultado de tabla clientes de la pagina
                             </tbody>
                             </table>
 
@@ -473,7 +451,7 @@
                         </tr>
                         <?php } ?>
                         <tbody></br>
-                        Resultado de tabla caracteristicas por empresa
+                        Resultado de tabla cleintes con empresa
                         </tbody>
                         </table>
 

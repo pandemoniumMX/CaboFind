@@ -7,7 +7,7 @@ $response = array();
 if(isset($_POST['id'])){
   $id = $_POST['id'];
 
-  $consulta = "SELECT n.ID_NEGOCIO, c.EXP_NIVEL, c.EXP_FECHA_CADUCIDAD
+  $consulta = "SELECT n.ID_NEGOCIO, c.EXP_NIVEL, c.EXP_RANGO, c.EXP_FECHA_CADUCIDAD
   FROM   negocios  n, exposicion c
   WHERE n.ID_NEGOCIO = c.ID_NEGOCIO and n.ID_NEGOCIO=$id";
    $resultado = $conn->query($consulta);
@@ -20,6 +20,7 @@ if(isset($_POST['id'])){
     //"id"          =>  $id,
     "id"        =>  $row["ID_NEGOCIO"],
     "expn"       =>  $row["EXP_NIVEL"],
+    "expr"       =>  $row["EXP_RANGO"],
     "expf"       =>  $row["EXP_FECHA_CADUCIDAD"],
   );
    }

@@ -14,7 +14,7 @@
 
 <head>
     <!-- Required meta tags-->
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
@@ -72,49 +72,37 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="registro_negocio.php">Nuevo registro empresa</a>
+                                    <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="modificar_empresa.php">Modificar empresa</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                              
                             </ul>
                         </li>
-                        <li class="active">
+                        <li>
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                            <i class="fas fa-star"></i>Categorias</a>
                         </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                        <li class="active">
+                            <a href="caracteristicas.php">
+                                <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
+                
                         <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
+                            <a class="js-arrow" href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
+                        <li>
+                            <a class="js-arrow" href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li>
+                        <a href="usuarios.php">
+                            <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </div>
@@ -134,7 +122,7 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Empresas</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
@@ -142,42 +130,31 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                             
                             </ul>
                         </li>
                     
                         <li >
                             <a href="categorias.php">
-                                <i class="fas fa-chart-bar"></i>Categorias</a>
+                                <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li class="active">
-                        <a href="caracteristicas.php">
-                                <i class="fas fa-table"></i>Caracteristicas</a>
+                            <a href="caracteristicas.php">
+                            <i class="fas fa-heart"></i>Caracteristicas</a>
+                        </li>
+                      
+                        <li>                     
+                            <a href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
-                        <a href="menu_precios.php">
-                                <i class="far fa-check-square"></i>Menú de precios</a>
+
+                            <a  href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li >
-                            <a href="exposicion_precios.php">
-                                <i class="fas fa-calendar-alt"></i>Exposición y precios</a>
-                        </li>  
-                        <li>                     
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Galería</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Reseñas</a>                         
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Usuarios</a>                           
+                        <li>
+                        <a href="usuarios.php">
+                                <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </nav>
@@ -368,11 +345,7 @@
                                     <div class="card-header">
                                         <strong>Caracteristicas de las empresas</strong>
                                       
-                                    </div>
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-success" id="watch-me">Todas las características</button>
-                                    </div>
-                                </div>
+                                   
                                             
                     <div id='show-me'>
                                     <div class="card-body">
@@ -391,7 +364,7 @@
                             <?php
                             $ejecutar = mysqli_query($conn, $caracteristicas);
                             while($fila=mysqli_fetch_array($ejecutar)){
-                            $nombre          = $fila['ID_CARACTERISTICA'];
+                            $id          = $fila['ID_CARACTERISTICA'];
                             $razon          = $fila['CAR_NOMBRE'];    
                             $nom           = $fila['CAR_DESCRIPCION'];
                             $ape          = $fila['CAR_ESTATUS'];
@@ -399,14 +372,14 @@
 
                             ?>
                                 <tr>
-                                    <td width="8%"><?php echo $nombre ?></td>
+                                    <td width="8%"><?php echo $id ?></td>
                                     <td width="14%"><?php echo $razon ?></td>
                                     <td width="14%"><?php echo $nom ?></td>
                                     <td width="14%"><?php echo $ape ?></td>
                                     <td width="14%">
                                     <?php
                                     echo "        
-                                    <a href='#' onclick='nueva(), enviarmod();' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
+                                    <a href='#' onclick='modificar($id), modificar_fn($id);' title='Modificar caracteristica' ><i class='btn-sm btn-success fa fa-refresh'></i></a>                                                                  
                                                                                                              
                                     </td>"; 
                                     ?>
@@ -469,6 +442,46 @@
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
+        <script>
+        //Script para mandar ID para generar la orden
+        function modificar_fn(id){
+        $.ajax({
+
+        // la URL para la petición
+        url : 'caracteristicas_getcar_fn.php',
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data : {
+        id : id
+        },
+        // especifica si será una petición POST o GET
+        type : 'POST',
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(data) {
+        //Manda Llamar id,nombre y apellido
+       // $("#cat").val(data.data.id);
+        $("#noms").val(data.data.nom);
+        $("#dess").val(data.data.des);
+        $("#ests").val(data.data.est);
+    
+        },
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto de la petición en crudo y código de estatus de la petición
+        error : function(xhr, status) {
+
+        },
+        // código a ejecutar sin importar si la petición falló o no
+        complete : function(xhr, status) {
+
+        }
+        });
+        }
+
+    </script>
 
     <script type="text/javascript">
     //ventana actualizar cliente
@@ -477,13 +490,13 @@
     swal({
     title: 'Nueva característica',
     html:
-    '<div class="card-body"> <form action="caracteristicas_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
+    '<div class="card-body"> <form action="caracteristicas_insertcar_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
     //Manda Llamar id,nombre y apellido
     '<div class="col-md-12">'+
       '<div class="form-group">'+
 
       '<label>Nombre general</label>'+
-      '<input input type="text" name="nombre" id="nombre" class="form-control border-input required>' +     
+      '<input input type="text" name="nom" id="nom" class="form-control border-input required>' +     
      
       '</div>'+
     '</div>'+
@@ -492,7 +505,7 @@
       '<div class="form-group">'+    
 
       '<label>Descripción</label>'+
-         '<textarea type="text" name="descripcion" id="descripcion"  class="form-control border-input" rows="5"></textarea>'+
+         '<textarea type="text" name="des" id="des"  class="form-control border-input" rows="5"></textarea>'+
         '</div>'+
     '</div>'+
 
@@ -516,6 +529,57 @@
 
     </script>
 
+
+<script type="text/javascript">
+    //ventana actualizar cliente
+    function modificar(id){
+      
+    swal({
+    title: 'Nueva característica',
+    html:
+    '<div class="card-body"> <form action="caracteristicas_updatecar_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
+    //Manda Llamar id,nombre y apellido
+    '<div class="col-md-12">'+
+      '<div class="form-group">'+
+
+      '<input  type="hidden" name="id" id="id" value='+id+' readonly class="form-control border-input maxlength="25" required>' +
+
+      '<label>Nombre general</label>'+
+      '<input input type="text" name="noms" id="noms" class="form-control border-input required>' +     
+     
+      '</div>'+
+    '</div>'+
+
+    '<div class="col-md-12">'+
+      '<div class="form-group">'+    
+
+      '<label>Descripción</label>'+
+         '<textarea type="text" name="dess" id="dess"  class="form-control border-input" rows="5"></textarea>'+
+        '</div>'+
+
+        '<label>Status</label>' +
+        '<select class="form-control form-control-sm" required textalign="center" name="ests" id="ests"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+ 
+    '</div>'+
+
+    '<div class="col-md-12">'+
+    '</br>'+
+    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar característica</Button>'+
+
+    '</form></div>',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: '</form> Actualizar solicitud',
+    cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+    showConfirmButton: false,
+    focusConfirm: false,
+    buttonsStyling: false,
+    reverseButtons: true, allowOutsideClick: false
+    })
+
+    };
+
+    </script>
 
 
     <script type="text/javascript">
