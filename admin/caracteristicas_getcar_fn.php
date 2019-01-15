@@ -10,11 +10,11 @@ if(isset($_POST['id'])){
   $consulta = "SELECT * FROM caracteristicas where ID_CARACTERISTICA=$id";
    $resultado = $conn->query($consulta);
 
-
    if($resultado->num_rows > 0){
 
     while($row = $resultado->fetch_assoc()) {
   $response['data'] = array (
+    "id"        =>  $id,
     "nom"        =>  $row["CAR_NOMBRE"],
     "des"        =>  $row["CAR_DESCRIPCION"],
     "est"        =>  $row["CAR_ESTATUS"],

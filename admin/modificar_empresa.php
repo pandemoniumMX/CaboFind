@@ -493,7 +493,7 @@ $(document).ready(function(){
         // la respuesta es pasada como argumento a la función
         success : function(data) {
         //Manda Llamar id,nombre y apellido
-       // $("#cat").val(data.data.id);
+        $("#id").val(data.data.id);
         $("#nom").val(data.data.nom);
         $("#raz").val(data.data.raz);
         $("#rfc").val(data.data.rfc);
@@ -542,7 +542,7 @@ $(document).ready(function(){
         // la respuesta es pasada como argumento a la función
         success : function(data) {
         //Manda Llamar id,nombre y apellido
-       // $("#cat").val(data.data.id);
+        $("#id").val(data.data.id);
         $("#expn").val(data.data.expn);
         $("#expr").val(data.data.expr);
         $("#expf").val(data.data.expf);
@@ -573,7 +573,7 @@ function modificar(id){
          title: 'Modificar empresa',
          html:
          '<div class="card-body"> <form action="modificar_empresa_updateem_fn.php" method="post" name="data">'+
-         '<input  type="hidden" name="id" id="id" value='+id+' class="form-control border-input maxlength="25" required>' +
+         '<input  type="text" name="id" id="id"  readonly class="form-control border-input" required>' +
 
          '<div class="row">'+
           '<div class="col-md-4">'+
@@ -725,7 +725,7 @@ allowOutsideClick: false
     html:
     '<div class="card-body"> <form action="modificar_empresa_updateex_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
     //Manda Llamar id,nombre y apellido
-    '<input input type="hidden" name="id" id="id" value='+id+' class="form-control border-input maxlength="25" required>' +
+    '<input input type="text" name="id" id="id"  readonly class="form-control border-input" required>' +
     '<div class="col-md-12">'+
       '<div class="form-group">'+
 

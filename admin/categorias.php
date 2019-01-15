@@ -602,7 +602,7 @@ Resultado de tabla subcategoría
    title: 'Modificar categoría ',
    html:
    '<div class="col-lg-12"> <form action="usuarios_insert_fn.php" method="post" name="data">'+
-   '<input type="text" id="id" name="id"  required placeholder="Ej. Reparacion" class="form-control">'+
+   '<input type="text" id="id" name="id" readonly required placeholder="Ej. Reparacion" class="form-control">'+
    '<label>Categoría</label>' +
     '<input type="text"  name="cat" id="cat" required class="form-control">'+
    '<label>Ramo</label>' +

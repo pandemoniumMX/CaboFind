@@ -598,11 +598,12 @@
                                      <strong class="card-title mb-3">Rango de precios</strong>
 
 
-                                        <select class="form-control form-control-sm" textalign="center" required name="destino" id="destino"><option value="" >
-                                        </option><option value="$$" >$$</option>
-                                        <option value="$$$">$$$</option>
-                                        <option value="$$$$">$$$$</option>
-                                        </select>
+                                    <select class="form-control form-control-sm" textalign="center" required name="expr" id="expr"><option value="" >
+                                    </option><option value="$$" >Hasta $99.00</option>
+                                    <option value="$$$">Hasta $999.00</option>
+                                    <option value="$$$$">Hasta $9999.00</option>
+                                    <option value="$$$$$">Hasta $99999.00</option>
+                                    </select>
 
                                         </div>
                                     </div>

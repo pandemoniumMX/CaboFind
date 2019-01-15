@@ -479,6 +479,7 @@
         success : function(data) {
         //Manda Llamar id,nombre y apellido
         $("#car").val(data.data.id_car);
+        $("#id_car").val(data.data.id_car);
         $("#est").val(data.data.est);
         $("#idn").val(data.data.idn);
 
@@ -556,8 +557,8 @@
    title: 'Características ',
    html:
    '<div class="col-lg-12"> <form action="modificar_empresa_car_update_fn.php" method="post" name="data">'+
-   '<input  type="hidden" name="id" id="id" readonly value='+id+' class="form-control border-input maxlength="25" required>' +
-   '<input  type="hidden" name="idn" id="idn" readonly class="form-control border-input maxlength="25" required>' +
+   '<input  type="text" name="id_car" id="id_car" readonly  class="form-control border-input maxlength="25" required>' +
+   '<input  type="text" name="idn" id="idn" readonly class="form-control border-input maxlength="25" required>' +
 
    '<strong class="card-title mb-3">Asignar caracteristica a empresa</strong> </br>'+
     '<select class="form-control form-control-sm" textalign="center" required name="car" id="car" placeholder="Ej. Reparación">'+

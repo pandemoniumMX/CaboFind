@@ -462,7 +462,7 @@
         // la respuesta es pasada como argumento a la función
         success : function(data) {
         //Manda Llamar id,nombre y apellido
-       // $("#cat").val(data.data.id);
+       $("#id").val(data.data.id);
         $("#noms").val(data.data.nom);
         $("#dess").val(data.data.des);
         $("#ests").val(data.data.est);
@@ -542,7 +542,7 @@
     '<div class="col-md-12">'+
       '<div class="form-group">'+
 
-      '<input  type="hidden" name="id" id="id" value='+id+' readonly class="form-control border-input maxlength="25" required>' +
+      '<input  type="text" name="id" id="id" readonly class="form-control border-input" required>' +
 
       '<label>Nombre general</label>'+
       '<input input type="text" name="noms" id="noms" class="form-control border-input required>' +     
