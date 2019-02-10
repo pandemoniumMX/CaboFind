@@ -3,6 +3,8 @@
     include'conexion.php';
     $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
     $specs="SELECT * FROM  `caracteristicas` ";
+    $cliente="SELECT * FROM usuarios where USU_ROLL='Empresa' and USU_STATUS='A' and ID_NEGOCIO IS NULL";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +41,8 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-    <script language="javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.4.min.js"></script>
-
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
 
     <script type="text/javascript">
 
@@ -94,95 +96,37 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
+                            <li class="active">
+                                    <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Dashboard 2</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                              
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="categorias.php">
+                            <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                            <a href="caracteristicas.php">
+                                <i class="fas fa-heart"></i>Caracteristicas</a>
+                        </li>
+                
+                        <li>                     
+                            <a class="js-arrow" href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                            <a class="js-arrow" href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
+                        <a href="usuarios.php">
+                            <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </div>
@@ -202,95 +146,39 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                                <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
+                            <li class="active">
+                                <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Dashboard 2</a>
+                                <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
+                             
                             </ul>
                         </li>
+                    
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                            <a href="categorias.php">
+                                <i class="fas fa-star"></i>Categorias</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
+                            <a href="caracteristicas.php">
+                            <i class="fas fa-heart"></i>Caracteristicas</a>
+                        </li>
+                      
+                        <li>                     
+                            <a href="galeria.php">
+                                <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
+
+                            <a  href="reseñas.php">
+                            <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
-                        <li class="active">
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
+                        <li>
+                        <a href="usuarios.php">
+                                <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
                 </nav>
@@ -472,222 +360,291 @@
                     </div>
                 </div>
             </header>
-            <!-- primer vista-->
+            <!-- END HEADER DESKTOP-->
 
-    <div class="main-content">
-    <div class="row">
-         <div class="col-md-4">
-         <div class="card">
+            <div class="main-content">
+            <div class="card-body"> <form action="registro_negocio_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+
+                <div id='show-me'>
+
+                    <div class="col-lg-6">
+                        <div class="card">
+
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Datos de la empresa</strong>
+
+                                     <div class="form-group">
+                                            <label for="company" class=" form-control-label">Nombre completo de la empresa</label>
+                                            <input type="text" id="company" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vat" class=" form-control-label">Razón social</label>
+                                            <input type="text" id="vat" placeholder="" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">RFC</label>
+                                            <input type="text" id="street" placeholder="RFC" class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Responsable</label>
+                                            <input type="text" id="street" placeholder="Persona a cargo" class="form-control">                                           
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Descripcion</label>
+                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Descripcion" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Dirección</label>
+                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Dirección y horario" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="textarea-input" class=" form-control-label">Etiquetas</label>
+                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Separadas con una coma..." class="form-control"></textarea>
+                                        </div>
+        </br>
+                                            <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Siguiente</button>
+
+                                </div>
+                        </div>
+                    </div>                        
+                </div>
+                         <div id='show-me-two' style='display:none;'>
+                           <div class="col-md-4">
+                             <div class="card">
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Categoría</strong>
+
+                                            <div>Selecciona Ramo : 
+                                            <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
+                                            <option value="" ></option>
+                                            <?php
+                                            $ejec7 = mysqli_query($conn, $ramos);
+                                            while($fila=mysqli_fetch_array($ejec7)){?>
+                                            <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
+                                            <?php } ?>
+                                            </select></div>
+                        
+                                                
+                                                <div>Selecciona categoria : </br><select name="categoria" id="categoria"></select></div>
+                                                
+                                                
+                                                <div>Selecciona subcategoria : </br><select name="subcategoria" id="subcategoria"></select></div>
+                                                
+
+                                                <div>Usuario de cliente: 
+                                            <select class="form-control form-control-sm" textalign="center" required name="usuario" id="usuario">
+                                            <option value="" ></option>
+                                            <?php
+                                            $ejec7 = mysqli_query($conn, $cliente);
+                                            while($fila=mysqli_fetch_array($ejec7)){?>
+                                            <?php echo '<option value="'.$fila["ID_USUARIO"].'">'.$fila["USU_USUARIO"].'</option>'; ?>
+                                            <?php } ?>
+                                            </select></div>
+                                            <br />
+                                                <div class="row">
+
+                                                    <div class="col-lg-6">
+                                                    <button type="button"  id='watch-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                    <button type="button" id='look-me' class="btn btn-success btn-lg btn-block">Siguiente</button>
+                                                    </div>
+                                                
+                                                </div> 
+
+                                            </div>                      
+                                      </div>
+                                    </div>
+                                </div>
+                         
+                 
+<div id='show-me-three' style='display:none; '>
+
+<div class="col-lg-6">
+    <div class="card">
+
             <div class="card-body">
+                 <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
+                 <div class="form-group">
+                 <label>
+                 <?php
+                $ejec1 = mysqli_query($conn, $specs);
+                while($fila=mysqli_fetch_array($ejec1)){ ?>               
+                      <input type="checkbox"> <?php echo $fila['CAR_NOMBRE']; ?>
+                </br>                  
 
-         <div class="form-group">
-         <label>Nombre del negocio</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
+              <?php } ?>
+              </div>              
+                    <div class="row">
+                        <div class="col-lg-6">
+                        <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                        </div>
+                        <div class="col-lg-6">
+                        <button type="button" id='look-me2' class="btn btn-success btn-lg btn-block">Siguiente</button>
+                        </div>
+                    </div>   
+</div> 
+</div>
 
-         </div>
-         </div>
-         </div>
-         </div>
+</div>   
+</div>   
 
-         <div class="col-md-4">
-         <div class="card">
+
+
+<div id='show-me-three2' style='display:none; '>
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Carrusel 1</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Carrusel 2</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Carrusel 3</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Contenido</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Contenido</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                            <div class="card">
+                                    <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-3">Contenido</h4>
+                                    <input type="file" accept="image/*" onchange="preview_image(event)">
+
+                                </div>
+                            </div>
+                            </div>
+
+
+
+                                <div class="col-lg-6">
+                                <button type="button"  id='look-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                                </div>
+                                <div class="col-lg-6">
+                                <button type="button" id='look-me3' class="btn btn-success btn-lg btn-block">Siguiente</button>
+                                </div>
+
+
+                            </div>
+    </div>
+    
+
+    <div id='show-me-three3' style='display:none; '>
+
+<div class="col-lg-6">
+    <div class="card">
+
             <div class="card-body">
-         <div class="form-group">
-         <label>Razón social</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-         </div>
-         </div>
-         </div>
-         </div>
+                 <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
 
-            <div class="col-md-4">
-            <div class="card">
-            <div class="card-body">
-            <div class="form-group">
+          
+<div class="row">
+                         <div class="col-md-4">
+                        <div class="card">
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Nivel de publicidad</strong>
 
 
+                                        <select class="form-control form-control-sm" textalign="center" required name="destino" id="destino"><option value="" >
+                                        </option><option value="Almacen" >Normal</option>
+                                        <option value="Cliente">Alta</option>
+                                        <option value="Cliente">Máxima</option>
+                                        </select>
 
-         <label>RFC</label>
-         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
+                                        </div>
+                                    </div>
+                                        </div>
+                                        <div class="col-md-4">
+                        <div class="card">
+                                <div class="card-body">
+                                     <strong class="card-title mb-3">Rango de precios</strong>
 
-         </div>
-         </div>
-         </div>
-         </div>
-         </div>
+
+                                    <select class="form-control form-control-sm" textalign="center" required name="expr" id="expr"><option value="" >
+                                    </option><option value="$$" >Hasta $99.00</option>
+                                    <option value="$$$">Hasta $999.00</option>
+                                    <option value="$$$$">Hasta $9999.00</option>
+                                    <option value="$$$$$">Hasta $99999.00</option>
+                                    </select>
+
+                                        </div>
+                                    </div>
+                                        </div>
+
+  
+
+                        <div class="col-lg-6">
+                        <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
+                        </div>
+                        <div class="col-lg-6">
+                        <button type="submit" id='look-me2' class="btn btn-success btn-lg btn-block">Agregar empresa</button>
+                        </div>
 
 
-         <div class="row">
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
+                    </div> 
+                    </div>
 
-         <div class="form-group">
-         <label>Nombre del negocio</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-         <div class="form-group">
-         <label>Razón social</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-         </div>
-         </div>
-         </div>
-         </div>
-
-            <div class="col-md-4">
-            <div class="card">
-            <div class="card-body">
-            <div class="form-group">
+                    </div>   
+                    </div>  
 
 
 
-         <label>RFC</label>
-         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="row">
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-
-         <div class="form-group">
-         <label>Nombre del negocio</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-         <div class="form-group">
-         <label>Razón social</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-         </div>
-         </div>
-         </div>
-         </div>
-
-            <div class="col-md-4">
-            <div class="card">
-            <div class="card-body">
-            <div class="form-group">
+                                </div>
+                                </form>
+            </div>    <!-- Div que cierra-->
 
 
 
-         <label>RFC</label>
-         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="row">
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-
-         <div class="form-group">
-         <label>Nombre del negocio</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-         <div class="form-group">
-         <label>Razón social</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-         </div>
-         </div>
-         </div>
-         </div>
-
-            <div class="col-md-4">
-            <div class="card">
-            <div class="card-body">
-            <div class="form-group">
-
-
-
-         <label>RFC</label>
-         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="row">
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-
-         <div class="form-group">
-         <label>Nombre del negocio</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-
-         <div class="col-md-4">
-         <div class="card">
-            <div class="card-body">
-         <div class="form-group">
-         <label>Razón social</label>
-         <input input type="text" name="usu" id="usu" class="form-control border-input" maxlength="25" required>
-         </div>
-         </div>
-         </div>
-         </div>
-
-            <div class="col-md-4">
-            <div class="card">
-            <div class="card-body">
-            <div class="form-group">
-
-
-
-         <label>RFC</label>
-         <input input type="password" name="pass" id="pass" class="form-control border-input" maxlength="25" required>
-
-         </div>
-         </div>
-         </div>
-         </div>
-         </div>
-
-   </div>     
-   
-   <!-- Div que cierra-->
-
-
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>

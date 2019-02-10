@@ -5,6 +5,7 @@
     $specs="SELECT * FROM  `caracteristicas` ";
     $cliente="SELECT * FROM usuarios where USU_ROLL='Empresa' and USU_STATUS='A' and ID_NEGOCIO IS NULL";
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -365,56 +366,59 @@
             <div class="main-content">
             <div class="card-body"> <form action="registro_negocio_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
 
-                <div id='show-me'>
-
-                    <div class="col-lg-6">
-                        <div class="card">
-
-                                <div class="card-body">
-                                     <strong class="card-title mb-3">Datos de la empresa</strong>
-
-                                     <div class="form-group">
-                                            <label for="company" class=" form-control-label">Nombre completo de la empresa</label>
-                                            <input type="text" id="company" class="form-control">
+            <div id='show-me'>
+            <div class="row">
+            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Datos</strong>
+                                        <small> de la empresa</small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <div class="form-group">
+                                            <label for="company" class=" form-control-label">Empresa</label>
+                                            <input type="text" name="empresa" id="empresa" required placeholder="Escribe el nombre de la empresa" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="vat" class=" form-control-label">Razón social</label>
-                                            <input type="text" id="vat" placeholder="" class="form-control">
+                                            <input type="text" name="razon"id="razon" required placeholder="" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="street" class=" form-control-label">RFC</label>
-                                            <input type="text" id="street" placeholder="RFC" class="form-control">
+                                            <input type="text" name="rfc" id="rfc" required placeholder="Escribe el RFC" class="form-control">
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="city" class=" form-control-label">Dirección</label>
+                                                    <textarea name="direccion" id="direccion" rows="6" required placeholder="Dirección..." class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="postal-code" class=" form-control-label">Breve Descripción de la empresa</label>
+                                                    <textarea name="descripcion" id="descripcion" rows="6" required placeholder="Descripcion..." class="form-control"></textarea>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="street" class=" form-control-label">Responsable</label>
-                                            <input type="text" id="street" placeholder="Persona a cargo" class="form-control">                                           
+                                            <label for="country" class=" form-control-label">Etiquetas</label>
+                                            <textarea name="etiquetas" id="etiquetas" rows="5" required placeholder="Escribe sólo las palabras claves relacionado a la empresa..." class="form-control"></textarea>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="street" class=" form-control-label">Descripcion</label>
-                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Descripcion" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="street" class=" form-control-label">Dirección</label>
-                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Dirección y horario" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="textarea-input" class=" form-control-label">Etiquetas</label>
-                                            <textarea name="textarea-input" id="textarea-input" rows="5" placeholder="Separadas con una coma..." class="form-control"></textarea>
-                                        </div>
-        </br>
-                                            <button type="button" id='see-me' class="btn btn-success btn-lg btn-block">Siguiente</button>
-
+                                    </div>
                                 </div>
-                        </div>
-                    </div>                        
-                </div>
-                         <div id='show-me-two' style='display:none;'>
-                           <div class="col-md-4">
-                             <div class="card">
-                                <div class="card-body">
-                                     <strong class="card-title mb-3">Categoría</strong>
+                            </div>
 
-                                            <div>Selecciona Ramo : 
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Categorías</strong>
+                                        <small> y especificaciones</small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <div class="form-group">
+                                            <label for="company" class=" form-control-label">Ramo de la empresa</label>
+
                                             <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
                                             <option value="" ></option>
                                             <?php
@@ -422,213 +426,62 @@
                                             while($fila=mysqli_fetch_array($ejec7)){?>
                                             <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
                                             <?php } ?>
-                                            </select></div>
-                        
-                                                
-                                                <div>Selecciona categoria : </br><select name="categoria" id="categoria"></select></div>
-                                                
-                                                
-                                                <div>Selecciona subcategoria : </br><select name="subcategoria" id="subcategoria"></select></div>
-                                                
-
-                                                <div>Usuario de cliente: 
-                                            <select class="form-control form-control-sm" textalign="center" required name="usuario" id="usuario">
+                                            </select>
+                                                                                </div>
+                                        <div class="form-group">
+                                            <label for="vat" class=" form-control-label">Selecciona la categoría que pertenece la empresa</label>
+                                            <select name="categoria" id="categoria" required></select>                                        </div>
+                                        <div class="form-group">
+                                            <label for="street" class=" form-control-label">Selecciona la subcategoría que pertenece la empresa</label>
+                                            <select name="subcategoria" id="subcategoria" required></select>                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="city" class=" form-control-label">Usuario a quien pertenece la empresa</label>
+                                                    <select class="form-control form-control-sm" textalign="center" required name="usuario" id="usuario">
                                             <option value="" ></option>
                                             <?php
                                             $ejec7 = mysqli_query($conn, $cliente);
                                             while($fila=mysqli_fetch_array($ejec7)){?>
                                             <?php echo '<option value="'.$fila["ID_USUARIO"].'">'.$fila["USU_USUARIO"].'</option>'; ?>
                                             <?php } ?>
-                                            </select></div>
-                                            <br />
-                                                <div class="row">
-
-                                                    <div class="col-lg-6">
-                                                    <button type="button"  id='watch-me' class="btn btn-danger btn-lg btn-block">Atras</button>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                    <button type="button" id='look-me' class="btn btn-success btn-lg btn-block">Siguiente</button>
-                                                    </div>
-                                                
-                                                </div> 
-
-                                            </div>                      
-                                      </div>
-                                    </div>
-                                </div>
-                         
-                 
-<div id='show-me-three' style='display:none; '>
-
-<div class="col-lg-6">
-    <div class="card">
-
-            <div class="card-body">
-                 <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
-                 <div class="form-group">
-                 <label>
-                 <?php
-                $ejec1 = mysqli_query($conn, $specs);
-                while($fila=mysqli_fetch_array($ejec1)){ ?>               
-                      <input type="checkbox"> <?php echo $fila['CAR_NOMBRE']; ?>
-                </br>                  
-
-              <?php } ?>
-              </div>              
-                    <div class="row">
-                        <div class="col-lg-6">
-                        <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
-                        </div>
-                        <div class="col-lg-6">
-                        <button type="button" id='look-me2' class="btn btn-success btn-lg btn-block">Siguiente</button>
-                        </div>
-                    </div>   
-</div> 
-</div>
-
-</div>   
-</div>   
-
-
-
-<div id='show-me-three2' style='display:none; '>
-                        <div class="row">
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image(event)">
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image(event)">
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image(event)">
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image(event)">
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="card">
-                                        <img class="card-img-top" src="images/noimage.jpg" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-3">Card Image Title</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image(event)">
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                                <div class="col-lg-6">
-                                <button type="button"  id='look-me' class="btn btn-danger btn-lg btn-block">Atras</button>
-                                </div>
-                                <div class="col-lg-6">
-                                <button type="button" id='look-me3' class="btn btn-success btn-lg btn-block">Siguiente</button>
-                                </div>
-
-
-                            </div>
-    </div>
-    
-
-    <div id='show-me-three3' style='display:none; '>
-
-<div class="col-lg-6">
-    <div class="card">
-
-            <div class="card-body">
-                 <strong class="card-title mb-3">Caracteristicas de la empresa</strong>
-
-          
-<div class="row">
-                         <div class="col-md-4">
-                        <div class="card">
-                                <div class="card-body">
-                                     <strong class="card-title mb-3">Nivel de publicidad</strong>
-
-
-                                        <select class="form-control form-control-sm" textalign="center" required name="destino" id="destino"><option value="" >
+                                            </select>                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="postal-code" class=" form-control-label">Alcance de publicidad</label>
+                                                    <select class="form-control form-control-sm" textalign="center" required name="alcance" id="alcance"><option value="" >
                                         </option><option value="Almacen" >Normal</option>
                                         <option value="Cliente">Alta</option>
                                         <option value="Cliente">Máxima</option>
                                         </select>
-
+                                                                                    </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                        </div>
-                                        <div class="col-md-4">
-                        <div class="card">
-                                <div class="card-body">
-                                     <strong class="card-title mb-3">Rango de precios</strong>
+                                   
 
-
-                                    <select class="form-control form-control-sm" textalign="center" required name="expr" id="expr"><option value="" >
+                                        <div class="form-group">
+                                            <label for="country" class=" form-control-label">Rango de precios</label>
+                                            <select class="form-control form-control-sm" textalign="center" required name="rango" id="rango"><option value="" >
                                     </option><option value="$$" >Hasta $99.00</option>
                                     <option value="$$$">Hasta $999.00</option>
                                     <option value="$$$$">Hasta $9999.00</option>
                                     <option value="$$$$$">Hasta $99999.00</option>
-                                    </select>
-
-                                        </div>
-                                    </div>
-                                        </div>
-
-  
-
-                        <div class="col-lg-6">
-                        <button type="button"  id='see-me' class="btn btn-danger btn-lg btn-block">Atras</button>
-                        </div>
-                        <div class="col-lg-6">
-                        <button type="submit" id='look-me2' class="btn btn-success btn-lg btn-block">Agregar empresa</button>
-                        </div>
-
-
-                    </div> 
-                    </div>
-
-                    </div>   
-                    </div>  
-
-
+                                    </select>                                        </div>
+                                    <input type="submit" value="Submit">
 
                                 </div>
+                                            
+                       
+                                </div>
+                              
+                            </div>
+
+
+
+                                
                                 </form>
+                                </div>
             </div>    <!-- Div que cierra-->
 
 
