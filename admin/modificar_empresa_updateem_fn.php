@@ -16,13 +16,21 @@ $sub = $_POST ['sub'];
 
 
 $sql = "UPDATE negocios set NEG_NOMBRE = '$nom',NEG_RAZONSOCIAL='$raz', NEG_RFC = '$rfc', NEG_DIRECCION='$dir', 
-NEG_DESCRIPCION='$des', NEG_RESPONSABLE='$res', ID_SUBCATEGORIA='$sub', NEG_ESTATUS='$est',NEG_ETIQUETAS='$eti' Where ID_NEGOCIO='$id' ";
+NEG_DESCRIPCION='$des', ID_SUBCATEGORIA='$sub', NEG_ESTATUS='$est',NEG_ETIQUETAS='$eti' Where ID_NEGOCIO='$id' ";
 $res = $conn->query($sql);
 
 
 if (!$res) {
     printf("Errormessage: %s\n", $conn->error);
  }
+ 
+ $sql1 = "UPDATE usuarios set ID_NEGOCIO = '$id' Where ID_USUARIO='$res' ";
+$res = $conn->query($sql1);
+
+ if (!$res) {
+    printf("Errormessage: %s\n", $conn->error);
+ }
+
  else{
  
 

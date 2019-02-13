@@ -20,6 +20,11 @@ $car = $_POST ['categoria'];
 $sub = $_POST ['subcategoria'];
 $usu = $_POST ['usuario'];
 
+$alc = $_POST ['alcance'];
+$ran = $_POST ['rango'];
+$expf = $_POST ['expf'];
+
+
 $sql="UPDATE usuarios set ID_NEGOCIO='$id' where ID_USUARIO='$usu'";
 $res = $conn->query($sql);
 
@@ -27,6 +32,11 @@ $res = $conn->query($sql);
 $sql2 = "INSERT INTO negocios(NEG_NOMBRE, NEG_RAZONSOCIAL, NEG_RFC, NEG_DIRECCION, NEG_DESCRIPCION, NEG_ETIQUETAS,ID_SUBCATEGORIA, NEG_ESTATUS)
 VALUES ('$emp', '$raz','$rfc','$dir','$des','$eti','$sub','A');";
 $res = $conn->query($sql2);
+
+$sql3 = "INSERT INTO exposicion(EXP_NIVEL, EXP_RANGO, EXP_FECHA_CADUCIDAD, ID_NEGOCIO) 
+VALUES ('$alc', '$ran','$expf','$id');";
+$res = $conn->query($sql3);
+
 
 echo "<script>window.open('modificar_empresa_car.php?id=", base64_encode($id), "','_self')</script>";
 

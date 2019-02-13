@@ -535,7 +535,7 @@
     function modificar(id){
       
     swal({
-    title: 'Nueva característica',
+    title: 'Actualizar característica',
     html:
     '<div class="card-body"> <form action="caracteristicas_updatecar_fn.php" method="post" name="data" content="text/html; charset=utf-8" >'+
     //Manda Llamar id,nombre y apellido
@@ -563,7 +563,7 @@
 
     '<div class="col-md-12">'+
     '</br>'+
-    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Registrar característica</Button>'+
+    '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar característica</Button>'+
 
     '</form></div>',
     showCancelButton: true,

@@ -827,6 +827,7 @@
   </script>
 
 <script type='text/javascript'>
+
 function preview_image(event) 
 {
  var reader = new FileReader();

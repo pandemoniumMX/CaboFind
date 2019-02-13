@@ -7,9 +7,7 @@ $response = array();
 if(isset($_POST['id'])){
   $id = $_POST['id'];
 
-  $consulta = "SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, n.NEG_RAZONSOCIAL, n.NEG_RFC, n.NEG_RESPONSABLE ,n.NEG_DIRECCION, n.NEG_DESCRIPCION, n.NEG_ETIQUETAS, n.NEG_ESTATUS, c.ID_RAMO, c.ID_CATEGORIA, s.ID_SUBCATEGORIA
-  FROM   negocios  n, categorias c, subcategoria s
-  WHERE n.ID_SUBCATEGORIA = s.ID_SUBCATEGORIA and s.ID_CATEGORIA = c.ID_CATEGORIA and ID_NEGOCIO=$id";
+  $consulta = "SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, n.NEG_RAZONSOCIAL, n.NEG_RFC ,n.NEG_DIRECCION, n.NEG_DESCRIPCION, n.NEG_ETIQUETAS, n.NEG_ESTATUS, c.ID_RAMO, c.ID_CATEGORIA, s.ID_SUBCATEGORIA, u.ID_USUARIO FROM negocios n, categorias c, subcategoria s, usuarios u WHERE n.ID_SUBCATEGORIA = s.ID_SUBCATEGORIA and s.ID_CATEGORIA = c.ID_CATEGORIA and n.ID_NEGOCIO=$id and n.ID_NEGOCIO = u.ID_NEGOCIO ";
    $resultado = $conn->query($consulta);
 
 
@@ -22,7 +20,7 @@ if(isset($_POST['id'])){
     "nom"       =>  $row["NEG_NOMBRE"],
     "raz"        =>  $row["NEG_RAZONSOCIAL"],
     "rfc"         =>  $row["NEG_RFC"],    
-    "res"        =>  $row["NEG_RESPONSABLE"],
+    "res"        =>  $row["ID_USUARIO"],
     "dir"       =>  $row["NEG_DIRECCION"],
     "des"        =>  $row["NEG_DESCRIPCION"],
     "eti"         =>  $row["NEG_ETIQUETAS"], 

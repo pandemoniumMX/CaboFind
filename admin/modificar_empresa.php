@@ -6,6 +6,8 @@
 
     $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
     $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
+    $cliente="SELECT * FROM usuarios where USU_ROLL='Empresa' and USU_STATUS='A' ";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -608,8 +610,15 @@ function modificar(id){
             '<div class="form-group">'+
 
          '<label>Responsable</label>' +
-         '<input input type="text" name="res" id="res" class="form-control border-input maxlength="25" required>' +
-         '</div>'+
+         '<select class="form-control form-control-sm" textalign="center"  name="res" id="res">'+
+         '<option value="" ></option>'+
+         <?php
+                                            $ejec7 = mysqli_query($conn, $cliente);
+                                            while($fila=mysqli_fetch_array($ejec7)){?>
+                                            '<?php echo '<option value="'.$fila['ID_USUARIO'].'">'.$fila["USU_USUARIO"].'</option>'; ?>'+
+
+                                            <?php } ?>
+            '</select></div>'+
          '</div>'+
 
          

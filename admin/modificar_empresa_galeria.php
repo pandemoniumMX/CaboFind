@@ -1,10 +1,28 @@
-<?php
-	
+<?php	
     include'conexion.php';
-    $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
-    $specs="SELECT * FROM  `caracteristicas` ";
-    $cliente="SELECT * FROM usuarios where USU_ROLL='Empresa' and USU_STATUS='A' and ID_NEGOCIO IS NULL";
+    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+    $id = base64_decode($_GET ['id']);
 
+    $empresa="SELECT * from negocios where ID_NEGOCIO=$id";
+    
+      $ejecutar = mysqli_query($conn, $empresa);
+      while($fila=mysqli_fetch_array($ejecutar)){
+      $nom           = $fila['NEG_NOMBRE'];
+      }
+
+
+                                                
+
+
+      $car="SELECT n.ID_CARACTERISTICA, n.CAR_NOMBRE, e.ID_CXN, e.CXN_ESTATUS
+      FROM   caracteristicas  n, caracteristicaxnegocio e
+      WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
+
+    $car3="SELECT n.CAR_NOMBRE
+    FROM   caracteristicas  n, caracteristicaxnegocio e
+    WHERE n.ID_CARACTERISTICA = e.CXN_ID_CARACTERISTICA and e.CXN_ID_NEGOCIO=$id";
+
+    $car2="SELECT * from caracteristicas where CAR_ESTATUS='A' and CAR_NOMBRE <> '$car3' ";
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +37,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Maps</title>
+    <title>Modificar empresa caracteristicas</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -42,35 +60,7 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-
-    <script type="text/javascript">
-
-            $(document).ready(function(){
-				$("#ramo").click(function () {
-                $("#ramo option:selected").each(function () {
-				ID_RAMO = $(this).val();
-				$.post("registro_negocio_combo_cat.php", { ID_RAMO: ID_RAMO }, function(data){
-				$("#categoria").html(data);
-                      });            
-					});
-				})
-            });
-            
-            $(document).ready(function(){
-				$("#categoria").click(function () {
-                $("#categoria option:selected").each(function () {
-                    ID_CATEGORIA = $(this).val();
-				$.post("registro_negocio_combo_subcat.php", { ID_CATEGORIA: ID_CATEGORIA }, function(data){
-				$("#subcategoria").html(data);
-                      });            
-					});
-				})
-			});
-
-        </script>
-        
+  
 
 </head>
 
@@ -99,16 +89,16 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                            <li class="active">
+                                <li>
                                     <a href="registro negocio.php">Nuevo registro empresa</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                               
                             </ul>
                         </li>
-                        <li>
+                        <li >
                             <a href="categorias.php">
                             <i class="fas fa-star"></i>Categorias</a>
                         </li>
@@ -149,10 +139,10 @@
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-cogs"></i>Empresas</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                            <li class="active">
+                                <li>
                                 <a href="registro_negocio.php">Nuevo registro empresa</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
                              
@@ -178,7 +168,7 @@
                             <i class="fas fa-comments"></i>Reseñas</a>                         
                         </li>
                         <li>
-                        <a href="usuarios.php">
+                            <a class="js-arrow" href="#">
                                 <i class="fas fa-user"></i>Usuarios</a>                           
                         </li>
                     </ul>
@@ -186,7 +176,6 @@
             </div>
         </aside>
         <!-- END MENU SIDEBAR-->
-
         <!-- PAGE CONTAINER-->
         <div class="page-container">
             <!-- HEADER DESKTOP-->
@@ -364,135 +353,101 @@
             <!-- END HEADER DESKTOP-->
 
             <div class="main-content">
-            <div class="card-body"> <form action="registro_negocio_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                    <form action="modificar_empresa_updateem_fn.php" method="post" name="data">
+                    <div class="row">
+                            <div class="col-md-4">
 
-            <div id='show-me'>
-            <div class="row">
-            <div class="col-lg-6">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <strong>Datos</strong>
-                                        <small> de la empresa</small>
-                                    </div>
-                                    <div class="card-body card-block">
-                                        <div class="form-group">
-                                            <label for="company" class=" form-control-label">Empresa</label>
-                                            <input type="text" name="empresa" id="empresa" required placeholder="Escribe el nombre de la empresa" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="vat" class=" form-control-label">Razón social</label>
-                                            <input type="text" name="razon"id="razon" required placeholder="" class="form-control">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="street" class=" form-control-label">RFC</label>
-                                            <input type="text" name="rfc" id="rfc" required placeholder="Escribe el RFC" class="form-control">
-                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col-8">
-                                                <div class="form-group">
-                                                    <label for="city" class=" form-control-label">Dirección</label>
-                                                    <textarea name="direccion" id="direccion" rows="6" required placeholder="Dirección..." class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="form-group">
-                                                    <label for="postal-code" class=" form-control-label">Breve Descripción de la empresa</label>
-                                                    <textarea name="descripcion" id="descripcion" rows="6" required placeholder="Descripcion..." class="form-control"></textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="country" class=" form-control-label">Etiquetas</label>
-                                            <textarea name="etiquetas" id="etiquetas" rows="5" required placeholder="Escribe sólo las palabras claves relacionado a la empresa..." class="form-control"></textarea>
-                                        </div>
+                                <img id="preview" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Carrusel 1</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-lg-6">
+                            <div class="col-md-4">
+
                                 <div class="card">
-                                    <div class="card-header">
-                                        <strong>Categorías</strong>
-                                        <small> y especificaciones</small>
+                                <img id="preview1" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Carrusel 2</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image1(event)">
+
                                     </div>
-                                    <div class="card-body card-block">
-                                        <div class="form-group">
-                                            <label for="company" class=" form-control-label">Ramo de la empresa</label>
-
-                                            <select class="form-control form-control-sm" textalign="center" required name="ramo" id="ramo">
-                                            <option value="" ></option>
-                                            <?php
-                                            $ejec7 = mysqli_query($conn, $ramos);
-                                            while($fila=mysqli_fetch_array($ejec7)){?>
-                                            <?php echo '<option value="'.$fila["ID_RAMO"].'">'.$fila["RAM_NOMBRE"].'</option>'; ?>
-                                            <?php } ?>
-                                            </select>
-                                                                                </div>
-                                        <div class="form-group">
-                                            <label for="vat" class=" form-control-label">Selecciona la categoría que pertenece la empresa</label>
-                                            <select name="categoria" id="categoria" required></select>                                        </div>
-                                        <div class="form-group">
-                                            <label for="street" class=" form-control-label">Selecciona la subcategoría que pertenece la empresa</label>
-                                            <select name="subcategoria" id="subcategoria" required></select>                                        </div>
-                                        <div class="row form-group">
-                                            <div class="col-8">
-                                                <div class="form-group">
-                                                    <label for="city" class=" form-control-label">Usuario a quien pertenece la empresa</label>
-                                                    <select class="form-control form-control-sm" textalign="center" required name="usuario" id="usuario">
-                                            <option value="" ></option>
-                                            <?php
-                                            $ejec7 = mysqli_query($conn, $cliente);
-                                            while($fila=mysqli_fetch_array($ejec7)){?>
-                                            <?php echo '<option value="'.$fila["ID_USUARIO"].'">'.$fila["USU_USUARIO"].'</option>'; ?>
-                                            <?php } ?>
-                                            </select>                                                </div>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="form-group">
-                                                    <label for="postal-code" class=" form-control-label">Alcance de publicidad</label>
-                                                    <select class="form-control form-control-sm" textalign="center" required name="alcance" id="alcance"><option value="" >
-                                        </option><option value="Normal" >Normal</option>
-                                        <option value="Alta">Alta</option>
-                                        <option value="Maxima">Máxima</option>
-                                        </select>
-                                                                                    </div>
-                                            </div>
-                                        </div>
-                                   
-
-                                        <div class="form-group">
-                                            <label for="country" class=" form-control-label">Rango de precios</label>
-                                            <select class="form-control form-control-sm" textalign="center" required name="rango" id="rango"><option value="" >
-                                    </option><option value="$$" >Hasta $99.00</option>
-                                    <option value="$$$">Hasta $999.00</option>
-                                    <option value="$$$$">Hasta $9999.00</option>
-                                    <option value="$$$$$">Hasta $99999.00</option>
-                                    </select>                                        </div>
-
-                                    <div class="form-group">
-
-                                    <label>Fecha límite de exposicion</label>
-                                    <input type="text" id="expf" name="expf" placeholder="Formato dd/mm/yyyy" required class="form-control border-input" pattern="[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}">
-                                    </select>                                        </div>
-
-                                    <input class="btn btn-outline-success" type="submit" value="Registrar y continuar ">
-
                                 </div>
-                                            
-                       
-                                </div>
-                              
                             </div>
 
+                            <div class="col-md-4">
 
+                                <div class="card">
+                                <img id="preview2" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Carrusel 3</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image2(event)">
 
-                                
-                                </form>
+                                    </div>
                                 </div>
-            </div>    <!-- Div que cierra-->
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                <img id="preview3" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Contenido</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image3(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <div class="card">
+                                <img id="preview4" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3">Contenido</h4>
+                                        <input type="file" accept="image/*" onchange="preview_image4(event)">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+
+                            <div class="card">
+                            <img id="preview5" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-3">Contenido</h4>
+                                    <input type="file" accept="image/*" onchange="preview_image5(event)">
+                                    <Button type="submit" id="confirmar" name="confirmar" class= "btn btn-info btn-fill btn-wd">Actualizar imagenes</Button>
+         </form>                    
+                                </div>
+                             
+                            </div>
+                            
+                            </div>
+                            
+                           
+                          
+  </div>
+
+ 
 
 
 
+            </div>
+        
+        </div>
+        
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
     <script src="vendor/bootstrap-4.1/popper.min.js"></script>
     <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -525,11 +480,107 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
 
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
+
     
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
-    
+
+<script type='text/javascript'>
+//imagen 1
+function preview_image(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview');
+  output.src = reader.result;
+
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+ 
+
+<script type='text/javascript'>
+//imagen2
+function preview_image1(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview1');
+  output.src = reader.result;
+
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
+<script type='text/javascript'>
+//imagen3
+function preview_image2(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview2');
+  output.src = reader.result;
+
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
+<script type='text/javascript'>
+//imagen4
+function preview_image3(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview3');
+  output.src = reader.result;
+
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
+<script type='text/javascript'>
+//imagen5
+function preview_image4(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview4');
+  output.src = reader.result;
+
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
+<script type='text/javascript'>
+//imagen6
+function preview_image5(event) 
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('preview5');
+  output.src = reader.result;
+
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+</script>
+
 
     <script type="text/javascript">
   $(document).ready(function ()
@@ -674,18 +725,14 @@
 
   </script>
 
-<script type='text/javascript'>
-function preview_image(event) 
-{
- var reader = new FileReader();
- reader.onload = function()
- {
-  var output = document.getElementById('preview');
-  output.src = reader.result;
- }
- reader.readAsDataURL(event.target.files[0]);
-}
-</script>
+<script>
+            $(document).ready(function() {
+                $('#a-tables').DataTable();
+                $('#a-tables2').DataTable();
+                $('#tabla4').DataTable();
+                $('#tabla5').DataTable();
+            } );
+    </script>
 
 </body>
 
