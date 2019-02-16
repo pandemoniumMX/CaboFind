@@ -340,8 +340,8 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                    <form action="registro_negocio_galeria_insert.php" method="post" name="data">
-                    <input type="hidden" name="id   " id="id" value="<?php echo $id ?>" readonly class="form-control border-input">
+                    <form action="registro_negocio_galeria_insert.php" method="post" name="data" enctype="multipart/form-data">
+                    <input type="hidden" name="id" id="id" value="<?php echo $id ?>" readonly class="form-control border-input">
 
                     <input type="hidden" name="nombre" id="nombre" value="<?php echo $nom ?>" readonly class="form-control border-input">
                     <div class="row">
@@ -351,7 +351,7 @@
                                 <img id="preview" name ="preview" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
                                     <div class="card-body">
                                         <h4 class="card-title mb-3">Carrusel 1</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image(event)">
+                                        <input id="preview" name ="preview" type="file" accept="image/*" onchange="preview_image(event)">
 
                                     </div>
                                 </div>
@@ -360,10 +360,10 @@
                             <div class="col-md-4">
 
                                 <div class="card">
-                                <img id="preview1" name ="preview1" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                <img id="preview1" name="preview1" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
                                     <div class="card-body">
                                         <h4 class="card-title mb-3">Carrusel 2</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image1(event)">
+                                        <input id="preview1" name="preview1" type="file" accept="image/*" onchange="preview_image1(event)">
 
                                     </div>
                                 </div>
@@ -372,10 +372,10 @@
                             <div class="col-md-4">
 
                                 <div class="card">
-                                <img id="preview2" name ="preview2" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                <img id="preview2" name="preview2" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
                                     <div class="card-body">
                                         <h4 class="card-title mb-3">Carrusel 3</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image2(event)">
+                                        <input id="preview2" name="preview2" type="file" accept="image/*" onchange="preview_image2(event)">
 
                                     </div>
                                 </div>
@@ -384,10 +384,10 @@
                             <div class="col-md-4">
 
                                 <div class="card">
-                                <img id="preview3"name ="preview3" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                <img id="preview3" name="preview3" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
                                     <div class="card-body">
                                         <h4 class="card-title mb-3">Contenido</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image3(event)">
+                                        <input id="preview3" name="preview3" type="file" accept="image/*" onchange="preview_image3(event)">
 
                                     </div>
                                 </div>
@@ -396,10 +396,10 @@
                             <div class="col-md-4">
 
                                 <div class="card">
-                                <img id="preview4" name ="preview4" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                                <img id="preview4" name="preview4" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
                                     <div class="card-body">
                                         <h4 class="card-title mb-3">Contenido</h4>
-                                        <input type="file" accept="image/*" onchange="preview_image4(event)">
+                                        <input id="preview4" name="preview4" type="file" accept="image/*" onchange="preview_image4(event)">
 
                                     </div>
                                 </div>
@@ -408,27 +408,24 @@
                             <div class="col-md-4">
 
                             <div class="card">
-                            <img id="preview5" name ="preview5" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
+                            <img id="preview5" name="preview5" class="img-rounded" src="images/noimage.jpg" style="width: 350; height: 300; ">
                                 <div class="card-body">
                                     <h4 class="card-title mb-3">Contenido</h4>
-                                    <input type="file" accept="image/*" onchange="preview_image5(event)">
-                                    <Button type="submit" id="confirmar" name="confirmar" class= "btn btn-info btn-fill btn-wd">Guardar imagenes</Button>
-         </form>                    
+                                    <input id="preview5" name="preview5" type="file" accept="image/*" onchange="preview_image5(event)">
                                 </div>
-                             
+                                </div>
+    
+                                <Button type="submit" id="confirmar" name="confirmar" class= "btn btn-info btn-fill btn-wd">Guardar imagenes</Button>
+
+                            </form>                    
+
                             </div>
                             
                             </div>
                             
                            
                           
-  </div>
-
- 
-
-
-
-            </div>
+  
         
         </div>
         
