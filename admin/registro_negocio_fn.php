@@ -38,7 +38,9 @@ VALUES ('$alc', '$ran','$expf','$id');";
 $res = $conn->query($sql3);
 
 
-echo "<script>window.open('modificar_empresa_car.php?id=", base64_encode($id), "','_self')</script>";
+//echo "<script>window.open('modificar_empresa_car.php?id=", base64_encode($id), "','_self')</script>";
+echo "<script>window.open('registro_negocio_galeria.php?id=", base64_encode($id), "','_self')</script>";
+
 
 
 ?>
