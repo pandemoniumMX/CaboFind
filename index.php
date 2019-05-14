@@ -57,18 +57,18 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                             <ul class="navbar-nav ml-auto">
                                
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Donde comer?</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                     <?php
                                     $ejec = mysqli_query($conn, $comidas);
                                     while($fila=mysqli_fetch_array($ejec)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
+                                        $ram          = $fila['CAT_NOMBRE'];
+                                        $url          = $fila['CAT_URL'];
+
                                         ?>
                                      <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
+                                     <a class='dropdown-item' href=$url> $ram</a>
                                      "
                                      ?>
                                     <?php } ?>
@@ -78,16 +78,16 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                       
+
                                     <?php
                                     $ejec1 = mysqli_query($conn, $servicios);
                                     while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
+                                        $ram          = $fila['CAT_NOMBRE'];
+                                        $url          = $fila['CAT_URL'];
+
                                         ?>
                                      <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
+                                     <a class='dropdown-item' href=$url> $ram</a>
                                      "
                                      ?>
                                     <?php } ?>
@@ -98,16 +98,16 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
+
                                     <?php
                                     $ejec1 = mysqli_query($conn, $comercios);
                                     while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
+                                        $ram          = $fila['CAT_NOMBRE'];
+                                        $url          = $fila['CAT_URL'];
+
                                         ?>
                                      <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
+                                     <a class='dropdown-item' href=$url> $ram</a>
                                      "
                                      ?>
                                     <?php } ?>
@@ -115,18 +115,18 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party night</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bars</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
+
                                     <?php
                                     $ejec1 = mysqli_query($conn, $party);
                                     while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
+                                        $ram          = $fila['CAT_NOMBRE'];
+                                        $url          = $fila['CAT_URL'];
+
                                         ?>
                                      <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
+                                     <a class='dropdown-item' href=$url> $ram</a>
                                      "
                                      ?>
                                     <?php } ?>
@@ -134,18 +134,18 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ocio</a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                     
+
                                     <?php
                                     $ejec1 = mysqli_query($conn, $ocio);
                                     while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
+                                        $ram          = $fila['CAT_NOMBRE'];
+                                        $url          = $fila['CAT_URL'];
+
                                         ?>
                                      <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
+                                     <a class='dropdown-item' href=$url> $ram</a>
                                      "
                                      ?>
                                     <?php } ?>
@@ -153,7 +153,7 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
 
                                     </div>
                                 </li>
-                                
+
                                 <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contacto</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
