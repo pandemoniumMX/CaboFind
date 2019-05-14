@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `categorias`
 --
-create database cabofind;
+create database IF NOT EXISTS cabofind;
 use cabofind;
 CREATE TABLE IF NOT EXISTS `categorias` (
   `ID_CATEGORIA` int(11) NOT NULL AUTO_INCREMENT,
