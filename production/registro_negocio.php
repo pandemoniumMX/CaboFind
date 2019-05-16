@@ -303,13 +303,7 @@
                               <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" name="name" placeholder="" required="required" type="text">
                             </div>
                           </div>
-                          <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="razon">Razón social <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input id="razons" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" name="razons" placeholder="" required="required" type="text">
-                            </div>
-                          </div>
+
                           <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
                             </label>
@@ -338,13 +332,7 @@
                               <input id="dire" type="text" name="dire" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
                             </div>
                           </div>
-                          <div class="item form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="rfc">RFC <span class="required">*</span>
-                            </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input type="text" id="rfc" name="rfc" required="required" placeholder="" class="form-control col-md-7 col-xs-12">
-                            </div>
-                          </div>
+                          
                           <div class="item form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="desc">Descripción <span class="required">*</span>
                             </label>
