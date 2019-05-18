@@ -1,17 +1,17 @@
-<?php	
+<?php
     include'conexion.php';
-    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+
     $id = base64_decode($_GET ['id']);
 
     $empresa="SELECT * from negocios where ID_NEGOCIO=$id";
-    
+
       $ejecutar = mysqli_query($conn, $empresa);
       while($fila=mysqli_fetch_array($ejecutar)){
       $nom           = $fila['NEG_NOMBRE'];
       }
 
 
-                                                
+
 
 
       $car="SELECT n.ID_CARACTERISTICA, n.CAR_NOMBRE, e.ID_CXN, e.CXN_ESTATUS
@@ -60,7 +60,7 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
-  
+
 
 </head>
 
@@ -95,7 +95,7 @@
                                 <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                              
+
                             </ul>
                         </li>
                         <li >
@@ -106,18 +106,18 @@
                             <a href="caracteristicas.php">
                                 <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                
-                        <li>                     
+
+                        <li>
                             <a class="js-arrow" href="galeria.php">
                                 <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
                             <a class="js-arrow" href="reseñas.php">
-                            <i class="fas fa-comments"></i>Reseñas</a>                         
+                            <i class="fas fa-comments"></i>Reseñas</a>
                         </li>
                         <li>
                         <a href="usuarios.php">
-                            <i class="fas fa-user"></i>Usuarios</a>                           
+                            <i class="fas fa-user"></i>Usuarios</a>
                         </li>
                     </ul>
                 </div>
@@ -145,10 +145,10 @@
                                 <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                             
+
                             </ul>
                         </li>
-                    
+
                         <li>
                             <a href="categorias.php">
                                 <i class="fas fa-star"></i>Categorias</a>
@@ -157,19 +157,19 @@
                             <a href="caracteristicas.php">
                             <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                      
-                        <li>                     
+
+                        <li>
                             <a href="galeria.php">
                                 <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
 
                             <a  href="reseñas.php">
-                            <i class="fas fa-comments"></i>Reseñas</a>                         
+                            <i class="fas fa-comments"></i>Reseñas</a>
                         </li>
                         <li>
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-user"></i>Usuarios</a>                           
+                                <i class="fas fa-user"></i>Usuarios</a>
                         </li>
                     </ul>
                 </nav>
@@ -358,22 +358,22 @@
                     <div class="card">
                                     <div class="card-header">
                                       Caracteristicas de la empresa: <strong> <?php echo $nom ?> </strong>
-                                      
+
                                     </div>
                                     <div class="card-body">
                                         <button type="button" class="btn btn-success active" onclick="add_caract();">Agregar caracteristica al negocio</button>
-                                       
+
                                     </div>
                                 </div>
                                 <div id='show-me'>
-                   
+
 
                 <table id="a-tables" class="table table-hover table-dark table-responsive">
     <thead>
 
     <th data-field="id">ID</th>
         <th data-field="id">Característica</th>
-        <th data-field="fecha" data-sortable="true">Estado</th>      
+        <th data-field="fecha" data-sortable="true">Estado</th>
         <th class="disabled-sorting">Acción</th>
 
     </thead>
@@ -383,18 +383,18 @@
         $id          = $fila['ID_CXN'];
         $nom          = $fila['CAR_NOMBRE'];
         $est           = $fila['CXN_ESTATUS'];
-      
+
 
 ?>
                     <tr>
                         <td width="8%"><?php echo $id ?></td>
                         <td width="8%"><?php echo $nom ?></td>
                         <td width="14%"><?php echo $est ?></td>
-                      
+
                         <td width="14%">
                           <?php echo"
-                     <a href='#' onclick='update_car($id), get_car($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
-                     <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
+                     <a href='#' onclick='update_car($id), get_car($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
+                     <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>
                         "
                       ?>
 
@@ -406,7 +406,7 @@
   </table>
   </div>
 
- 
+
 
 
 
@@ -454,7 +454,7 @@
     <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#a-tables').DataTable();</script>
 
-    
+
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
@@ -484,7 +484,7 @@
         $("#idn").val(data.data.idn);
 
 
-     
+
         },
         // código a ejecutar si la petición falla;
         // son pasados como argumentos a la función
@@ -501,7 +501,7 @@
 
     </script>
 
- 
+
 
   <script type="text/javascript">
 //ventana de nuevo cliente
@@ -514,7 +514,7 @@
    '<div class="col-lg-12"> <form action="modificar_empresa_car_insert_fn.php" method="post" name="data">'+
    <?php
                 $ejec1 = mysqli_query($conn, $empresa);
-                while($fila=mysqli_fetch_array($ejec1)){ ?>               
+                while($fila=mysqli_fetch_array($ejec1)){ ?>
                 '<input type="hidden" name="id" id="id" value="<?php echo $fila["ID_NEGOCIO"]; ?>" '+//obtener solo id
     <?php } ?>
 
@@ -571,7 +571,7 @@
     '</select>'+
     '<label>Estatus</label>' +
 
-    '<select class="form-control form-control-sm" required textalign="center" name="est" id="est"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
+    '<select class="form-control form-control-sm" required textalign="center" name="est" id="est"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+
 
     '</br>'+
     '<button type="submit"  class="btn btn-success btn-lg btn-block">Agregar</button>'+

@@ -1,14 +1,12 @@
-<?php	
+<?php
     include'conexion.php';
-    $empresa ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, n.NEG_RAZONSOCIAL, e.ID_EXPOSICION, e.EXP_NIVEL, e.EXP_FECHA_ALTA, e.EXP_FECHA_CADUCIDAD
+    $empresa ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, e.ID_EXPOSICION, e.EXP_NIVEL, e.EXP_FECHA_ALTA, e.EXP_FECHA_CADUCIDAD
     FROM   negocios  n, exposicion e
     WHERE n.ID_NEGOCIO = e.ID_NEGOCIO ";
-
-    $ramos = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
     $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
-    $cliente="SELECT * FROM usuarios where USU_ROLL='Empresa' and USU_STATUS='A' ";
 
-    
+
+
 
 ?>
 <!DOCTYPE html>
@@ -54,16 +52,6 @@
 
     <script type="text/javascript">
 
-$(document).ready(function(){
-    $("#ramo").click(function () {
-    $("#ramo option:selected").each(function () {
-    ID_RAMO = $(this).val();
-    $.post("registro_negocio_combo_cat.php", { ID_RAMO: ID_RAMO }, function(data){
-    $("#categoria").html(data);
-          });            
-        });
-    })
-});
 
 $(document).ready(function(){
     $("#categoria").click(function () {
@@ -71,13 +59,13 @@ $(document).ready(function(){
         ID_CATEGORIA = $(this).val();
     $.post("registro_negocio_combo_subcat.php", { ID_CATEGORIA: ID_CATEGORIA }, function(data){
     $("#subcategoria").html(data);
-          });            
+          });
         });
     })
 });
 
 </script>
-        
+
 
 
 </head>
@@ -113,7 +101,7 @@ $(document).ready(function(){
                                 <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                              
+
                             </ul>
                         </li>
                         <li>
@@ -124,18 +112,18 @@ $(document).ready(function(){
                             <a href="caracteristicas.php">
                                 <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                
-                        <li>                     
+
+                        <li>
                             <a class="js-arrow" href="galeria.php">
                                 <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
                             <a class="js-arrow" href="reseñas.php">
-                            <i class="fas fa-comments"></i>Reseñas</a>                         
+                            <i class="fas fa-comments"></i>Reseñas</a>
                         </li>
                         <li>
                         <a href="usuarios.php">
-                            <i class="fas fa-user"></i>Usuarios</a>                           
+                            <i class="fas fa-user"></i>Usuarios</a>
                         </li>
                     </ul>
                 </div>
@@ -163,10 +151,10 @@ $(document).ready(function(){
                                 <li class="active">
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                             
+
                             </ul>
                         </li>
-                    
+
                         <li>
                             <a href="categorias.php">
                                 <i class="fas fa-star"></i>Categorias</a>
@@ -175,19 +163,19 @@ $(document).ready(function(){
                             <a href="caracteristicas.php">
                             <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                      
-                        <li>                     
+
+                        <li>
                             <a href="galeria.php">
                                 <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
 
                             <a  href="reseñas.php">
-                            <i class="fas fa-comments"></i>Reseñas</a>                         
+                            <i class="fas fa-comments"></i>Reseñas</a>
                         </li>
                         <li>
                         <a href="usuarios.php">
-                                <i class="fas fa-user"></i>Usuarios</a>                           
+                                <i class="fas fa-user"></i>Usuarios</a>
                         </li>
                     </ul>
                 </nav>
@@ -375,17 +363,16 @@ $(document).ready(function(){
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                     <div class="card">
-                                   
+
 
                                 <div id='show-me'>
-                                    
+
 
                                 <table id="a-tables" class="table table-hover table-dark table-responsive">
                                                     <thead>
 
                                                         <th data-field="id">ID</th>
                                                     <th data-field="fecha" data-sortable="true">Nombre</th>
-                                                    <th data-field="estatus" data-sortable="true">Razón social</th>
                                                     <th data-field="estatus" data-sortable="true">Nivel de exposición</th>
                                                     <th class="disabled-sorting">Acción</th>
 
@@ -395,7 +382,6 @@ $(document).ready(function(){
                                                     while($fila=mysqli_fetch_array($ejecutar)){
                                                         $id          = $fila['ID_NEGOCIO'];
                                                         $nom           = $fila['NEG_NOMBRE'];
-                                                        $dir          = $fila['NEG_RAZONSOCIAL'];
                                                         $ape          = $fila['EXP_NIVEL'];
 
 
@@ -403,21 +389,21 @@ $(document).ready(function(){
                                                                     <tr>
                                                                         <td width="8%"><?php echo $id ?></td>
                                                                         <td width="14%"><?php echo $nom ?></td>
-                                                                        <td width="14%"><?php echo $dir ?></td>
+
                                                                         <td width="14%"><?php echo $ape ?></td>
                                                                         <td width="14%">
                                                                         <?php
 
-                                                                            echo "        
-                                                                            <a href='#' onclick='modificar($id), update_em_fn($id);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
-                                                                            <a href='#' onclick='expo($id), update_ex_fn($id);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>    
-                                                                            <a href='modificar_empresa_car.php?id=", base64_encode($id), "'  title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>                                                      
-                                                                                                                 
+                                                                            echo "
+                                                                            <a href='#' onclick='modificar($id), update_em_fn($id);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
+                                                                            <a href='#' onclick='expo($id), update_ex_fn($id);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>
+                                                                            <a href='modificar_empresa_car.php?id=", base64_encode($id), "'  title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>
+
                                                                             <a href='recepcion_historial_cliente.php?id=", base64_encode($id), "'  title='Modificar galería'><i class='btn-sm btn-primary fa fa-picture-o'></i></a>
 
 
-                                                                            </td>"; 
-                                                                        
+                                                                            </td>";
+
                                                                     ?>
 
                                                         </tr>
@@ -477,7 +463,7 @@ $(document).ready(function(){
     <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
     <script type="text/javascript">$('#a-tables').DataTable();</script>
 
-    
+
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
@@ -529,7 +515,7 @@ $(document).ready(function(){
 
     </script>
 
-        
+
 <script>
         //Script para mandar ID para generar la orden
         function update_ex_fn(id){
@@ -554,7 +540,7 @@ $(document).ready(function(){
         $("#expn").val(data.data.expn);
         $("#expr").val(data.data.expr);
         $("#expf").val(data.data.expf);
-    
+
         },
         // código a ejecutar si la petición falla;
         // son pasados como argumentos a la función
@@ -627,43 +613,43 @@ function modificar(id){
             '</select></div>'+
          '</div>'+
 
-         
+
          '<div class="col-md-4">'+
             '<div class="form-group">'+
 
          '<label>Status</label>' +
-         '<select class="form-control form-control-sm" required textalign="center" name="est" id="est"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+   
+         '<select class="form-control form-control-sm" required textalign="center" name="est" id="est"><option value="" ></option><option value="A" >A</option><option value="C">C</option></select></br>'+
          '</div>'+
          '</div>'+
-         '</div>'+        
+         '</div>'+
 
          '<div class="row">'+
           '<div class="col-md-4">'+
             '<div class="form-group">'+
-             '<label>Dirección</label>' +      
+             '<label>Dirección</label>' +
                  '<textarea type="text" name="dir" id="dir"  class="form-control border-input" rows="5"></textarea>'+
 
-                      
+
         '</div>'+
          '</div>'+
 
-                 
+
 
          '<div class="col-md-4">'+
             '<div class="form-group">'+
 
-         '<label>Descripción</label>' +     
+         '<label>Descripción</label>' +
          '<textarea type="text" name="des" id="des"  class="form-control border-input" rows="5"></textarea>'+
- 
+
         '</div>'+
          '</div>'+
 
           '<div class="col-md-4">'+
             '<div class="form-group">'+
 
-         '<label>Etiquetas</label>' +     
+         '<label>Etiquetas</label>' +
          '<textarea type="text" name="eti" id="eti"  class="form-control" rows="5"></textarea>'+
- 
+
         '</div>'+
          '</div>'+
          '</div>'+
@@ -672,7 +658,7 @@ function modificar(id){
           '<div class="col-md-4">'+
             '<div class="form-group">'+
 
-       
+
          '<div>Selecciona Ramo : '+
             '<select class="form-control form-control-sm"  required name="ram" id="ram">' +
             '<option value="" ></option>'+
@@ -721,7 +707,7 @@ cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
 showConfirmButton: false,
 focusConfirm: false,
 buttonsStyling: false,
-reverseButtons: true, 
+reverseButtons: true,
 customClass: 'swal-wide',
 allowOutsideClick: false
 
@@ -734,7 +720,7 @@ allowOutsideClick: false
 <script type="text/javascript">
     //ventana exposicion
     function expo(id){
-      
+
     swal({
     title: 'Exposición',
     html:
@@ -759,7 +745,7 @@ allowOutsideClick: false
         '<option value="$$$">Hasta $999.00</option>'+
         '<option value="$$$$">Hasta $9999.00</option>'+
         '<option value="$$$$$">Hasta $99999.00</option>'+
-        '</select>' +          
+        '</select>' +
         '</div>'+
     '</div>'+
 

@@ -169,8 +169,8 @@
                         </li>
 
                         <li>
-                            <a href="galeria.php">
-                                <i class="fas fa-picture-o"></i>Galería</a>
+                            <a href="publicaciones.php">
+                                <i class="fas fa-picture-o"></i>Publicaciones</a>
                         </li>
                         <li>
 
@@ -225,13 +225,13 @@
                                     <label for="vat" class=" form-control-label">Correo</label>
 																		</div>
 																		<div class="row col-8">
-                                    <input type="text" name="razon"id="razon" required placeholder="Correo" class="form-control">
+                                    <input type="text" name="correo" required placeholder="Correo" class="form-control">
                                     </div>
                                     <div class="row col-8">
                                     <label for="street" class=" form-control-label">Telefono</label>
 																		</div>
 																	  <div class="row col-8">
-                                    <input type="text" name="tel" id="tel" required placeholder="Teclea telefono" class="form-control">
+                                    <input type="number" name="tel" id="tel" required placeholder="Teclea telefono" class="form-control">
                                     </div>
 																		<div class="row col-8">
                                     <label for="city" class=" form-control-label">Dirección</label>
@@ -314,7 +314,7 @@
 																			</div>
 																				<div class="row col-10">
                                         <select  required name="alcance" id="alcance">
-																				<option value="" ></option>
+																				<option value="" >- Select -</option>
 																				<option value="Normal" >Normal</option>
                                         <option value="Alta">Alta</option>
                                         <option value="Maxima">Máxima</option>
@@ -335,7 +335,7 @@
                                     <label>Fecha límite de exposicion</label>
 																	</div>
 																	<div class="row col-10">
-                                    <input type="date" id="expf" name="expf" required class="form-control border-input">
+                                    <input type="date" id="expf" name="expf" required class="form-control border-input"></br>
 																	</div>
 																	<div class="row col-10">
                                     <input class="btn btn-outline-success" type="submit" value="Registrar y continuar">
