@@ -1,20 +1,18 @@
 
 <?php
-include 'conexion.php';
+include '../conexion.php';
 
 $name = $_POST['name'];
-$razons = $_POST['razons'];
 $email = $_POST['email'];
-$rfc = $_POST['rfc'];
 $desc= $_POST['desc'];
 $resp = $_POST['resp'];
 $dire = $_POST['dire'];
 $tel = $_POST['number'];
 $cate = $_POST['cate'];
-$ramo = $_POST['ramo'];
 $expo = $_POST['expo'];
+$eti =  $_POST['etiqueta'];
 
-$validar="SELECT NEG_RAZONSOCIAL FROM negocios WHERE NEG_RAZONSOCIAL = '$razons' ";
+$validar="SELECT NEG_NOMBRE FROM negocios WHERE NEG_NOMBRE = '$name' ";
 //if(mysqli_num_rows($nuevo_usuario)>0)
 $resultado = $conn->query($validar);
 if ($resultado->num_rows > 0){
@@ -27,10 +25,10 @@ if ($resultado->num_rows > 0){
 else
 {
 
-$sql = "INSERT INTO negocios(NEG_NOMBRE, NEG_RAZONSOCIAL, NEG_RFC, NEG_TELEFONO, NEG_DIRECCION,
+$sql = "INSERT INTO negocios(NEG_NOMBRE, NEG_TEL, NEG_DIRECCION, NEG_CORREO,
                               NEG_DESCRIPCION, NEG_RESPONSABLE, NEG_ESTATUS,
-                              NEG_ID_RAMOS, NEG_ID_CATEGORIAS, NEG_ID_EXPOSICION)
-VALUES ('$name','$razons','$rfc', $tel,'$dire','$desc','$resp','A', $ramo, $cate, $expo)";
+                              ID_SUBCATEGORIA, NEG_ETIQUETAS)
+VALUES ('$name', $tel,'$dire','$email','$desc','$resp','A', $cate, '$eti')";
 
 
 if ($conn->query($sql) === TRUE) {
@@ -41,7 +39,12 @@ echo "<script>window.open('registro_negocio.php','_self')</script>";
 
 } else {
   echo "<script>alert('*ERROR*')</script>";
-echo "<script>window.open('registro_negocio.php','_self')</script>";
+//echo "<script>window.open('registro_negocio.php','_self')</script>";
+
+echo  "INSERT INTO negocios(NEG_NOMBRE, NEG_TEL, NEG_DIRECCION, NEG_CORREO,
+                              NEG_DESCRIPCION, NEG_RESPONSABLE, NEG_ESTATUS,
+                              ID_SUBCATEGORIA, NEG_ETIQUETAS)
+VALUES ('$name', $tel,'$dire','$email','$desc','$resp','A', $cate, '$eti')";
 }
 
 $conn->close();

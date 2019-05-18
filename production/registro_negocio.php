@@ -81,11 +81,11 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="../assets/img/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
-                <h2>John Doe</h2>
+                <h2>Equisde</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -97,11 +97,11 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i> Editar <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Dashboard1</a></li>
-                      <li><a href="#">Dashboard2</a></li>
-                      <li><a href="#">Dashboard3</a></li>
+                      <li><a href="#">Usuarios</a></li>
+                      <li><a href="#">Negocio</a></li>
+                      <li><a href="#">Caracteristicas</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-pencil-square-o"></i> Registros <span class="fa fa-chevron-down"></span></a>
@@ -352,12 +352,12 @@
                               <input id="cate" type="hidden" name="cate" class="optional form-control col-md-7 col-xs-12"/>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                              <input id="ramo" type="hidden" name="ramo" class="optional form-control col-md-7 col-xs-12"/>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
                               <input id="expo" type="hidden" name="expo" class="optional form-control col-md-7 col-xs-12"/>
                             </div>
-                          </form>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                              <input id="etiqueta" type="hidden" name="etiqueta" class="optional form-control col-md-7 col-xs-12"/>
+                            </div>
+                              </form>
 
                       </div>
                           <!-- end step 1-->
@@ -439,11 +439,11 @@
                       <div id="step-44">
                         <h2 class="StepTitle">Paso 4 Etiquetas</h2>
                         <p>Escribe las etiquetas relacionando la categoria, separado por comas.</p>
-                          <div class="col-md-9 col-sm-9">
-                              <input class="form-group" name="eti" id="etiq" readonly></input></br>
-                              <input class="form-group" name="etiqueta" ></input>
+                          <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input id=eti class="optional form-control col-md-7 col-xs-12"/>
+                          </div>
 
-                      </div>
+
                       </div>
                           <!-- end step 4-->
                       <div id="step-55">
@@ -516,6 +516,8 @@
                                 if(this.checked) {
                             var check = $("#alta:checked"). val();
                             document.getElementById("expo").value = check;
+                            var et = $("#eti"). val();
+                            document.getElementById("etiqueta").value = et;
                           }});
                           $("#media").change(function(){
                               if(this.checked) {

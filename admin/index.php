@@ -1,6 +1,6 @@
-<?php	
+<?php
     include'conexion.php';
-    $ramo = "SELECT ID_RAMO, RAM_NOMBRE From ramos where estatus='A'";
+    
     $categoria = "SELECT * From categorias where CAT_estatus='A'";
     $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
 
@@ -75,7 +75,7 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                              
+
                             </ul>
                         </li>
                         <li>
@@ -86,18 +86,18 @@
                             <a href="caracteristicas.php">
                                 <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                
-                        <li>                     
+
+                        <li>
                             <a class="js-arrow" href="galeria.php">
                                 <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
                             <a class="js-arrow" href="reseñas.php">
-                            <i class="fas fa-comments"></i>Reseñas</a>                         
+                            <i class="fas fa-comments"></i>Reseñas</a>
                         </li>
                         <li>
                         <a href="usuarios.php">
-                            <i class="fas fa-user"></i>Usuarios</a>                           
+                            <i class="fas fa-user"></i>Usuarios</a>
                         </li>
                     </ul>
                 </div>
@@ -125,10 +125,10 @@
                                 <li>
                                 <a href="modificar_empresa.php">Modificar empresa</a>
                                 </li>
-                             
+
                             </ul>
                         </li>
-                    
+
                         <li>
                             <a href="categorias.php">
                                 <i class="fas fa-star"></i>Categorias</a>
@@ -137,19 +137,19 @@
                             <a href="caracteristicas.php">
                             <i class="fas fa-heart"></i>Caracteristicas</a>
                         </li>
-                      
-                        <li>                     
+
+                        <li>
                             <a href="galeria.php">
                                 <i class="fas fa-picture-o"></i>Galería</a>
                         </li>
                         <li>
 
                             <a  href="reseñas.php">
-                            <i class="fas fa-comments"></i>Reseñas</a>                         
+                            <i class="fas fa-comments"></i>Reseñas</a>
                         </li>
                         <li>
                             <a href="usuarios.php">
-                                <i class="fas fa-user"></i>Usuarios</a>                           
+                                <i class="fas fa-user"></i>Usuarios</a>
                         </li>
                     </ul>
                 </nav>
@@ -336,8 +336,8 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                   
-                                            
+
+
 
 
 
