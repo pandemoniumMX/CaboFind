@@ -23,7 +23,7 @@
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
+    <link href="css/dropzone.css" rel="stylesheet" media="all">
     <!-- Bootstrap CSS-->
     <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
@@ -37,10 +37,13 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <link href="vendor/vector-map/jqvmap.min.css" rel="stylesheet" media="all">
 
+<link href="css/jquery.steps.css" rel="stylesheet" media="all">
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/dropzone.js"></script>
+
 
 </head>
 
@@ -166,6 +169,7 @@
                         <div class="header-wrap">
 
 
+
                         </div>
                     </div>
                 </div>
@@ -178,9 +182,55 @@
                     <div class="card">
 
                       <div class="card-header">
-
+                        <h3>Crear nueva publicación</h3>
                       </div>
-                                <div class="card-body">
+                      <div class="card-body">
+      <?php
+      $negocios = "SELECT * FROM negocios;";
+      $ejecutar = mysqli_query($conn, $negocios);
+       ?>
+    <form id="frmTarget" class="dropzone">
+      <div class="row col-10">
+        <label class=" form-control-label">Selecciona la empresa a la que pertenece la publicación</label>
+      </div>
+        <div class="row col-10">
+        <select name="s_neg" id="select_neg" required>
+          <option>...</option>
+          <?php
+        while($fila=mysqli_fetch_array($ejecutar)){
+            $neg_nom          = $fila['NEG_NOMBRE'];
+            $id_neg            = $fila['ID_NEGOCIO'];
+            echo "<option value='$id_neg'>$neg_nom</option>";
+          }
+             ?>
+        </select>
+      </div>
+    <div class="row col-8">
+    <label class=" form-control-label">Titulo</label>
+    </div>
+    <div class="row col-8">
+    <input type="text" name="titulo" id="titulo" required placeholder="Titulo" class="form-control">
+    </div>
+    <div class="row col-8">
+    <label  class=" form-control-label">Nota</label>
+    </div>
+    <div class="row col-8">
+    <textarea name="nota" id="nota" rows="6" required placeholder="<...>" class="form-control"></textarea>
+    </div>
+    <div class="row col-8">
+      <label  class=" form-control-label">Imagenes</label>
+    </div>
+<div class="row col-8">
+  <div class="fallback">
+    <input name="file" type="file" multiple />
+  </div>
+</div>
+</form>
+  <div class="row col-8">
+<button type="submit" id="button" class="btn btn-primary">Submit</button>
+  </div>
+
+
 
 
                           </div>
@@ -188,8 +238,6 @@
               </div>
         </div>
     </div>
-
-
 
 
 
@@ -224,13 +272,42 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
-
-
+    <!-- steps jquery-->
+    <script src="js/jquery.steps.js"></script>
+    <script src="js/jquery.steps.min.js"></script>
+    <!-- sweetalert-->
     <script src="js/sweetalert2.all.min.js"></script>
     <script src="js/sweetalert2.js"></script>
 
 
+<script>
+Dropzone.options.frmTarget = {
+    autoProcessQueue: false,
+    maxFiles: 3,
+    acceptedFiles: 'image/*',
+    addRemoveLinks: true,
+    parallelUploads: 3,
+    url: 'upload.php',
+    init: function () {
 
+        var myDropzone = this;
+
+        // Update selector to match your button
+        $("#button").click(function (e) {
+            e.preventDefault();
+            myDropzone.processQueue();
+        });
+
+        this.on('sending', function(file, xhr, formData) {
+            // Append all form inputs to the formData Dropzone will POST
+            var data = $('#frmTarget').serializeArray();
+            $.each(data, function(key, el) {
+                formData.append(el.name, el.value);
+            });
+        });
+    }
+}
+</script>
 
 
 <script type='text/javascript'>

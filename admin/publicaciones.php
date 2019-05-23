@@ -2,7 +2,7 @@
 
     include'conexion.php';
 
-    $publicacion ="SELECT * FROM PUBLICACION";
+    $publicacion ="SELECT * FROM publicacion p, negocios n WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -179,17 +179,14 @@
 
                       <div class="card-header">
 
-                        <button class="btn btn-primary">Nueva publicación</button>
+                        <button class="btn btn-primary"><a  href="publicacion_nueva.php"></a>Nueva publicación</button>
 
                       </div>
                                 <div class="card-body">
 
-
-
                                 <table id="a-tables" class="table table-hover table-dark table-responsive">
                                                     <thead>
-
-                                                        <th data-field="id">ID</th>
+                                                    <th data-field="id">ID</th>
                                                     <th data-field="fecha" data-sortable="true">Titulo</th>
                                                     <th data-field="estatus" data-sortable="true">Fecha</th>
                                                     <th data-field="estatus" data-sortable="true">Negocio</th>
@@ -214,11 +211,11 @@
                                                                         <?php
 
                                                                             echo "
-                                                                            <a href='#' onclick='modificar($id), update_em_fn($id);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
-                                                                            <a href='#' onclick='expo($id), update_ex_fn($id);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>
-                                                                            <a href='modificar_empresa_car.php?id=", base64_encode($id), "'  title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>
+                                                                            <a href='#' onclick='modificar($id_p), update_em_fn($id_p);' title='Modificar empresa' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
+                                                                            <a href='#' onclick='expo($id_p), update_ex_fn($id_p);' title='Modificar exposición' ><i class='btn-sm btn-danger fa fa-bolt'></i></a>
+                                                                            <a href='modificar_empresa_car.php?id=", base64_encode($id_p), "'  title='Modificar caracteristicas' ><i class='btn-sm btn-info fa fa-star'></i></a>
 
-                                                                            <a href='recepcion_historial_cliente.php?id=", base64_encode($id), "'  title='Modificar galería'><i class='btn-sm btn-primary fa fa-picture-o'></i></a>
+                                                                            <a href='recepcion_historial_cliente.php?id=", base64_encode($id_p), "'  title='Modificar galería'><i class='btn-sm btn-primary fa fa-picture-o'></i></a>
 
 
                                                                             </td>";
