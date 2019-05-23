@@ -4,6 +4,7 @@ include 'conexion.php';
 $neg = $_POST ['s_neg'];
 $tit = $_POST ['titulo'];
 $not = $_POST ['nota'];
+$exp = $_POST ['s_exp'];
 
 //crea directorio si no existe.
 $target_dir = "assets/galeria/empresas/$neg/";
@@ -24,8 +25,8 @@ $resul = $conn->query($validacion);
 if (mysqli_num_rows($resul)==0) {
 
   //inserta la publicación nueva
-   $sql2 = "INSERT INTO publicacion(PUB_TITULO, PUB_DETALLE, negocios_ID_NEGOCIO)
-   VALUES ('$tit','$not', $neg);";
+   $sql2 = "INSERT INTO publicacion(PUB_TITULO, PUB_DETALLE, negocios_ID_NEGOCIO, exposicion_ID_EXPOSICION)
+   VALUES ('$tit','$not', $neg, $exp);";
    $res = $conn->query($sql2);
 
    //consulta publicación recien insertada para anidarla a la imagen en galeria

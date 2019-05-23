@@ -2,11 +2,6 @@
 include'conexion.php';
 // navbar
 
-$comidas = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='1';"; //donde comer
-$servicios = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='2';";//servicios
-$comercios = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='3';";//comercios
-$party = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='4';";     //party
-$ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //ocio
 
 //
 ?>
@@ -58,19 +53,12 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Música</a>
+                                    <a class="dropdown-item" href="#">Actividades turisticas</a>
+                                    <a class="dropdown-item" href="#">Teatro</a>
+                                    <a class="dropdown-item" href="#">Playas</a>
+                                    <a class="dropdown-item" href="#">Museos</a>
 
-                                  <?php
-                                  $ejec1 = mysqli_query($conn, $ocio);
-                                  while($fila=mysqli_fetch_array($ejec1)){
-                                      $ram          = $fila['CAT_NOMBRE'];
-                                      $url          = $fila['CAT_URL'];
-
-                                      ?>
-                                   <?php  echo "
-                                   <a class='dropdown-item' href=$url> $ram</a>
-                                   "
-                                   ?>
-                                  <?php } ?>
 
 
                                   </div>
@@ -78,77 +66,48 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bares</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">NightClub</a>
+                                    <a class="dropdown-item" href="#">PUB</a>
+                                    <a class="dropdown-item" href="#">SportBar</a>
+                                    <a class="dropdown-item" href="#">RockBar</a>
+                                    <a class="dropdown-item" href="#">Terraza</a>
+                                    <a class="dropdown-item" href="#">Bar Restaurant</a>
+                                    <a class="dropdown-item" href="#">Billar</a>
 
-                                  <?php
-                                  $ejec1 = mysqli_query($conn, $party);
-                                  while($fila=mysqli_fetch_array($ejec1)){
-                                      $ram          = $fila['CAT_NOMBRE'];
-                                      $url          = $fila['CAT_URL'];
-
-                                      ?>
-                                   <?php  echo "
-                                   <a class='dropdown-item' href=$url> $ram</a>
-                                   "
-                                   ?>
-                                  <?php } ?>
 
                                   </div>
                               </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                    <?php
-                                    $ejec = mysqli_query($conn, $comidas);
-                                    while($fila=mysqli_fetch_array($ejec)){
-                                        $ram          = $fila['CAT_NOMBRE'];
-                                        $url          = $fila['CAT_URL'];
-
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a>
-                                     "
-                                     ?>
-                                    <?php } ?>
+                                      <a class="dropdown-item" href="#">Mexicano</a>
+                                      <a class="dropdown-item" href="#">Italiano</a>
+                                      <a class="dropdown-item" href="#">Japones</a>
+                                      <a class="dropdown-item" href="#">Chino</a>
+                                      <a class="dropdown-item" href="#">Mariscos</a>
+                                      <a class="dropdown-item" href="#">Mexicano</a>
+                                      <a class="dropdown-item" href="#">Comida rapida</a>
 
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                    <?php
-                                    $ejec1 = mysqli_query($conn, $servicios);
-                                    while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];
-                                        $url          = $fila['CAT_URL'];
-
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a>
-                                     "
-                                     ?>
-                                    <?php } ?>
-
+                                      <a class="dropdown-item" href="#">Medicos</a>
+                                      <a class="dropdown-item" href="#">Tecnicos</a>
+                                      <a class="dropdown-item" href="#">Mecanicos</a>
+                                      <a class="dropdown-item" href="#">Transporte</a>
 
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                                    <?php
-                                    $ejec1 = mysqli_query($conn, $comercios);
-                                    while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];
-                                        $url          = $fila['CAT_URL'];
-
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a>
-                                     "
-                                     ?>
-                                    <?php } ?>
+                                      <a class="dropdown-item" href="#">Ropa</a>
+                                      <a class="dropdown-item" href="#">Joyerias</a>
+                                      <a class="dropdown-item" href="#">Supermercados</a>
+                                      <a class="dropdown-item" href="#">Autopartes</a>
+                                      <a class="dropdown-item" href="#">Artesanias</a>
 
                                     </div>
                                 </li>
@@ -191,41 +150,28 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                     <div class="col-12">
                         <div class="hero-post-slide">
                             <!-- Single Slide -->
-                            <div class="single-slide d-flex align-items-center">
-                                <div class="post-number">
-                                    <p>1</p>
-                                </div>
-                                <div class="post-title">
-                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
-                                </div>
-                            </div>
-                            <!-- Single Slide -->
-                            <div class="single-slide d-flex align-items-center">
-                                <div class="post-number">
-                                    <p>2</p>
-                                </div>
-                                <div class="post-title">
-                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
-                                </div>
-                            </div>
-                            <!-- Single Slide -->
-                            <div class="single-slide d-flex align-items-center">
-                                <div class="post-number">
-                                    <p>3</p>
-                                </div>
-                                <div class="post-title">
-                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
-                                </div>
-                            </div>
-                            <!-- Single Slide -->
-                            <div class="single-slide d-flex align-items-center">
-                                <div class="post-number">
-                                    <p>4</p>
-                                </div>
-                                <div class="post-title">
-                                    <a href="single-blog.html">How Did van Gogh’s Turbulent Mind Depict One of the Most Complex</a>
-                                </div>
-                            </div>
+
+                              <?php
+                              $slide = "SELECT  @row := @row + 1 as row, PUB_TITULO, PUB_DETALLE
+                              FROM publicacion a, (SELECT @row := 0) r
+                              WHERE exposicion_ID_EXPOSICION = 4 LIMIT 4";
+                              $ejec = mysqli_query($conn, $slide);
+                              while($fila=mysqli_fetch_array($ejec)){
+                              $row           = $fila['row'];
+                              $titulo        = $fila['PUB_TITULO'];
+
+                              echo "
+                              <div class='single-slide d-flex align-items-center'>
+                              <div class='post-number'>
+                              <p>$row</p>
+                              </div>
+
+                              <div class='post-title'>
+                              <a href='#'>$titulo</a>
+                              </div>
+                              </div>";
+                              }
+                              ?>
                         </div>
                     </div>
                 </div>
@@ -276,147 +222,83 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="world-catagory-slider owl-carousel wow fadeInUpBig" data-wow-delay="0.1s">
+                                      <?php
+                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      FROM publicacion p, galeria g, negocios n
+                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 4;";
+                                      $ejec2 = mysqli_query($conn, $post);
+                                      while($fila=mysqli_fetch_array($ejec2)){
+                                      $n_nom           = $fila['NEG_NOMBRE'];
+                                      $titulo        = $fila['PUB_TITULO'];
+                                      $detalle       = $fila['PUB_DETALLE'];
+                                      $img         = $fila['GAL_FOTO'];
 
-                                        <!-- Single Blog Post -->
-                                        <div class="single-blog-post">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="assets/img/blog-img/b1.jpg" alt="">
-                                                <!-- Catagory -->
-                                                <div class="post-cta"><a href="#">travel</a></div>
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="headline">
-                                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                                </a>
-                                                <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                                <!-- Post Meta -->
-                                                <div class="post-meta">
-                                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                      echo "
+                                      <div class='single-blog-post'>
+                                          <div class='post-thumbnail'>
+                                              <img src='$img'>
+                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                          </div>
+                                          <div class='post-content'>
+                                              <a href='#' class='headline'>
+                                              <h5>$titulo</h5>
+                                          </a>
+                                          <p>$detalle</p>
 
-                                        <!-- Single Blog Post -->
-                                        <div class="single-blog-post">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="assets/img/blog-img/b2.jpg" alt="">
-                                                <!-- Catagory -->
-                                                <div class="post-cta"><a href="#">travel</a></div>
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="headline">
-                                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                                </a>
-                                                <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                                <!-- Post Meta -->
-                                                <div class="post-meta">
-                                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                          <div class='post-meta'>
+                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                          </div>
+                                      </div>
+                                  </div>
 
-                                        <!-- Single Blog Post -->
-                                        <div class="single-blog-post">
-                                            <!-- Post Thumbnail -->
-                                            <div class="post-thumbnail">
-                                                <img src="assets/img/blog-img/b3.jpg" alt="">
-                                                <!-- Catagory -->
-                                                <div class="post-cta"><a href="#">travel</a></div>
-                                            </div>
-                                            <!-- Post Content -->
-                                            <div class="post-content">
-                                                <a href="#" class="headline">
-                                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                                </a>
-                                                <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                                <!-- Post Meta -->
-                                                <div class="post-meta">
-                                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                      ";
+                                    }
+                                      ?>
                                     </div>
-                                </div>
-
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.2s">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
                                     </div>
+                                    <!-- TERMINA SLIDER -->
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.3s">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="col-12 col-md-6">
+                                      <?php
+                                      $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      FROM publicacion p, galeria g, negocios n
+                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                      LIMIT 4";
+                                      $ejec3 = mysqli_query($conn, $post2);
+                                      while($fila=mysqli_fetch_array($ejec3)){
+                                      $n_nom           = $fila['NEG_NOMBRE'];
+                                      $titulo        = $fila['PUB_TITULO'];
+                                      $detalle       = $fila['PUB_DETALLE'];
+                                      $img         = $fila['GAL_FOTO'];
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.4s">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                      echo "
+                                      <div class='single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.2s'>
+                                          <div class='post-thumbnail'>
+                                              <img src='$img'>
+                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                          </div>
+                                          <div class='post-content'>
+                                              <a href='#' class='headline'>
+                                              <h5>$titulo</h5>
+                                          </a>
+                                          <p>$detalle</p>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.5s">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                          <div class='post-meta'>
+                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                          </div>
+                                      </div>
+                                      </div>
+                                      ";
+                                    }
+                                      ?>
+
                             </div>
                         </div>
+                        </div>
+
 
                         <div class="tab-pane fade" id="world-tab-2" role="tabpanel" aria-labelledby="tab2">
                             <div class="row">

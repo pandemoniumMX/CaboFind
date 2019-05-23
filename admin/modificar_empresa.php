@@ -1,8 +1,6 @@
 <?php
     include'conexion.php';
-    $empresa ="SELECT n.ID_NEGOCIO, n.NEG_NOMBRE, e.ID_EXPOSICION, e.EXP_NIVEL, e.EXP_FECHA_ALTA, e.EXP_FECHA_CADUCIDAD
-    FROM   negocios  n, exposicion e
-    WHERE n.ID_NEGOCIO = e.ID_NEGOCIO ";
+    $empresa ="SELECT * FROM negocios";
     $subcategoria = "SELECT * From subcategoria where sub_estatus='A'";
 
 
@@ -373,7 +371,7 @@ $(document).ready(function(){
 
                                                         <th data-field="id">ID</th>
                                                     <th data-field="fecha" data-sortable="true">Nombre</th>
-                                                    <th data-field="estatus" data-sortable="true">Nivel de exposición</th>
+                                                    <th data-field="estatus" data-sortable="true">Responsable</th>
                                                     <th class="disabled-sorting">Acción</th>
 
                                                     </thead>
@@ -382,7 +380,7 @@ $(document).ready(function(){
                                                     while($fila=mysqli_fetch_array($ejecutar)){
                                                         $id          = $fila['ID_NEGOCIO'];
                                                         $nom           = $fila['NEG_NOMBRE'];
-                                                        $ape          = $fila['EXP_NIVEL'];
+                                                        $ape          = $fila['NEG_RESPONSABLE'];
 
 
                                                 ?>
