@@ -1,10 +1,14 @@
 <?php
 
 include 'conexion.php';
-$neg = $_POST ['s_neg'];
+
 $tit = $_POST ['titulo'];
-$not = $_POST ['nota'];
-$exp = $_POST ['s_exp'];
+$not = $_POST ['detalle'];
+$neg = $_POST ['s_neg'];
+$archivo1 = $_FILES['img']['tmp_name'];
+$destino1 = "../assets/galeria/empresas/$neg/". $_FILES['img']['name'];
+
+echo $neg, $tit, $not, $archivo1;
 
 //crea directorio si no existe.
 $target_dir = "assets/galeria/empresas/$neg/";
@@ -52,3 +56,4 @@ $sql3 = "INSERT INTO galeria(GAL_FOTO ,ID_NEGOCIO, publicacion_ID_PUBLICACION)
 VALUES ('assets/galeria/empresas/$neg/$img', $neg, $id_p);";
 $res2 = $conn->query($sql3);
 }
+?>

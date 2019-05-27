@@ -205,26 +205,6 @@
              ?>
         </select>
       </div>
-      <?php
-      $expo = "SELECT * FROM exposicion;";
-      $ejec = mysqli_query($conn, $expo);
-       ?>
-    <form id="frmTarget" class="dropzone">
-      <div class="row col-10">
-        <label class=" form-control-label">Selecciona nivel de exposicion</label>
-      </div>
-        <div class="row col-10">
-        <select name="s_exp"  required>
-          <option>...</option>
-          <?php
-        while($fila=mysqli_fetch_array($ejec)){
-            $exp_nom          = $fila['EXP_NIVEL'];
-            $id_expo            = $fila['ID_EXPOSICION'];
-            echo "<option value='$id_expo'>$exp_nom</option>";
-          }
-             ?>
-        </select>
-      </div>
     <div class="row col-8">
     <label class=" form-control-label">Titulo</label>
     </div>

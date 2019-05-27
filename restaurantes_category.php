@@ -1,14 +1,9 @@
 <?php
-//consultas
 include'conexion.php';
-
-$comidas = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='1';"; //donde comer
-$servicios = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='2';";//servicios
-$comercios = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='3';";//comercios
-$party = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='4';";     //party
-$ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //ocio
+// navbar
 
 
+//
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,129 +44,77 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg">
                         <!-- Logo -->
-                        <a class="navbar-brand" href="index.html">CaboFind</a>
+                        <a class="navbar-brand" href="index.html">CaboFind<img src="assets\img/logo.png" height="50px" width="50px"></a>
                         <!-- Navbar Toggler -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                             <!-- Navbar -->
-                             <div class="collapse navbar-collapse" id="worldNav">
+                        <!-- Navbar -->
+                        <div class="collapse navbar-collapse" id="worldNav">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Donde comer?</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">Música</a>
+                                    <a class="dropdown-item" href="#">Actividades turisticas</a>
+                                    <a class="dropdown-item" href="#">Teatro</a>
+                                    <a class="dropdown-item" href="#">Playas</a>
+                                    <a class="dropdown-item" href="#">Museos</a>
 
-                                    <?php
-                                    $ejec = mysqli_query($conn, $comidas);
-                                    while($fila=mysqli_fetch_array($ejec)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
-                                     "
-                                     ?>
-                                    <?php } ?>
+
+
+                                  </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bares</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#">NightClub</a>
+                                    <a class="dropdown-item" href="#">PUB</a>
+                                    <a class="dropdown-item" href="#">SportBar</a>
+                                    <a class="dropdown-item" href="#">RockBar</a>
+                                    <a class="dropdown-item" href="#">Terraza</a>
+                                    <a class="dropdown-item" href="#">Bar Restaurant</a>
+                                    <a class="dropdown-item" href="#">Billar</a>
+
+
+                                  </div>
+                              </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <a class="dropdown-item" href="#">Mexicano</a>
+                                      <a class="dropdown-item" href="#">Italiano</a>
+                                      <a class="dropdown-item" href="#">Japones</a>
+                                      <a class="dropdown-item" href="#">Chino</a>
+                                      <a class="dropdown-item" href="#">Mariscos</a>
+                                      <a class="dropdown-item" href="#">Mexicano</a>
+                                      <a class="dropdown-item" href="#">Comida rapida</a>
 
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                       
-                                    <?php
-                                    $ejec1 = mysqli_query($conn, $servicios);
-                                    while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
-                                     "
-                                     ?>
-                                    <?php } ?>
-
+                                      <a class="dropdown-item" href="#">Medicos</a>
+                                      <a class="dropdown-item" href="#">Tecnicos</a>
+                                      <a class="dropdown-item" href="#">Mecanicos</a>
+                                      <a class="dropdown-item" href="#">Transporte</a>
 
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                    <?php
-                                    $ejec1 = mysqli_query($conn, $comercios);
-                                    while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
-                                     "
-                                     ?>
-                                    <?php } ?>
+                                      <a class="dropdown-item" href="#">Ropa</a>
+                                      <a class="dropdown-item" href="#">Joyerias</a>
+                                      <a class="dropdown-item" href="#">Supermercados</a>
+                                      <a class="dropdown-item" href="#">Autopartes</a>
+                                      <a class="dropdown-item" href="#">Artesanias</a>
 
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Party night</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                    <?php
-                                    $ejec1 = mysqli_query($conn, $party);
-                                    while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
-                                     "
-                                     ?>
-                                    <?php } ?>
-
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ocio</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                     
-                                    <?php
-                                    $ejec1 = mysqli_query($conn, $ocio);
-                                    while($fila=mysqli_fetch_array($ejec1)){
-                                        $ram          = $fila['CAT_NOMBRE'];  
-                                        $url          = $fila['CAT_URL'];                                                                                   
-                                                                                 
-                                        ?>
-                                     <?php  echo "
-                                     <a class='dropdown-item' href=$url> $ram</a> 
-                                     "
-                                     ?>
-                                    <?php } ?>
 
 
-                                    </div>
-                                </li>
-                                
-                                <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contacto</a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="quejas.html">Quejas y sugerencias</a>
-                                      <a class="dropdown-item" href="trabajar.html">¿Quieres trabajar con nosotros?</a>
-                                  </div>
-                              </li>
-                                <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil <i class="ti-user"></i></a>
-                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" onclick="login();">Iniciar sesion</a>
-                                      <a class="dropdown-item" onclick="registro();">Registrarse</a>
-                                      <a class="dropdown-item" href="single-blog.html">Recuperar contraseña</a>
 
-                                  </div>
-                              </li>
+
                             </ul>
                             <!-- Search Form  -->
                             <div id="search-wrapper">
@@ -253,7 +196,7 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
     <div class="main-content-wrapper section-padding-100">
         <div class="container">
             <div class="row justify-content-center">
-               
+
                 <!-- ========== Sidebar Area ========== -->
                 <div class="col-12 col-md-8 col-lg-4">
                     <div class="post-sidebar-area wow fadeInUpBig" data-wow-delay="0.2s">
@@ -265,7 +208,7 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                 <input type="radio" name="gender" value="male" > China<br>
                                 <input type="radio" name="gender" value="male" > Italiana<br>
 
-                        
+
                             </div>
                         </div>
 
@@ -276,7 +219,7 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                 <input type="radio" name="gender" value="male" > $$$<br>
                                 <input type="radio" name="gender" value="male" > $$$$<br>
 
-                        
+
                             </div>
                         </div>
 
@@ -285,9 +228,9 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                             <div class="widget-content">
                                 <input type="radio" name="gender" value="male" > Sí <br>
                                 <input type="radio" name="gender" value="male" > No <br>
-                              
 
-                        
+
+
                             </div>
                         </div>
 
@@ -298,21 +241,21 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                                 <input type="checkbox" name="gender" value="male" > Area de fumadores <br>
                                 <input type="checkbox" name="gender" value="male" > Aire acondicoinado <br>
                                 <input type="checkbox" name="gender" value="male" > Acepta tarjetas de credito <br>
-                            
 
-                        
+
+
                             </div>
                         </div>
 
                         </div>
-                        
+
                     </div>
                          <!--<div class="row justify-content-center">-->
                 <!-- ============= Post Content Area Start ============= -->
                 <div class="col-12 col-lg-8">
                     <div class="post-content-area mb-50">
                         <!-- Catagory Area -->
-                        
+
                         <div class="world-catagory-area">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="title">Restaurantes en Los Cabos</li>
@@ -2622,10 +2565,10 @@ $ocio = "SELECT * FROM categorias where CAT_ESTATUS='A' and ID_RAMO='5';";  //oc
                     </div>
                 </div>
                 </div>
-                
+
             </div>
 
-            
+
             <div class="row justify-content-center">
                 <!-- ========== Single Blog Post ========== -->
                 <div class="col-12 col-md-6 col-lg-4">

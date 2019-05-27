@@ -301,816 +301,335 @@ include'conexion.php';
 
 
                         <div class="tab-pane fade" id="world-tab-2" role="tabpanel" aria-labelledby="tab2">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
+
+                              <div class="row">
+                                  <div class="col-12 col-md-6">
                                     <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <?php
+                                        $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                        FROM publicacion p, galeria g, negocios n
+                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                        AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                        $ejec2 = mysqli_query($conn, $post);
+                                        while($fila=mysqli_fetch_array($ejec2)){
+                                        $n_nom           = $fila['NEG_NOMBRE'];
+                                        $titulo        = $fila['PUB_TITULO'];
+                                        $detalle       = $fila['PUB_DETALLE'];
+                                        $img         = $fila['GAL_FOTO'];
 
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                        echo "
+                                        <div class='single-blog-post'>
+                                            <div class='post-thumbnail'>
+                                                <img src='$img'>
+                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                            </div>
+                                            <div class='post-content'>
+                                                <a href='#' class='headline'>
+                                                <h5>$titulo</h5>
                                             </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                            <p>$detalle</p>
+
+                                            <div class='post-meta'>
+                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        ";
+                                      }
+                                        ?>
+                                      </div>
+                                      </div>
+                                      <!-- TERMINA SLIDER -->
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                      <div class="col-12 col-md-6">
+                                        <?php
+                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                        FROM publicacion p, galeria g, negocios n
+                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                        LIMIT 4";
+                                        $ejec3 = mysqli_query($conn, $post2);
+                                        while($fila=mysqli_fetch_array($ejec3)){
+                                        $n_nom           = $fila['NEG_NOMBRE'];
+                                        $titulo        = $fila['PUB_TITULO'];
+                                        $detalle       = $fila['PUB_DETALLE'];
+                                        $img         = $fila['GAL_FOTO'];
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                        echo "
+                                        <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
+                                            <div class='post-thumbnail'>
+                                                <img src='$img'>
+                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                            </div>
+                                            <div class='post-content'>
+                                                <a href='#' class='headline'>
+                                                <h5>$titulo</h5>
                                             </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                            <p>$detalle</p>
+
+                                            <div class='post-meta'>
+                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div>
+                                        ";
+                                      }
+                                        ?>
+
+                              </div>
+                          </div>
                         </div>
 
                         <div class="tab-pane fade" id="world-tab-3" role="tabpanel" aria-labelledby="tab3">
-                            <div class="row">
+
+                              <div class="row">
                                 <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                  <div class="single-blog-post">
+                                      <?php
+                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      FROM publicacion p, galeria g, negocios n
+                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                      $ejec2 = mysqli_query($conn, $post);
+                                      while($fila=mysqli_fetch_array($ejec2)){
+                                      $n_nom           = $fila['NEG_NOMBRE'];
+                                      $titulo        = $fila['PUB_TITULO'];
+                                      $detalle       = $fila['PUB_DETALLE'];
+                                      $img         = $fila['GAL_FOTO'];
 
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                      echo "
+                                      <div class='single-blog-post'>
+                                          <div class='post-thumbnail'>
+                                              <img src='$img'>
+                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                          </div>
+                                          <div class='post-content'>
+                                              <a href='#' class='headline'>
+                                              <h5>$titulo</h5>
+                                          </a>
+                                          <p>$detalle</p>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                          <div class='post-meta'>
+                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                          </div>
+                                      </div>
+                                  </div>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
+                                      ";
+                                    }
+                                      ?>
                                     </div>
+                                      </div>
+                                      <!-- TERMINA SLIDER -->
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                      <div class="col-12 col-md-6">
+                                        <?php
+                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                        FROM publicacion p, galeria g, negocios n
+                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                        LIMIT 4";
+                                        $ejec3 = mysqli_query($conn, $post2);
+                                        while($fila=mysqli_fetch_array($ejec3)){
+                                        $n_nom           = $fila['NEG_NOMBRE'];
+                                        $titulo        = $fila['PUB_TITULO'];
+                                        $detalle       = $fila['PUB_DETALLE'];
+                                        $img         = $fila['GAL_FOTO'];
+
+                                        echo "
+                                        <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
+                                            <div class='post-thumbnail'>
+                                                <img src='$img'>
+                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                            </div>
+                                            <div class='post-content'>
+                                                <a href='#' class='headline'>
+                                                <h5>$titulo</h5>
                                             </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                            <p>$detalle</p>
+
+                                            <div class='post-meta'>
+                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div>
+                                        ";
+                                      }
+                                        ?>
+
+                              </div>
+                          </div>
                         </div>
 
                         <div class="tab-pane fade" id="world-tab-4" role="tabpanel" aria-labelledby="tab4">
-                            <div class="row">
+
+                              <div class="row">
                                 <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                  <div class="single-blog-post">
+                                      <?php
+                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      FROM publicacion p, galeria g, negocios n
+                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                      $ejec2 = mysqli_query($conn, $post);
+                                      while($fila=mysqli_fetch_array($ejec2)){
+                                      $n_nom           = $fila['NEG_NOMBRE'];
+                                      $titulo        = $fila['PUB_TITULO'];
+                                      $detalle       = $fila['PUB_DETALLE'];
+                                      $img         = $fila['GAL_FOTO'];
 
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                      echo "
+                                      <div class='single-blog-post'>
+                                          <div class='post-thumbnail'>
+                                              <img src='$img'>
+                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                          </div>
+                                          <div class='post-content'>
+                                              <a href='#' class='headline'>
+                                              <h5>$titulo</h5>
+                                          </a>
+                                          <p>$detalle</p>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                          <div class='post-meta'>
+                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                          </div>
+                                      </div>
+                                  </div>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
+                                      ";
+                                    }
+                                      ?>
                                     </div>
+                                    </div>
+                                      <!-- TERMINA SLIDER -->
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                      <div class="col-12 col-md-6">
+                                        <?php
+                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                        FROM publicacion p, galeria g, negocios n
+                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                        LIMIT 4";
+                                        $ejec3 = mysqli_query($conn, $post2);
+                                        while($fila=mysqli_fetch_array($ejec3)){
+                                        $n_nom           = $fila['NEG_NOMBRE'];
+                                        $titulo        = $fila['PUB_TITULO'];
+                                        $detalle       = $fila['PUB_DETALLE'];
+                                        $img         = $fila['GAL_FOTO'];
+
+                                        echo "
+                                        <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
+                                            <div class='post-thumbnail'>
+                                                <img src='$img'>
+                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                            </div>
+                                            <div class='post-content'>
+                                                <a href='#' class='headline'>
+                                                <h5>$titulo</h5>
                                             </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                            <p>$detalle</p>
+
+                                            <div class='post-meta'>
+                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div>
+                                        ";
+                                      }
+                                        ?>
+
+                              </div>
+                          </div>
                         </div>
 
                         <div class="tab-pane fade" id="world-tab-5" role="tabpanel" aria-labelledby="tab5">
-                            <div class="row">
+                              <div class="row">
                                 <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                  <div class="single-blog-post">
+                                      <?php
+                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      FROM publicacion p, galeria g, negocios n
+                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                      $ejec2 = mysqli_query($conn, $post);
+                                      while($fila=mysqli_fetch_array($ejec2)){
+                                      $n_nom           = $fila['NEG_NOMBRE'];
+                                      $titulo        = $fila['PUB_TITULO'];
+                                      $detalle       = $fila['PUB_DETALLE'];
+                                      $img         = $fila['GAL_FOTO'];
 
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                      echo "
+                                      <div class='single-blog-post'>
+                                          <div class='post-thumbnail'>
+                                              <img src='$img'>
+                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                          </div>
+                                          <div class='post-content'>
+                                              <a href='#' class='headline'>
+                                              <h5>$titulo</h5>
+                                          </a>
+                                          <p>$detalle</p>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                          <div class='post-meta'>
+                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                          </div>
+                                      </div>
+                                  </div>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
+                                      ";
+                                    }
+                                      ?>
                                     </div>
+                                    </div>
+                                      <!-- TERMINA SLIDER -->
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                      <div class="col-12 col-md-6">
+                                        <?php
+                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                        FROM publicacion p, galeria g, negocios n
+                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                        LIMIT 4";
+                                        $ejec3 = mysqli_query($conn, $post2);
+                                        while($fila=mysqli_fetch_array($ejec3)){
+                                        $n_nom           = $fila['NEG_NOMBRE'];
+                                        $titulo        = $fila['PUB_TITULO'];
+                                        $detalle       = $fila['PUB_DETALLE'];
+                                        $img         = $fila['GAL_FOTO'];
 
-                        <div class="tab-pane fade" id="world-tab-6" role="tabpanel" aria-labelledby="tab6">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                        echo "
+                                        <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
+                                            <div class='post-thumbnail'>
+                                                <img src='$img'>
+                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                            <div class='post-content'>
+                                                <a href='#' class='headline'>
+                                                <h5>$titulo</h5>
+                                            </a>
+                                            <p>$detalle</p>
 
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                            <div class='post-meta'>
+                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
                                             </div>
                                         </div>
-                                    </div>
+                                        </div>
+                                        ";
+                                      }
+                                        ?>
 
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="world-tab-7" role="tabpanel" aria-labelledby="tab7">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="world-tab-8" role="tabpanel" aria-labelledby="tab8">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="world-tab-9" role="tabpanel" aria-labelledby="tab9">
-                            <div class="row">
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b1.jpg" alt="">
-                                            <!-- Catagory -->
-                                            <div class="post-cta"><a href="#">travel</a></div>
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                            </a>
-                                            <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-12 col-md-6">
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b10.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b11.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b12.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single Blog Post -->
-                                    <div class="single-blog-post post-style-2 d-flex align-items-center">
-                                        <!-- Post Thumbnail -->
-                                        <div class="post-thumbnail">
-                                            <img src="assets/img/blog-img/b13.jpg" alt="">
-                                        </div>
-                                        <!-- Post Content -->
-                                        <div class="post-content">
-                                            <a href="#" class="headline">
-                                                <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
-                                            </a>
-                                            <!-- Post Meta -->
-                                            <div class="post-meta">
-                                                <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
               </div>
-            </div>
+              </div>
+              </div>
                 <!-- end category area -->
             <div class="world-latest-articles">
                 <div class="row">
@@ -1119,81 +638,35 @@ include'conexion.php';
                             <h5>Latest Articles</h5>
                         </div>
 
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.2s">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="assets/img/blog-img/b18.jpg" alt="">
-                            </div>
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="headline">
-                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                </a>
-                                <p>Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-                                <!-- Post Meta -->
-                                <div class="post-meta">
-                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                </div>
-                            </div>
+                        <?php
+                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                        FROM publicacion p, galeria g, negocios n
+                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                        LIMIT 4";
+                        $ejec3 = mysqli_query($conn, $post2);
+                        while($fila=mysqli_fetch_array($ejec3)){
+                        $n_nom           = $fila['NEG_NOMBRE'];
+                        $titulo        = $fila['PUB_TITULO'];
+                        $detalle       = $fila['PUB_DETALLE'];
+                        $img         = $fila['GAL_FOTO'];
+                        echo "
+                        <div class='single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.3s'>
+                        <div class='post-thumbnail'>
+                            <img src='$img'>
                         </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.3s">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="assets/img/blog-img/b19.jpg" alt="">
-                            </div>
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="headline">
-                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                </a>
-                                <p>Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-                                <!-- Post Meta -->
-                                <div class="post-meta">
-                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                </div>
-                            </div>
+                        <div class='post-content'>
+                            <a href='#' class='headline'>
+                            <h5>$titulo</h5>
+                        </a>
+                        <p>$detalle</p>
+                        <div class='post-meta'>
+                            <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
                         </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.4s">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="assets/img/blog-img/b20.jpg" alt="">
-                            </div>
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="headline">
-                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                </a>
-                                <p>Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-                                <!-- Post Meta -->
-                                <div class="post-meta">
-                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.5s">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="assets/img/blog-img/b21.jpg" alt="">
-                            </div>
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="headline">
-                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                </a>
-                                <p>Pick the yellow peach that looks like a sunset with its red, orange, and pink coat skin, peel it off with your teeth. Sink them into unripened...</p>
-                                <!-- Post Meta -->
-                                <div class="post-meta">
-                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                        ";
+                      } ?>
                     </div>
 
                     <div class="col-12 col-lg-4">
@@ -1302,110 +775,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Mad
         </div>
     </footer>
     <!-- ***** Footer Area End ***** -->
-    <script type="text/javascript">
 
-      function login(){
-
-
-      swal({
-      title: 'Iniciar Sesión',
-      html:
-      '<div class="col-lg-12">  <form class="login-form" action="method_login.php" method="post">'+
-          ' <div class="form-group">'+
-              '   <label class="control-label">Usuario</label>'+
-              '<input name="user" class="form-control" type="text" placeholder="Email" autofocus>'+
-              '</div>'+
-              '<div class="form-group">'+
-                  '<label class="control-label">Contraseña</label>'+
-                  '<input name="pass" class="form-control" type="password" placeholder="Password">'+
-                  '</div>'+
-                  '<div class="form-group">'+
-                      '<div class="utility">'+
-                          '<div class="animated-checkbox">'+
-                              '<label>'+
-                                  '<input type="checkbox"><span class="label-text">Mantener la sesión</span>'+
-                                  '</label>'+
-                                  ' </div>'+
-                                  ' <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Olvidó su contraseña ?</a></p>'+
-
-                                  ' </div>'+
-                                  ' </div>'+
-                                  ' <div class="form-group btn-container">'+
-                ' <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>Iniciar sesion</button></br>'+
-                ' <p class="semibold-text mb-4"><a href="#" data-toggle="flip">Registrarse</a></p>'+
-
-              ' </div>'+
-         ' </form>'+
-         '</div>',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: '</form> Actualizar solicitud',
-      cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
-      showConfirmButton: false,
-      focusConfirm: false,
-      buttonsStyling: false,
-      reverseButtons: true
-      })
-
-      };
-      </script>
-
-<script type="text/javascript">
-
-  function registro(){
-
-
-  swal({
-  title: 'Registrarse',
-  html:
-  '<div class="col-lg-12">  <form class="login-form" action="method_register.php" method="post">'+
-      ' <div class="form-group">'+
-          '   <label class="control-label">Usuario</label>'+
-          '<input name="user" class="form-control" type="text" required placeholder="Nombre de usuario" autofocus>'+
-          '</div>'+
-          '<div class="form-group">'+
-          '<label class="control-label">Correo</label>'+
-          '<input name="user" class="form-control" type="mail" required placeholder="Email" autofocus>'+
-          '</div>'+
-          '<div class="form-group">'+
-          '<label class="control-label">Celular</label>'+
-          '<input name="user" class="form-control" type="number" required placeholder="Celular" autofocus>'+
-          '</div>'+
-          '<div class="form-group">'+
-          '<label class="control-label">Localidad</label>'+
-          '<select class="form-control form-control-sm" textalign="center"  required name="sucu" id="sucu">'+
-          '<option value="Cabo San Lucas" >Cabo San Lucas</option>'+
-          '<option value="San Jose del Cabo" >San José del Cabo</option>'+
-          '<option value="Los Bariles" >Los Barriles</option>'+
-          '<option value="Todos Santos" >Todos Santos</option>'+
-          '</select>' +
-
-          '</div>'+
-          '<div class="form-group">'+
-          '<label class="control-label">Contraseña</label>'+
-          '<input name="pass" class="form-control" type="password" required placeholder="Password">'+
-          '</div>'+
-
-          ' <div class="form-group btn-container">'+
-          ' <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in fa-lg fa-fw"></i>Registrarse</button></br>'+
-
-          ' </div>'+
-     ' </form>'+
-     '</div>',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: '</form> Actualizar solicitud',
-  cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
-  showConfirmButton: false,
-  focusConfirm: false,
-  buttonsStyling: false,
-  reverseButtons: true
-  })
-
-  };
-  </script>
 
     <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
