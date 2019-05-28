@@ -4250,11 +4250,15 @@ section {
     color: #808080;
     padding: 12px 40px;
     white-space: nowrap;
+    overflow: hidden;
+     text-overflow: ellipsis;
 }
 
 .table-earning tbody td.text-right {
     padding-left: 15px;
     padding-right: 65px;
+    text-overflow:ellipsis;
+    overflow:hidden;
 }
 
 .table-earning tbody tr:hover td {
@@ -4277,6 +4281,8 @@ section {
     padding: 14px 5px;
     border-top: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    text-overflow:ellipsis;
+    overflow:hidden;
 }
 
 .table-top-countries tbody tr:last-child td {
@@ -4340,6 +4346,8 @@ section {
     border-bottom: 1px solid #f2f2f2;
     padding: 12px 6px;
     vertical-align: middle;
+    text-overflow:ellipsis;
+    overflow:hidden;
 }
 
 .table-data {
@@ -4361,6 +4369,8 @@ section {
     padding-bottom: 33px;
     padding-left: 40px;
     padding-right: 10px;
+    text-overflow:ellipsis;
+    overflow:hidden;
 }
 
 .table-data .table tr td:last-child {
@@ -4471,13 +4481,13 @@ section {
 
 @media (min-width: 1200px) {
     .table-responsive-data2 {
-        overflow: visible;
+        overflow: hidden;
     }
 }
 
 .table-data2 {
     border-collapse: collapse;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .table-data2.table thead th {
@@ -4507,6 +4517,7 @@ section {
     -moz-border-radius-bottomleft: 3px;
     border-bottom-left-radius: 3px;
     vertical-align: top;
+     text-overflow: ellipsis;
 }
 
 .table-data2.table tbody tr td:first-child .au-checkbox {
@@ -14863,6 +14874,8 @@ table.dataTable {
   table.dataTable.nowrap th,
   table.dataTable.nowrap td {
     white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
   }
 
   .tile div.dataTables_wrapper {

@@ -53,7 +53,7 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="negocios.php">
+                <a href="#">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
@@ -330,11 +330,12 @@
     <!-- PAGE CONTAINER-->
     <div class="page-content--bgf7"></br>
           <div class="container">
+                    <div class="container-fluid">
                     <div class="card">
 
                       <div class="card-header">
 
-                        <a class="btn btn-primary" href="publicacion_nueva.php">Nueva publicación</a>
+                        <a class="btn btn-primary" href="negocio_nuevo.php">Nuevo negocio</a>
 
                       </div>
                       <div class="card-body">
@@ -343,33 +344,41 @@
                                   <thead>
                                       <tr>
                                           <th>id</th>
-                                          <th>Titulo</th>
-                                          <th>Negocio</th>
-                                          <th class="text-right">Exposición</th>
-                                          <th class="text-right">Fecha</th>
+                                          <th>Nombre</th>
+                                          <th>Descripcion</th>
+                                          <th>Telefono</th>
+                                          <th class="text-right">Correo</th>
+                                          <th class="text-right">Responsable</th>
+                                          <th class="text-right">Estatus</th>
+                                          <th maxlenght="10" class="text-right">Nivel</th>
                                           <th class="text-right">Acción</th>
                                       </tr>
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "SELECT * FROM publicacion p, negocios n, exposicion e
-                                    WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO
-                                    AND e.ID_EXPOSICION = n.exposicion_ID_EXPOSICION;";
+                                    $public = "SELECT *, SUBSTRING(n.NEG_DESCRIPCION, 1, 10) FROM negocios n, exposicion e
+                                    WHERE e.ID_EXPOSICION = n.exposicion_ID_EXPOSICION";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_pub       = $fila['ID_PUBLICACION'];
-                                      $titu_pub            = $fila['PUB_TITULO'];
-                                      $nom_neg   = $fila['NEG_NOMBRE'];
+                                      $id_neg       = $fila['ID_NEGOCIO'];
+                                      $neg_nom            = $fila['NEG_NOMBRE'];
+                                      $neg_desc   = $fila['SUBSTRING(n.NEG_DESCRIPCION, 1, 10)'];
+                                      $neg_tel   = $fila['NEG_TEL'];
+                                      $neg_correo   = $fila['NEG_CORREO'];
+                                      $neg_resp   = $fila['NEG_RESPONSABLE'];
+                                      $neg_status   = $fila['NEG_ESTATUS'];
                                       $neg_exp   = $fila['EXP_NIVEL'];
-                                      $fecha_pub   = $fila['PUB_FECHA'];
                                      ?>
                                      <tr>
-                                         <td><?php echo $id_pub ?></td>
-                                         <td><?php echo $titu_pub ?></td>
-                                         <td><?php echo $nom_neg ?></td>
+                                         <td><?php echo $id_neg ?></td>
+                                         <td><?php echo $neg_nom ?></td>
+                                         <td><?php echo $neg_desc ?></td>
+                                         <td><?php echo $neg_tel ?></td>
+                                         <td><?php echo $neg_correo ?></td>
+                                         <td><?php echo $neg_resp ?></td>
+                                         <td><?php echo $neg_status ?></td>
                                          <td><?php echo $neg_exp ?></td>
-                                         <td class="text-right"><?php echo $fecha_pub ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
                                            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
@@ -384,7 +393,7 @@
               </div>
               </div>
               </div>
-
+              </div>
         </div>
 
     </div>

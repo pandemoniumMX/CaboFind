@@ -15,7 +15,7 @@
   <meta name="keywords" content="au theme template">
 
   <!-- Title Page-->
-  <title>Dashboard 3</title>
+  <title>Nuevo negocio</title>
 
   <!-- Fontfaces CSS-->
   <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -54,7 +54,7 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="#">
+                <a href="negocios">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
@@ -81,12 +81,12 @@
                   <span class="bot-line"></span>Caracteristicas</a>
               </li>
               <li class="has-sub">
-                <a href="#">
+                <a href="publicaciones.php">
                   <i class="fas fa-copy"></i>
                   <span class="bot-line"></span>Publicaciones</a>
                 <ul class="header3-sub-list list-unstyled">
                   <li>
-                    <a href="#">Agregar</a>
+                    <a href="publicacion_nueva.php">Agregar</a>
                   </li>
                   <li>
                     <a href="#">Editar</a>
@@ -337,66 +337,169 @@
                 <div class="card-header">
               <strong>Nueva</strong> Publicacion
             </div>
-          <div class="card-body card-block">
-          <form class="form-horizontal" action="upload.php" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-      <div class="input-group">
-    <div class="input-group-addon">Titulo</div>
-    <input type="text" id="titulo" required name="titulo" class="form-control">
-    <div class="input-group-addon">
-      <i class="fa fa-text-height"></i>
-    </div>
-  </div>
-</div>
-<div class="row form-group">
-  <div class="col col-md-3">
-      <label for="textarea-input" class=" form-control-label">Publicacion</label>
-  </div>
-  <div class="col-12 col-md-9">
-      <textarea name="detalle" required id="detalle" rows="9" placeholder="Información de la publicacion" class="form-control"></textarea>
-  </div>
-</div>
-<div class="row form-group">
-  <div class="col col-md-12">
-      <div class="input-group">
-          <input type="text" id='s_neg' name='s_neg' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
-          <div class="input-group-btn">
-            <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
-              <option>Seleccione</option>
-            <?php
-            $negocios = "SELECT * FROM negocios;";
-            $ejecutar = mysqli_query($conn, $negocios);
+            <div class="card-body">
+						<form action="registro_negocio_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+            <div class="row">
+            <div class="col-lg-6">
+                                <div class="card">
+        <div class="card-header">
+        <strong>Datos</strong>
+        <small> de la empresa</small>
+        </div>
+        <div class="card-body card-block">
+          <div class="row form-group">
+                      <div class="col col-md-12">
+                          <div class="input-group">
+                              <div class="input-group-addon">
+                                  <i class="fa fa-user"></i>
+                              </div>
+                              <input type="text" id="empresa" name="empresa" placeholder="Nombre negocio" class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                              <div class="col col-md-12">
+                                  <div class="input-group">
+                                      <div class="input-group-addon">
+                                          <i class="fa fa-envelope"></i>
+                                      </div>
+                                      <input type="text" id="correo" name="correo" placeholder="Correo" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <div class="input-group-addon">
+                                                  <i class="fa fa-phone"></i>
+                                              </div>
+                                              <input type="number" id="telefono" name="telefono" placeholder="telefono" class="form-control">
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="row form-group">
+                                              <div class="col col-md-12">
+                                                  <div class="input-group">
+                                                      <div class="input-group-addon">
+                                                          <i class="fa fa-home"></i>
+                                                      </div>
+                                                      <input type="text" id="direccion" name="direccion" placeholder="direccion" class="form-control">
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <div class="row form-group">
+                                                      <div class="col col-md-12">
+                                                          <div class="input-group">
+                                                              <div class="input-group-addon">
+                                                                  <i class="fa fa-user"></i>
+                                                              </div>
+                                                              <input type="text" id="responsable" name="responsable" placeholder="responsable" class="form-control">
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <div class="row form-group">
+                                                              <div class="col col-md-12">
+                                                                  <div class="input-group">
+                                                                      <div class="input-group-addon">
+                                                                          <i class="fa fa-pencil-square-o"></i>
+                                                                      </div>
+                                                                      <input type="text" id="descripcion" name="descripcion" placeholder="descripcion" class="form-control">
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="row form-group">
+                                                                      <div class="col col-md-12">
+                                                                          <div class="input-group">
+                                                                              <div class="input-group-addon">
+                                                                                  <i class="fa fa-tag"></i>
+                                                                              </div>
+                                                                              <input type="text" id="etiquetas" name="etiquetas" placeholder="etiquetas" class="form-control">
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+																	</div>
+																</div>
+                            </div>
 
-          while($fila=mysqli_fetch_array($ejecutar)){
-              $neg_nom          = $fila['NEG_NOMBRE'];
-              $id_neg            = $fila['ID_NEGOCIO'];
-              echo "<option value='$id_neg'>$neg_nom</option>";
-            }
-               ?>
-             </select>
-          </div>
-      </div>
-  </div>
-</div>
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Categorías</strong>
+                                        <small> y especificaciones</small>
+                                    </div>
+                                    <div class="card-body card-block">
+                                      <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <input type="text" placeholder="Selecciona categoria" disabled class="form-control">
+                                                <div class="input-group-btn">
+                                                  <select id='select_cat' name='categoria' class="dropdown-toggle btn btn-primary" type="button">
+                                                    <option>Seleccione</option>
+                                                  <?php
+                                                  $cons_cate = "SELECT * FROM categorias;";
+        																					$ejecutar = mysqli_query($conn, $cons_cate);
 
-<div class="row form-group">
-    <div class="col col-md-3">
-      <label for="file-input" class=" form-control-label">Imagen</label>
-  </div>
-  <div class="col-12 col-md-9">
-    <div class="image-upload">
-      <label for="file-input">
-        <img id="blah" src="images/giphy.gif" style="max-width: 30%;" />
-      </label>
+                                                while($fila=mysqli_fetch_array($ejecutar)){
+                                                    $categoria          = $fila['CAT_NOMBRE'];
+                                                    $id_cat             = $fila['ID_CATEGORIA'];
+                                                    echo "<option value='$id_cat'>$categoria</option>";
+                                                  }
+                                                     ?>
+                                                   </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row form-group">
+                                          <div class="col col-md-12">
+                                              <div class="input-group">
+                                                  <input type="text" placeholder="Selecciona subcategoria" disabled class="form-control">
+                                                  <div class="input-group-btn">
+                                                    <select id='select_subcat' name='subcategoria' class="dropdown-toggle btn btn-primary" type="button">
+                                                      <option>Seleccione</option>
+                                                     </select>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          </div>
 
-      <input id="file-input" name="img" required type="file" style="display:none" onchange="readURL(this);" />
-    </div>
+                                          <div class="row form-group">
+                                            <div class="col col-md-12">
+                                                <div class="input-group">
+                                                    <input type="text" placeholder="Selecciona exposicion" disabled class="form-control">
+                                                    <div class="input-group-btn">
+                                                      <select  name='exposicion' class="dropdown-toggle btn btn-primary" type="button">
+                                                        <option>Seleccione</option>
+                                                        <option value="3">Alta</option>
+                                                        <option value="2">Media</option>
+                                                        <option value="1">Baja</option>
+                                                       </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                            <div class="row form-group">Fecha limite de exposición
+                                                        <div class="col col-md-12">
+                                                            <div class="input-group">
+                                                                <div class="input-group-addon">
+                                                                    <i class="fa fa-calendar"></i>
+                                                                </div>
+                                                                <input type="date" name="expf" placeholder="Fecha limite de exposicion" class="form-control">
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="row form-group">
+                                                                      <div class="col col-md-12">
+                                                                          <div class="input-group">
+                                                                              <div class="input-group-addon">
+                                                                                  <i class="fa fa-calendar"></i>
+                                                                              </div>
+                                                                              <input type="text" name="expf" placeholder="URL localizacion" class="form-control">
+                                                                            </div>
+                                                                          </div>
+                                                                        </div>
+															</div>
 
-  </div>
-</div>
-
-
-</div>
 <div class="card-footer">
 <button type="submit" class="btn btn-success btn-sm">
 <i class="fa fa-dot-circle-o"></i> Submit
@@ -451,6 +554,37 @@
   <!-- Main JS-->
   <script src="js/main.js"></script>
 
+  <!-- Select cambia solo :o-->
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $("#select_cat").change(function(){
+        var deptid = $(this).val();
+
+        $.ajax({
+            url: 'registro_fn_get_subcat.php',
+            type: 'post',
+            data: {depart:deptid},
+            dataType: 'json',
+            success:function(response){
+
+                var len = response.length;
+
+                $("#select_subcat").empty();
+                for( var i = 0; i<len; i++){
+                    var id = response[i]['id'];
+                    var name = response[i]['name'];
+
+                    $("#select_subcat").append("<option value='"+id+"'>"+name+"</option>");
+
+                }
+            }
+        });
+    });
+
+  });
+  </script>
 
   <!-- file input image preview-->
   <script>

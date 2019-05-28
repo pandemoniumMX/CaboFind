@@ -6,12 +6,10 @@ $dir = $_POST ['direccion'];
 $des = $_POST ['descripcion'];
 $eti = $_POST ['etiquetas'];
 $cor = $_POST ['correo'];
-$tel = $_POST ['tel'];
+$tel = $_POST ['telefono'];
 $cat = $_POST ['categoria'];
 $sub = $_POST ['subcategoria'];
 $resp = $_POST ['responsable'];
-
-$alc = $_POST ['alcance'];
 $ran = $_POST ['rango'];
 $expf = $_POST ['expf'];
 
@@ -35,12 +33,9 @@ if (!$res) {
     printf("Errormessage: %s\n", $conn->error);
  }
  else{
-   echo "<script>window.open('registro_negocio_galeria.php?id=", base64_encode($id), "','_self')</script>";
+   echo "<script>window.location('negocios.php')</script>";
 
  }
-
-//echo "<script>window.open('modificar_empresa_car.php?id=", base64_encode($id), "','_self')</script>";
-
 
 
 ?>
