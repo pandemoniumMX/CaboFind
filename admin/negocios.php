@@ -334,9 +334,9 @@
                     <div class="card">
 
                       <div class="card-header">
-
-                        <a class="btn btn-primary" href="negocio_nuevo.php">Nuevo negocio</a>
-
+                        <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
+                        Agregar negocio
+                        </button>
                       </div>
                       <div class="card-body">
                           <div class="table-responsive table--no-card m-b-30">
@@ -350,14 +350,12 @@
                                           <th class="text-right">Correo</th>
                                           <th class="text-right">Responsable</th>
                                           <th class="text-right">Estatus</th>
-                                          <th maxlenght="10" class="text-right">Nivel</th>
                                           <th class="text-right">Acción</th>
                                       </tr>
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "SELECT *, SUBSTRING(n.NEG_DESCRIPCION, 1, 10) FROM negocios n, exposicion e
-                                    WHERE e.ID_EXPOSICION = n.exposicion_ID_EXPOSICION";
+                                    $public = "SELECT *, SUBSTRING(n.NEG_DESCRIPCION, 1, 10) FROM negocios n                                    ";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
@@ -368,7 +366,7 @@
                                       $neg_correo   = $fila['NEG_CORREO'];
                                       $neg_resp   = $fila['NEG_RESPONSABLE'];
                                       $neg_status   = $fila['NEG_ESTATUS'];
-                                      $neg_exp   = $fila['EXP_NIVEL'];
+
                                      ?>
                                      <tr>
                                          <td><?php echo $id_neg ?></td>
@@ -378,12 +376,14 @@
                                          <td><?php echo $neg_correo ?></td>
                                          <td><?php echo $neg_resp ?></td>
                                          <td><?php echo $neg_status ?></td>
-                                         <td><?php echo $neg_exp ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
                                            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                                              <i class="zmdi zmdi-edit"></i>
                                         </button>
+                                        <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                          <i class="zmdi zmdi-delete"></i>
+                                     </button>
                                       </div>
                                        </td>
                                        </tr>
@@ -397,6 +397,173 @@
         </div>
 
     </div>
+
+
+
+    <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    				<div class="modal-dialog modal-lg" role="document">
+    					<div class="modal-content">
+    						<div class="modal-header">
+    							<h5 class="modal-title" id="largeModalLabel">Nuevo negocio</h5>
+    							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    								<span aria-hidden="true">×</span>
+    							</button>
+    						</div>
+    						<div class="modal-body">
+                  <!-- contenido del modal -->
+
+          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card">
+                <div class="card-header">
+                <strong>Datos</strong>
+                <small> de la empresa</small>
+                </div>
+          <div class="card-body card-block">
+            <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <input type="text" id="empresa" name="empresa" required onkeypress="return validar(event)" placeholder="Nombre negocio" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                                <div class="col col-md-12">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <input type="email" id="correo" name="correo" required placeholder="Correo" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <input type="number" id="telefono" name="telefono" required placeholder="telefono" class="form-control">
+                                            </div>
+                                        </div>
+          </div>
+          <div class="row form-group">
+                      <div class="col col-md-12">
+                          <div class="input-group">
+                              <div class="input-group-addon">
+                                  <i class="fa fa-home"></i>
+                              </div>
+                              <input type="text" id="direccion" name="direccion" required onkeypress="return validar(event)" placeholder="direccion" class="form-control">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                              <div class="col col-md-12">
+                                  <div class="input-group">
+                                      <div class="input-group-addon">
+                                          <i class="fa fa-user"></i>
+                                      </div>
+                                      <input type="text" id="responsable" required onkeypress="return validar(event)" name="responsable" placeholder="responsable" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <div class="input-group-addon">
+                                                  <i class="fa fa-pencil-square-o"></i>
+                                              </div>
+                                              <input type="text" required id="descripcion" name="descripcion" placeholder="descripcion" class="form-control">
+                                          </div>
+                                      </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                              </div>
+
+                                <div class="col-lg-6">
+                                <div class="card">
+                                  <div class="card-header">
+                                      <strong>Categorías</strong>
+                                      <small> y especificaciones</small>
+                                  </div>
+                                  <div class="card-body card-block">
+                                    <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <input type="text" placeholder="Selecciona categoria" disabled class="form-control">
+                                              <div class="input-group-btn">
+                                                <select id='select_cat' name='categoria' class="dropdown-toggle btn btn-primary" type="button">
+                                                  <option>Seleccione</option>
+                                                <?php
+                                                $cons_cate = "SELECT * FROM categorias;";
+                                                $ejecutar = mysqli_query($conn, $cons_cate);
+
+                                              while($fila=mysqli_fetch_array($ejecutar)){
+                                                  $categoria          = $fila['CAT_NOMBRE'];
+                                                  $id_cat             = $fila['ID_CATEGORIA'];
+                                                  echo "<option value='$id_cat'>$categoria</option>";
+                                                }
+                                     ?>
+                                     </select>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              <div class="row form-group">
+                            <div class="col col-md-12">
+                            <div class="input-group">
+                            <input type="text" placeholder="Selecciona subcategoria" disabled class="form-control">
+                            <div class="input-group-btn">
+                            <select id='select_subcat' name='subcategoria' class="dropdown-toggle btn btn-primary" type="button">
+                            <option>Seleccione</option>
+                             </select>
+                                </div>
+                              </div>
+                              </div>
+                                  </div>
+                                  <div class="row form-group">
+                              <div class="col col-md-12">
+                        <div class="input-group">
+                       <div class="input-group-addon">
+                      <i class="fa fa-location-arrow"></i>
+                        </div>
+                          <input type="text" id="map" name="map" required placeholder="URL localizacion" onkeypress="return validar(event)" class="form-control">
+                            </div>
+                              </div>
+                            </div>
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <input type="text" id="etiquetas" required name="etiquetas" placeholder="etiquetas" class="form-control">
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                                </div>
+                                                  </div>
+                                                  </div>
+                                                    </div>
+                                                  </form>
+
+                                                    </div>
+    						<div class="modal-footer">
+    							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+
+
 
 
 
@@ -434,11 +601,135 @@
   <script src="vendor/circle-progress/circle-progress.min.js"></script>
   <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-  <script src="vendor/select2/select2.min.js">
-  </script>
+  <script src="vendor/select2/select2.min.js"></script>
+  <!-- sweetalert-->
+
+<script src="js/sweetalert2.all.min.js"></script>
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
+
+  <!-- onkeypress="return validar(event)"-->
+  <script>
+  function validar(e) {
+  tecla = (document.all) ? e.keyCode : e.which;
+  if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+  // dejar la línea de patron que se necesite y borrar el resto
+  patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
+  //patron = /\d/; // Solo acepta números
+  //patron = /[\w\s]/; // Acepta números y letras
+  //patron = /\D/; // No acepta números
+  //
+
+  te = String.fromCharCode(tecla);
+  return patron.test(te);
+  }
+  </script>
+  <!-- onkeypress="return validar(event)"-->
+  <script>
+  function validar2(e) {
+  tecla = (document.all) ? e.keyCode : e.which;
+  if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
+  // dejar la línea de patron que se necesite y borrar el resto
+  //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
+  //patron = /\d/; // Solo acepta números
+  //patron = /\w/; // Acepta números y letras
+  patron = /[\w\s]/;// Acepta números y letras y espacio
+  //patron = /\D/; // No acepta números
+  //
+
+  te = String.fromCharCode(tecla);
+  return patron.test(te);
+  }
+  </script>
+
+<!-- ajax submit modal-->
+<script>
+function submitContactForm(){
+                $.ajax({
+                 url: 'negocio_nuevo_fn.php',
+                 type: 'POST',
+                 data: $("#registerSubmit").serialize(),
+                 dataType: 'json'
+               })
+               .done(function(response){
+                 swal('Agregado exitosamente!', response.message, response.status).then(function(){
+                     location.reload();
+                 });
+               })
+               .fail(function(response){
+                 swal('Oops...', 'Something went wrong with ajax !',response.message);
+               });
+               };
+</script>
+
+<!-- select ajax subcategoria-->
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $("#select_cat").change(function(){
+        var deptid = $(this).val();
+
+        $.ajax({
+            url: 'registro_fn_get_subcat.php',
+            type: 'post',
+            data: {depart:deptid},
+            dataType: 'json',
+            success:function(response){
+
+                var len = response.length;
+
+                $("#select_subcat").empty();
+                for( var i = 0; i<len; i++){
+                    var id = response[i]['id'];
+                    var name = response[i]['name'];
+
+                    $("#select_subcat").append("<option value='"+id+"'>"+name+"</option>");
+
+                }
+            }
+        });
+    });
+
+  });
+  </script>
+
+<!-- funcion ajax borrar en tabla-->
+  <script>
+  function borrar_emp(id){
+  swal({
+     title: 'Estás seguro?',
+     text: "Esta acción no se puede revertir!",
+     type: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: '¡Si!, borralo',
+     showLoaderOnConfirm: true,
+     preConfirm: function() {
+       return new Promise(function(resolve) {
+         $.ajax({
+          url: 'negocio_delete_fn.php',
+          type: 'POST',
+          data: 'delete='+id,
+          dataType: 'json'
+       })
+       .done(function(response){
+          swal('Borrado exitosamente!', response.message, response.status).then(function(){
+              location.reload();
+          });
+       })
+       .fail(function(){
+          swal('Oops...', 'Something went wrong with ajax !', 'error');
+       });
+       });
+     },
+     allowOutsideClick: false
+  });
+  }
+  </script>
+
 
 
 

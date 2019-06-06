@@ -152,22 +152,27 @@ include'conexion.php';
                             <!-- Single Slide -->
 
                               <?php
-                              $slide = "SELECT  @row := @row + 1 as row, PUB_TITULO, PUB_DETALLE
-                              FROM publicacion a, (SELECT @row := 0) r
-                              WHERE exposicion_ID_EXPOSICION = 4 LIMIT 4";
+                              $slide = "SELECT  @row := @row + 1 as row, PUB_TITULO, PUB_DETALLE, GAL_FOTO
+                              FROM publicacion a, galeria g, negocios n, (SELECT @row := 0) r
+                              where n.ID_NEGOCIO = g.ID_NEGOCIO
+                              AND a.galeria_ID_GALERIA = g.ID_GALERIA
+                               LIMIT 4";
                               $ejec = mysqli_query($conn, $slide);
                               while($fila=mysqli_fetch_array($ejec)){
                               $row           = $fila['row'];
                               $titulo        = $fila['PUB_TITULO'];
+                              $img           = $fila['GAL_FOTO'];
 
                               echo "
                               <div class='single-slide d-flex align-items-center'>
+                              <div class='post-thumbnail'>
+                              <img src='$img' style='width: 800px; height: 400px;'>
                               <div class='post-number'>
                               <p>$row</p>
                               </div>
-
                               <div class='post-title'>
                               <a href='#'>$titulo</a>
+                              </div>
                               </div>
                               </div>";
                               }
@@ -225,9 +230,9 @@ include'conexion.php';
                                       <?php
                                       $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
-                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 4;";
+                                       LIMIT 4;";
                                       $ejec2 = mysqli_query($conn, $post);
                                       while($fila=mysqli_fetch_array($ejec2)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
@@ -264,7 +269,7 @@ include'conexion.php';
                                       <?php
                                       $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
-                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                                       LIMIT 4";
                                       $ejec3 = mysqli_query($conn, $post2);
@@ -308,9 +313,9 @@ include'conexion.php';
                                         <?php
                                         $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                         FROM publicacion p, galeria g, negocios n
-                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        WHERE g.GAL_TIPO = 'Publicacion'
                                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                        AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                      LIMIT 1;";
                                         $ejec2 = mysqli_query($conn, $post);
                                         while($fila=mysqli_fetch_array($ejec2)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
@@ -347,7 +352,7 @@ include'conexion.php';
                                         <?php
                                         $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                         FROM publicacion p, galeria g, negocios n
-                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        WHERE g.GAL_TIPO = 'Publicacion'
                                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                                         LIMIT 4";
                                         $ejec3 = mysqli_query($conn, $post2);
@@ -390,9 +395,9 @@ include'conexion.php';
                                       <?php
                                       $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
-                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                     LIMIT 1;";
                                       $ejec2 = mysqli_query($conn, $post);
                                       while($fila=mysqli_fetch_array($ejec2)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
@@ -429,7 +434,7 @@ include'conexion.php';
                                         <?php
                                         $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                         FROM publicacion p, galeria g, negocios n
-                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        WHERE g.GAL_TIPO = 'Publicacion'
                                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                                         LIMIT 4";
                                         $ejec3 = mysqli_query($conn, $post2);
@@ -472,9 +477,9 @@ include'conexion.php';
                                       <?php
                                       $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
-                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                       LIMIT 1;";
                                       $ejec2 = mysqli_query($conn, $post);
                                       while($fila=mysqli_fetch_array($ejec2)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
@@ -511,7 +516,7 @@ include'conexion.php';
                                         <?php
                                         $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                         FROM publicacion p, galeria g, negocios n
-                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        WHERE g.GAL_TIPO = 'Publicacion'
                                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                                         LIMIT 4";
                                         $ejec3 = mysqli_query($conn, $post2);
@@ -553,9 +558,9 @@ include'conexion.php';
                                       <?php
                                       $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
-                                      WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                      WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                      AND p.exposicion_ID_EXPOSICION = 5 LIMIT 1;";
+                                       LIMIT 1;";
                                       $ejec2 = mysqli_query($conn, $post);
                                       while($fila=mysqli_fetch_array($ejec2)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
@@ -592,7 +597,7 @@ include'conexion.php';
                                         <?php
                                         $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                         FROM publicacion p, galeria g, negocios n
-                                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                                        WHERE g.GAL_TIPO = 'Publicacion'
                                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                                         LIMIT 4";
                                         $ejec3 = mysqli_query($conn, $post2);
@@ -641,7 +646,7 @@ include'conexion.php';
                         <?php
                         $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                         FROM publicacion p, galeria g, negocios n
-                        WHERE p.ID_PUBLICACION = g.publicacion_ID_PUBLICACION
+                        WHERE g.GAL_TIPO = 'Publicacion'
                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                         LIMIT 4";
                         $ejec3 = mysqli_query($conn, $post2);

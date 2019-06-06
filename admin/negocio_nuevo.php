@@ -4,7 +4,7 @@
 
     $publicacion ="SELECT * FROM PUBLICACION";
 ?>
-<html lang="en">
+<html>
 
 <head>
   <!-- Required meta tags-->
@@ -338,7 +338,7 @@
               <strong>Nueva</strong> Publicacion
             </div>
             <div class="card-body">
-						<form action="registro_negocio_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+						<form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
             <div class="row">
             <div class="col-lg-6">
                                 <div class="card">
@@ -420,7 +420,6 @@
 																	</div>
 																</div>
                             </div>
-
                             <div class="col-lg-6">
                                 <div class="card">
                                     <div class="card-header">
@@ -437,7 +436,7 @@
                                                     <option>Seleccione</option>
                                                   <?php
                                                   $cons_cate = "SELECT * FROM categorias;";
-        																					$ejecutar = mysqli_query($conn, $cons_cate);
+                                                  $ejecutar = mysqli_query($conn, $cons_cate);
 
                                                 while($fila=mysqli_fetch_array($ejecutar)){
                                                     $categoria          = $fila['CAT_NOMBRE'];
@@ -462,49 +461,25 @@
                                               </div>
                                           </div>
                                           </div>
-
                                           <div class="row form-group">
-                                            <div class="col col-md-12">
-                                                <div class="input-group">
-                                                    <input type="text" placeholder="Selecciona exposicion" disabled class="form-control">
-                                                    <div class="input-group-btn">
-                                                      <select  name='exposicion' class="dropdown-toggle btn btn-primary" type="button">
-                                                        <option>Seleccione</option>
-                                                        <option value="3">Alta</option>
-                                                        <option value="2">Media</option>
-                                                        <option value="1">Baja</option>
-                                                       </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div class="row form-group">Fecha limite de exposición
-                                                        <div class="col col-md-12">
-                                                            <div class="input-group">
-                                                                <div class="input-group-addon">
-                                                                    <i class="fa fa-calendar"></i>
-                                                                </div>
-                                                                <input type="date" name="expf" placeholder="Fecha limite de exposicion" class="form-control">
+                                                      <div class="col col-md-12">
+                                                          <div class="input-group">
+                                                              <div class="input-group-addon">
+                                                                  <i class="fa fa-location-arrow"></i>
                                                               </div>
+                                                              <input type="text" id="map" name="map" placeholder="URL localizacion" class="form-control">
                                                             </div>
                                                           </div>
-                                                          <div class="row form-group">
-                                                                      <div class="col col-md-12">
-                                                                          <div class="input-group">
-                                                                              <div class="input-group-addon">
-                                                                                  <i class="fa fa-calendar"></i>
-                                                                              </div>
-                                                                              <input type="text" name="expf" placeholder="URL localizacion" class="form-control">
-                                                                            </div>
-                                                                          </div>
-                                                                        </div>
+                                                        </div>
+                                                      
+                                                        </form>
 															</div>
 
 <div class="card-footer">
-<button type="submit" class="btn btn-success btn-sm">
+<button type="button" onclick="confirmAdd()" class="btn btn-success btn-sm">
 <i class="fa fa-dot-circle-o"></i> Submit
 </button>
-</form>
+
 <button type="reset" class="btn btn-danger btn-sm">
 <i class="fa fa-ban"></i> Reset
 </button>
@@ -548,11 +523,16 @@
   <script src="vendor/circle-progress/circle-progress.min.js"></script>
   <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-  <script src="vendor/select2/select2.min.js">
-  </script>
+  <script src="vendor/select2/select2.min.js"></script>
+
+    <!-- sweetalert-->
+
+  <script src="js/sweetalert2.all.min.js"></script>
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
+
+
 
   <!-- Select cambia solo :o-->
   <script type="text/javascript">
@@ -600,6 +580,41 @@
            reader.readAsDataURL(input.files[0]);
        }
    }
+  </script>
+  <!-- swal confirmacion-->
+  <script>
+  function confirmAdd(){
+  swal({
+
+     title: 'Estás seguro?',
+     text: "Se guardarán los datos en la BD",
+     type: 'question',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: '¡Afirma!',
+     showLoaderOnConfirm: true,
+     preConfirm: function() {
+       return new Promise(function(resolve) {
+         $.ajax({
+          url: 'negocio_nuevo_fn.php',
+          type: 'POST',
+          data: $("#registerSubmit").serialize(),
+          dataType: 'json'
+       })
+       .done(function(response){
+          swal('Agregado exitosamente!', response.message, response.status).then(function(){
+              location.reload();
+          });
+       })
+       .fail(function(){
+          swal('Oops...', 'Something went wrong with ajax !');
+       });
+       });
+     },
+     allowOutsideClick: false
+  });
+  }
   </script>
 </body>
 
