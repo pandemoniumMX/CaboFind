@@ -355,13 +355,13 @@
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "SELECT *, SUBSTRING(n.NEG_DESCRIPCION, 1, 10) FROM negocios n                                    ";
+                                    $public = "SELECT * FROM GALERIA";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_neg       = $fila['ID_NEGOCIO'];
+                                      $id_gal       = $fila['ID_GALERIA'];
                                       $neg_nom            = $fila['NEG_NOMBRE'];
-                                      $neg_desc   = $fila['SUBSTRING(n.NEG_DESCRIPCION, 1, 10)'];
+
                                       $neg_tel   = $fila['NEG_TEL'];
                                       $neg_correo   = $fila['NEG_CORREO'];
                                       $neg_resp   = $fila['NEG_RESPONSABLE'];
@@ -384,10 +384,6 @@
                                         <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                                           <i class="zmdi zmdi-delete"></i>
                                      </button>
-                                     <button class="item" title="Galery" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#myModal" data-original-title="Edit">
-                                       <i class="zmdi zmdi-image"></i>
-                                  </button>
-
                                       </div>
                                        </td>
                                        </tr>
@@ -568,44 +564,6 @@
     			</div>
 <!-- modal end -->
 
-<!-- START MODAL GALERIA-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-
-                </button>
-                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-
-            </div>
-            <div class="modal-body">
-                <div role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
-
-                        </li>
-                        <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
-
-                        </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
-                        <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary save">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- END MODAL GALERIA-->
 
 
 
