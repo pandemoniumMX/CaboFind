@@ -378,15 +378,16 @@
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
+                                             <button class="item" title="Galery" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#ModalGaleria" data-original-title="Edit">
+                                               <i class="zmdi zmdi-image"></i>
+                                          </button>
                                            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                                              <i class="zmdi zmdi-edit"></i>
                                         </button>
                                         <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                                           <i class="zmdi zmdi-delete"></i>
                                      </button>
-                                     <button class="item" title="Galery" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#myModal" data-original-title="Edit">
-                                       <i class="zmdi zmdi-image"></i>
-                                  </button>
+
 
                                       </div>
                                        </td>
@@ -569,42 +570,56 @@
 <!-- modal end -->
 
 <!-- START MODAL GALERIA-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+<div class="modal fade" id="ModalGaleria" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" style="display: none;" aria-hidden="true">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="largeModalLabel"></h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">
+              <div class="default-tab">
+											<nav>
+												<div class="nav nav-tabs" id="nav-tab" role="tablist">
+													<a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-home" aria-selected="true">Todas</a>
+													<a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-profile" aria-selected="false">Galeria</a>
+													<a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-contact" aria-selected="false">Publicaciones</a>
+                          <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-contact" aria-selected="false">Portada</a>
+												</div>
+											</nav>
+											<div class="tab-content pl-3 pt-2" id="nav-tabContent">
+												<div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-home-tab">
+                          <input class="form-group" type="hidden" id="idnegocio"></input>
 
-                </button>
-                 <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                          <div class="row form-group">
+                            <div class="col-lg-12" id="formgalery">
 
-            </div>
-            <div class="modal-body">
-                <div role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#uploadTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Upload</a>
+                            </div>
+                          </div>
 
-                        </li>
-                        <li role="presentation"><a href="#browseTab" aria-controls="browseTab" role="tab" data-toggle="tab">Browse</a>
+												</div>
+												<div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-                        </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="uploadTab">upload Tab</div>
-                        <div role="tabpanel" class="tab-pane" id="browseTab">browseTab</div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary save">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+												</div>
+												<div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-contact-tab">
 
+												</div>
+                        <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+												</div>
+											</div>
+
+										</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary">Confirm</button>
+						</div>
+					</div>
+				</div>
+			</div>
 <!-- END MODAL GALERIA-->
 
 
@@ -650,6 +665,44 @@
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
+
+  <script>
+  $(document).ready(function(){
+  $('#ModalGaleria').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('id negocio: ' + recipient)
+  $('#idnegocio').val(recipient);
+var ids = recipient;
+  $.ajax({
+      url: 'negocios_galeria_fn.php',
+      type: 'POST',
+      data: "id="+ids,
+      dataType: 'JSON',
+      success: function(response){
+        document.getElementById("formgalery").innerHTML = "";
+          var len = response.length;
+          for(var i=0; i<len; i++){
+              var id = response[i].id;
+              var foto = response[i].foto;
+
+
+              var tr_str = "<div class='col-md-3'>" +
+                  "<img class='img-responsive' alt='" + (i+1) + "' " +
+                  "src='../" + foto + "'</img> " +
+                  "</div>";
+
+              $("#formgalery").append(tr_str);
+          }
+
+      }
+  });
+})
+});
+  </script>
 
   <!-- onkeypress="return validar(event)"-->
   <script>
