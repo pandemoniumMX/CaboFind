@@ -14,7 +14,7 @@
   <meta name="keywords" content="au theme template">
 
   <!-- Title Page-->
-  <title>Publicaciones</title>
+  <title>Negocios</title>
 
   <!-- Fontfaces CSS-->
   <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -378,7 +378,7 @@
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
-                                             <button class="item" title="Galery" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#ModalGaleria" data-original-title="Edit">
+                                             <button class="item" title="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Edit">
                                                <i class="zmdi zmdi-image"></i>
                                           </button>
                                            <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">

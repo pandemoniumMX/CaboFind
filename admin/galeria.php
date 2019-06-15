@@ -2,7 +2,9 @@
 
     include'conexion.php';
 
+$id = $_GET['id'];
 ?>
+
 <html lang="en">
 
 <head>
@@ -14,14 +16,15 @@
   <meta name="keywords" content="au theme template">
 
   <!-- Title Page-->
-  <title>Publicaciones</title>
+  <title>Galeria</title>
 
   <!-- Fontfaces CSS-->
   <link href="css/font-face.css" rel="stylesheet" media="all">
   <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
   <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
   <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
+  <!-- Galery CSS-->
+<link href="css/galery.css" rel="stylesheet" media="all">
   <!-- Bootstrap CSS-->
   <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
@@ -53,19 +56,19 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="#">
+                <a href="negocios.php">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
                 <ul class="header3-sub-list list-unstyled">
                   <li>
-                    <a href="index.html">Agregar</a>
+                    <a href="negocio_nuevo.html">Agregar</a>
                   </li>
                   <li>
-                    <a href="index2.html">Editar</a>
+                    <a href="#.html">Editar</a>
                   </li>
                   <li>
-                    <a href="index3.html">Borrar</a>
+                    <a href="#.html">Borrar</a>
                   </li>
                 </ul>
               </li>
@@ -335,61 +338,79 @@
 
                       <div class="card-header">
                         <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
-                        Agregar negocio
+                        Agregar imagen
                         </button>
                       </div>
                       <div class="card-body">
-                          <div class="table-responsive table--no-card m-b-30">
-                              <table class="table table-borderless table-striped table-earning">
-                                  <thead>
-                                      <tr>
-                                          <th>id</th>
-                                          <th>Nombre</th>
-                                          <th>Descripcion</th>
-                                          <th>Telefono</th>
-                                          <th class="text-right">Correo</th>
-                                          <th class="text-right">Responsable</th>
-                                          <th class="text-right">Estatus</th>
-                                          <th class="text-right">Acción</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                    $public = "SELECT * FROM GALERIA";
-                                    $ejecutar = mysqli_query($conn, $public);
 
-                                  while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_gal       = $fila['ID_GALERIA'];
-                                      $neg_nom            = $fila['NEG_NOMBRE'];
+                        <!-- Grid row -->
+<div class="row">
 
-                                      $neg_tel   = $fila['NEG_TEL'];
-                                      $neg_correo   = $fila['NEG_CORREO'];
-                                      $neg_resp   = $fila['NEG_RESPONSABLE'];
-                                      $neg_status   = $fila['NEG_ESTATUS'];
+  <!-- Grid column -->
+  <div class="col-md-12 d-flex justify-content-center mb-5">
 
-                                     ?>
-                                     <tr>
-                                         <td><?php echo $id_neg ?></td>
-                                         <td><?php echo $neg_nom ?></td>
-                                         <td><?php echo $neg_desc ?></td>
-                                         <td><?php echo $neg_tel ?></td>
-                                         <td><?php echo $neg_correo ?></td>
-                                         <td><?php echo $neg_resp ?></td>
-                                         <td><?php echo $neg_status ?></td>
-                                         <td class="text-right">
-                                           <div class="table-data-feature">
-                                           <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
-                                             <i class="zmdi zmdi-edit"></i>
-                                        </button>
-                                        <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                                          <i class="zmdi zmdi-delete"></i>
-                                     </button>
-                                      </div>
-                                       </td>
-                                       </tr>
-                                     <?php } ?>
-                                  </tbody>
-                              </table>
+    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Publicacion</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Portada</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="3">Galeria</button>
+
+  </div>
+  <!-- Grid column -->
+
+</div>
+<!-- Grid row -->
+
+<!-- Grid row -->
+<div class="gallery" id="gallery">
+
+
+  <!-- Grid column -->
+  <div class="mb-3 pics animation all 1">
+    <?php
+    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Publicacion'";
+    $ejecutar = mysqli_query($conn, $all);
+
+  while($fila=mysqli_fetch_array($ejecutar)){
+      $img_all          = $fila['GAL_FOTO'];
+      echo "<img class='img-fluid' src='../$img_all' alt='Card image cap'>";
+    }
+     ?>
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="mb-3 pics animation all 2">
+    <?php
+    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Portada'";
+    $ejecutar = mysqli_query($conn, $all);
+
+  while($fila=mysqli_fetch_array($ejecutar)){
+      $img_all          = $fila['GAL_FOTO'];
+      echo "<img class='img-fluid' src='../$img_all' alt='Card image cap'>";
+    }
+     ?>
+  </div>
+  <!-- Grid column -->
+
+  <!-- Grid column -->
+  <div class="mb-3 pics animation all 3">
+    <?php
+    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Galeria'";
+    $ejecutar = mysqli_query($conn, $all);
+
+  while($fila=mysqli_fetch_array($ejecutar)){
+      $img_all          = $fila['GAL_FOTO'];
+      echo "<img class='img-fluid' src='../$img_all' alt='Card image cap'>";
+    }
+     ?>
+  </div>
+  <!-- Grid column -->
+
+
+</div>
+<!-- Grid row -->
+
+
               </div>
               </div>
               </div>
@@ -412,152 +433,44 @@
     						<div class="modal-body">
                   <!-- contenido del modal -->
 
-          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
+          <form id="registerSubmit" action="galeria_nuevo_fn.php" method="post" enctype="multipart/form-data" content="text/html; charset=utf-8" >
             <div class="row">
               <div class="col-lg-6">
-                <div class="card">
-                <div class="card-header">
-                <strong>Datos</strong>
-                <small> de la empresa</small>
-                </div>
-          <div class="card-body card-block">
             <div class="row form-group">
                         <div class="col col-md-12">
                             <div class="input-group">
                                 <div class="input-group-addon">
-                                    <i class="fa fa-user"></i>
+                                    <input type="hidden" name="id" value="<?php echo $id ?>" class="form-control">
+                                    <input type="text" placeholder="Seleccione tipo de imagen" disabled class="form-control">
                                 </div>
-                                <input type="text" id="empresa" name="empresa" required onkeypress="return validar(event)" placeholder="Nombre negocio" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                                <div class="col col-md-12">
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-envelope"></i>
-                                        </div>
-                                        <input type="email" id="correo" name="correo" required placeholder="Correo" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row form-group">
-                                        <div class="col col-md-12">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-phone"></i>
-                                                </div>
-                                                <input type="number" id="telefono" name="telefono" required placeholder="telefono" class="form-control">
-                                            </div>
-                                        </div>
-          </div>
-          <div class="row form-group">
-                      <div class="col col-md-12">
-                          <div class="input-group">
-                              <div class="input-group-addon">
-                                  <i class="fa fa-home"></i>
+                                <select name='tipo' class="dropdown-toggle btn btn-primary" type="button">
+                                <option value="NULL">Seleccione</option>
+                                <option value="Galeria">Galeria</option>
+                                <option value="Portada">Portada</option>
+                                 </select>
                               </div>
-                              <input type="text" id="direccion" name="direccion" required onkeypress="return validar(event)" placeholder="direccion" class="form-control">
+                            </div>
                           </div>
-                      </div>
-                  </div>
-                  <div class="row form-group">
-                              <div class="col col-md-12">
-                                  <div class="input-group">
-                                      <div class="input-group-addon">
-                                          <i class="fa fa-user"></i>
-                                      </div>
-                                      <input type="text" id="responsable" required onkeypress="return validar(event)" name="responsable" placeholder="responsable" class="form-control">
-                                  </div>
-                              </div>
-                          </div>
+
                           <div class="row form-group">
                                       <div class="col col-md-12">
-                                          <div class="input-group">
-                                              <div class="input-group-addon">
-                                                  <i class="fa fa-pencil-square-o"></i>
-                                              </div>
-                                              <input type="text" required id="descripcion" name="descripcion" placeholder="descripcion" class="form-control">
+                                        <div class="image-upload">
+                                          <label for="file-input">
+                                            <img id="blah" src="images/giphy.gif" style="max-width: 30%;" />
+                                          </label>
+                                          <input id="file-input" name="file" required type="file" style="display:none" onchange="readURL(this);" />
+                                        </div>
                                           </div>
-                                      </div>
-                                  </div>
+                                        </div>
 
-                                </div>
-                              </div>
-                              </div>
 
-                                <div class="col-lg-6">
-                                <div class="card">
-                                  <div class="card-header">
-                                      <strong>Categorías</strong>
-                                      <small> y especificaciones</small>
-                                  </div>
-                                  <div class="card-body card-block">
-                                    <div class="row form-group">
-                                      <div class="col col-md-12">
-                                          <div class="input-group">
-                                              <input type="text" placeholder="Selecciona categoria" disabled class="form-control">
-                                              <div class="input-group-btn">
-                                                <select id='select_cat' name='categoria' class="dropdown-toggle btn btn-primary" type="button">
-                                                  <option>Seleccione</option>
-                                                <?php
-                                                $cons_cate = "SELECT * FROM categorias;";
-                                                $ejecutar = mysqli_query($conn, $cons_cate);
-
-                                              while($fila=mysqli_fetch_array($ejecutar)){
-                                                  $categoria          = $fila['CAT_NOMBRE'];
-                                                  $id_cat             = $fila['ID_CATEGORIA'];
-                                                  echo "<option value='$id_cat'>$categoria</option>";
-                                                }
-                                     ?>
-                                     </select>
-                                    </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              <div class="row form-group">
-                            <div class="col col-md-12">
-                            <div class="input-group">
-                            <input type="text" placeholder="Selecciona subcategoria" disabled class="form-control">
-                            <div class="input-group-btn">
-                            <select id='select_subcat' name='subcategoria' class="dropdown-toggle btn btn-primary" type="button">
-                            <option>Seleccione</option>
-                             </select>
-                                </div>
-                              </div>
-                              </div>
-                                  </div>
-                                  <div class="row form-group">
-                              <div class="col col-md-12">
-                        <div class="input-group">
-                       <div class="input-group-addon">
-                      <i class="fa fa-location-arrow"></i>
-                        </div>
-                          <input type="text" id="map" name="map" required placeholder="URL localizacion" onkeypress="return validar(event)" class="form-control">
-                            </div>
-                              </div>
-                            </div>
-                            <div class="row form-group">
-                                        <div class="col col-md-12">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-tag"></i>
-                                                </div>
-                                                <input type="text" id="etiquetas" required name="etiquetas" placeholder="etiquetas" class="form-control">
-                                              </div>
-                                            </div>
-                                          </div>
-
-                                                </div>
-                                                  </div>
-                                                  </div>
-                                                    </div>
-                                                  </form>
-
-                                                    </div>
+        </div>
+      </div>
+    </form>
+      </div>
     						<div class="modal-footer">
     							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+    							<button type="submit" name="submit" value="submit" id="submitBtn" class="btn btn-primary submitBtn">Confirm</button>
     						</div>
     					</div>
     				</div>
@@ -609,58 +522,46 @@
   <!-- Main JS-->
   <script src="js/main.js"></script>
 
-  <!-- onkeypress="return validar(event)"-->
-  <script>
-  function validar(e) {
-  tecla = (document.all) ? e.keyCode : e.which;
-  if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
-  // dejar la línea de patron que se necesite y borrar el resto
-  patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-  //patron = /\d/; // Solo acepta números
-  //patron = /[\w\s]/; // Acepta números y letras
-  //patron = /\D/; // No acepta números
-  //
+<script>
+$(function(){
+var selectedClass = "";
+$(".filter").click(function(){
+selectedClass = $(this).attr("data-rel");
+$("#gallery").fadeTo(100, 0.1);
+$("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
+setTimeout(function() {
+$("."+selectedClass).fadeIn().addClass('animation');
+$("#gallery").fadeTo(300, 1);
+}, 300);
+});
+});
+</script>
 
-  te = String.fromCharCode(tecla);
-  return patron.test(te);
-  }
-  </script>
-  <!-- onkeypress="return validar(event)"-->
-  <script>
-  function validar2(e) {
-  tecla = (document.all) ? e.keyCode : e.which;
-  if (tecla==8) return true; //Tecla de retroceso (para poder borrar)
-  // dejar la línea de patron que se necesite y borrar el resto
-  //patron =/[A-Za-z\s]/; // Solo acepta letras  \s = es para el espacio
-  //patron = /\d/; // Solo acepta números
-  //patron = /\w/; // Acepta números y letras
-  patron = /[\w\s]/;// Acepta números y letras y espacio
-  //patron = /\D/; // No acepta números
-  //
+<!-- file input image preview-->
+<script>
+function readURL(input) {
+     if (input.files && input.files[0]) {
+         var reader = new FileReader();
 
-  te = String.fromCharCode(tecla);
-  return patron.test(te);
-  }
-  </script>
+         reader.onload = function (e) {
+             $('#blah')
+                 .attr('src', e.target.result);
+         };
+
+         reader.readAsDataURL(input.files[0]);
+     }
+ }
+</script>
 
 <!-- ajax submit modal-->
 <script>
-function submitContactForm(){
-                $.ajax({
-                 url: 'negocio_nuevo_fn.php',
-                 type: 'POST',
-                 data: $("#registerSubmit").serialize(),
-                 dataType: 'json'
-               })
-               .done(function(response){
-                 swal('Agregado exitosamente!', response.message, response.status).then(function(){
-                     location.reload();
-                 });
-               })
-               .fail(function(response){
-                 swal('Oops...', 'Something went wrong with ajax !',response.message);
-               });
-               };
+
+  $(document).ready(function(){
+$("#submitBtn").click(function(e){
+$("#registerSubmit").submit();
+});
+
+});
 </script>
 
 <!-- select ajax subcategoria-->
