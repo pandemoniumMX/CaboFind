@@ -75,7 +75,7 @@
                   <span class="bot-line"></span>Galeria</a>
               </li>
               <li>
-                <a href="table.html">
+                <a href="caracteristicas.php">
                   <i class="fas fa-trophy"></i>
                   <span class="bot-line"></span>Caracteristicas</a>
               </li>
@@ -387,6 +387,9 @@
                                         <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                                           <i class="zmdi zmdi-delete"></i>
                                      </button>
+                                     <button class="item" title="tags" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#Modaltags" data-original-title="Edit">
+                                       <i class="zmdi zmdi-labels"></i>
+                                  </button>
 
 
                                       </div>
@@ -570,48 +573,19 @@
 <!-- modal end -->
 
 <!-- START MODAL GALERIA-->
-<div class="modal fade" id="ModalGaleria" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" style="display: none;" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
+<div class="modal fade" id="Modaltags" tabindex="-1" role="dialog" aria-labelledby="smallModalLabel" style="display: none;" aria-hidden="true">
+				<div class="modal-dialog modal-sm" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="largeModalLabel"></h5>
+							<h5 class="modal-title" id="smallModalLabel"></h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">×</span>
 							</button>
 						</div>
 						<div class="modal-body">
-              <div class="default-tab">
-											<nav>
-												<div class="nav nav-tabs" id="nav-tab" role="tablist">
-													<a class="nav-item nav-link active" id="nav-1-tab" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-home" aria-selected="true">Todas</a>
-													<a class="nav-item nav-link" id="nav-2-tab" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-profile" aria-selected="false">Galeria</a>
-													<a class="nav-item nav-link" id="nav-3-tab" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-contact" aria-selected="false">Publicaciones</a>
-                          <a class="nav-item nav-link" id="nav-4-tab" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-contact" aria-selected="false">Portada</a>
-												</div>
-											</nav>
-											<div class="tab-content pl-3 pt-2" id="nav-tabContent">
-												<div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav-home-tab">
-                          <input class="form-group" type="hidden" id="idnegocio"></input>
+              <div id="formtags" class="form-check">
 
-                          <div class="row form-group">
-                            <div class="col-lg-12" id="formgalery">
-
-                            </div>
-                          </div>
-
-												</div>
-												<div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav-profile-tab">
-
-												</div>
-												<div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-												</div>
-                        <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-												</div>
-											</div>
-
-										</div>
+              </div>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -668,7 +642,7 @@
 
   <script>
   $(document).ready(function(){
-  $('#ModalGaleria').on('show.bs.modal', function (event) {
+  $('#Modaltags').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var recipient = button.data('whatever') // Extract info from data-* attributes
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
@@ -678,24 +652,25 @@
   $('#idnegocio').val(recipient);
 var ids = recipient;
   $.ajax({
-      url: 'negocios_galeria_fn.php',
+      url: 'negocio_carac_fn.php',
       type: 'POST',
       data: "id="+ids,
       dataType: 'JSON',
       success: function(response){
-        document.getElementById("formgalery").innerHTML = "";
+        document.getElementById("formtags").innerHTML = "";
           var len = response.length;
           for(var i=0; i<len; i++){
               var id = response[i].id;
-              var foto = response[i].foto;
+              var nombre = response[i].nombre;
 
 
-              var tr_str = "<div class='col-md-3'>" +
-                  "<img class='img-responsive' alt='" + (i+1) + "' " +
-                  "src='../" + foto + "'</img> " +
+              var tr_str = "<div class='checkbox'>" +
+                  "<label for='checkbox1' class='form-check-label'>"+
+                  "<input type='checkbox' id='checkbox1' name='checkbox1' value='" + (i+1) + "'" +
+                  "class='form-check-input'>" + nombre + "</label> " +
                   "</div>";
 
-              $("#formgalery").append(tr_str);
+              $("#formtags").append(tr_str);
           }
 
       }

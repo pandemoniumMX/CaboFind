@@ -393,14 +393,15 @@
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="largeModalLabel">Nuevo negocio</h5>
+                  <h5 class="modal-title" id="largeModalLabel">Nueva publicacion</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
                 </div>
                 <div class="modal-body">
                   <!-- contenido del modal -->
-                  <form>
+
+                  <form enctype="multipart/form-data" form enctype="multipart/form-data" >
                     <div class="form-group">
                   <div class="input-group">
                 <div class="input-group-addon">Titulo</div>
@@ -446,17 +447,10 @@
                   <label for="file-input" class=" form-control-label">Imagen</label>
               </div>
               <div class="col-12 col-md-9">
-                <div class="image-upload">
-                  <label for="file-input">
-                    <img id="blah" src="images/giphy.gif" style="max-width: 30%;" />
-                  </label>
 
-                  <input id="file-input" name="img" required type="file" style="display:none" onchange="readURL(this);" />
-                </div>
 
               </div>
             </div>
-
                          </form>
 
                                                     </div>
@@ -483,7 +477,7 @@
                       </div>
                       <div class="modal-body">
                         <!-- contenido del modal -->
-                        <form>
+                          <form enctype="multipart/form-data" id="fupForm" form enctype="multipart/form-data">
                           <div class="form-group">
                         <div class="input-group">
                       <div class="input-group-addon">Titulo</div>
@@ -534,19 +528,20 @@
                           <img id="blah" src="images/giphy.gif" style="max-width: 30%;" />
                         </label>
 
-                        <input id="file-input" name="img" required type="file" style="display:none" onchange="readURL(this);" />
+                        <input id="file-input" name="file" required type="file" style="display:none" onchange="readURL(this);" />
                       </div>
 
                     </div>
                   </div>
 
-                               </form>
+
 
                                                           </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+                        <button type="submit"  class="btn btn-primary submitBtn" value="SAVE">Confirm</button>
                       </div>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -588,14 +583,85 @@
   <script src="vendor/circle-progress/circle-progress.min.js"></script>
   <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-  <script src="vendor/select2/select2.min.js">
-  </script>
+  <script src="vendor/select2/select2.min.js"></script>
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
 
   <!-- sweetalert-->
 <script src="js/sweetalert2.all.min.js"></script>
+
+
+    <!-- file input image preview-->
+    <script>
+    function readURL(input) {
+         if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+                 $('#blah')
+                     .attr('src', e.target.result);
+             };
+
+             reader.readAsDataURL(input.files[0]);
+         }
+     }
+    </script>
+<!-- submit form-->
+<script>
+$(document).ready(function(e){
+    $("#fupForm").on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'publicacion_nueva_fn.php',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend: function(){
+                $('.submitBtn').attr("disabled","disabled");
+                $('#fupForm').css("opacity",".5");
+            },
+            success: function(msg){
+                $('.statusMsg').html('');
+                if(msg == 'ok'){
+                    $('#fupForm')[0].reset();
+                    Swal.fire({
+                      type: 'success',
+                      title: 'Well done',
+                      text: 'Save complety',
+                    }).then(function(){
+                        location.reload();
+                    })
+                }else{
+                  Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                  })
+                }
+                $('#fupForm').css("opacity","");
+                $(".submitBtn").removeAttr("disabled");
+            }
+        });
+    });
+
+    //file type validation
+    $("#file-input").change(function() {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match= ["image/jpeg","image/png","image/jpg"];
+        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
+            alert('Please select a valid image file (JPEG/JPG/PNG).');
+            $("#file-input").val('');
+            return false;
+        }
+    });
+});
+</script>
+
+
 
   <!-- funcion ajax borrar en tabla-->
     <script>
