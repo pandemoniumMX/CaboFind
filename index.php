@@ -228,7 +228,7 @@ include'conexion.php';
                                 <div class="col-12 col-md-6">
                                     <div class="world-catagory-slider owl-carousel wow fadeInUpBig" data-wow-delay="0.1s">
                                       <?php
-                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.ID_NEGOCIO, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
                                       WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
@@ -239,12 +239,12 @@ include'conexion.php';
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
-
+                                      $id         = $fila['ID_NEGOCIO'];
                                       echo "
                                       <div class='single-blog-post'>
                                           <div class='post-thumbnail'>
                                               <img src='$img'>
-                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                              <div class='post-cta'><a href='negocio.php?id=$id'>$n_nom</a></div>
                                           </div>
                                           <div class='post-content'>
                                               <a href='#' class='headline'>
@@ -267,7 +267,7 @@ include'conexion.php';
 
                                     <div class="col-12 col-md-6">
                                       <?php
-                                      $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                      $post2 = "SELECT p.PUB_TITULO, n.ID_NEGOCIO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                       FROM publicacion p, galeria g, negocios n
                                       WHERE g.GAL_TIPO = 'Publicacion'
                                       AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
@@ -278,12 +278,13 @@ include'conexion.php';
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
+                                      $id         = $fila['ID_NEGOCIO'];
 
                                       echo "
                                       <div class='single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.2s'>
                                           <div class='post-thumbnail'>
                                               <img src='$img'>
-                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+                                              <div class='post-cta'><a href='negocio.php?id=$id'>$n_nom</a></div>
                                           </div>
                                           <div class='post-content'>
                                               <a href='#' class='headline'>

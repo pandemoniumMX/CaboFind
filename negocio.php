@@ -1,8 +1,20 @@
 <?php
 include'conexion.php';
 // navbar
-$id_neg = 22;
 
+$id_neg = $_GET['id'];
+$post2 = "SELECT *
+FROM negocios WHERE ID_NEGOCIO = $id_neg";
+$ejec3 = mysqli_query($conn, $post2);
+while($fila=mysqli_fetch_array($ejec3)){
+$dir           = $fila['NEG_DIRECCION'];
+$tel        = $fila['NEG_TEL'];
+$cor       = $fila['NEG_CORREO'];
+$map         = $fila['NEG_MAP'];
+$detalle         = $fila['NEG_DESCRIPCION'];
+$n_nom         = $fila['NEG_NOMBRE'];
+
+}
 //
 ?>
 <!DOCTYPE html>
@@ -44,7 +56,7 @@ $id_neg = 22;
                 <div class="col-12">
                     <nav class="navbar navbar-expand-lg">
                         <!-- Logo -->
-                        <a class="navbar-brand" href="index.html">CaboFind<img src="assets\img/logo.png" height="50px" width="50px"></a>
+                        <a class="navbar-brand" href="index.php">CaboFind<img src="assets\img/logo.png" height="50px" width="50px"></a>
                         <!-- Navbar Toggler -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <!-- Navbar -->
@@ -133,7 +145,7 @@ $id_neg = 22;
         <div class="hero-slides owl-carousel">
             <!-- Single Slide -->
             <?php
-            $portada = "SELECT * FROM GALERIA where GAL_TIPO = 'Portada' AND ID_NEGOCIO = 23";
+            $portada = "SELECT * FROM GALERIA where GAL_TIPO = 'Portada' AND ID_NEGOCIO = $id_neg";
             $query = mysqli_query($conn, $portada);
             while($fila=mysqli_fetch_array($query)){
               $porta           = $fila['GAL_FOTO'];
@@ -159,7 +171,7 @@ $id_neg = 22;
 
                                         <div class="world-catagory-area">
                                             <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                                <li class="title">Vaquita</li>
+                                                <li class="title"><?php echo $n_nom ?></li>
 
                                                 <li class="nav-item">
                                                     <a class="nav-link active" id="tab1" data-toggle="tab" href="#world-tab-1" role="tab" aria-controls="world-tab-1" aria-selected="true">Información</a>
@@ -205,22 +217,13 @@ $id_neg = 22;
 
                                                             <div class="col-12 col-md-6">
                                                               <?php
-                                                              $post2 = "SELECT NEG_DESCRIPCION FROM negocios
-                                                              WHERE ID_NEGOCIO = $id_neg";
-                                                              $ejec3 = mysqli_query($conn, $post2);
-                                                              while($fila=mysqli_fetch_array($ejec3)){
-                                                              $detalle           = $fila['NEG_DESCRIPCION'];
                                                               echo "
                                                               <div class='single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.2s'>
                                                                   <div class='post-content'>
                                                                   <p>$detalle</p>
-                                                                  <div class='post-meta'>
-                                                                      <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
-                                                                  </div>
                                                               </div>
                                                               </div>
                                                               ";
-                                                            }
                                                               ?>
 
                                                     </div>
@@ -276,8 +279,8 @@ $id_neg = 22;
 
                                                               <div class='single-blog-post'>
                                                                   <div class='post-thumbnail'>
-                                                                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.7412545953907!2d-109.91401218541608!3d22.886014727161797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86af4ae53cc8b0df%3A0x48bf5448cce5518e!2sLA+VAQUITA!5e0!3m2!1ses-419!2smx!4v1560226609704!5m2!1ses-419!2smx"
-                                                                        width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                                                      <iframe src="<?php echo $map ?>"
+                                                                        width="540" height="307" frameborder="0" style="border:0" allowfullscreen></iframe>
                                                                   </div>
                                                           </div>
 
@@ -287,14 +290,6 @@ $id_neg = 22;
 
                                                               <div class="col-12 col-md-6">
                                                                 <?php
-                                                                $post2 = "SELECT NEG_DIRECCION, NEG_TEL, NEG_CORREO, NEG_MAP
-                                                                FROM negocios WHERE ID_NEGOCIO = $id_neg";
-                                                                $ejec3 = mysqli_query($conn, $post2);
-                                                                while($fila=mysqli_fetch_array($ejec3)){
-                                                                $dir           = $fila['NEG_DIRECCION'];
-                                                                $tel        = $fila['NEG_TEL'];
-                                                                $cor       = $fila['NEG_CORREO'];
-                                                                $map         = $fila['NEG_MAP'];
 
                                                                 echo "
                                                                 <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
@@ -303,13 +298,10 @@ $id_neg = 22;
                                                                         <h5>Dirección: $dir</h5>
                                                                         <h5>Teléfono: $tel</h5>
                                                                         <h5>Correo: $cor</h5>
-                                                                    <div class='post-meta'>
-                                                                        <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
-                                                                    </div>
                                                                 </div>
                                                                 </div>
                                                                 ";
-                                                              }
+
                                                                 ?>
 
                                                       </div>
@@ -330,9 +322,11 @@ $id_neg = 22;
                                                 </div>
 
                                                 <?php
-                                                $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                                $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
                                                 FROM publicacion p, galeria g, negocios n
                                                 WHERE n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                                                AND g.ID_GALERIA = p.galeria_ID_GALERIA 
+                                                AND n.ID_NEGOCIO = $id_neg
                                                 LIMIT 4";
                                                 $ejec3 = mysqli_query($conn, $post2);
                                                 while($fila=mysqli_fetch_array($ejec3)){
@@ -340,6 +334,7 @@ $id_neg = 22;
                                                 $titulo        = $fila['PUB_TITULO'];
                                                 $detalle       = $fila['PUB_DETALLE'];
                                                 $img         = $fila['GAL_FOTO'];
+                                                $fecha         = $fila['PUB_FECHA'];
                                                 echo "
                                                 <div class='single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.3s'>
                                                 <div class='post-thumbnail'>
@@ -351,7 +346,7 @@ $id_neg = 22;
                                                 </a>
                                                 <p>$detalle</p>
                                                 <div class='post-meta'>
-                                                    <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                                    <p><a href='#' class='post-author'>$n_nom</a> on <a href='#' class='post-date'>$fecha</a></p>
                                                 </div>
                                             </div>
                                         </div>
