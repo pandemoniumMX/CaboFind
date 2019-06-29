@@ -49,73 +49,69 @@ include'conexion.php';
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#worldNav" aria-controls="worldNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                         <!-- Navbar -->
                         <div class="collapse navbar-collapse" id="worldNav">
-                            <ul class="navbar-nav ml-auto">
+                          <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="categorias.php?id=8002">Música</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8001">Actividades turisticas</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8003">Teatro</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8004">Playas</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8005">Museos</a>
+
+
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bares</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                  <a class="dropdown-item" href="categorias.php?id=8006">NightClub</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8008">PUB</a>
+                                  <a class="dropdown-item" href="#">SportBar</a>
+                                  <a class="dropdown-item" href="#">RockBar</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8007">Terraza</a>
+                                  <a class="dropdown-item" href="categorias.php?id=8009">Ladysnight</a>
+                                  <a class="dropdown-item" href="#">Billar</a>
+
+
+                                </div>
+                            </li>
                               <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
+                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Música</a>
-                                    <a class="dropdown-item" href="#">Actividades turisticas</a>
-                                    <a class="dropdown-item" href="#">Teatro</a>
-                                    <a class="dropdown-item" href="#">Playas</a>
-                                    <a class="dropdown-item" href="#">Museos</a>
-
-
+                                    <a class="dropdown-item" href="categorias.php?id=8019">Mexicano</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8020">Italiano</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8021">Japones</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8018">Chino</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8023">Mariscos</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8022">Comida rapida</a>
 
                                   </div>
                               </li>
                               <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bares</a>
+                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">NightClub</a>
-                                    <a class="dropdown-item" href="#">PUB</a>
-                                    <a class="dropdown-item" href="#">SportBar</a>
-                                    <a class="dropdown-item" href="#">RockBar</a>
-                                    <a class="dropdown-item" href="#">Terraza</a>
-                                    <a class="dropdown-item" href="#">Bar Restaurant</a>
-                                    <a class="dropdown-item" href="#">Billar</a>
-
+                                    <a class="dropdown-item" href="categorias.php?id=8010">Medicos</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8011">Tecnicos</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8012">Mecanicos</a>
+                                    <a class="dropdown-item" href="#">Transporte</a>
 
                                   </div>
                               </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Mexicano</a>
-                                      <a class="dropdown-item" href="#">Italiano</a>
-                                      <a class="dropdown-item" href="#">Japones</a>
-                                      <a class="dropdown-item" href="#">Chino</a>
-                                      <a class="dropdown-item" href="#">Mariscos</a>
-                                      <a class="dropdown-item" href="#">Mexicano</a>
-                                      <a class="dropdown-item" href="#">Comida rapida</a>
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="categorias.php?id=8015">Ropa</a>
+                                    <a class="dropdown-item" href="#">Joyerias</a>
+                                    <a class="dropdown-item" href="#">Supermercados</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8017">Autopartes</a>
+                                    <a class="dropdown-item" href="categorias.php?id=8016">Artesanias</a>
 
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Medicos</a>
-                                      <a class="dropdown-item" href="#">Tecnicos</a>
-                                      <a class="dropdown-item" href="#">Mecanicos</a>
-                                      <a class="dropdown-item" href="#">Transporte</a>
+                                  </div>
+                              </li>
 
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Ropa</a>
-                                      <a class="dropdown-item" href="#">Joyerias</a>
-                                      <a class="dropdown-item" href="#">Supermercados</a>
-                                      <a class="dropdown-item" href="#">Autopartes</a>
-                                      <a class="dropdown-item" href="#">Artesanias</a>
-
-                                    </div>
-                                </li>
-
-
-
-
-                            </ul>
+                          </ul>
                             <!-- Search Form  -->
                             <div id="search-wrapper">
                                 <form action="#">
