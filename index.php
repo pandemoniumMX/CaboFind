@@ -755,12 +755,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Mad
                 <div class="col-12 col-md-4">
                     <div class="footer-single-widget">
                         <ul class="footer-menu d-flex justify-content-between">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Fashion</a></li>
-                            <li><a href="#">Lifestyle</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Gadgets</a></li>
-                            <li><a href="#">Video</a></li>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">¿Qué hacer?</a></li>
+                            <li><a href="#">Restaurantes</a></li>
+                            <li><a href="#">Bares</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Comercios</a></li>
                         </ul>
                     </div>
                 </div>
