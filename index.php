@@ -1,7 +1,7 @@
 <?php
 include'conexion.php';
 // navbar
-
+include'consultas.php';
 
 //
 ?>
@@ -51,63 +51,84 @@ include'conexion.php';
                         <div class="collapse navbar-collapse" id="worldNav">
                           <ul class="navbar-nav ml-auto">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
+                                <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Descubre</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="categorias.php?id=8002">Música</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8001">Actividades turisticas</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8003">Teatro</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8004">Playas</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8005">Museos</a>
-
-
+                                  <!-- descubre -->
+                                  <?php
+                                  while($fila=mysqli_fetch_array($ejec_desc)){
+                                  $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                  $nom_sub       = $fila['SUB_NOMBRE'];
+                                  echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                  }
+                                  ?>
 
                                 </div>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bares</a>
+                                <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vida nocturna</a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="categorias.php?id=8006">NightClub</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8008">PUB</a>
-                                  <a class="dropdown-item" href="#">SportBar</a>
-                                  <a class="dropdown-item" href="#">RockBar</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8007">Terraza</a>
-                                  <a class="dropdown-item" href="categorias.php?id=8009">Ladysnight</a>
-                                  <a class="dropdown-item" href="#">Billar</a>
 
+                                  <!-- Vida nocturna -->
+                                  <?php
+                                  while($fila=mysqli_fetch_array($ejec_vidn)){
+                                  $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                  $nom_sub       = $fila['SUB_NOMBRE'];
+                                  echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                  }
+                                  ?>
 
                                 </div>
                             </li>
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="categorias.php?id=8019">Mexicano</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8020">Italiano</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8021">Japones</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8018">Chino</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8023">Mariscos</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8022">Comida rapida</a>
-
+                                      <!-- restaurantes -->
+                                    <?php
+                                    while($fila=mysqli_fetch_array($ejec_rest)){
+                                    $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                    $nom_sub       = $fila['SUB_NOMBRE'];
+                                    echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                    }
+                                    ?>
+                                  </div>
+                              </li>
+                              <li class="nav-item dropdown">
+                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compras</a>
+                                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <!-- Compras -->
+                                    <?php
+                                    while($fila=mysqli_fetch_array($ejec_comp)){
+                                    $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                    $nom_sub       = $fila['SUB_NOMBRE'];
+                                    echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                    }
+                                    ?>
                                   </div>
                               </li>
                               <li class="nav-item dropdown">
                                   <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="categorias.php?id=8010">Medicos</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8011">Tecnicos</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8012">Mecanicos</a>
-                                    <a class="dropdown-item" href="#">Transporte</a>
-
+                                    <!-- servicios -->
+                                    <?php
+                                    while($fila=mysqli_fetch_array($ejec_serv)){
+                                    $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                    $nom_sub       = $fila['SUB_NOMBRE'];
+                                    echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                    }
+                                    ?>
                                   </div>
                               </li>
                               <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
+                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salud</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="categorias.php?id=8015">Ropa</a>
-                                    <a class="dropdown-item" href="#">Joyerias</a>
-                                    <a class="dropdown-item" href="#">Supermercados</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8017">Autopartes</a>
-                                    <a class="dropdown-item" href="categorias.php?id=8016">Artesanias</a>
-
+                                    <!-- salud -->
+                                    <?php
+                                    while($fila=mysqli_fetch_array($ejec_salu)){
+                                    $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                    $nom_sub       = $fila['SUB_NOMBRE'];
+                                    echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                    }
+                                    ?>
                                   </div>
                               </li>
 
@@ -144,15 +165,61 @@ include'conexion.php';
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class='carousel-indicators'>
+  <li data-target='#carouselExampleIndicators' data-slide-to='0'></li>
+  <li data-target='#carouselExampleIndicators' data-slide-to='1' ></li>
+  <li data-target='#carouselExampleIndicators' data-slide-to='2' ></li>
+  <li data-target='#carouselExampleIndicators' data-slide-to='3' ></li>
+  <li data-target='#carouselExampleIndicators' data-slide-to='4' ></li>
+    </ol>
+    <div class='carousel-inner'>
+      <div class='carousel-item active align-items-center'>
+        <img style="width:1200px; height:450px;" src='assets/galeria/140929.jpg' alt='$titulo'>
+
+      </div>
+    <?php
+
+    $ejec = mysqli_query($conn, $slide);
+    while($fila=mysqli_fetch_array($ejec)){
+    $row           = $fila['row'];
+    $titulo        = $fila['PUB_TITULO'];
+    $img           = $fila['GAL_FOTO'];
+
+    echo "
+        <div class='carousel-item align-items-center'>
+          <img style='width:1200px; height:450px;' src='$img' alt='$titulo'>
+          <div class='carousel-caption'>
+          <div class='card'>
+    <h3>$titulo</h3>
+    <p>We had such a great time in LA!</p>
+    </div>
+    </div>
+        </div>
+        ";
+    }
+    ?>
+</div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+                      <!--
                         <div class="hero-post-slide">
-                            <!-- Single Slide -->
+                            <!-- Single Slide
 
                               <?php
-                              $slide = "SELECT  @row := @row + 1 as row, PUB_TITULO, PUB_DETALLE, GAL_FOTO
-                              FROM publicacion a, galeria g, negocios n, (SELECT @row := 0) r
-                              where n.ID_NEGOCIO = g.ID_NEGOCIO
-                              AND a.galeria_ID_GALERIA = g.ID_GALERIA
-                               LIMIT 4";
+                            /*
                               $ejec = mysqli_query($conn, $slide);
                               while($fila=mysqli_fetch_array($ejec)){
                               $row           = $fila['row'];
@@ -171,9 +238,10 @@ include'conexion.php';
                               </div>
                               </div>
                               </div>";
-                              }
+                            }*/
                               ?>
                         </div>
+                      -->
                     </div>
                 </div>
             </div>
@@ -224,11 +292,7 @@ include'conexion.php';
                                 <div class="col-12 col-md-6">
                                     <div class="world-catagory-slider owl-carousel wow fadeInUpBig" data-wow-delay="0.1s">
                                       <?php
-                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.ID_NEGOCIO, n.NEG_NOMBRE, g.GAL_FOTO
-                                      FROM publicacion p, galeria g, negocios n
-                                      WHERE g.GAL_TIPO = 'Publicacion'
-                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                       LIMIT 4;";
+
                                       $ejec2 = mysqli_query($conn, $post);
                                       while($fila=mysqli_fetch_array($ejec2)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
@@ -263,11 +327,7 @@ include'conexion.php';
 
                                     <div class="col-12 col-md-6">
                                       <?php
-                                      $post2 = "SELECT p.PUB_TITULO, n.ID_NEGOCIO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                      FROM publicacion p, galeria g, negocios n
-                                      WHERE g.GAL_TIPO = 'Publicacion'
-                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                      LIMIT 4";
+
                                       $ejec3 = mysqli_query($conn, $post2);
                                       while($fila=mysqli_fetch_array($ejec3)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
@@ -280,7 +340,7 @@ include'conexion.php';
                                       <div class='single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.2s'>
                                           <div class='post-thumbnail'>
                                               <img src='$img'>
-                                              <div class='post-cta'><a href='negocio.php?id=$id'>$n_nom</a></div>
+
                                           </div>
                                           <div class='post-content'>
                                               <a href='#' class='headline'>
@@ -308,12 +368,12 @@ include'conexion.php';
                                   <div class="col-12 col-md-6">
                                     <div class="single-blog-post">
                                         <?php
-                                        $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                                        $post3 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
                                         FROM publicacion p, galeria g, negocios n
                                         WHERE g.GAL_TIPO = 'Publicacion'
                                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
                                       LIMIT 1;";
-                                        $ejec2 = mysqli_query($conn, $post);
+                                        $ejec2 = mysqli_query($conn, $post3);
                                         while($fila=mysqli_fetch_array($ejec2)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
                                         $titulo        = $fila['PUB_TITULO'];
@@ -324,7 +384,7 @@ include'conexion.php';
                                         <div class='single-blog-post'>
                                             <div class='post-thumbnail'>
                                                 <img src='$img'>
-                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                             </div>
                                             <div class='post-content'>
                                                 <a href='#' class='headline'>
@@ -363,7 +423,7 @@ include'conexion.php';
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
                                             <div class='post-thumbnail'>
                                                 <img src='$img'>
-                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                             </div>
                                             <div class='post-content'>
                                                 <a href='#' class='headline'>
@@ -406,7 +466,7 @@ include'conexion.php';
                                       <div class='single-blog-post'>
                                           <div class='post-thumbnail'>
                                               <img src='$img'>
-                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                           </div>
                                           <div class='post-content'>
                                               <a href='#' class='headline'>
@@ -445,7 +505,7 @@ include'conexion.php';
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
                                             <div class='post-thumbnail'>
                                                 <img src='$img'>
-                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                             </div>
                                             <div class='post-content'>
                                                 <a href='#' class='headline'>
@@ -488,7 +548,7 @@ include'conexion.php';
                                       <div class='single-blog-post'>
                                           <div class='post-thumbnail'>
                                               <img src='$img'>
-                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                           </div>
                                           <div class='post-content'>
                                               <a href='#' class='headline'>
@@ -527,7 +587,7 @@ include'conexion.php';
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
                                             <div class='post-thumbnail'>
                                                 <img src='$img'>
-                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                             </div>
                                             <div class='post-content'>
                                                 <a href='#' class='headline'>
@@ -569,7 +629,7 @@ include'conexion.php';
                                       <div class='single-blog-post'>
                                           <div class='post-thumbnail'>
                                               <img src='$img'>
-                                              <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                           </div>
                                           <div class='post-content'>
                                               <a href='#' class='headline'>
@@ -608,7 +668,7 @@ include'conexion.php';
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
                                             <div class='post-thumbnail'>
                                                 <img src='$img'>
-                                                <div class='post-cta'><a href='#'>$n_nom</a></div>
+
                                             </div>
                                             <div class='post-content'>
                                                 <a href='#' class='headline'>

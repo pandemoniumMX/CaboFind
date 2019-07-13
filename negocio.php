@@ -1,12 +1,14 @@
 <?php
 include'conexion.php';
+include'consultas.php';
 // navbar
 
 $id_neg = $_GET['id'];
-$post2 = "SELECT *
+
+$postneg = "SELECT *
 FROM negocios WHERE ID_NEGOCIO = $id_neg";
-$ejec3 = mysqli_query($conn, $post2);
-while($fila=mysqli_fetch_array($ejec3)){
+$ejecpostn = mysqli_query($conn, $postneg);
+while($fila=mysqli_fetch_array($ejecpostn)){
 $dir           = $fila['NEG_DIRECCION'];
 $tel        = $fila['NEG_TEL'];
 $cor       = $fila['NEG_CORREO'];
@@ -15,7 +17,8 @@ $detalle         = $fila['NEG_DESCRIPCION'];
 $n_nom         = $fila['NEG_NOMBRE'];
 
 }
-//
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,66 +66,87 @@ $n_nom         = $fila['NEG_NOMBRE'];
                         <div class="collapse navbar-collapse" id="worldNav">
                             <ul class="navbar-nav ml-auto">
                               <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">¿Qué hacer?</a>
+                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Descubre</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Música</a>
-                                    <a class="dropdown-item" href="#">Actividades turisticas</a>
-                                    <a class="dropdown-item" href="#">Teatro</a>
-                                    <a class="dropdown-item" href="#">Playas</a>
-                                    <a class="dropdown-item" href="#">Museos</a>
-
-
+                                    <!-- descubre -->
+                                    <?php
+                                    while($fila=mysqli_fetch_array($ejec_desc)){
+                                    $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                    $nom_sub       = $fila['SUB_NOMBRE'];
+                                    echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                    }
+                                    ?>
 
                                   </div>
                               </li>
                               <li class="nav-item dropdown">
-                                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bares</a>
+                                  <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vida nocturna</a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">NightClub</a>
-                                    <a class="dropdown-item" href="#">PUB</a>
-                                    <a class="dropdown-item" href="#">SportBar</a>
-                                    <a class="dropdown-item" href="#">RockBar</a>
-                                    <a class="dropdown-item" href="#">Terraza</a>
-                                    <a class="dropdown-item" href="#">Bar Restaurant</a>
-                                    <a class="dropdown-item" href="#">Billar</a>
 
+                                    <!-- Vida nocturna -->
+                                    <?php
+                                    while($fila=mysqli_fetch_array($ejec_vidn)){
+                                    $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                    $nom_sub       = $fila['SUB_NOMBRE'];
+                                    echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                    }
+                                    ?>
 
                                   </div>
                               </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
+                                    <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Restaurantes</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Mexicano</a>
-                                      <a class="dropdown-item" href="#">Italiano</a>
-                                      <a class="dropdown-item" href="#">Japones</a>
-                                      <a class="dropdown-item" href="#">Chino</a>
-                                      <a class="dropdown-item" href="#">Mariscos</a>
-                                      <a class="dropdown-item" href="#">Mexicano</a>
-                                      <a class="dropdown-item" href="#">Comida rapida</a>
-
+                                        <!-- restaurantes -->
+                                      <?php
+                                      while($fila=mysqli_fetch_array($ejec_rest)){
+                                      $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                      $nom_sub       = $fila['SUB_NOMBRE'];
+                                      echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                      }
+                                      ?>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+                                    <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compras</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Medicos</a>
-                                      <a class="dropdown-item" href="#">Tecnicos</a>
-                                      <a class="dropdown-item" href="#">Mecanicos</a>
-                                      <a class="dropdown-item" href="#">Transporte</a>
-
+                                        <!-- Compras -->
+                                      <?php
+                                      while($fila=mysqli_fetch_array($ejec_comp)){
+                                      $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                      $nom_sub       = $fila['SUB_NOMBRE'];
+                                      echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                      }
+                                      ?>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Comercios</a>
+                                    <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                      <a class="dropdown-item" href="#">Ropa</a>
-                                      <a class="dropdown-item" href="#">Joyerias</a>
-                                      <a class="dropdown-item" href="#">Supermercados</a>
-                                      <a class="dropdown-item" href="#">Autopartes</a>
-                                      <a class="dropdown-item" href="#">Artesanias</a>
-
+                                      <!-- servicios -->
+                                      <?php
+                                      while($fila=mysqli_fetch_array($ejec_serv)){
+                                      $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                      $nom_sub       = $fila['SUB_NOMBRE'];
+                                      echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                      }
+                                      ?>
                                     </div>
                                 </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href='' id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salud</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <!-- salud -->
+                                      <?php
+                                      while($fila=mysqli_fetch_array($ejec_salu)){
+                                      $id_sub           = $fila['ID_SUBCATEGORIA'];
+                                      $nom_sub       = $fila['SUB_NOMBRE'];
+                                      echo "<a class='dropdown-item' href='categorias.php?id=$id_sub'>$nom_sub</a>";
+                                      }
+                                      ?>
+                                    </div>
+                                </li>
+
                             </ul>
                             <!-- Search Form  -->
                             <div id="search-wrapper">
@@ -325,7 +349,7 @@ $n_nom         = $fila['NEG_NOMBRE'];
                                                 $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
                                                 FROM publicacion p, galeria g, negocios n
                                                 WHERE n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                                AND g.ID_GALERIA = p.galeria_ID_GALERIA 
+                                                AND g.ID_GALERIA = p.galeria_ID_GALERIA
                                                 AND n.ID_NEGOCIO = $id_neg
                                                 LIMIT 4";
                                                 $ejec3 = mysqli_query($conn, $post2);
