@@ -23,8 +23,11 @@
 
   <!-- Fontfaces CSS-->
   <link href="css/font-face.css" rel="stylesheet" media="all">
-  <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-  <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+  <link href="vendor/font-awesome-5/css/fontawesome.css" rel="stylesheet" media="all">
+  <link href="vendor/font-awesome-5/css/all.min.css" rel="stylesheet" media="all">
+  <link href="vendor/font-awesome-5/css/all.css" rel="stylesheet" media="all">
+  <link href="vendor/font-awesome-5/css/fontawesome.min.css" rel="stylesheet" media="all">
+
   <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
   <!-- Bootstrap CSS-->
@@ -83,6 +86,11 @@
                 <a href="caracteristicas.php">
                   <i class="fas fa-trophy"></i>
                   <span class="bot-line"></span>Caracteristicas</a>
+              </li>
+              <li>
+                <a href="servicios.php">
+                  <i class="fas fa-trophy"></i>
+                  <span class="bot-line"></span>Servicios</a>
               </li>
               <li class="has-sub">
                 <a href="publicaciones.php">
@@ -461,15 +469,37 @@
                               </div>
                           </div>
                           <div class="row form-group">
+                              <div class="col col-md-12">
+                                  <div class="input-group">
+                                      <div class="input-group-addon">
+                                      <i class="fa fa-location-arrow"></i>
+                                      </div>
+                                      <input type="text" required id="descripcion" name="descripcion" placeholder="descripcion" class="form-control">
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="row form-group">
                                       <div class="col col-md-12">
                                           <div class="input-group">
                                               <div class="input-group-addon">
-                                                  <i class="fa fa-pencil-square-o"></i>
+                                              <i class="fa fa-location-arrow"></i>
                                               </div>
-                                              <input type="text" required id="descripcion" name="descripcion" placeholder="descripcion" class="form-control">
+                                              <input type="text" required id="descripcion_ing" name="descripcion_ing" placeholder="descripcion inglés" class="form-control">
                                           </div>
                                       </div>
-                                  </div>
+                          </div>
+
+                          <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <textarea name="horario" id="horario" placeholder="Horario " rows="7" form="usrform"></textarea>
+                                            </div>
+                                        </div>
+                            </div>
 
                                 </div>
                               </div>
@@ -533,9 +563,58 @@
                                                     <i class="fa fa-tag"></i>
                                                 </div>
                                                 <input type="text" id="etiquetas" required name="etiquetas" placeholder="etiquetas" class="form-control">
-                                              </div>
                                             </div>
-                                          </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                <i class="fab fa-facebook"></i>
+                                                </div>
+                                                <input type="text" id="facebook" required name="facebook" placeholder="facebook" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fab fa-instagram"></i>
+                                                </div>
+                                                <input type="text" id="instagram" required name="instagram" placeholder="instagram" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fab fa-chrome"></i>
+                                                </div>
+                                                <input type="text" id="web" required name="web" placeholder="pagina web" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+                            
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <textarea name="horario_ing" id="horario_ing" placeholder="Horario inglés" rows="7" form="usrform"></textarea>
+                                            </div>
+                                        </div>
+                            </div>
+
+                          
+
+
+
 
                                                 </div>
                                                   </div>

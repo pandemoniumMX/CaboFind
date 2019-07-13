@@ -10,6 +10,7 @@ if ($_POST['empresa']) {
   $emp = $_POST ['empresa'];
   $dir = $_POST ['direccion'];
   $des = $_POST ['descripcion'];
+  $des_ing = $_POST ['descripcion_ing'];
   $eti = $_POST ['etiquetas'];
   $cor = $_POST ['correo'];
   $tel = $_POST ['telefono'];
@@ -17,6 +18,12 @@ if ($_POST['empresa']) {
   $sub = $_POST ['subcategoria'];
   $resp = $_POST ['responsable'];
   $map = $_POST ['map'];
+  $hor = $_POST ['horario'];
+  $hor_ing = $_POST ['horario_ing'];
+  $fb = $_POST ['facebook'];
+  $in = $_POST ['instagram'];
+  $web = $_POST ['web'];
+
 
 
   $validacion = "SELECT NEG_NOMBRE FROM negocios WHERE NEG_NOMBRE = '$emp';";
@@ -25,8 +32,9 @@ if ($_POST['empresa']) {
 
 
     $sql2 = "INSERT INTO negocios(NEG_NOMBRE, NEG_CORREO, NEG_TEL, NEG_DIRECCION,
-      NEG_RESPONSABLE, NEG_DESCRIPCION, NEG_ETIQUETAS,ID_SUBCATEGORIA, NEG_ESTATUS, NEG_MAP)
-    VALUES ('$emp', '$cor', $tel,'$dir','$resp','$des','$eti', $sub,'A', '$map');";
+      NEG_RESPONSABLE, NEG_DESCRIPCION, NEG_DESCRIPCION_ING, NEG_ETIQUETAS,ID_SUBCATEGORIA, NEG_ESTATUS, NEG_MAP,NEG_HORARIO,
+      NEG_HORARIO_ING,NEG_FACEBOOK,NEG_INSTAGRAM,NEG_WEB)
+    VALUES ('$emp', '$cor', $tel,'$dir','$resp','$des','$des_ing',$eti', $sub,'A', '$map','$hor','$hor_ing','$fb','$in','$web');";
     $res = $conn->query($sql2);
 
     if (!$res) {

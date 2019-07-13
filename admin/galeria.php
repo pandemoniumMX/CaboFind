@@ -84,6 +84,11 @@
                   <i class="fas fa-trophy"></i>
                   <span class="bot-line"></span>Caracteristicas</a>
               </li>
+              <li>
+                <a href="servicios.php">
+                  <i class="fas fa-trophy"></i>
+                  <span class="bot-line"></span>Servicios</a>
+              </li>
               <li class="has-sub">
                 <a href="publicaciones.php">
                   <i class="fas fa-copy"></i>

@@ -6,11 +6,11 @@ $nom = $_POST ['nom'];
 $nom_ing = $_POST ['nom_ing'];
 
 
-  $validacion = "SELECT CAR_NOMBRE FROM Caracteristicas WHERE CAR_NOMBRE = '$nom';";
+  $validacion = "SELECT SERV_NOMBRE FROM servicios WHERE SERV_NOMBRE = '$nom';";
     $resul = $conn->query($validacion);
     if (mysqli_num_rows($resul)==0) {
 
-$sql = "INSERT INTO caracteristicas(CAR_NOMBRE, CAR_NOMBRE_ING, CAR_ESTATUS)
+$sql = "INSERT INTO servicios(SERV_NOMBRE, SERV_NOMBRE_ING, SERV_ESTATUS)
 VALUES ('$nom','$nom_ing', 'A');";
 $res = $conn->query($sql);
 
@@ -20,12 +20,12 @@ $response['message'] = $conn->error;
  }
  else{
    $response['status']  = 'success';
-$response['message'] = 'Negocio registrado correctamente ...';
+$response['message'] = 'Servicio registrado correctamente ...';
  }
 
 }else{
  $response['status']  = 'error';
-$response['message'] = 'Ya existe un caracteristica con ese nombre, intenta uno diferente';
+$response['message'] = 'Ya existe un servicio con ese nombre, intenta uno diferente';
 }
 }
 echo json_encode($response);

@@ -89,6 +89,11 @@
                   <i class="fas fa-trophy"></i>
                   <span class="bot-line"></span>Servicios</a>
               </li>
+              <li>
+                <a href="servicios.php">
+                  <i class="fas fa-trophy"></i>
+                  <span class="bot-line"></span>Servicios</a>
+              </li>
               <li class="has-sub">
                 <a href="publicaciones.php">
                   <i class="fas fa-copy"></i>
@@ -316,12 +321,13 @@
     <!-- PAGE CONTAINER-->
     <div class="page-content--bgf7"></br>
           <div class="container">
+                    <div class="container-fluid">
                     <div class="card">
 
                       <div class="card-header">
-
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#newPublic" >Nueva publicación</button>
-
+                        <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
+                        Agregar Servicio
+                        </button>
                       </div>
                       <div class="card-body">
                           <div class="table-responsive table--no-card m-b-30">
@@ -329,37 +335,46 @@
                                   <thead>
                                       <tr>
                                           <th>id</th>
-                                          <th>Titulo</th>
-                                          <th>Negocio</th>
-                                          <th class="text-right">Fecha</th>
+                                          <th>Nombre</th>
+                                          <th>Nombre inglés</th>
+
+                                          <th>Estatus</th>
+                                          <th>Fecha</th>
                                           <th class="text-right">Acción</th>
                                       </tr>
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "SELECT * FROM publicacion p, negocios n
-                                    WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO;";
+                                    $public = "SELECT * FROM Servicios;";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_pub       = $fila['ID_PUBLICACION'];
-                                      $titu_pub            = $fila['PUB_TITULO'];
-                                      $nom_neg   = $fila['NEG_NOMBRE'];
-                                      $fecha_pub   = $fila['PUB_FECHA'];
+                                      $id_car       = $fila['ID_SERVICIOS'];
+                                      $nom       = $fila['SERV_NOMBRE'];
+                                      $noming       = $fila['SERV_NOMBRE_ING'];
+                                      $esta       = $fila['SERV_ESTATUS'];
+                                      $fech       = $fila['SERV_FECHA'];
+
                                      ?>
                                      <tr>
-                                         <td><?php echo $id_pub ?></td>
-                                         <td><?php echo $titu_pub ?></td>
-                                         <td><?php echo $nom_neg ?></td>
-                                         <td class="text-right"><?php echo $fecha_pub ?></td>
+                                         <td><?php echo $id_car ?></td>
+                                         <td><?php echo $nom ?></td>
+                                         <td><?php echo $noming ?></td>
+                                         <td><?php echo $esta ?></td>
+                                         <td><?php echo $fech ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
-                                           <button class="item" title="Edit" data-toggle="modal" data-whatever="<?php echo $id_pub ?>" data-target="#largeModal" data-original-title="Edit">
+                                             <button class="item" title="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_car ?>'" data-original-title="Edit">
+                                               <i class="zmdi zmdi-image"></i>
+                                          </button>
+                                           <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
                                              <i class="zmdi zmdi-edit"></i>
                                         </button>
-                                        <button class="item" data-toggle="tooltip" onclick="borrar_pub(<?php echo $id_pub ?>)" data-placement="top" title="Delete" data-original-title="Delete">
+                                        <button class="item" onclick="borrar_emp(<?php echo $id_car ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
                                           <i class="zmdi zmdi-delete"></i>
                                      </button>
+
+
                                       </div>
                                        </td>
                                        </tr>
@@ -369,169 +384,52 @@
               </div>
               </div>
               </div>
-
+              </div>
         </div>
 
     </div>
 
-    <!-- modal edit publicacion -->
+
+<!-- Modal start -->
     <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="largeModalLabel">Nueva publicacion</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">
+    				<div class="modal-dialog modal-lg" role="document">
+    					<div class="modal-content">
+    						<div class="modal-header">
+    							<h5 class="modal-title" id="largeModalLabel">Negocios relacionados</h5>
+    							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    								<span aria-hidden="true">×</span>
+    							</button>
+    						</div>
+    						<div class="modal-body">
                   <!-- contenido del modal -->
 
-                  <form enctype="multipart/form-data" form enctype="multipart/form-data" >
-                    <div class="form-group">
-                  <div class="input-group">
-                <div class="input-group-addon">Titulo</div>
-                <input type="text" id="titulo" required name="titulo" class="form-control">
-                <div class="input-group-addon">
-                  <i class="fa fa-text-height"></i>
-                </div>
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col col-md-3">
-                  <label for="textarea-input" class=" form-control-label">Publicacion</label>
-              </div>
-              <div class="col-12 col-md-9">
-                  <textarea name="detalle" required id="detalle" rows="9" placeholder="Información de la publicacion" class="form-control"></textarea>
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col col-md-12">
-                  <div class="input-group">
-                      <input type="text" id='s_neg' name='s_neg' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
-                      <div class="input-group-btn">
-                        <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
-                          <option>Seleccione</option>
-                        <?php
-                        $negocios = "SELECT * FROM negocios;";
-                        $ejecutar = mysqli_query($conn, $negocios);
+          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
+            <div class="row">
 
-                      while($fila=mysqli_fetch_array($ejecutar)){
-                          $neg_nom          = $fila['NEG_NOMBRE'];
-                          $id_neg            = $fila['ID_NEGOCIO'];
-                          echo "<option value='$id_neg'>$neg_nom</option>";
-                        }
-                           ?>
-                         </select>
-                      </div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col col-md-3">
-                  <label for="file-input" class=" form-control-label">Imagen</label>
-              </div>
-              <div class="col-12 col-md-9">
-
-
-              </div>
-            </div>
-                         </form>
-
-                                                    </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- fin del modal -->
-
-
-
-          <!-- modal new publicacion -->
-          <div class="modal fade" id="newPublic" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="largeModalLabel">Nuevo negocio</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- contenido del modal -->
-                          <form enctype="multipart/form-data" id="fupForm" form enctype="multipart/form-data">
-                          <div class="form-group">
+                                  <div class="row form-group">
+                              <div class="col col-md-12">
                         <div class="input-group">
-                      <div class="input-group-addon">Titulo</div>
-                      <input type="text" id="titulo" required name="titulo" class="form-control">
-                      <div class="input-group-addon">
-                        <i class="fa fa-text-height"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="textarea-input" class=" form-control-label">Publicacion</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                        <textarea name="detalle" required id="detalle" rows="9" placeholder="Información de la publicacion" class="form-control"></textarea>
-                    </div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-12">
-                        <div class="input-group">
-                            <input type="text" id='s_neg' name='s_neg' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
-                            <div class="input-group-btn">
-                              <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
-                                <option>Seleccione</option>
-                              <?php
-                              $negocios = "SELECT * FROM negocios;";
-                              $ejecutar = mysqli_query($conn, $negocios);
-
-                            while($fila=mysqli_fetch_array($ejecutar)){
-                                $neg_nom          = $fila['NEG_NOMBRE'];
-                                $id_neg            = $fila['ID_NEGOCIO'];
-                                echo "<option value='$id_neg'>$neg_nom</option>";
-                              }
-                                 ?>
-                               </select>
-                            </div>
+                       <div class="input-group-addon">
+                      <i class="fa fa-tags"></i>
                         </div>
-                    </div>
-                  </div>
+                          <input type="text" id="nom" name="nom" required placeholder="Nombre" class="form-control">
+                          <input type="text" id="nom_ing" name="nom_ing" required placeholder="Nombre inglés" class="form-control">
 
-                  <div class="row form-group">
-                      <div class="col col-md-3">
-                        <label for="file-input" class=" form-control-label">Imagen</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                      <div class="image-upload">
-                        <label for="file-input">
-                          <img id="blah" src="images/giphy.gif" style="max-width: 30%;" />
-                        </label>
+                            </div>
+                              </div>
+                            </div>
+                                                  </div>
+                                                    </div>
+                                                  </form>
 
-                        <input id="file-input" name="file" required type="file" style="display:none" onchange="readURL(this);" />
-                      </div>
-
-                    </div>
-                  </div>
-
-
-
-                                                          </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit"  class="btn btn-primary submitBtn" value="SAVE">Confirm</button>
-                      </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <!-- fin modal-->
+    						<div class="modal-footer">
+    							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+<!-- modal end -->
 
 
 
@@ -570,119 +468,100 @@
   <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
   <script src="vendor/chartjs/Chart.bundle.min.js"></script>
   <script src="vendor/select2/select2.min.js"></script>
+  <!-- sweetalert-->
+
+<script src="js/sweetalert2.all.min.js"></script>
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
 
-  <!-- sweetalert-->
-<script src="js/sweetalert2.all.min.js"></script>
-
-
-    <!-- file input image preview-->
-    <script>
-    function readURL(input) {
-         if (input.files && input.files[0]) {
-             var reader = new FileReader();
-
-             reader.onload = function (e) {
-                 $('#blah')
-                     .attr('src', e.target.result);
-             };
-
-             reader.readAsDataURL(input.files[0]);
-         }
-     }
-    </script>
-<!-- submit form-->
+<!-- ajax submit modal-->
 <script>
-$(document).ready(function(e){
-    $("#fupForm").on('submit', function(e){
-        e.preventDefault();
+function submitContactForm(){
+                $.ajax({
+                 url: 'servicios_insertserv_fn.php',
+                 type: 'POST',
+                 data: $("#registerSubmit").serialize(),
+                 dataType: 'json'
+               })
+               .done(function(response){
+                 swal('HECHO!', response.message, response.status).then(function(){
+                     location.reload();
+                 });
+               })
+               .fail(function(response){
+                 swal('Oops...', 'Something went wrong with ajax !',response.message);
+               });
+               };
+</script>
+
+<!-- select ajax subcategoria-->
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+
+    $("#select_cat").change(function(){
+        var deptid = $(this).val();
+
         $.ajax({
-            type: 'POST',
-            url: 'publicacion_nueva_fn.php',
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData:false,
-            beforeSend: function(){
-                $('.submitBtn').attr("disabled","disabled");
-                $('#fupForm').css("opacity",".5");
-            },
-            success: function(msg){
-                $('.statusMsg').html('');
-                if(msg == 'ok'){
-                    $('#fupForm')[0].reset();
-                    Swal.fire({
-                      type: 'success',
-                      title: 'Well done',
-                      text: 'Save complety',
-                    }).then(function(){
-                        location.reload();
-                    })
-                }else{
-                  Swal.fire({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                  })
+            url: 'registro_fn_get_subcat.php',
+            type: 'post',
+            data: {depart:deptid},
+            dataType: 'json',
+            success:function(response){
+
+                var len = response.length;
+
+                $("#select_subcat").empty();
+                for( var i = 0; i<len; i++){
+                    var id = response[i]['id'];
+                    var name = response[i]['name'];
+
+                    $("#select_subcat").append("<option value='"+id+"'>"+name+"</option>");
+
                 }
-                $('#fupForm').css("opacity","");
-                $(".submitBtn").removeAttr("disabled");
             }
         });
     });
 
-    //file type validation
-    $("#file-input").change(function() {
-        var file = this.files[0];
-        var imagefile = file.type;
-        var match= ["image/jpeg","image/png","image/jpg"];
-        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
-            alert('Please select a valid image file (JPEG/JPG/PNG).');
-            $("#file-input").val('');
-            return false;
-        }
-    });
-});
-</script>
+  });
+  </script>
 
+<!-- funcion ajax borrar en tabla-->
+  <script>
+  function borrar_emp(id){
+  swal({
+     title: 'Estás seguro?',
+     text: "Esta acción no se puede revertir!",
+     type: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: '¡Si!, borralo',
+     showLoaderOnConfirm: true,
+     preConfirm: function() {
+       return new Promise(function(resolve) {
+         $.ajax({
+          url: 'caracteristica_delete_fn.php',
+          type: 'POST',
+          data: 'delete='+id,
+          dataType: 'json'
+       })
+       .done(function(response){
+          swal('Borrado exitosamente!', response.message, response.status).then(function(){
+              location.reload();
+          });
+       })
+       .fail(function(){
+          swal('Oops...', 'Something went wrong with ajax !', 'error');
+       });
+       });
+     },
+     allowOutsideClick: false
+  });
+  }
+  </script>
 
-
-  <!-- funcion ajax borrar en tabla-->
-    <script>
-    function borrar_pub(id){
-    swal({
-       title: 'Estás seguro?',
-       text: "Esta acción no se puede revertir!",
-       type: 'warning',
-       showCancelButton: true,
-       confirmButtonColor: '#3085d6',
-       cancelButtonColor: '#d33',
-       confirmButtonText: '¡Si!, borralo',
-       showLoaderOnConfirm: true,
-       preConfirm: function() {
-         return new Promise(function(resolve) {
-           $.ajax({
-            url: 'publicacion_delete_fn.php',
-            type: 'POST',
-            data: 'delete='+id,
-            dataType: 'json'
-         })
-         .done(function(response){
-            swal('Borrado exitosamente!', response.message, response.status).then(function(){
-                location.reload();
-            });
-         })
-         .fail(function(){
-            swal('Oops...', 'Something went wrong with ajax !', 'error');
-         });
-         });
-       },
-       allowOutsideClick: false
-    });
-    }
-    </script>
 
 
 

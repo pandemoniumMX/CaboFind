@@ -84,6 +84,11 @@
                   <i class="fas fa-trophy"></i>
                   <span class="bot-line"></span>Caracteristicas</a>
               </li>
+              <li>
+                <a href="servicios.php">
+                  <i class="fas fa-trophy"></i>
+                  <span class="bot-line"></span>Servicios</a>
+              </li>
               <li class="has-sub">
                 <a href="publicaciones.php">
                   <i class="fas fa-copy"></i>
@@ -326,6 +331,8 @@
                                       <tr>
                                           <th>id</th>
                                           <th>Nombre</th>
+                                          <th>Nombre inglés</th>
+
                                           <th>Estatus</th>
                                           <th>Fecha</th>
                                           <th class="text-right">Acción</th>
@@ -339,6 +346,8 @@
                                   while($fila=mysqli_fetch_array($ejecutar)){
                                       $id_car       = $fila['ID_CARACTERISTICAS'];
                                       $nom       = $fila['CAR_NOMBRE'];
+                                      $nom_ing       = $fila['CAR_NOMBRE_ING'];
+
                                       $esta       = $fila['CAR_ESTATUS'];
                                       $fech       = $fila['CAR_FECHA'];
 
@@ -346,6 +355,8 @@
                                      <tr>
                                          <td><?php echo $id_car ?></td>
                                          <td><?php echo $nom ?></td>
+                                         <td><?php echo $nom_ing ?></td>
+
                                          <td><?php echo $esta ?></td>
                                          <td><?php echo $fech ?></td>
                                          <td class="text-right">
@@ -399,6 +410,8 @@
                       <i class="fa fa-tags"></i>
                         </div>
                           <input type="text" id="nom" name="nom" required placeholder="Nombre" class="form-control">
+                          <input type="text" id="nom_ing" name="nom_ing" required placeholder="Nombre inglés" class="form-control">
+
                             </div>
                               </div>
                             </div>
