@@ -3,7 +3,8 @@
     include'conexion.php';
     include'fuctions.php';
 
-
+   // $id = base64_decode($_GET ['id']);
+   $id = $_GET ['id'];
     session_start();
     $usu_nom= $_SESSION['nombre'];
     $usu_tip= $_SESSION['tipo'];
@@ -355,7 +356,7 @@
 
   while($fila=mysqli_fetch_array($ejecutar)){
       $img_all          = $fila['GAL_FOTO'];
-      echo "<img class='img-fluid' src='../$img_all' alt='Card image cap'>";
+      echo "<img class='img-fluid' src='$img_all' alt='Card image cap'>";
     }
      ?>
   </div>
@@ -364,12 +365,12 @@
   <!-- Grid column -->
   <div class="mb-3 pics animation all 2">
     <?php
-    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Portada'";
+    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Logo'";
     $ejecutar = mysqli_query($conn, $all);
 
   while($fila=mysqli_fetch_array($ejecutar)){
       $img_all          = $fila['GAL_FOTO'];
-      echo "<img class='img-fluid' src='../$img_all' alt='Card image cap'>";
+      echo "<img class='img-fluid' src='$img_all' alt='Card image cap'>";
     }
      ?>
   </div>
@@ -383,7 +384,7 @@
 
   while($fila=mysqli_fetch_array($ejecutar)){
       $img_all          = $fila['GAL_FOTO'];
-      echo "<img class='img-fluid' src='../$img_all' alt='Card image cap'>";
+      echo "<img class='img-fluid' src='$img_all' alt='Card image cap'>";
     }
      ?>
   </div>
@@ -428,8 +429,12 @@
                                 </div>
                                 <select name='tipo' class="dropdown-toggle btn btn-primary" type="button">
                                 <option value="NULL">Seleccione</option>
-                                <option value="Galeria">Galeria</option>
+                                <option value="Publicacion">Publicacion</option>
+                                <option value="Logo">Logo</option>
                                 <option value="Portada">Portada</option>
+                                <option value="Galeria">Galeria</option>
+
+
                                  </select>
                               </div>
                             </div>

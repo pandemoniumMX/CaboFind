@@ -9,7 +9,7 @@ $archivo1 = $_FILES['file']['tmp_name'];
 //DESTINO DONDE SE GUARDA LA IMAGEN
 $destino1 = "../assets/galeria/empresas/$id/".$_FILES['file']['name'];
 //DESTINO QUE SE GUARDA EN LA BD
-$destino2 = "assets/galeria/empresas/$id/".$_FILES['file']['name'];
+$destino2 = "http://cabofind.com.mx/assets/galeria/empresas/$id/".$_FILES['file']['name'];
 
 //crea directorio si no existe.
 $target_dir = "../assets/galeria/empresas/$id/";

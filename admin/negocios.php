@@ -496,7 +496,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-clock"></i>
                                                 </div>
-                                                <textarea name="horario" id="horario" placeholder="Horario " rows="7" form="usrform"></textarea>
+                                                <input type="text" required id="horario" name="horario" placeholder="descripcion inglés" class="form-control">
                                             </div>
                                         </div>
                             </div>
@@ -606,7 +606,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-clock"></i>
                                                 </div>
-                                                <textarea name="horario_ing" id="horario_ing" placeholder="Horario inglés" rows="7" form="usrform"></textarea>
+                                                <input type="text" required id="horario_ing" name="horario_ing" placeholder="descripcion inglés" class="form-control">
                                             </div>
                                         </div>
                             </div>
@@ -784,7 +784,7 @@ function submitContactForm(){
                })
                .done(function(response){
                  swal('Agregado exitosamente!', response.message, response.status).then(function(){
-                     location.reload();
+                  window.location.href='galeria.php?id=<?php echo $id_plus = $id_neg + 1; ?>'
                  });
                })
                .fail(function(response){
@@ -860,6 +860,19 @@ function submitContactForm(){
   }
   </script>
 
+<script type="text/javascript">
+
+function sumid()
+{
+  var id =$id_neg;
+ 
+  suma =parseInt(id)+parseInt(1);
+
+  $id_plus = suma;
+  
+
+}
+</script>
 
 
 
