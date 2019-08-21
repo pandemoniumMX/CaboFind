@@ -7,7 +7,16 @@
     session_start();
     $usu_nom= $_SESSION['nombre'];
     $usu_tip= $_SESSION['tipo'];
+
+
+   
+    
+    $cliente="SELECT * FROM usuarios where USU_ROLL='Empresa' and USU_STATUS='A' ";
+    
+
 ?>
+
+
 <html lang="en">
 
 <head>
@@ -46,6 +55,9 @@
   <link href="css/theme.css" rel="stylesheet" media="all">
 
 </head>
+
+
+
 
 <body class="animsition">
   <div class="page-wrapper">
@@ -367,16 +379,16 @@
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
-                                             <button class="item" title="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Edit">
+                                             <button class="item" title="Galeria" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
                                                <i class="zmdi zmdi-image"></i>
                                           </button>
-                                           <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
+                                           <button class="item" data-toggle="tooltip" data-placement="top" onclick="editar_emp(<?php echo $id_neg ?>),editar_mod(<?php echo $id_neg ?>)"   data-original-title="Editar">
                                              <i class="zmdi zmdi-edit"></i>
-                                        </button>
-                                        <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
+                                           </button>
+                                        <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Borrar">
                                           <i class="zmdi zmdi-delete"></i>
                                      </button>
-                                     <button class="item" title="tags" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#Modaltags" data-original-title="Edit">
+                                     <button class="item" title="tags" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#Modaltags" data-original-title="Etiquetas">
                                        <i class="zmdi zmdi-labels"></i>
                                   </button>
 
@@ -444,7 +456,17 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-phone"></i>
                                                 </div>
-                                                <input type="number" id="telefono" name="telefono" required placeholder="telefono" class="form-control">
+                                                <input type="number" id="telefono" name="telefono" required placeholder="telefono negocio" class="form-control">
+                                            </div>
+                                        </div>
+          </div>
+          <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <input type="number" id="telefono_res" name="telefono_res" required placeholder="telefono responsable" class="form-control">
                                             </div>
                                         </div>
           </div>
@@ -496,7 +518,7 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-clock"></i>
                                                 </div>
-                                                <input type="text" required id="horario" name="horario" placeholder="descripcion inglés" class="form-control">
+                                                <input type="text" required id="horario" name="horario" placeholder="Horario " class="form-control">
                                             </div>
                                         </div>
                             </div>
@@ -523,10 +545,8 @@
                                                 $cons_cate = "SELECT * FROM categorias;";
                                                 $ejecutar = mysqli_query($conn, $cons_cate);
 
-                                              while($fila=mysqli_fetch_array($ejecutar)){
-                                                  $categoria          = $fila['CAT_NOMBRE'];
-                                                  $id_cat             = $fila['ID_CATEGORIA'];
-                                                  echo "<option value='$id_cat'>$categoria</option>";
+                                              while($fila=mysqli_fetch_array($ejecutar)){                                                 
+                                                  echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>';
                                                 }
                                      ?>
                                      </select>
@@ -562,7 +582,12 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-tag"></i>
                                                 </div>
-                                                <input type="text" id="etiquetas" required name="etiquetas" placeholder="etiquetas" class="form-control">
+                                                <select required id="ciudad" name="ciudad"  class="form-control" >
+                                                <option disabled selected>Selecciona ciudad</option>
+                                                <option value="Cabo San Lucas">Cabo San Lucas</option>
+                                                <option value="San José del Cabo">San José del Cabo</option>
+                                                <option value="Los Barriles">Los Barriles</option>                                                  
+                                                </select>
                                             </div>
                                         </div>
                             </div>
@@ -606,11 +631,47 @@
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-clock"></i>
                                                 </div>
-                                                <input type="text" required id="horario_ing" name="horario_ing" placeholder="descripcion inglés" class="form-control">
+                                                <input type="text" required id="horario_ing" name="horario_ing" placeholder="Horario inglés" class="form-control">
                                             </div>
                                         </div>
                             </div>
 
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <input type="text" id="etiquetas_esp" required name="etiquetas_esp" placeholder="Etiquetas español" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <input type="text" id="etiquetas_ing" required name="etiquetas_ing" placeholder="Etiquetas inglés" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <select required id="estatus" name="estatus" class="form-control" >
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>                                                  
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>                      
                           
 
 
@@ -796,6 +857,7 @@ function submitContactForm(){
 <!-- select ajax subcategoria-->
   <script type="text/javascript">
 
+
   $(document).ready(function(){
 
     $("#select_cat").change(function(){
@@ -824,6 +886,12 @@ function submitContactForm(){
 
   });
   </script>
+
+
+
+
+
+
 
 <!-- funcion ajax borrar en tabla-->
   <script>
@@ -874,9 +942,275 @@ function sumid()
 }
 </script>
 
+  <!-- Llenar campos editar negocio-->
+
+<script type="text/javascript">
+function editar_mod(id){
+  $.ajax({
+      // la URL para la petición
+      url : 'negocios_actualizar_fn.php',
+      // la información a enviar
+      // (también es posible utilizar una cadena de datos)
+      data : {
+         id : id
+      },
+      // especifica si será una petición POST o GET
+      type : 'POST',
+      // el tipo de información que se espera de respuesta
+      dataType : 'json',
+      // código a ejecutar si la petición es satisfactoria;
+      // la respuesta es pasada como argumento a la función
+      success : function(data) {
+        $("#nombre").val(data.data.nombre);
+        $("#correo").val(data.data.correo);
+        $("#telefono").val(data.data.telefono);
+        $("#telefono_res").val(data.data.telefono_res);
+        $("#nombre_res").val(data.data.nombre_res);
+        $("#descripcion_esp").val(data.data.descripcion_esp);
+        $("#descripcion_ing").val(data.data.descripcion_ing);
+        $("#maps").val(data.data.maps);
+        $("#etiquetas").val(data.data.etiquetas);
+        $("#facebook").val(data.data.facebook);
+        $("#instagram").val(data.data.instagram);
+        $("#web").val(data.data.web);
+        $("#horario_esp").val(data.data.horario_esp);
+        $("#horario_ing").val(data.data.horario_ing);
+        $("#estatus").val(data.data.estatus);
+        $("#select_cat").val(data.data.select_cat);
+        $("#subcategoria").val(data.data.subcategoria);       
+
+      },
+      // código a ejecutar si la petición falla;
+      // son pasados como argumentos a la función
+      // el objeto de la petición en crudo y código de estatus de la petición
+      error : function(xhr, status) {
+
+      },
+      // código a ejecutar sin importar si la petición falló o no
+      complete : function(xhr, status) {
+
+      }
+  });
+}
+
+</script>
+
+<script type="text/javascript">
+//ventana actualizar cliente
+function editar_emp(id){
 
 
+swal({
+title: 'Actualizar negocio',
+html:
+'<div class="col-lg-12"> <form action="recepcion_cliente_actualizar.php" method="post" name="data">'+
+'<input name="idneg" type="text" id="idneg" value="'+id+'" class="form-control border-input" readonly>' +
+//inicia fila 1
+'<div class="row">'+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Nombre negocio</label>'+
+        '<input type="text" name="nombre" id="nombre" class="form-control border-input">'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Correo negocio</label>'+
+        '<input name="correo"  id="correo" type="mail"  required  class="form-control border-input">'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Telefono negocio</label>'+
+
+        '<input name="telefono"  id="telefono" type="number"   required  class="form-control border-input">'+
+
+
+'</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Telefono responsable</label>'+
+
+        '<input name="telefono_res"  id="telefono_res" type="number"   required  class="form-control border-input">'+
+
+
+'</div>'+
+'</div>'+
+'</div>'+
+
+//termina fila 1
+
+//inicia fila 2
+'<div class="row">'+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+  '<label>Direccion negocio</label>'+
+  '<textarea type="text" name="direccion" id="direccion" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Nombre Responsable</label>'+
+        '<input name="nombre_res"  id="nombre_res" type="text" required  class="form-control border-input">'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Descripcion español</label>'+
+        '<textarea type="text" name="descripcion_esp" id="descripcion_esp" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Descripcion inglés</label>'+
+        '<textarea type="text" name="descripcion_ing" id="descripcion_ing" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+
+
+'</div>'+
+'</div>'+
+'</div>'+
+
+//termina fila 2
+'<h5>Redes sociales</h5>'+
+
+//inicia fila 3
+'<div class="row">'+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>URL Maps</label>'+
+        '<input type="text" name="maps" id="maps" type="text"  class="form-control border-input">'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Etiquetas</label>'+
+        '<textarea type="text" name="etiquetas" id="etiquetas" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Facebook</label>'+
+        '<input name="facebook"  id="facebook" type="text"  class="form-control border-input">'+
+
+
+'</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Instagram</label>'+
+        '<input name="instagram"  id="instagram" type="text" class="form-control border-input">'+
+    '</div>'+
+'</div>'+
+'</div>'+
+
+//termina fila 3
+'<h5>Horarios</h5>'+
+
+//inicia fila 4
+'<div class="row">'+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Pagina web</label>'+
+        '<input type="text" name="pagina" id="pagina" require class="form-control border-input">'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Horario esp</label>'+
+        '<textarea type="text" name="horario_esp" id="horario_esp" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+    '</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Horario inglés</label>'+
+        '<textarea type="text" name="horario_ing" id="horario_ing" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+
+
+'</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Estatus</label>'+
+        '<select class="form-control form-control-sm" text-align="center" required name="estatus" id="estatus"><option value=""></option><option value="A">A</option><option value="B">B</option></select>' +
+    '</div>'+
+'</div>'+
+'</div>'+
+
+//termina fila 4
+
+//inicia fila 5
+'<div class="row">'+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Categoria</label>'+
+        '<select id="select_cat" name="select_cat" class="dropdown-toggle btn btn-primary" onclick="categoria();" type="button">'+
+                                                 ' <option>Seleccione</option>'+
+                                                <?php
+                                                $cons_cate1 = "SELECT * FROM categorias;";
+                                                $ejecutar = mysqli_query($conn, $cons_cate1);
+                                              while($fila=mysqli_fetch_array($ejecutar)){?>
+                                                '<?php  echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>'; ?>'+
+                                                <?php } ?>
+                                   '  </select>'+
+'</div>'+
+'</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Subcategoria</label>'+
+        '<select id="subcategoria" name="subcategoria" class="dropdown-toggle btn btn-primary" onclick="categoria();" type="button">'+
+                                                 ' <option>Seleccione</option>'+
+                                                <?php
+                                                $cons_cate1 = "SELECT * FROM subcategoria;";
+                                                $ejecutar = mysqli_query($conn, $cons_cate1);
+                                              while($fila=mysqli_fetch_array($ejecutar)){?>
+                                                '<?php  echo '<option value="'.$fila["ID_SUBCATEGORIA"].'">'.$fila["SUB_NOMBRE"].'</option>'; ?>'+
+                                                <?php } ?>
+                                   '  </select>'+
+'</div>'+
+'</div>'+
+'</div>'+
+
+'<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar negocio</Button>'+
+'</form></div>',
+type: 'warning',
+showCancelButton: true,
+confirmButtonColor: '#3085d6',
+cancelButtonColor: '#d33',
+confirmButtonText: 'Actualizar solicitud',
+cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+showConfirmButton: false,
+focusConfirm: false,
+customClass: 'swal-wide',
+buttonsStyling: false,
+reverseButtons: true, allowOutsideClick: false
+})
+  };
+
+</script>
+
+<style>
+.swal-wide{
+    width:70% !important;
+}
+</style>
   </body>
 
   </html>
   <!-- end document-->
+
+
+ 

@@ -333,10 +333,11 @@
   <!-- Grid column -->
   <div class="col-md-12 d-flex justify-content-center mb-5">
 
-    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">All</button>
+    
     <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Publicacion</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Portada</button>
     <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="3">Galeria</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="4">Logo</button>
+
 
   </div>
   <!-- Grid column -->
@@ -429,10 +430,10 @@
                                 </div>
                                 <select name='tipo' class="dropdown-toggle btn btn-primary" type="button">
                                 <option value="NULL">Seleccione</option>
-                                <option value="Publicacion">Publicacion</option>
                                 <option value="Logo">Logo</option>
-                                <option value="Portada">Portada</option>
                                 <option value="Galeria">Galeria</option>
+                                <option value="Publicacion">Publicacion</option>
+
 
 
                                  </select>
