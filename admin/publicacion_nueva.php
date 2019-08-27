@@ -70,11 +70,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-shopping-basket"></i>
-                  <span class="bot-line"></span>Galeria</a>
-              </li>
+              
               <li>
                 <a href="table.html">
                   <i class="fas fa-trophy"></i>

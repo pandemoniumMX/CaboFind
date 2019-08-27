@@ -59,7 +59,7 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="negocios.php">
+                <a href="index.php">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
@@ -75,11 +75,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-shopping-basket"></i>
-                  <span class="bot-line"></span>Galeria</a>
-              </li>
+              
               <li>
                 <a href="caracteristicas.php">
                   <i class="fas fa-trophy"></i>
@@ -190,63 +186,30 @@
               <a class="js-arrow" href="#">
                 <i class="fas fa-globe"></i>Negocios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-film"></i>Galeria</a>
+              
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
+              <a class="js-arrow" href="caracteristicas.php">
                 <i class="fas fa-tags"></i>Caracteristicas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-rocket"></i>Publicaciones</a>
+              <a class="js-arrow" href="publicaciones.php">
+                <i class="fas fa-tags"></i>Publicaciones</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
@@ -254,15 +217,7 @@
               <a class="js-arrow" href="#">
                 <i class="fas fa-users"></i>Usuarios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
@@ -324,6 +279,7 @@
                         <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
                         Agregar imagen
                         </button>
+                        
                       </div>
                       <div class="card-body">
 
@@ -333,10 +289,11 @@
   <!-- Grid column -->
   <div class="col-md-12 d-flex justify-content-center mb-5">
 
-    
+  <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="0">Todo</button>
+
     <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">Publicacion</button>
+    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">Logo</button>
     <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="3">Galeria</button>
-    <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="4">Logo</button>
 
 
   </div>
@@ -357,7 +314,7 @@
 
   while($fila=mysqli_fetch_array($ejecutar)){
       $img_all          = $fila['GAL_FOTO'];
-      echo "<img class='img-fluid' src='$img_all' alt='Card image cap'>";
+      echo "<img class='img-fluid' src='$img_all' alt='Responsive image' style='width:50%'>";
     }
      ?>
   </div>
@@ -371,7 +328,7 @@
 
   while($fila=mysqli_fetch_array($ejecutar)){
       $img_all          = $fila['GAL_FOTO'];
-      echo "<img class='img-fluid' src='$img_all' alt='Card image cap'>";
+      echo "<img class='img-fluid' src='$img_all' alt='Responsive image' style='width:50%'>";
     }
      ?>
   </div>
@@ -385,7 +342,7 @@
 
   while($fila=mysqli_fetch_array($ejecutar)){
       $img_all          = $fila['GAL_FOTO'];
-      echo "<img class='img-fluid' src='$img_all' alt='Card image cap'>";
+      echo "<img class='img-thumbnail' src='$img_all' alt='Responsive image' style='width:50%'>";
     }
      ?>
   </div>
@@ -421,7 +378,7 @@
           <form id="registerSubmit" action="galeria_nuevo_fn.php" method="post" enctype="multipart/form-data" content="text/html; charset=utf-8" >
             <div class="row">
               <div class="col-lg-6">
-            <div class="row form-group">
+              <div class="row form-group">
                         <div class="col col-md-12">
                             <div class="input-group">
                                 <div class="input-group-addon">
@@ -432,7 +389,7 @@
                                 <option value="NULL">Seleccione</option>
                                 <option value="Logo">Logo</option>
                                 <option value="Galeria">Galeria</option>
-                                <option value="Publicacion">Publicacion</option>
+                                
 
 
 
@@ -452,8 +409,13 @@
                                           </div>
                                         </div>
 
+                                        
+
 
         </div>
+        
+
+                
       </div>
     </form>
       </div>
@@ -538,6 +500,21 @@ function readURL(input) {
          };
 
          reader.readAsDataURL(input.files[0]);
+     }
+ }
+</script>
+
+<script>
+function readURL1(input1) {
+     if (input1.files && input1.files[1]) {
+         var reader1 = new FileReader();
+
+         reader1.onload1 = function (e) {
+             $('#blah1')
+                 .attr('src', e.target.result);
+         };
+
+         reader1.readAsDataURL(input1.files[1]);
      }
  }
 </script>

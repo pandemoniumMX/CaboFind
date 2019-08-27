@@ -23,6 +23,6 @@ $sql3 = "INSERT INTO galeria(GAL_FOTO ,GAL_TIPO, GAL_ESTATUS, ID_NEGOCIO)
 VALUES ('$destino2', '$tipo','A', $id);";
 $res2 = $conn->query($sql3);
 echo "<script> window.location='galeria.php?id=$id'</script>;";
-}else{echo "<script> window.location='negocios.php'</script>;";
+}else{echo "<script> window.location='index.php'</script>;";
 }
 ?>

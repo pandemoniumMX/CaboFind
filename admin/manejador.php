@@ -16,7 +16,7 @@ if($resultado->num_rows > 0){
   		$_SESSION['clave'] = $row["ID_USER"];
   	    $_SESSION['nombre']=$var_nombre;
         $_SESSION['tipo'] = $row["USU_TIPO"];
-		echo "<script>window.open('negocios.php','_self')</script>";
+		echo "<script>window.open('index.php','_self')</script>";
 }
 //aqui termina el while
 	}else{

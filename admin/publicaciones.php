@@ -58,27 +58,13 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="negocios.php">
+                <a href="index.php">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
-                <ul class="header3-sub-list list-unstyled">
-                  <li>
-                    <a href="index.html">Agregar</a>
-                  </li>
-                  <li>
-                    <a href="index2.html">Editar</a>
-                  </li>
-                  <li>
-                    <a href="index3.html">Borrar</a>
-                  </li>
-                </ul>
+                
               </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-shopping-basket"></i>
-                  <span class="bot-line"></span>Galeria</a>
-              </li>
+              
               <li>
                 <a href="caracteristicas.php">
                   <i class="fas fa-trophy"></i>
@@ -186,66 +172,39 @@
         <div class="container-fluid">
           <ul class="navbar-mobile__list list-unstyled">
             <li class="has-sub">
-              <a class="js-arrow" href="#">
+              <a class="js-arrow" href="index.php">
                 <i class="fas fa-globe"></i>Negocios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-film"></i>Galeria</a>
+              
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
+              <a class="js-arrow" href="caracteristicas.php">
                 <i class="fas fa-tags"></i>Caracteristicas</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">         
+              </ul>
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="servicios.php">
+                <i class="fas fa-tags"></i>Servicios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-rocket"></i>Publicaciones</a>
+              <a class="js-arrow" href="publicaciones.php">
+                <i class="fas fa-tags"></i>Publicaciones</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
@@ -253,15 +212,7 @@
               <a class="js-arrow" href="#">
                 <i class="fas fa-users"></i>Usuarios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
@@ -456,7 +407,7 @@
                   <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="largeModalLabel">Nuevo negocio</h5>
+                        <h5 class="modal-title" id="largeModalLabel">Nueva publicación</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                         </button>
@@ -465,25 +416,37 @@
                         <!-- contenido del modal -->
                           <form enctype="multipart/form-data" id="fupForm" form enctype="multipart/form-data">
                           <div class="form-group">
+
                         <div class="input-group">
-                      <div class="input-group-addon">Titulo</div>
-                      <input type="text" id="titulo" required name="titulo" class="form-control">
-                      <div class="input-group-addon">
+                        <input type="text" id="titulo" required name="titulo" placeholder="Titulo de publicacion en español" class="form-control">  
+
+                        
+                        <i class="fa fa-text-height"></i>
+                      </div>
+                      </br>
+                      <div class="input-group">
+                        <input type="text" id="titulo_ing" required name="titulo_ing" placeholder="Titulo de publicacion en inglés" class="form-control"> 
+
+                        
                         <i class="fa fa-text-height"></i>
                       </div>
                     </div>
                   </div>
                   <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="textarea-input" class=" form-control-label">Publicacion</label>
-                    </div>
+                   
+
                     <div class="col-12 col-md-9">
                         <textarea name="detalle" required id="detalle" rows="9" placeholder="Información de la publicacion" class="form-control"></textarea>
+                        </br>
+                        <textarea name="detalle_ing" required id="detalle_ing" rows="9" placeholder="Información de la publicacion en inglés" class="form-control"></textarea>
+                        <input type="text" id="video"  name="video" value="https://www.youtube.com/watch?v=9k6tvyyowk0" placeholder="Link de youtube(Opcional)" class="form-control"> 
+
                     </div>
                   </div>
                   <div class="row form-group">
                     <div class="col col-md-12">
                         <div class="input-group">
+
                             <input type="text" id='s_neg' name='s_neg' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
                             <div class="input-group-btn">
                               <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
@@ -501,10 +464,31 @@
                                </select>
                             </div>
                         </div>
-                    </div>
-                  </div>
 
-                  <div class="row form-group">
+                            </br></br>
+                            <div class="row form-group">
+
+                    <div class="col col-md-6">
+                        <div class="input-group">
+
+                            <input type="text" id='publicacion' name='publicacion' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
+                            <div class="input-group-btn">
+                              <select id='publicacion' name='publicacion' class="dropdown-toggle btn btn-primary" type="button">
+                              <option value="NULL">Tipo de publicacion</option>
+                                <option value="Publicacion">Normal</option>
+                                <option value="Promocion">Promoción</option>
+                                <option value="Recomendado">Recomendado</option>
+                                <option value="Eventos">Eventos</option>
+
+                               </select>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+
+                    
+                    <div class="row form-group">
                       <div class="col col-md-3">
                         <label for="file-input" class=" form-control-label">Imagen</label>
                     </div>
@@ -615,8 +599,8 @@ $(document).ready(function(e){
                     $('#fupForm')[0].reset();
                     Swal.fire({
                       type: 'success',
-                      title: 'Well done',
-                      text: 'Save complety',
+                      title: 'Publicacion realizada',
+                      text: 'satisfactoriamente',
                     }).then(function(){
                         location.reload();
                     })

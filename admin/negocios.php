@@ -73,7 +73,7 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="negocios.php">
+                <a href="index.php">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
@@ -89,11 +89,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-shopping-basket"></i>
-                  <span class="bot-line"></span>Galeria</a>
-              </li>
+              
               <li>
                 <a href="caracteristicas.php">
                   <i class="fas fa-trophy"></i>
@@ -204,63 +200,30 @@
               <a class="js-arrow" href="#">
                 <i class="fas fa-globe"></i>Negocios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-film"></i>Galeria</a>
+              
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
+              <a class="js-arrow" href="caracteristicas.php">
                 <i class="fas fa-tags"></i>Caracteristicas</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-rocket"></i>Publicaciones</a>
+              <a class="js-arrow" href="publicaciones.php">
+                <i class="fas fa-tags"></i>Publicaciones</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
@@ -268,15 +231,7 @@
               <a class="js-arrow" href="#">
                 <i class="fas fa-users"></i>Usuarios</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
+               
 
               </ul>
             </li>
@@ -523,6 +478,17 @@
                                         </div>
                             </div>
 
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <input type="text" required id="horario_ing" name="horario_ing" placeholder="Horario inglés" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
                                 </div>
                               </div>
                               </div>
@@ -625,16 +591,7 @@
                                         </div>
                             </div>
                             
-                            <div class="row form-group">
-                                        <div class="col col-md-12">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-clock"></i>
-                                                </div>
-                                                <input type="text" required id="horario_ing" name="horario_ing" placeholder="Horario inglés" class="form-control">
-                                            </div>
-                                        </div>
-                            </div>
+                            
 
                             <div class="row form-group">
                                         <div class="col col-md-12">
@@ -666,12 +623,29 @@
                                                     <i class="fa fa-clock"></i>
                                                 </div>
                                                 <select required id="estatus" name="estatus" class="form-control" >
+                                                <option disabled selected>Estatus</option>
                                                 <option value="A">A</option>
                                                 <option value="B">B</option>                                                  
                                                 </select>
                                             </div>
                                         </div>
-                            </div>                      
+                            </div>   
+                            
+                            
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <select required id="ingles" name="ingles" class="form-control" >
+                                                <option disabled selected>¿Hablan inglés?</option>
+                                                <option value="True">SI</option>
+                                                <option value="False">NO</option>                                                  
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div> 
                           
 
 
@@ -948,7 +922,7 @@ function sumid()
 function editar_mod(id){
   $.ajax({
       // la URL para la petición
-      url : 'negocios_actualizar_fn.php',
+      url : 'negocios_get_fn.php',
       // la información a enviar
       // (también es posible utilizar una cadena de datos)
       data : {
@@ -965,19 +939,22 @@ function editar_mod(id){
         $("#correo").val(data.data.correo);
         $("#telefono").val(data.data.telefono);
         $("#telefono_res").val(data.data.telefono_res);
+        $("#direccion").val(data.data.direccion);
         $("#nombre_res").val(data.data.nombre_res);
         $("#descripcion_esp").val(data.data.descripcion_esp);
         $("#descripcion_ing").val(data.data.descripcion_ing);
         $("#maps").val(data.data.maps);
-        $("#etiquetas").val(data.data.etiquetas);
+        $("#ciudad").val(data.data.ciudad);
         $("#facebook").val(data.data.facebook);
         $("#instagram").val(data.data.instagram);
         $("#web").val(data.data.web);
         $("#horario_esp").val(data.data.horario_esp);
         $("#horario_ing").val(data.data.horario_ing);
         $("#estatus").val(data.data.estatus);
-        $("#select_cat").val(data.data.select_cat);
-        $("#subcategoria").val(data.data.subcategoria);       
+        $("#subcategoria").val(data.data.subcategoria);   
+        $("#etiquetas_esp").val(data.data.etiquetas_esp);
+        $("#etiquetas_ing").val(data.data.etiquetas_ing);
+    
 
       },
       // código a ejecutar si la petición falla;
@@ -1091,8 +1068,13 @@ html:
 
 '<div class="col-md-3">'+
   '<div class="form-group">'+
-        '<label>Etiquetas</label>'+
-        '<textarea type="text" name="etiquetas" id="etiquetas" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+        '<label>Ciudad</label>'+
+        '<select required id="ciudad" name="ciudad"  class="form-control" >'+
+         '<option disabled selected>Selecciona ciudad</option>'+
+          '<option value="Cabo San Lucas">Cabo San Lucas</option>'+
+          '<option value="San José del Cabo">San José del Cabo</option>'+
+          '<option value="Los Barriles">Los Barriles</option>      '+                                            
+        '</select>'+
     '</div>'+
 '</div>'+
 
@@ -1182,7 +1164,29 @@ html:
                                    '  </select>'+
 '</div>'+
 '</div>'+
+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Etiquetas esp</label>'+
+        '<textarea type="text" name="etiquetas_esp" id="etiquetas_esp" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+    '</div>'+
 '</div>'+
+
+'<div class="col-md-3">'+
+  '<div class="form-group">'+
+        '<label>Etiquetas inglés</label>'+
+        '<textarea type="text" name="etiquetas_ing" id="etiquetas_ing" pattern="[A-Za-z0-9 ]+" title="Sólo letras y números" class="form-control border-input"></textarea>'+
+
+
+'</div>'+
+'</div>'+
+
+'</div>'+
+
+//inicia fila 6
+
+
 
 '<Button type="submit" class= "btn btn-info btn-fill btn-wd">Actualizar negocio</Button>'+
 '</form></div>',

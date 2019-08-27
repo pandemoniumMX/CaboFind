@@ -30,6 +30,7 @@ if ($_POST['empresa']) {
   $eti_ing = $_POST ['etiquetas_ing'];
   $estatus = $_POST ['estatus'];
 
+  $ingles = $_POST ['ingles'];
 
 
 
@@ -40,8 +41,8 @@ if ($_POST['empresa']) {
 
     $sql2 = "INSERT INTO negocios(NEG_NOMBRE, NEG_CORREO, NEG_TEL, NEG_TEL_RESP, NEG_DIRECCION, NEG_LUGAR, NEG_RESPONSABLE,
      NEG_DESCRIPCION, NEG_DESCRIPCION_ING, NEG_ETIQUETAS, NEG_ETIQUETAS_ING,ID_SUBCATEGORIA, 
-     NEG_MAP,NEG_HORARIO, NEG_HORARIO_ING,NEG_FACEBOOK,NEG_INSTAGRAM,NEG_WEB,NEG_ESTATUS)
-    VALUES ('$emp','$cor','$tel','$tel_res','$dir','$ciu','$resp','$des','$des_ing','$eti_esp','$eti_ing','$sub', '$map','$hor','$hor_ing','$fb','$in','$web','$estatus');";
+     NEG_MAP,NEG_HORARIO, NEG_HORARIO_ING,NEG_FACEBOOK,NEG_INSTAGRAM,NEG_WEB,NEG_ESTATUS,NEG_INGLES)
+    VALUES ('$emp','$cor','$tel','$tel_res','$dir','$ciu','$resp','$des','$des_ing','$eti_esp','$eti_ing','$sub', '$map','$hor','$hor_ing','$fb','$in','$web','$estatus','$ingles');";
     $res = $conn->query($sql2);
 
     if (!$res) {

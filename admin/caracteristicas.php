@@ -58,7 +58,7 @@
           <div class="header__navbar">
             <ul class="list-unstyled">
               <li class="has-sub">
-                <a href="negocios.php">
+                <a href="index.php">
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
@@ -74,11 +74,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
-                <a href="#">
-                  <i class="fas fa-shopping-basket"></i>
-                  <span class="bot-line"></span>Galeria</a>
-              </li>
+              
               <li>
                 <a href="caracteristicas.php">
                   <i class="fas fa-trophy"></i>
@@ -186,84 +182,30 @@
         <div class="container-fluid">
           <ul class="navbar-mobile__list list-unstyled">
             <li class="has-sub">
-              <a class="js-arrow" href="#">
+              <a class="js-arrow" href="index.php">
                 <i class="fas fa-globe"></i>Negocios</a>
-              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
-
-              </ul>
+             
             </li>
+            
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-film"></i>Galeria</a>
-              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
-
-              </ul>
-            </li>
-            <li class="has-sub">
-              <a class="js-arrow" href="#">
+              <a class="js-arrow" href="caracteristicas.php">
                 <i class="fas fa-tags"></i>Caracteristicas</a>
-              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
-
-              </ul>
+              
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-rocket"></i>Publicaciones</a>
-              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
-
-              </ul>
+              <a class="js-arrow" href="servicios.php">
+                <i class="fas fa-tags"></i>Servicios</a>
+              
+            </li>
+            <li class="has-sub">
+              <a class="js-arrow" href="publicaciones.php">
+                <i class="fas fa-tags"></i>Publicaciones</a>
+             
             </li>
             <li class="has-sub">
               <a class="js-arrow" href="#">
                 <i class="fas fa-users"></i>Usuarios</a>
-              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                <li>
-                  <a href="#">Agregar</a>
-                </li>
-                <li>
-                  <a href="#">Editar</a>
-                </li>
-                <li>
-                  <a href="#">Eliminar</a>
-                </li>
-
-              </ul>
+             
             </li>
               </ul>
             </li>
