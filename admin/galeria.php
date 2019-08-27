@@ -52,8 +52,8 @@
       <div class="section__content section__content--p35">
         <div class="header3-wrap">
           <div class="header__logo">
-            <a href="#">
-              <img src="images/icon/logo.png" alt="Cabofind" />
+            <a href="index.php">
+              <img src="images/icon/logo1.png" alt="Cabofind" />
             </a>
           </div>
           <div class="header__navbar">
@@ -63,17 +63,7 @@
                   <i class="fas fa-tachometer-alt"></i>Negocios
                   <span class="bot-line"></span>
                 </a>
-                <ul class="header3-sub-list list-unstyled">
-                  <li>
-                    <a href="index.html">Agregar</a>
-                  </li>
-                  <li>
-                    <a href="index2.html">Editar</a>
-                  </li>
-                  <li>
-                    <a href="index3.html">Borrar</a>
-                  </li>
-                </ul>
+                
               </li>
               
               <li>
@@ -90,33 +80,13 @@
                 <a href="publicaciones.php">
                   <i class="fas fa-copy"></i>
                   <span class="bot-line"></span>Publicaciones</a>
-                <ul class="header3-sub-list list-unstyled">
-                  <li>
-                    <a href="publicacion_nueva.php">Agregar</a>
-                  </li>
-                  <li>
-                    <a href="#">Editar</a>
-                  </li>
-                  <li>
-                    <a href="#">Borrar</a>
-                  </li>
-                </ul>
+                
               </li>
               <li class="has-sub">
                 <a href="#">
                   <i class="fas fa-desktop"></i>
                   <span class="bot-line"></span>Usuarios</a>
-                <ul class="header3-sub-list list-unstyled">
-                  <li>
-                    <a href="button.html">Agregar</a>
-                  </li>
-                  <li>
-                    <a href="badge.html">Editar</a>
-                  </li>
-                  <li>
-                    <a href="tab.html">Borrar</a>
-                  </li>
-                </ul>
+                
               </li>
             </ul>
           </div>
@@ -168,8 +138,8 @@
       <div class="header-mobile__bar">
         <div class="container-fluid">
           <div class="header-mobile-inner">
-            <a class="logo" href="index.html">
-              <img src="images/icon/logo.png" alt="Cabofind" />
+            <a class="logo" href="index.php">
+              <img src="images/icon/logo1.png" alt="Cabofind" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
