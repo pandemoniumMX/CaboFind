@@ -282,7 +282,7 @@
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "SELECT * FROM Caracteristicas;";
+                                    $public = "SELECT * FROM caracteristicas;";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){

@@ -338,18 +338,21 @@
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
-                                             <button class="item" title="Galeria" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
+                                             <button class="item"  data-toggle="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
                                                <i class="zmdi zmdi-image"></i>
                                           </button>
                                            <button class="item" data-toggle="tooltip" data-placement="top" onclick="editar_emp(<?php echo $id_neg ?>),editar_mod(<?php echo $id_neg ?>)"   data-original-title="Editar">
                                              <i class="zmdi zmdi-edit"></i>
-                                           </button>
+                                           </button>                                        
+                                        <button class="item"  data-toggle="tooltip" onclick="window.location.href='caracteristicasxn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Caracteristicas">
+                                          <i class="zmdi zmdi-labels"></i>
+                                        </button>
+                                        <button class="item"  data-toggle="tooltip" onclick="window.location.href='serviciosxn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Servicios">
+                                          <i class="fa fa-bell"></i>
+                                        </button>
                                         <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Borrar">
                                           <i class="zmdi zmdi-delete"></i>
-                                     </button>
-                                     <button class="item" title="tags" data-toggle="modal" data-whatever="<?php echo $id_neg ?>" data-target="#Modaltags" data-original-title="Etiquetas">
-                                       <i class="zmdi zmdi-labels"></i>
-                                  </button>
+                                        </button>
 
 
                                       </div>

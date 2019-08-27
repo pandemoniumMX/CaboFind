@@ -301,7 +301,7 @@
                                   </thead>
                                   <tbody>
                                     <?php
-                                    $public = "SELECT * FROM Servicios;";
+                                    $public = "SELECT * FROM servicios;";
                                     $ejecutar = mysqli_query($conn, $public);
 
                                   while($fila=mysqli_fetch_array($ejecutar)){
