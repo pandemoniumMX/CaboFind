@@ -53,7 +53,7 @@
         <div class="header3-wrap">
           <div class="header__logo">
             <a href="#">
-              <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+              <img src="images/icon/logo.png" alt="Cabofind" />
             </a>
           </div>
           <div class="header__navbar">
@@ -169,7 +169,7 @@
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+              <img src="images/icon/logo.png" alt="Cabofind" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
@@ -309,7 +309,7 @@
   <!-- Grid column -->
   <div class="mb-3 pics animation all 1">
     <?php
-    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Publicacion'";
+    $all = "SELECT * FROM galeria WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Publicacion'";
     $ejecutar = mysqli_query($conn, $all);
 
   while($fila=mysqli_fetch_array($ejecutar)){
@@ -323,7 +323,7 @@
   <!-- Grid column -->
   <div class="mb-3 pics animation all 2">
     <?php
-    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Logo'";
+    $all = "SELECT * FROM galeria WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Logo'";
     $ejecutar = mysqli_query($conn, $all);
 
   while($fila=mysqli_fetch_array($ejecutar)){
@@ -337,7 +337,7 @@
   <!-- Grid column -->
   <div class="mb-3 pics animation all 3">
     <?php
-    $all = "SELECT * FROM GALERIA WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Galeria'";
+    $all = "SELECT * FROM galeria WHERE ID_NEGOCIO = $id AND GAL_TIPO = 'Galeria'";
     $ejecutar = mysqli_query($conn, $all);
 
   while($fila=mysqli_fetch_array($ejecutar)){

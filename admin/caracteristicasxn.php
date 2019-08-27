@@ -73,7 +73,7 @@
         <div class="header3-wrap">
           <div class="header__logo">
             <a href="#">
-              <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+              <img src="images/icon/logo.png" alt="Cabofind" />
             </a>
           </div>
           <div class="header__navbar">
@@ -189,7 +189,7 @@
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+              <img src="images/icon/logo.png" alt="Cabofind" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
@@ -289,8 +289,12 @@
                                     </div>
                                     <div class="card-body">
                                         <button type="button" class="btn btn-success active" onclick="add_caract();">Agregar caracteristica al negocio</button>
-                                       
+                                        <button type="button" class="btn btn-primary active" onclick="window.location.href='serviciosxn.php?id=<?php echo $id_neg ?>'">Agregar servicios al negocio</button>
+
                                     </div>
+
+                                    
+
                       </div>
                       <div class="card-body">
                           <div class="table-responsive table--no-card m-b-30">

@@ -52,7 +52,7 @@
         <div class="header3-wrap">
           <div class="header__logo">
             <a href="#">
-              <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+              <img src="images/icon/logo.png" alt="Cabofind" />
             </a>
           </div>
           <div class="header__navbar">
@@ -168,7 +168,7 @@
         <div class="container-fluid">
           <div class="header-mobile-inner">
             <a class="logo" href="index.html">
-              <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+              <img src="images/icon/logo.png" alt="Cabofind" />
             </a>
             <button class="hamburger hamburger--slider" type="button">
               <span class="hamburger-box">
