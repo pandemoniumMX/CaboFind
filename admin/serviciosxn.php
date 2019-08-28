@@ -489,7 +489,7 @@ function submitContactForm(){
 //insertar caracetrsitica a negocio
     function add_caract(){
    swal({
-   title: 'Características ',
+   title: 'Servicios ',
    html:
    '<div class="col-lg-12"> <form action="serviciosxn_car_insert_fn.php" method="post" name="data">'+
    <?php
@@ -497,7 +497,7 @@ function submitContactForm(){
                 while($fila=mysqli_fetch_array($ejec1)){ ?>               
                 '<input type="hidden" name="id" id="id" value="<?php echo $fila["ID_NEGOCIO"]; ?>" '+//obtener solo id
     <?php } ?>
-   '<strong class="card-title mb-3">Asignar caracteristica a empresa</strong> </br>'+
+   '<strong class="card-title mb-3">Asignar Servicios a empresa</strong> </br>'+
     '<select class="form-control form-control-sm" textalign="center" required name="car" id="car" placeholder="Ej. Reparación">'+
     '<option value="" ></option>'+
     <?php

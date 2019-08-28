@@ -248,12 +248,9 @@
     <div class="page-content--bgf7"></br>
           <div class="container">
                     <div class="card">
-
-                      <div class="card-header">
-
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#newPublic" >Nueva publicación</button>
-
-                      </div>
+                    <div class="card-header">
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#newPublic" >Nueva publicación</button>
+                    </div>
                       <div class="card-body">
                           <div class="table-responsive table--no-card m-b-30">
                               <table class="table table-borderless table-striped table-earning">
@@ -271,113 +268,37 @@
                                     $public = "SELECT * FROM publicacion p, negocios n
                                     WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO;";
                                     $ejecutar = mysqli_query($conn, $public);
-
                                   while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_pub       = $fila['ID_PUBLICACION'];
-                                      $titu_pub            = $fila['PUB_TITULO'];
+                                      $id       = $fila['ID_PUBLICACION'];
+                                      $titu_pub  = $fila['PUB_TITULO'];
                                       $nom_neg   = $fila['NEG_NOMBRE'];
-                                      $fecha_pub   = $fila['PUB_FECHA'];
+                                      $fecha_pub  = $fila['PUB_FECHA'];
                                      ?>
                                      <tr>
-                                         <td><?php echo $id_pub ?></td>
+                                         <td><?php echo $id ?></td>
                                          <td><?php echo $titu_pub ?></td>
                                          <td><?php echo $nom_neg ?></td>
-                                         <td class="text-right"><?php echo $fecha_pub ?></td>
-                                         <td class="text-right">
-                                           <div class="table-data-feature">
-                                           <button class="item" title="Edit" data-toggle="modal" data-whatever="<?php echo $id_pub ?>" data-target="#largeModal" data-original-title="Edit">
-                                             <i class="zmdi zmdi-edit"></i>
-                                        </button>
-                                        <button class="item" data-toggle="tooltip" onclick="borrar_pub(<?php echo $id_pub ?>)" data-placement="top" title="Delete" data-original-title="Delete">
-                                          <i class="zmdi zmdi-delete"></i>
-                                     </button>
-                                      </div>
-                                       </td>
-                                       </tr>
-                                     <?php } ?>
-                                  </tbody>
+                                         <td><?php echo $fecha_pub ?></td>
+                                         <td width="14%">
+                                        <?php echo"
+                                        <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                                        <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
+                                            "
+                                          ?>
+
+                                      </tr>
+                                    <?php } ?>
+                                    <tbody></br>
                               </table>
               </div>
               </div>
               </div>
 
         </div>
+    </div>   
 
-    </div>
+  
 
-    <!-- modal edit publicacion -->
-    <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog modal-lg" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="largeModalLabel">Nueva publicacion</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <!-- contenido del modal -->
-
-                  <form enctype="multipart/form-data" form enctype="multipart/form-data" >
-                    <div class="form-group">
-                  <div class="input-group">
-                <div class="input-group-addon">Titulo</div>
-                <input type="text" id="titulo" required name="titulo" class="form-control">
-                <div class="input-group-addon">
-                  <i class="fa fa-text-height"></i>
-                </div>
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col col-md-3">
-                  <label for="textarea-input" class=" form-control-label">Publicacion</label>
-              </div>
-              <div class="col-12 col-md-9">
-                  <textarea name="detalle" required id="detalle" rows="9" placeholder="Información de la publicacion" class="form-control"></textarea>
-              </div>
-            </div>
-            <div class="row form-group">
-              <div class="col col-md-12">
-                  <div class="input-group">
-                      <input type="text" id='s_neg' name='s_neg' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
-                      <div class="input-group-btn">
-                        <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
-                          <option>Seleccione</option>
-                        <?php
-                        $negocios = "SELECT * FROM negocios;";
-                        $ejecutar = mysqli_query($conn, $negocios);
-
-                      while($fila=mysqli_fetch_array($ejecutar)){
-                          $neg_nom          = $fila['NEG_NOMBRE'];
-                          $id_neg            = $fila['ID_NEGOCIO'];
-                          echo "<option value='$id_neg'>$neg_nom</option>";
-                        }
-                           ?>
-                         </select>
-                      </div>
-                  </div>
-              </div>
-            </div>
-
-            <div class="row form-group">
-                <div class="col col-md-3">
-                  <label for="file-input" class=" form-control-label">Imagen</label>
-              </div>
-              <div class="col-12 col-md-9">
-
-
-              </div>
-            </div>
-                         </form>
-
-                                                    </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
-                </div>
-              </div>
-            </div>
-          </div>
           <!-- fin del modal -->
 
 
@@ -442,6 +363,9 @@
                               }
                                  ?>
                                </select>
+
+
+                               
                             </div>
                         </div>
 
@@ -557,6 +481,23 @@
          }
      }
     </script>
+
+    <!-- files input image preview-->
+    <script>
+    function readURL(input) {
+         if (input.files && input.files[0]) {
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+                 $('#img')
+                     .attr('src', e.target.result);
+             };
+
+             reader.readAsDataURL(input.files[0]);
+         }
+     }
+    </script>
+
 <!-- submit form-->
 <script>
 $(document).ready(function(e){
@@ -648,6 +589,127 @@ $(document).ready(function(e){
     }
     </script>
 
+
+<script type="text/javascript">
+  //ventana de nuevo cliente
+    function editar_pub(id){
+   swal({
+   title: 'Editar Publicacion ',
+   html:
+   '<div class="col-lg-12"> <form action="publicacion_update_fn.php" method="post" name="data">'+
+   '<input type="text" id="idps" name="idps"  readonly required  class="form-control"></br>' +
+   //'<input  type="text" id="idn"  name="idn" readonly class="form-control border-input maxlength="25" required>' +
+
+    '<input type="text" id="titulos" placeholder="Título en español" required name="titulos" class="form-control"></br>'+
+    '<input type="text" id="titulo_ings" required name="titulo_ings" placeholder="Título en inglés" class="form-control"></br>'+
+
+    '<textarea id="detalles" name="detalles" required  rows="9" placeholder="Información de la publicacion español" class="form-control"></textarea></br>'+
+    '<textarea id="detalle_ings" name="detalle_ings" required  rows="9" placeholder="Información de la publicacion inglés" class="form-control"></textarea></br>'+
+
+    '<input type="text" id="videos"  name="videos"  placeholder="Link de youtube(Opcional)" class="form-control"></br>'+
+    '<label>Empresa de la publicacion</label>'+
+                     '<div class="input-group-btn">'+
+                    '<select id="s_negs" name="s_negs" class="dropdown-toggle btn btn-success" type="button">'+
+                   '<option disabled selected>Selecciona una empresa</option>'+                   
+                        <?php
+                        $negocios = "SELECT * FROM negocios;";
+                        $ejecutar = mysqli_query($conn, $negocios);
+
+                      while($fila=mysqli_fetch_array($ejecutar)){?>                          
+                      '<?php echo '<option value="'.$fila["ID_NEGOCIO"].'">'.$fila["NEG_NOMBRE"].'</option>'; ?>'+
+                      
+                      <?php } ?>
+                        
+                  '</select>'+
+                 '</div>'+
+
+    '<label>Tipo de publicacion</label></br>'+
+    '            <div class="input-group-btn">'+
+                                        '<select id="publicacions" name="publicacions" class="dropdown-toggle btn btn-primary" type="button">'+
+                              '<option disabled selected>Selecciona tipo</option>'+
+                              '<option value="Publicacion">Normal</option>'+
+                                '<option value="Promocion">Promoción</option>'+
+                                '<option value="Recomendado">Recomendado</option>'+
+                                '<option value="Eventos">Eventos</option>'+
+
+                              '</select>'+
+                              '</div>'+
+                              '<label>Estatus</label></br>' +
+                              '<select class="dropdown-toggle btn btn-info" type="button" required textalign="center" name="estatuss" id="estatuss"><option disabled selected>Selecciona estado</option><option value="A" >A</option><option value="B">B</option></select></br>'+   
+
+                              '<label>Selecciona imagen</label></br>' +
+                        '<div class="image-upload"><label for="file-input">'+
+                        <?php 
+                        $all = "SELECT * FROM galeria g, publicacion p  WHERE g.ID_GALERIA = p.galeria_ID_GALERIA and p.ID_PUBLICACION=$id;";
+                        $ejecutar = mysqli_query($conn, $all);
+                        while($fila=mysqli_fetch_array($ejecutar)){?>  
+                         // $img_all          = $fila['GAL_FOTO'];
+                          '<?php echo '<img id="img" name="img" alt="Responsive image" class="rounded mx-auto d-block"  src="images/giphy.gif" />'; ?>'+
+                          <?php } ?>
+                        
+                        '</label>'+
+                        '<input id="file-input" name="file"  type="file" style="display:none" onchange="readURL(this);" />'+
+
+    '<button type="submit"  class="btn btn-success btn-lg btn-block">Actualizar</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+})
+};
+  </script>
+
+
+<script>
+        //Script para mandar ID para generar la orden
+        function get_pub(id){
+        $.ajax({
+        // la URL para la petición
+        url : 'publicacion_get_fn.php',
+        // la información a enviar
+        // (también es posible utilizar una cadena de datos)
+        data : {
+        id : id
+        },
+        // especifica si será una petición POST o GET
+        type : 'POST',
+        // el tipo de información que se espera de respuesta
+        dataType : 'json',
+        // código a ejecutar si la petición es satisfactoria;
+        // la respuesta es pasada como argumento a la función
+        success : function(data) {
+        //Manda Llamar id,nombre y apellido
+       // $("#idp").val(data.data.id_car);
+        $("#idps").val(data.data.idp);             
+        $("#titulos").val(data.data.titulo);
+        $("#titulo_ings").val(data.data.titulo_ing);        
+        $("#detalles").val(data.data.detalle);
+	      $("#detalle_ings").val(data.data.detalle_ing);
+        $("#videos").val(data.data.video);
+        $("#publicacions").val(data.data.publicacion);
+        $("#estatuss").val(data.data.estatus);
+	      $("#s_negs").val(data.data.s_neg);
+	      $("#img").val(data.data.img);
+        
+      },
+        // código a ejecutar si la petición falla;
+        // son pasados como argumentos a la función
+        // el objeto de la petición en crudo y código de estatus de la petición
+        error : function(xhr, status) {
+        },
+        // código a ejecutar sin importar si la petición falló o no
+        complete : function(xhr, status) {
+        }
+        });
+        }
+    </script>
 
 
   </body>

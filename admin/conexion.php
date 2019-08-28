@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "cabofind";
-$password = "6241543710";
+$username = "root";
+$password = "";
 $dbname = "cabofind_cabofind";
 
 

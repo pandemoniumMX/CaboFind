@@ -495,7 +495,8 @@
                                                 <select id='select_cat' name='categoria' class="dropdown-toggle btn btn-primary" type="button">
                                                   <option>Seleccione</option>
                                                 <?php
-                                                $cons_cate = "SELECT * FROM categorias;";
+                                                  echo '<option value="'.$fila["ID_CATEGORIA"].'">'.$fila["CAT_NOMBRE"].'</option>';
+                                                $cons_cate = "SELECT ID_CATEGORIA,CAT_NOMBRE FROM categorias;";
                                                 $ejecutar = mysqli_query($conn, $cons_cate);
 
                                               while($fila=mysqli_fetch_array($ejecutar)){                                                 
@@ -539,7 +540,9 @@
                                                 <option disabled selected>Selecciona ciudad</option>
                                                 <option value="Cabo San Lucas">Cabo San Lucas</option>
                                                 <option value="San José del Cabo">San José del Cabo</option>
-                                                <option value="Los Barriles">Los Barriles</option>                                                  
+                                                <option value="Los Barriles">Los Barriles</option>     
+                                                <option value="Miraflores">Miraflores</option>                                                  
+                                             
                                                 </select>
                                             </div>
                                         </div>
@@ -1060,7 +1063,9 @@ html:
          '<option disabled selected>Selecciona ciudad</option>'+
           '<option value="Cabo San Lucas">Cabo San Lucas</option>'+
           '<option value="San José del Cabo">San José del Cabo</option>'+
-          '<option value="Los Barriles">Los Barriles</option>      '+                                            
+          '<option value="Los Barriles">Los Barriles</option>'+    
+          '<option value="Corredor Turístico">Corredor Turístico</option>'+                                            
+                                        
         '</select>'+
     '</div>'+
 '</div>'+
