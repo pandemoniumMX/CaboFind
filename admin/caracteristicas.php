@@ -7,6 +7,10 @@
     session_start();
     $usu_nom= $_SESSION['nombre'];
     $usu_tip= $_SESSION['tipo'];
+    if($usu_tip != "Admin") {
+      //echo "<script>alert('No tienes acceso a esta página!')</script>";
+        echo "<script>window.open('Error_restrinccion.html','_self')</script>";
+      }
 ?>
 <html lang="en">
 

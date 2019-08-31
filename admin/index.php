@@ -7,6 +7,11 @@
     session_start();
     $usu_nom= $_SESSION['nombre'];
     $usu_tip= $_SESSION['tipo'];
+    if($usu_tip != "Admin") {
+      //echo "<script>alert('No tienes acceso a esta página!')</script>";
+        echo "<script>window.open('Error_restrinccion.html','_self')</script>";
+      }
+  
 
 
    
@@ -378,7 +383,7 @@
                                 <div class="input-group-addon">
                                     <i class="fa fa-user"></i>
                                 </div>
-                                <input type="text" id="empresa" name="empresa" required onkeypress="return validar(event)" placeholder="Nombre negocio" class="form-control">
+                                <input type="text" id="empresa" name="empresa" required  placeholder="Nombre negocio" class="form-control">
                             </div>
                         </div>
                     </div>

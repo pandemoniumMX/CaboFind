@@ -8,6 +8,10 @@
     session_start();
     $usu_nom= $_SESSION['nombre'];
     $usu_tip= $_SESSION['tipo'];
+    if($usu_tip != "Admin") {
+      //echo "<script>alert('No tienes acceso a esta página!')</script>";
+        echo "<script>window.open('Error_restrinccion.html','_self')</script>";
+      }
 ?>
 <html lang="en">
 
@@ -249,6 +253,8 @@
                         <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
                         Agregar imagen
                         </button>
+                        <button type="button" class="btn btn-success active" onclick="window.location.href='caracteristicasxn.php?id=<?php echo $id ?>'">Agregar caracteristica al negocio</button>
+                        <button type="button" class="btn btn-primary active" onclick="window.location.href='serviciosxn.php?id=<?php echo $id ?>'">Agregar servicios al negocio</button>
                         
                       </div>
                       <div class="card-body">
