@@ -11,10 +11,32 @@
       //echo "<script>alert('No tienes acceso a esta página!')</script>";
         echo "<script>window.open('Error_restrinccion.html','_self')</script>";
       }
+
+      $id_neg = ($_GET ['id']);
+
+      $query = "SELECT
+      negocios.ID_NEGOCIO,
+      negocios.`NEG_NOMBRE`,
+      trigger_visita_negocio.`IDIOMA_TVN`,
+      COUNT(trigger_visita_negocio.negocios_ID_NEGOCIO) AS Total
+      FROM
+      negocios
+      LEFT JOIN trigger_visita_negocio ON negocios.ID_NEGOCIO = 
+      trigger_visita_negocio.negocios_ID_NEGOCIO
+      WHERE trigger_visita_negocio.negocios_ID_NEGOCIO=$id_neg
+      GROUP BY negocios.ID_NEGOCIO,trigger_visita_negocio.`IDIOMA_TVN`";  
+
+
+    $query2="SELECT * FROM negocios WHERE ID_NEGOCIO=$id_neg";
+
+      $result1 = mysqli_query($conn, $query2); 
+      $result = mysqli_query($conn, $query);  
 ?>
 <html lang="en">
 
 <head>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>  
+
   <!-- Required meta tags-->
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -236,67 +258,22 @@
           <div class="container">
                     <div class="container-fluid">
                     <div class="card">
-
                       <div class="card-header">
-                        <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
-                        Agregar caracteristica
-                        </button>
-                      </div>
+                        
+                      
                       <div class="card-body">
-                          <div class="table-responsive table--no-card m-b-30">
-                              <table class="table table-borderless table-striped table-earning">
-                                  <thead>
-                                      <tr>
-                                          <th>id</th>
-                                          <th>Nombre</th>
-                                          <th>Nombre inglés</th>
-
-                                          <th>Estatus</th>
-                                          <th>Fecha</th>
-                                          <th class="text-right">Acción</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                    $public = "SELECT * FROM caracteristicas;";
-                                    $ejecutar = mysqli_query($conn, $public);
-
-                                  while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id_car       = $fila['ID_CARACTERISTICAS'];
-                                      $nom       = $fila['CAR_NOMBRE'];
-                                      $nom_ing       = $fila['CAR_NOMBRE_ING'];
-
-                                      $esta       = $fila['CAR_ESTATUS'];
-                                      $fech       = $fila['CAR_FECHA'];
-
-                                     ?>
-                                     <tr>
-                                         <td><?php echo $id_car ?></td>
-                                         <td><?php echo $nom ?></td>
-                                         <td><?php echo $nom_ing ?></td>
-
-                                         <td><?php echo $esta ?></td>
-                                         <td><?php echo $fech ?></td>
-                                         <td class="text-right">
-                                           <div class="table-data-feature">
-                                             <button class="item" title="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_car ?>'" data-original-title="Edit">
-                                               <i class="zmdi zmdi-image"></i>
-                                          </button>
-                                           <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">
-                                             <i class="zmdi zmdi-edit"></i>
-                                        </button>
-                                        <button class="item" onclick="borrar_emp(<?php echo $id_car ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete">
-                                          <i class="zmdi zmdi-delete"></i>
-                                     </button>
-
-
-                                      </div>
-                                       </td>
-                                       </tr>
-                                     <?php } ?>
-                                  </tbody>
-                              </table>
-              </div>
+                            <h3 align="center">
+                            Contador de visitas al negocio :
+                            <?php  
+                            while($row = mysqli_fetch_array($result1))  
+                            {  
+                              echo "".$row["NEG_NOMBRE"],"";  
+                            }  
+                            ?>  
+                            </h3>  
+                            <br />  
+                            <!-- PAGE CONTAINER-->  <div id="piechart" ></div>  
+                       </div>     
               </div>
               </div>
               </div>
@@ -305,46 +282,7 @@
     </div>
 
 
-<!-- Modal start -->
-    <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-    				<div class="modal-dialog modal-lg" role="document">
-    					<div class="modal-content">
-    						<div class="modal-header">
-    							<h5 class="modal-title" id="largeModalLabel">Negocios relacionados</h5>
-    							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-    								<span aria-hidden="true">×</span>
-    							</button>
-    						</div>
-    						<div class="modal-body">
-                  <!-- contenido del modal -->
 
-          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
-            <div class="row">
-
-                                  <div class="row form-group">
-                              <div class="col col-md-12">
-                        <div class="input-group">
-                       <div class="input-group-addon">
-                      <i class="fa fa-tags"></i>
-                        </div>
-                          <input type="text" id="nom" name="nom" required placeholder="Nombre" class="form-control">
-                          <input type="text" id="nom_ing" name="nom_ing" required placeholder="Nombre inglés" class="form-control">
-
-                            </div>
-                              </div>
-                            </div>
-                                                  </div>
-                                                    </div>
-                                                  </form>
-
-    						<div class="modal-footer">
-    							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-<!-- modal end -->
 
 
 
@@ -443,39 +381,30 @@ function submitContactForm(){
   </script>
 
 <!-- funcion ajax borrar en tabla-->
-  <script>
-  function borrar_emp(id){
-  swal({
-     title: 'Estás seguro?',
-     text: "Esta acción no se puede revertir!",
-     type: 'warning',
-     showCancelButton: true,
-     confirmButtonColor: '#3085d6',
-     cancelButtonColor: '#d33',
-     confirmButtonText: '¡Si!, borralo',
-     showLoaderOnConfirm: true,
-     preConfirm: function() {
-       return new Promise(function(resolve) {
-         $.ajax({
-          url: 'caracteristica_delete_fn.php',
-          type: 'POST',
-          data: 'delete='+id,
-          dataType: 'json'
-       })
-       .done(function(response){
-          swal('Borrado exitosamente!', response.message, response.status).then(function(){
-              location.reload();
-          });
-       })
-       .fail(function(){
-          swal('Oops...', 'Something went wrong with ajax !', 'error');
-       });
-       });
-     },
-     allowOutsideClick: false
-  });
-  }
-  </script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>  
+<script type="text/javascript">  
+           google.charts.load('current', {'packages':['corechart']});  
+           google.charts.setOnLoadCallback(drawChart);  
+           function drawChart()  
+           {  
+                var data = google.visualization.arrayToDataTable([  
+                          ['Gender', 'Number'],  
+                          <?php  
+                          while($row = mysqli_fetch_array($result))  
+                          {  
+                               echo "['".$row["IDIOMA_TVN"]."', ".$row["Total"]."],";  
+                          }  
+                          ?>  
+                     ]);  
+                var options = {  
+                      title: 'Diagrama de visitas al negocio en Español e inglés',  
+                      //is3D:true,  
+                      pieHole: 0.4  
+                     };  
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));  
+                chart.draw(data, options);  
+           }  
+           </script>  
 
 
 

@@ -84,7 +84,9 @@
                   <i class="fas fa-copy"></i>
                   <span class="bot-line"></span>Publicaciones</a>
                 
-              </li>
+</li>
+
+
               <li class="has-sub">
                 <a href="#">
                   <i class="fas fa-desktop"></i>
@@ -285,7 +287,8 @@
                                          <td><?php echo $fecha_pub ?></td>
                                          <td width="14%">
                                         <?php echo"
-                                        <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>   
+                                        <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a> 
+                                        <a href='estadisticas_xp.php?id=$id' title='Estadisticas ' ><i class='btn-sm btn-info fa fa-eye'></i></a>   
                                         <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
                                             "
                                           ?>

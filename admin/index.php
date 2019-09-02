@@ -106,7 +106,9 @@
                   <i class="fas fa-copy"></i>
                   <span class="bot-line"></span>Publicaciones</a>
                 
-              </li>
+</li>
+
+
               <li class="has-sub">
                 <a href="#">
                   <i class="fas fa-desktop"></i>
@@ -323,20 +325,23 @@
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
-                                             <button class="item"  data-toggle="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
-                                               <i class="zmdi zmdi-image"></i>
+                                             <button  data-toggle="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
+                                             <i class='btn-sm btn-success fa fa-image'></i>
                                           </button>
-                                           <button class="item" data-toggle="tooltip" data-placement="top" onclick="editar_emp(<?php echo $id_neg ?>),editar_mod(<?php echo $id_neg ?>)"   data-original-title="Editar">
-                                             <i class="zmdi zmdi-edit"></i>
+                                           <button  data-toggle="tooltip" data-placement="top" onclick="editar_emp(<?php echo $id_neg ?>),editar_mod(<?php echo $id_neg ?>)"   data-original-title="Editar">
+                                           <i class='btn-sm btn-secondary fa fa-edit'></i>
                                            </button>                                        
-                                        <button class="item"  data-toggle="tooltip" onclick="window.location.href='caracteristicasxn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Caracteristicas">
-                                          <i class="zmdi zmdi-labels"></i>
+                                        <button data-toggle="tooltip" onclick="window.location.href='caracteristicasxn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Caracteristicas">
+                                        <i class='btn-sm btn-primary fa fa-tasks'></i>
                                         </button>
-                                        <button class="item"  data-toggle="tooltip" onclick="window.location.href='serviciosxn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Servicios">
-                                          <i class="fa fa-bell"></i>
+                                        <button data-toggle="tooltip" onclick="window.location.href='serviciosxn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Servicios">
+                                          <i class="btn-sm btn-warning fa fa-bell"></i>
                                         </button>
-                                        <button class="item" onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Borrar">
-                                          <i class="zmdi zmdi-delete"></i>
+                                        <button  data-toggle="tooltip" onclick="window.location.href='estadisticas_xn.php?id=<?php echo $id_neg ?>'" data-target="#top" data-original-title="Estadisticas">
+                                          <i class="btn-sm btn-info fa fa-eye"></i>
+                                        </button>
+                                        <button onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Borrar">
+                                        <i class='btn-sm btn-danger fa fa-trash'></i>
                                         </button>
 
 

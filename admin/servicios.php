@@ -85,7 +85,9 @@
                   <i class="fas fa-copy"></i>
                   <span class="bot-line"></span>Publicaciones</a>
                 
-              </li>
+</li>
+
+
               <li class="has-sub">
                 <a href="#">
                   <i class="fas fa-desktop"></i>
