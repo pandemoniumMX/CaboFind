@@ -32,6 +32,9 @@
 
     $car2="SELECT * from caracteristicas where CAR_ESTATUS='A' and CAR_NOMBRE <> '$car3' ";
 
+    $exp="SELECT * from exposicion where EXP_ESTATUS='A'";
+
+
 ?>
 <html lang="en">
 
@@ -266,7 +269,7 @@
                                     <div class="card-body">
                                         <button type="button" class="btn btn-success active" onclick="add_caract();">Agregar caracteristica al negocio</button>
                                         <button type="button" class="btn btn-primary active" onclick="window.location.href='serviciosxn.php?id=<?php echo $id_neg ?>'">Agregar servicios al negocio</button>
-
+                                        <button type="button" class="btn btn-info active" onclick="add_exp();">Agregar exposición al negocio</button>
                                     </div>
 
                                     
@@ -510,6 +513,44 @@ function submitContactForm(){
     $ejec = mysqli_query($conn, $car2);
     while($fila=mysqli_fetch_array($ejec)){?>
     '<?php echo '<option value="'.$fila["ID_CARACTERISTICAS"].'">'.$fila["CAR_NOMBRE"].'</option>'; ?>'+
+    <?php } ?>
+    '</select>'+
+    '</br>'+
+    '<button type="submit"  class="btn btn-success btn-lg btn-block">Agregar</button>'+
+   '</form></div>',
+   showCancelButton: true,
+   confirmButtonColor: '#3085d6',
+   cancelButtonColor: '#d33',
+   confirmButtonText: '</form> Actualizar solicitud',
+   cancelButtonClass: 'btn btn-danger btn-fill btn-wd',
+   showConfirmButton: false,
+   focusConfirm: false,
+   buttonsStyling: false,
+   reverseButtons: true,
+   allowOutsideClick: false
+})
+};
+  </script>
+
+<script type="text/javascript">
+//insertar caracetrsitica a negocio
+    function add_exp(){
+   swal({
+   title: 'Exposicion ',
+   html:
+   '<div class="col-lg-12"> <form action="exposicionxn_insert_fn.php" method="post" name="data">'+
+   <?php
+                $ejec1 = mysqli_query($conn, $empresa);
+                while($fila=mysqli_fetch_array($ejec1)){ ?>               
+                '<input type="hidden" name="id" id="id" value="<?php echo $fila["ID_NEGOCIO"]; ?>" '+//obtener solo id
+    <?php } ?>
+   '<strong class="card-title mb-3">Asignar exposicion a empresa</strong> </br>'+
+    '<select class="form-control form-control-sm" textalign="center" required name="exp" id="exp" placeholder="Ej. Reparación">'+
+    '<option value="" ></option>'+
+    <?php
+    $ejec = mysqli_query($conn, $exp);
+    while($fila=mysqli_fetch_array($ejec)){?>
+    '<?php echo '<option value="'.$fila["ID_EXPOSICION"].'">'.$fila["EXP_NOMBRE"].'</option>'; ?>'+
     <?php } ?>
     '</select>'+
     '</br>'+
