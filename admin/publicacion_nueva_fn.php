@@ -40,12 +40,49 @@ while($fila=mysqli_fetch_array($ejecutar)){
 $id_g          = $fila['ID_GALERIA'];
 }
 
-//inserta la imagen en la galeria
+//inserta datos de la publicacion
 $sql3 = "INSERT INTO publicacion(PUB_TITULO ,PUB_TITULO_ING, PUB_DETALLE, PUB_DETALLE_ING, PUB_VIDEO, PUB_TIPO, PUB_ESTATUS, negocios_ID_NEGOCIO, galeria_ID_GALERIA)
 VALUES ('$titu','$titulo_ing','$deta','$detalle_ing','$video','$publicacion','A', $id, $id_g);";
 $res2 = $conn->query($sql3);
-    echo $res2?'ok':'err';
-    if (!$res2) {
-       printf("Errormessage: %s\n", $conn->error);
-    }
+
+//notificacion publicacion sin enviar valores
+define( 'API_ACCESS_KEY', 'AAAAwmPVOw4:APA91bHRSlozkMrxPPNNnvOuRNF9-y6jmNhxBBJo4F5zkn2ENHd1TC1yqJ7J3UmWJNQVIZ0PpW84XlrGr4pxDI7VXjotEGpyu4gnAfg3R1wTgd_5nE323jFvZkZBn38MGu_kwMQispvN');
+ //   $registrationIds = ;
+#prep the bundle
+     $msg = array
+          (
+		
+		'title'	=> $titu
+		'body' 	=> $deta,		
+		'icon'  => 'launcher_icon',
+		//"icon" => "ic_launcher",
+		'image'	=> $destino2,		
+             	
+          );
+	$fields = array
+			(
+				'to' => "/topics/Todos",
+				'notification'	=> $msg,
+				
+			);
+	
+	
+	$headers = array
+			(
+				'Authorization: key=' . API_ACCESS_KEY,
+				'Content-Type: application/json'
+			);
+#Send Reponse To FireBase Server	
+		$ch = curl_init();
+		curl_setopt( $ch,CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send' );
+		curl_setopt( $ch,CURLOPT_POST, true );
+		curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
+		curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
+		curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
+		curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
+		$result = curl_exec($ch );
+		echo $result;
+		curl_close( $ch );
+
+   
 }
