@@ -33,7 +33,7 @@ $sql = "INSERT INTO galeria(GAL_FOTO ,GAL_TIPO, GAL_ESTATUS, ID_NEGOCIO)
 VALUES ('$destino2', 'Publicacion','A', $id);";
 $res = $conn->query($sql);
 
-//consulta publicación recien insertada para anidarla a la imagen en galeria
+//consulta publicaci贸n recien insertada para anidarla a la imagen en galeria
 $empresa="SELECT ID_GALERIA FROM galeria order by ID_GALERIA DESC limit 1";
 $ejecutar = mysqli_query($conn, $empresa);
 while($fila=mysqli_fetch_array($ejecutar)){
@@ -52,11 +52,21 @@ define( 'API_ACCESS_KEY', 'AAAAwmPVOw4:APA91bHRSlozkMrxPPNNnvOuRNF9-y6jmNhxBBJo4
      $msg = array
           (
 		
-		'title'	=> $titu
-		'body' 	=> $deta,		
-		'icon'  => 'launcher_icon',
-		//"icon" => "ic_launcher",
-		'image'	=> $destino2,		
+	    'title'	=> "$titu",
+            'body' 	=> "$deta",		
+            'icon'  => 'launcher_icon',
+            //"icon" => "ic_launcher",
+            'image'	=> "$destino2",		
+             	
+		  );
+		  $msg1 = array
+          (
+		
+	    'title'	=> "$titulo_ing",
+            'body' 	=> "$detalle_ing",		
+            'icon'  => 'launcher_icon',
+            //"icon" => "ic_launcher",
+            'image'	=> "$destino2",		
              	
           );
 	$fields = array
@@ -65,6 +75,12 @@ define( 'API_ACCESS_KEY', 'AAAAwmPVOw4:APA91bHRSlozkMrxPPNNnvOuRNF9-y6jmNhxBBJo4
 				'notification'	=> $msg,
 				
 			);
+	$fields2 = array
+			(
+				'to' => "/topics/All",
+				'notification'	=> $msg1,
+				
+			);		
 	
 	
 	$headers = array
@@ -79,10 +95,13 @@ define( 'API_ACCESS_KEY', 'AAAAwmPVOw4:APA91bHRSlozkMrxPPNNnvOuRNF9-y6jmNhxBBJo4
 		curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
 		curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
 		curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
-		curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
+		curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields,$fields2 ) );
 		$result = curl_exec($ch );
 		echo $result;
 		curl_close( $ch );
 
-   
+    echo $res2?'ok':'err';
+    if (!$res2) {
+       printf("Errormessage: %s\n", $conn->error);
+    }
 }
