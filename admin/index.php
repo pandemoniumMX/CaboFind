@@ -324,6 +324,7 @@
                                          <td><?php echo $neg_resp ?></td>
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
+                                         <!-- Modal start 
                                            <div class="table-data-feature">
                                              <button  data-toggle="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
                                              <i class='btn-sm btn-success fa fa-image'></i>
@@ -343,7 +344,7 @@
                                         <button onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Borrar">
                                         <i class='btn-sm btn-danger fa fa-trash'></i>
                                         </button>
-
+-->
 
                                       </div>
                                        </td>
