@@ -287,7 +287,8 @@
                                          <td><?php echo $fecha_pub ?></td>
                                          <td width="14%">
                                         <?php echo"
-                                        <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a> 
+                                        <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
+                                        <a href='publicacion_notififacion_fn.php?id=$id' title='Enviar notificacion ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
                                         <a href='estadisticas_xp.php?id=$id' title='Estadisticas ' ><i class='btn-sm btn-info fa fa-eye'></i></a>   
                                         <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
                                             "
@@ -355,7 +356,7 @@
                     <div class="col col-md-12">
                         <div class="input-group">
 
-                            <input type="text" id='s_neg' name='s_neg' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
+                            <input type="text" id='s_neg' name='s_neg' required placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
                             <div class="input-group-btn">
                               <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
                                 <option>Seleccione</option>
@@ -382,13 +383,12 @@
                     <div class="col col-md-6">
                         <div class="input-group">
 
-                            <input type="text" id='publicacion' name='publicacion' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
+                            <input type="text" id='publicacion' required name='publicacion' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
                             <div class="input-group-btn">
                               <select id='publicacion' name='publicacion' class="dropdown-toggle btn btn-primary" type="button">
                               <option value="NULL">Tipo de publicacion</option>
                                 <option value="Publicacion">Normal</option>
                                 <option value="Promocion">Promoción</option>
-                                <option value="Recomendado">Recomendado</option>
                                 <option value="Eventos">Eventos</option>
 
                                </select>
