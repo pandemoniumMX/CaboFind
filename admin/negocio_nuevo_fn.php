@@ -21,7 +21,6 @@ if ($_POST['empresa']) {
   $cat = $_POST ['categoria'];
   $sub = $_POST ['subcategoria'];
   $map = $_POST ['map'];
-  $map_ios = $_POST ['map_ios'];
   $ciu = $_POST ['ciudad'];
   $fb = $_POST ['facebook'];
   $in = $_POST ['instagram'];
@@ -41,8 +40,8 @@ if ($_POST['empresa']) {
 
     $sql2 = "INSERT INTO negocios(NEG_NOMBRE, NEG_CORREO, NEG_TEL, NEG_TEL_RESP, NEG_DIRECCION, NEG_LUGAR, NEG_RESPONSABLE,
      NEG_DESCRIPCION, NEG_DESCRIPCION_ING, NEG_ETIQUETAS, NEG_ETIQUETAS_ING,ID_SUBCATEGORIA, 
-     NEG_MAP,NEG_MAP_IOS,NEG_HORARIO, NEG_HORARIO_ING,NEG_FACEBOOK,NEG_INSTAGRAM,NEG_WEB,NEG_ESTATUS,NEG_INGLES)
-    VALUES ('$emp','$cor','$tel','$tel_res','$dir','$ciu','$resp','$des','$des_ing','$eti_esp','$eti_ing','$sub', '$map','$map_ios','$hor','$hor_ing','$fb','$in','$web','$estatus','$ingles');";
+     NEG_MAP,NEG_HORARIO, NEG_HORARIO_ING,NEG_FACEBOOK,NEG_INSTAGRAM,NEG_WEB,NEG_ESTATUS,NEG_INGLES)
+    VALUES ('$emp','$cor','$tel','$tel_res','$dir','$ciu','$resp','$des','$des_ing','$eti_esp','$eti_ing','$sub', '$map','$hor','$hor_ing','$fb','$in','$web','$estatus','$ingles');";
     $res = $conn->query($sql2);
 
     

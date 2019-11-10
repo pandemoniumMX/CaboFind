@@ -537,22 +537,10 @@
                        <div class="input-group-addon">
                       <i class="fa fa-location-arrow"></i>
                         </div>
-                          <input type="text" id="map" name="map" required placeholder="URL Google Maps" onkeypress="return validar(event)" class="form-control">
+                          <input type="text" id="map" name="map" required placeholder="URL localizacion" onkeypress="return validar(event)" class="form-control">
                             </div>
                               </div>
                             </div>
-
-                            <div class="row form-group">
-                                        <div class="col col-md-12">
-                                            <div class="input-group">
-                                                <div class="input-group-addon">
-                                                <i class="fa fa-location-arrow"></i>
-                                                </div>
-                                                <input type="text" id="map_ios" name="map_ios" required placeholder="URL Apple Maps" onkeypress="return validar(event)" class="form-control">
-                                            </div>
-                                        </div>
-                            </div>
-
                             <div class="row form-group">
                                         <div class="col col-md-12">
                                             <div class="input-group">
