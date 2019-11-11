@@ -1,9 +1,6 @@
 <?php
-
     include'conexion.php';
     include'fuctions.php';
-
-
     session_start();
     $usu_nom= $_SESSION['nombre'];
     $usu_tip= $_SESSION['tipo'];
@@ -288,7 +285,7 @@
                                          <td width="14%">
                                         <?php echo"
                                         <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
-                                        <a href='publicacion_notififacion_fn.php?id=$id' title='Enviar notificacion ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
+                                        <a href='publicacion_notificacion_fn.php?id=$id' title='Enviar notificacion ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
                                         <a href='estadisticas_xp.php?id=$id' title='Estadisticas ' ><i class='btn-sm btn-info fa fa-eye'></i></a>   
                                         <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
                                             "
@@ -363,7 +360,6 @@
                               <?php
                               $negocios = "SELECT * FROM negocios;";
                               $ejecutar = mysqli_query($conn, $negocios);
-
                             while($fila=mysqli_fetch_array($ejecutar)){
                                 $neg_nom          = $fila['NEG_NOMBRE'];
                                 $id_neg            = $fila['ID_NEGOCIO'];
@@ -478,12 +474,10 @@
     function readURL(input) {
          if (input.files && input.files[0]) {
              var reader = new FileReader();
-
              reader.onload = function (e) {
                  $('#blah')
                      .attr('src', e.target.result);
              };
-
              reader.readAsDataURL(input.files[0]);
          }
      }
@@ -494,12 +488,10 @@
     function readURL(input) {
          if (input.files && input.files[0]) {
              var reader = new FileReader();
-
              reader.onload = function (e) {
                  $('#img')
                      .attr('src', e.target.result);
              };
-
              reader.readAsDataURL(input.files[0]);
          }
      }
@@ -544,7 +536,6 @@ $(document).ready(function(e){
             }
         });
     });
-
     //file type validation
     $("#file-input").change(function() {
         var file = this.files[0];
@@ -606,13 +597,10 @@ $(document).ready(function(e){
    '<div class="col-lg-12"> <form action="publicacion_update_fn.php" method="post" name="data">'+
    '<input type="text" id="idps" name="idps"  readonly required  class="form-control"></br>' +
    //'<input  type="text" id="idn"  name="idn" readonly class="form-control border-input maxlength="25" required>' +
-
     '<input type="text" id="titulos" placeholder="Título en español" required name="titulos" class="form-control"></br>'+
     '<input type="text" id="titulo_ings" required name="titulo_ings" placeholder="Título en inglés" class="form-control"></br>'+
-
     '<textarea id="detalles" name="detalles" required  rows="9" placeholder="Información de la publicacion español" class="form-control"></textarea></br>'+
     '<textarea id="detalle_ings" name="detalle_ings" required  rows="9" placeholder="Información de la publicacion inglés" class="form-control"></textarea></br>'+
-
     '<input type="text" id="videos"  name="videos"  placeholder="Link de youtube(Opcional)" class="form-control"></br>'+
     '<label>Empresa de la publicacion</label>'+
                      '<div class="input-group-btn">'+
@@ -621,7 +609,6 @@ $(document).ready(function(e){
                         <?php
                         $negocios = "SELECT * FROM negocios;";
                         $ejecutar = mysqli_query($conn, $negocios);
-
                       while($fila=mysqli_fetch_array($ejecutar)){?>                          
                       '<?php echo '<option value="'.$fila["ID_NEGOCIO"].'">'.$fila["NEG_NOMBRE"].'</option>'; ?>'+
                       
@@ -629,7 +616,6 @@ $(document).ready(function(e){
                         
                   '</select>'+
                  '</div>'+
-
     '<label>Tipo de publicacion</label></br>'+
     '            <div class="input-group-btn">'+
                                         '<select id="publicacions" name="publicacions" class="dropdown-toggle btn btn-primary" type="button">'+
@@ -638,12 +624,10 @@ $(document).ready(function(e){
                                 '<option value="Promocion">Promoción</option>'+
                                 '<option value="Recomendado">Recomendado</option>'+
                                 '<option value="Eventos">Eventos</option>'+
-
                               '</select>'+
                               '</div>'+
                               '<label>Estatus</label></br>' +
                               '<select class="dropdown-toggle btn btn-info" type="button" required textalign="center" name="estatuss" id="estatuss"><option disabled selected>Selecciona estado</option><option value="A" >A</option><option value="B">B</option></select></br>'+   
-
                               '<label>Selecciona imagen</label></br>' +
                         '<div class="image-upload"><label for="file-input">'+
                         <?php 
@@ -656,7 +640,6 @@ $(document).ready(function(e){
                         
                         '</label>'+
                         '<input id="file-input" name="file"  type="file" style="display:none" onchange="readURL(this);" />'+
-
     '<button type="submit"  class="btn btn-success btn-lg btn-block">Actualizar</button>'+
    '</form></div>',
    showCancelButton: true,
@@ -722,4 +705,3 @@ $(document).ready(function(e){
   </body>
 
   </html>
-  <!-- end document-->

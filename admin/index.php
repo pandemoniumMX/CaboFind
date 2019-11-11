@@ -324,7 +324,7 @@
                                          <td><?php echo $neg_resp ?></td>
                                          <td><?php echo $neg_status ?></td>
                                          <td class="text-right">
-                                         <!-- Modal start 
+                                         
                                            <div class="table-data-feature">
                                              <button  data-toggle="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_neg ?>'" data-original-title="Galeria">
                                              <i class='btn-sm btn-success fa fa-image'></i>
@@ -344,7 +344,7 @@
                                         <button onclick="borrar_emp(<?php echo $id_neg ?>)" data-toggle="tooltip" data-placement="top" title="" data-original-title="Borrar">
                                         <i class='btn-sm btn-danger fa fa-trash'></i>
                                         </button>
--->
+
 
                                       </div>
                                        </td>
@@ -361,8 +361,9 @@
     </div>
 
 
-<!-- Modal start -->
+
     <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <form target="_blank" action="negocio_nuevo_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
     				<div class="modal-dialog modal-lg" role="document">
     					<div class="modal-content">
     						<div class="modal-header">
@@ -658,10 +659,11 @@
                                                     </div>
     						<div class="modal-footer">
     							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+    							<button type="submit" value="submit" class="btn btn-primary">Confirm</button>
     						</div>
     					</div>
     				</div>
+            </form>
     			</div>
 <!-- modal end -->
 
