@@ -33,9 +33,11 @@ $detalle_ing   = $fila['PUB_DETALLE_ING'];
 
 $curl = curl_init();
 
-$fields ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titu\",\r\n\t\"body\":\"$deta\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\"\r\n }\r\n \"to\" : \"/topics/Todos\",\r\n } \r\n";
+//$fields ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titu\",\r\n\t\"body\":\"$deta\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\"\r\n }\r\n \"to\" : \"/topics/Todos\",\r\n } \r\n";
+$fields ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titu\",\r\n\t\"body\":\"$deta\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\",\r\n\t\"click_action\": \"FLUTTER_NOTIFICATION_CLICK\"\r\n },\r\n \"data\": {\r\n \t\"id_n\": \"$idn\",\r\n \t\"id\": \"$idp\" \r\n }\r\n \"to\" : \"/topics/Todos\",\r\n }";
+//$fields1 ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titulo_ing\",\r\n\t\"body\":\"$detalle_ing\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\"\r\n }\r\n \"to\" : \"/topics/All\",\r\n } \r\n";
+$fields1="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titulo_ing\",\r\n\t\"body\":\"$detalle_ing\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\",\r\n\t\"click_action\": \"FLUTTER_NOTIFICATION_CLICK\"\r\n },\r\n \"data\": {\r\n \t\"id_n\": \"$idn\",\r\n \t\"id\": \"$idp\" \r\n }\r\n \"to\" : \"/topics/All\",\r\n }";
 
-$fields1 ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titulo_ing\",\r\n\t\"body\":\"$detalle_ing\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\"\r\n }\r\n \"to\" : \"/topics/All\",\r\n } \r\n";
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://fcm.googleapis.com/fcm/send",
   CURLOPT_RETURNTRANSFER => true,
