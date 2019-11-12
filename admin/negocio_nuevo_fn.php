@@ -32,6 +32,13 @@ if ($_POST['empresa']) {
   $ingles = $_POST ['ingles'];
 
 
+  require "conexion.php";
+
+
+//HConsulta y obtengo los datos
+
+
+
   $validacion = "SELECT ID_NEGOCIO,NEG_NOMBRE FROM negocios WHERE NEG_NOMBRE = '$emp';";
     $resul = $conn->query($validacion);   
    
@@ -44,6 +51,13 @@ if ($_POST['empresa']) {
     VALUES ('$emp','$cor','$tel','$tel_res','$dir','$ciu','$resp','$des','$des_ing','$eti_esp','$eti_ing','$sub', '$map','$hor','$hor_ing','$fb','$in','$web','$estatus','$ingles');";
     $res = $conn->query($sql2);
 
+
+    $empresa="SELECT ID_NEGOCIO FROM negocios order by 	NEG_FECHA DESC limit 1";
+    $ejecutar = mysqli_query($conn, $empresa);
+    while($fila=mysqli_fetch_array($ejecutar)){
+    $id_n          = $fila['ID_NEGOCIO'];
+    }
+
     
 
     if (!$res) {
@@ -53,6 +67,8 @@ $response['message'] = $conn->error;
      else{
        $response['status']  = 'success';
 $response['message'] = 'Negocio registrado correctamente ...';
+echo "<script> window.location.href='galeria.php?id=$id_n'</script>;";
+
      }
 
    }else{
