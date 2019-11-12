@@ -8,20 +8,28 @@ $detalle_ing = $_POST['detalle_ing'];
 $video = $_POST['video'];
 $publicacion = $_POST['publicacion'];
 $id = $_POST['s_neg'];
-$archivo1 = $_FILES['file']['tmp_name'];
+$img_esp = $_FILES['file']['tmp_name'];
+$img_ing = $_FILES['file1']['tmp_name'];
+
 //DESTINO DONDE SE GUARDA LA IMAGEN
 $destino1 = "../assets/galeria/empresas/$id/".$_FILES['file']['name'];
 //DESTINO QUE SE GUARDA EN LA BD
 $destino2 = "http://cabofind.com.mx/assets/galeria/empresas/$id/".$_FILES['file']['name'];
+
+$destino1_ing = "../assets/galeria/empresas/$id/".$_FILES['file1']['name'];
+//DESTINO QUE SE GUARDA EN LA BD
+$destino2_ing = "http://cabofind.com.mx/assets/galeria/empresas/$id/".$_FILES['file1']['name'];
 //crea directorio si no existe.
 $target_dir = "../assets/galeria/empresas/$id/";
 if (!file_exists($target_dir)) {
     mkdir($target_dir, 0777, true);
 }
-move_uploaded_file($archivo1, $destino1);
+move_uploaded_file($img_esp, $destino1);
+move_uploaded_file($img_ing, $destino1_ing);
+
 //inserta la imagen en la galeria
-$sql = "INSERT INTO galeria(GAL_FOTO ,GAL_TIPO, GAL_ESTATUS, ID_NEGOCIO)
-VALUES ('$destino2', 'Publicacion','A', $id);";
+$sql = "INSERT INTO galeria(GAL_FOTO ,GAL_FOTO_ING, GAL_TIPO, GAL_ESTATUS, ID_NEGOCIO)
+VALUES ('$destino2','$destino2_ing', 'Publicacion','A', $id);";
 $res = $conn->query($sql);
 //consulta publicaci贸n recien insertada para anidarla a la imagen en galeria
 $empresa="SELECT ID_GALERIA FROM galeria order by ID_GALERIA DESC limit 1";

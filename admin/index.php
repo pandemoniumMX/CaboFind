@@ -308,7 +308,7 @@
                                   while($fila=mysqli_fetch_array($ejecutar)){
                                       $id_neg       = $fila['ID_NEGOCIO'];
                                       $neg_nom            = $fila['NEG_NOMBRE'];
-                                      $neg_desc   = $fila['SUBSTRING(n.NEG_DESCRIPCION, 1, 10)'];
+                                      $neg_desc   = $fila['NEG_DESCRIPCION'];
                                       $neg_tel   = $fila['NEG_TEL'];
                                       $neg_correo   = $fila['NEG_CORREO'];
                                       $neg_resp   = $fila['NEG_RESPONSABLE'];

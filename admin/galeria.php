@@ -12,6 +12,13 @@
       //echo "<script>alert('No tienes acceso a esta página!')</script>";
         echo "<script>window.open('Error_restrinccion.html','_self')</script>";
       }
+
+      $empresa="SELECT * from negocios where ID_NEGOCIO=$id";
+      $ejecutar = mysqli_query($conn, $empresa);
+      while($fila=mysqli_fetch_array($ejecutar)){
+      $nom           = $fila['NEG_NOMBRE'];
+      }
+
 ?>
 <html lang="en">
 
@@ -250,6 +257,10 @@
           <div class="container">
                     <div class="container-fluid">
                     <div class="card">
+                    <div class="card-header">
+                                      Galeria de la empresa: <strong> <?php echo $nom ?> </strong>
+                                      
+                                    </div>
 
                       <div class="card-header">
                         <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
@@ -475,27 +486,16 @@ function readURL(input) {
          reader.onload = function (e) {
              $('#blah')
                  .attr('src', e.target.result);
-         };
-
+         }
          reader.readAsDataURL(input.files[0]);
      }
  }
+ $("#file-input").change(function(){
+        readURL(this);
+    });
 </script>
 
-<script>
-function readURL1(input1) {
-     if (input1.files && input1.files[1]) {
-         var reader1 = new FileReader();
 
-         reader1.onload1 = function (e) {
-             $('#blah1')
-                 .attr('src', e.target.result);
-         };
-
-         reader1.readAsDataURL(input1.files[1]);
-     }
- }
-</script>
 
 <!-- ajax submit modal-->
 <script>

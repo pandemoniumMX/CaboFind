@@ -356,7 +356,7 @@
                             <input type="text" id='s_neg' name='s_neg' required placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
                             <div class="input-group-btn">
                               <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
-                                <option>Seleccione</option>
+                              <option disabled selected>Seleccionar negocio</option>
                               <?php
                               $negocios = "SELECT * FROM negocios;";
                               $ejecutar = mysqli_query($conn, $negocios);
@@ -382,7 +382,7 @@
                             <input type="text" id='publicacion' required name='publicacion' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
                             <div class="input-group-btn">
                               <select id='publicacion' name='publicacion' class="dropdown-toggle btn btn-primary" type="button">
-                              <option value="NULL">Tipo de publicacion</option>
+                              <option disabled selected>Tipo de publicacion</option>
                                 <option value="Publicacion">Normal</option>
                                 <option value="Promocion">Promoción</option>
                                 <option value="Eventos">Eventos</option>
@@ -397,18 +397,34 @@
                     
                     <div class="row form-group">
                       <div class="col col-md-3">
-                        <label for="file-input" class=" form-control-label">Imagen</label>
+                        <label for="file-input" class=" form-control-label">Imagen esp</label>
                     </div>
                     <div class="col-12 col-md-9">
                       <div class="image-upload">
                         <label for="file-input">
-                          <img id="blah" src="images/giphy.gif" style="max-width: 30%;" />
+                          <img id="blah" src="images/giphy.gif" require style="max-width: 30%;" />
                         </label>
 
                         <input id="file-input" name="file" required type="file" style="display:none" onchange="readURL(this);" />
                       </div>
 
                     </div>
+
+                    <div class="row form-group">
+                      <div class="col col-md-3">
+                        <label for="file-input" class=" form-control-label">Imagen ing</label>
+                    </div>
+                    <div class="col-12 col-md-9">
+                      <div class="image-upload">
+                        <label for="file-input1">
+                          <img id="blah1" src="images/giphy.gif"  style="max-width: 30%;" />
+                        </label>
+
+                        <input id="file-input1" name="file1"  type="file" style="display:none" onchange="readURL1(this);" />
+                      </div>
+
+                    </div>
+                    
                   </div>
 
 
@@ -471,31 +487,38 @@
 
     <!-- file input image preview-->
     <script>
-    function readURL(input) {
-         if (input.files && input.files[0]) {
-             var reader = new FileReader();
-             reader.onload = function (e) {
-                 $('#blah')
-                     .attr('src', e.target.result);
-             };
-             reader.readAsDataURL(input.files[0]);
-         }
-     }
-    </script>
+function readURL(input) {
+     if (input.files && input.files[0]) {
+         var reader = new FileReader();
 
-    <!-- files input image preview-->
-    <script>
-    function readURL(input) {
-         if (input.files && input.files[0]) {
-             var reader = new FileReader();
-             reader.onload = function (e) {
-                 $('#img')
-                     .attr('src', e.target.result);
-             };
-             reader.readAsDataURL(input.files[0]);
+         reader.onload = function (e) {
+             $('#blah')
+                 .attr('src', e.target.result);
          }
+         reader.readAsDataURL(input.files[0]);
      }
-    </script>
+ }
+ $("#file-input").change(function(){
+        readURL(this);
+    });
+</script>
+
+<script>
+function readURL1(input) {
+     if (input.files && input.files[0]) {
+         var reader = new FileReader();
+
+         reader.onload = function (e) {
+             $('#blah1')
+                 .attr('src', e.target.result);
+         }
+         reader.readAsDataURL(input.files[0]);
+     }
+ }
+ $("#file-input1").change(function(){
+        readURL1(this);
+    });
+</script>
 
 <!-- submit form-->
 <script>
@@ -635,7 +658,7 @@ $(document).ready(function(e){
                         $ejecutar = mysqli_query($conn, $all);
                         while($fila=mysqli_fetch_array($ejecutar)){?>  
                          // $img_all          = $fila['GAL_FOTO'];
-                          '<?php echo '<img id="img" name="img" alt="Responsive image" class="rounded mx-auto d-block"  src="images/giphy.gif" />'; ?>'+
+                          '<?php echo '<img id="img" name="img" style="max-width: 30%;" src="images/giphy.gif" />'; ?>'+
                           <?php } ?>
                         
                         '</label>'+
