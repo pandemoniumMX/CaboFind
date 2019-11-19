@@ -248,55 +248,249 @@
     </div>
     <!-- END HEADER MOBILE -->
     <!-- PAGE CONTAINER-->
-    <div class="page-content--bgf7"></br>
-          <div class="container">
-                    <div class="card">
-                    <div class="card-header">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#newPublic" >Nueva publicación</button>
-                    </div>
-                      <div class="card-body">
-                          <div class="table-responsive table--no-card m-b-30">
-                              <table class="table table-borderless table-striped table-earning">
-                                  <thead>
-                                      <tr>
-                                          <th>id</th>
-                                          <th>Titulo</th>
-                                          <th>Negocio</th>
-                                          <th class="text-right">Fecha</th>
-                                          <th class="text-right">Acción</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                    $public = "SELECT * FROM publicacion p, negocios n
-                                    WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO;";
-                                    $ejecutar = mysqli_query($conn, $public);
-                                  while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id       = $fila['ID_PUBLICACION'];
-                                      $titu_pub  = $fila['PUB_TITULO'];
-                                      $nom_neg   = $fila['NEG_NOMBRE'];
-                                      $fecha_pub  = $fila['PUB_FECHA'];
-                                     ?>
-                                     <tr>
-                                         <td><?php echo $id ?></td>
-                                         <td><?php echo $titu_pub ?></td>
-                                         <td><?php echo $nom_neg ?></td>
-                                         <td><?php echo $fecha_pub ?></td>
-                                         <td width="14%">
-                                        <?php echo"
-                                        <a href='#' onclick='editar_pub($id), get_pub($id)' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
-                                        <a href='publicacion_notificacion_fn.php?id=$id' onclick='pregunta()' name='tuformulario' title='Enviar notificacion ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
-                                        <a href='estadisticas_xp.php?id=$id' title='Estadisticas ' ><i class='btn-sm btn-info fa fa-eye'></i></a>   
-                                        <a href='modificar_empresa_car_delete_fn.php?id=$id' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
-                                            "
-                                          ?>
+    <div class="container-fluid">
+</br>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                  <form id='form-id'>
 
-                                      </tr>
-                                    <?php } ?>
-                                    <tbody></br>
-                              </table>
-              </div>
-              </div>
+                  <label class="btn btn-danger" id='watch-me'>
+                      <input name='test' type='radio' /> Lista de dispositivos
+                      </label>
+
+                      <label class="btn btn-info" id='see-me'>
+                      <input name='test' type='radio' /> Visitas a publicaciones
+                      </label>
+
+                      <label class="btn btn-success" id='look-me'>
+                      <input name='test' type='radio' /> Visitas a negocios
+                    </label>
+
+                      
+
+
+
+                  </form>
+                </div>
+                <div class="container-fluid">
+    <div id='show-me'>
+                    <div class="tile">
+                      <div class="tile-body">
+          <table id="a-tables" class="table table-hover table-dark table-responsive">
+    <thead>
+
+        <th data-field="id">ID</th>
+      <th data-field="fecha" data-sortable="true">FECHA</th>
+      <th data-field="estatus" data-sortable="true">CODIGO</th>
+      <th data-field="estatus" data-sortable="true">IDIOMA</th>
+      
+      <th class="disabled-sorting">Acción</th>
+
+    </thead>
+    <?php
+    $consulta = "SELECT * FROM trigger_info_device;";
+      $ejecutar = mysqli_query($conn, $consulta);
+    while($fila=mysqli_fetch_array($ejecutar)){
+        $id          = $fila['ID_IMEI'];
+        $nom           = $fila['TID_FECHA'];
+        $ape          = $fila['TID_BOOT'];
+        $dir          = $fila['TID_IDIOMA'];
+        
+
+
+?>
+                    <tr>
+                        <td width="8%"><?php echo $id ?></td>
+                        <td width="14%"><?php echo $nom ?></td>
+                        <td width="14%"><?php echo $ape ?></td>
+                        <td width="14%"><?php echo $dir ?></td>
+                        
+                        <td width="14%">
+                         
+
+          </tr>
+        <?php } ?>
+        <tbody></br>
+            Registro por dispositivo
+      </tbody>
+  </table>
+</div></div></div></div>
+
+ <div id='show-me-two' style='display:none; border:2px solid #ccc'>
+                    <div class="tile">
+                      <div class="tile-body">
+
+<table id="tabla2" class="table table-dark table-hover table-responsive">
+    <thead>
+        <!--<th data-field="state" data-checkbox="true"></th>-->
+        <th data-field="id">ID</th>
+      <th data-field="folio" data-sortable="true">FECHA</th>
+      <th data-field="nombre" data-sortable="true">IDIOMA</th>
+      <th data-field="apellido" data-sortable="true">CODIGO</th>
+      <th data-field="marca" data-sortable="true">PLATAFORMA</th>
+      <th data-field="modelo" data-sortable="true">PUBLICACION</th>
+
+      
+
+      <th data-field="garantia" data-sortable="true">Acción</th>
+
+
+
+    </thead>
+    <?php
+    $reparada = "SELECT * FROM trigger_visita_publicacion ORDER BY ID_TVP DESC;";
+      $ejecutar = mysqli_query($conn, $reparada);
+    while($fila=mysqli_fetch_array($ejecutar)){
+        $id_equipo          = $fila['ID_TVP'];
+        $id           = $fila['FECHA_TVP'];
+        $nombre          = $fila['IDIOMA_TVP'];
+        $apellidos        = $fila['TVP_BOOT'];
+        $marca           = $fila['TVP_VERSION'];
+        $modelo           = $fila['publicacion_ID_PUBLICACION'];
+        
+
+?>
+                    <tr>
+                        <td><?php echo $id_equipo ?></td>
+                        <td><?php echo $id ?></td>
+                        <td><?php echo $nombre ?></td>
+                        <td><?php echo $apellidos ?></td>
+
+
+                        <td><?php echo $marca ?></td>
+                        <td><?php echo $modelo ?></td>
+                        
+
+                      
+
+          </tr>
+        <?php } ?>
+        <tbody></br>
+            Registro visitas a publicaciones
+      </tbody>
+  </table>
+  </div></div></div>
+
+
+  <div id='show-me-three'  style='display:none; border:2px solid #ccc'>
+                    <div class="tile">
+                      <div class="tile-body">
+
+                      <table id="tabla3" class="table table-dark table-hover table-responsive">
+    <thead>
+        <!--<th data-field="state" data-checkbox="true"></th>-->
+        <th data-field="id">id_equipo</th>
+      <th data-field="folio" data-sortable="true">Folio</th>
+      <th data-field="nombre" data-sortable="true">Nombre</th>
+      <th data-field="apellido" data-sortable="true">Apellidos</th>
+
+      <th data-field="marca" data-sortable="true">Marca</th>
+      <th data-field="modelo" data-sortable="true">Modelo</th>
+
+      <th data-field="fecha_entrega" data-sortable="true">Reparación</th>
+      <th data-field="costo" data-sortable="true">Restante</th>
+      <th data-field="ubicacion" data-sortable="true">Ubicacion</th>
+      <th data-field="garantia" data-sortable="true">Acción</th>
+
+    </thead>
+    <?php
+      $ejecutar = mysqli_query($conn, $sinsolucion);
+    while($fila=mysqli_fetch_array($ejecutar)){
+      $id_equipo          = $fila['id_equipo'];
+        $id           = $fila['id_folio'];
+        $nombre          = $fila['nombre'];
+        $apellidos        = $fila['apellidos'];
+
+        $marca           = $fila['marca'];
+        $modelo           = $fila['modelo'];
+        $fecha_entregar        = $fila['fecha_entregar'];
+        $total        = $fila['restante'];
+        $ubicacion        = $fila['ubicacion'];
+?>
+                    <tr>
+                    <td><?php echo $id_equipo ?></td>
+                        <td><?php echo $id ?></td>
+                        <td><?php echo $nombre ?></td>
+                        <td><?php echo $apellidos ?></td>
+
+
+                        <td><?php echo $marca ?></td>
+                        <td><?php echo $modelo ?></td>
+                        <td><?php echo $fecha_entregar ?></td>
+                        <td><?php echo $total ?></td>
+                        <td><?php echo $ubicacion ?></td>
+                        <td>
+
+
+</td>
+          </tr>
+        <?php } ?>
+        <tbody></br>
+            Resultado de equipos sin solucion
+      </tbody>
+  </table>
+</div></div></div>
+
+  <div id='show-me-three2' style='display:none; border:2px solid #ccc'>
+  <div class="tile">
+                      <div class="tile-body">
+
+          <table id="tabla4" class="table table-dark table-hover table-responsive">
+    <thead>
+        <!--<th data-field="state" data-checkbox="true"></th>-->
+        <th data-field="id">id_equipo</th>
+      <th data-field="folio" data-sortable="true">Folio</th>
+      <th data-field="nombre" data-sortable="true">Nombre</th>
+      <th data-field="apellido" data-sortable="true">Apellidos</th>
+
+      <th data-field="marca" data-sortable="true">Marca</th>
+      <th data-field="modelo" data-sortable="true">Modelo</th>
+
+      <th data-field="fecha_entrega" data-sortable="true">Reparación</th>
+      <th data-field="costo" data-sortable="true">Restante</th>
+      <th data-field="ubicacion" data-sortable="true">Ubicacion</th>
+      <th data-field="garantia" data-sortable="true">Acción</th>
+
+    </thead>
+    <?php
+      $ejecutar = mysqli_query($conn, $valorados);
+    while($fila=mysqli_fetch_array($ejecutar)){
+      $id_equipo          = $fila['id_equipo'];
+        $id           = $fila['id_folio'];
+        $nombre          = $fila['nombre'];
+        $apellidos        = $fila['apellidos'];
+
+        $marca           = $fila['marca'];
+        $modelo           = $fila['modelo'];
+        $fecha_entregar        = $fila['fecha_entregar'];
+        $total        = $fila['restante'];
+        $ubicacion        = $fila['ubicacion'];
+?>
+                    <tr>
+                    <td><?php echo $id_equipo ?></td>
+                        <td><?php echo $id ?></td>
+                        <td><?php echo $nombre ?></td>
+                        <td><?php echo $apellidos ?></td>
+
+
+                        <td><?php echo $marca ?></td>
+                        <td><?php echo $modelo ?></td>
+                        <td><?php echo $fecha_entregar ?></td>
+                        <td><?php echo $total ?></td>
+                        <td><?php echo $ubicacion ?></td>
+                        <td>
+                        <button onclick='reporte(<?php echo "$id_equipo" ; ?>), enviarreporte(<?php echo "$id_equipo" ; ?>);' title='Ver reporte' class='btn btn-simple btn-primary btn-icon edit'><i class='ti-agenda'></i></button>
+
+
+</td>
+          </tr>
+        <?php } ?>
+        <tbody></br>
+            Resultado de valorados
+      </tbody>
+  </table>
+</div></div></div>
+
+              <!--CIERRA TABLA -->
               </div>
 
         </div>
@@ -481,6 +675,11 @@
   <!-- Main JS-->
   <script src="js/main.js"></script>
 
+   <!-- Data table plugin-->
+   <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
+
   <!-- sweetalert-->
 <script src="js/sweetalert2.all.min.js"></script>
 
@@ -635,6 +834,8 @@ $(document).ready(function(e){
    html:
    '<div class="col-lg-12"> <form action="publicacion_update_fn.php" method="post" name="data">'+
    '<input type="text" id="idps" name="idps"  readonly required  class="form-control"></br>' +
+   '<input type="hidden" id="id_g" name="id_g"  readonly required  class="form-control"></br>' +
+
    //'<input  type="text" id="idn"  name="idn" readonly class="form-control border-input maxlength="25" required>' +
     '<input type="text" id="titulos" placeholder="Título en español" required name="titulos" class="form-control"></br>'+
     '<input type="text" id="titulo_ings" required name="titulo_ings" placeholder="Título en inglés" class="form-control"></br>'+
@@ -667,21 +868,14 @@ $(document).ready(function(e){
                               '<label>Estatus</label></br>' +
                               '<select class="dropdown-toggle btn btn-info" type="button" required textalign="center" name="estatuss" id="estatuss"><option disabled selected>Selecciona estado</option><option value="A" >A</option><option value="B">B</option></select></br>'+   
                               '<label>Selecciona imagen esp</label></br>' +
-                              '<div class="image-upload">'+
-                                '<label for="file-input">'+
-                                  '<img id="blah" src="images/giphy.gif"  style="max-width: 30%;" />'+ 
-                                '</label>'+
-                              '<input id="file-input" name="file"  type="file" style="display:none" onchange="readURL(this);" />'+
-                              '</div>'+        
+                              
+                              '<input name="img"  id="img" type="file" class="form-control"  />'+
 
                               '<label>Selecciona imagen ing</label></br>' +
-                              '<div class="image-upload">'+
-                                '<label for="file-input">'+
-                                  '<img id="blah1" src="images/giphy.gif"  style="max-width: 30%;" />'+ 
-                                '</label>'+
-                              '<input id="file-input1" name="file1"  type="file" style="display:none" onchange="readURL1(this);" />'+
-                              '</div>'+             
-                        
+
+                              
+                              '<input  name="img1"  id="img1"  type="file" class="form-control" />'+
+
     '<button type="submit"  class="btn btn-success btn-lg btn-block">Actualizar</button>'+
    '</form></div>',
    showCancelButton: true,
@@ -719,7 +913,8 @@ $(document).ready(function(e){
         success : function(data) {
         //Manda Llamar id,nombre y apellido
        // $("#idp").val(data.data.id_car);
-        $("#idps").val(data.data.idp);             
+        $("#idps").val(data.data.idp);  
+        $("#id_g").val(data.data.id_g);   
         $("#titulos").val(data.data.titulo);
         $("#titulo_ings").val(data.data.titulo_ing);        
         $("#detalles").val(data.data.detalle);
@@ -728,8 +923,8 @@ $(document).ready(function(e){
         $("#publicacions").val(data.data.publicacion);
         $("#estatuss").val(data.data.estatus);
 	      $("#s_negs").val(data.data.s_neg);
-	      $("#blah").val(data.data.img);
-        $("#blah1").val(data.data.img1);
+	      $("#file").val(data.data.img);
+        $("#file1").val(data.data.img1);
 
         
       },
@@ -744,6 +939,158 @@ $(document).ready(function(e){
         });
         }
     </script>
+
+<script type="text/javascript">
+  $(document).ready(function ()
+   {
+     //primero
+    $("#watch-me").click(function()
+    {
+     $("#show-me:hidden").show('slow');
+     $("#show-me-two").hide();
+     $("#show-me-three").hide();
+     $("#show-me-three2").hide();
+     $("#show-me-three5").hide();
+     $("#show-me-three3").hide();
+     $("#show-me-three4").hide();
+     });
+     $("#watch-me").click(function()
+    {
+      if($('watch-me').prop('checked')===false)
+     {
+      $('#show-me').hide();
+     }
+    });
+
+    //segundo
+    $("#see-me").click(function()
+    {
+      $("#show-me-two:hidden").show('slow');
+     $("#show-me").hide();
+     $("#show-me-three").hide();
+     $("#show-me-three2").hide();
+     $("#show-me-three5").hide();
+     $("#show-me-three3").hide();
+     $("#show-me-three4").hide();
+     });
+     $("#see-me").click(function()
+    {
+      if($('see-me-two').prop('checked')===false)
+     {
+      $('#show-me-two').hide();
+     }
+    });
+
+    //tercero
+    $("#look-me").click(function()
+    {
+      $("#show-me-three:hidden").show('slow');
+     $("#show-me").hide();
+     $("#show-me-two").hide();
+     $("#show-me-three2").hide();
+     $("#show-me-three5").hide();
+     $("#show-me-three3").hide();
+     $("#show-me-three4").hide();
+     });
+     $("#look-me").click(function()
+    {
+      if($('see-me-three').prop('checked')===false)
+     {
+      $('#show-me-three').hide();
+     }
+    });
+
+    //cuarto
+    $("#look-me2").click(function()
+    {
+      $("#show-me-three2:hidden").show('slow');
+     $("#show-me").hide();
+     $("#show-me-two").hide();
+     $("#show-me-three").hide();
+     $("#show-me-three5").hide();
+     $("#show-me-three3").hide();
+     $("#show-me-three4").hide();
+     });
+     $("#look-me2").click(function()
+    {
+      if($('see-me-three2').prop('checked')===false)
+     {
+      $('#show-me-three2').hide();
+     }
+    });
+
+      //quinto
+    $("#look-me3").click(function()
+    {
+      $("#show-me-three3:hidden").show('slow');
+     $("#show-me").hide();
+     $("#show-me-two").hide();
+     $("#show-me-three2").hide();
+     $("#show-me-three5").hide();
+     $("#show-me-three").hide();
+     $("#show-me-three4").hide();
+     });
+     $("#look-me3").click(function()
+    {
+      if($('see-me-three3').prop('checked')===false)
+     {
+      $('#show-me-three3').hide();
+     }
+    });
+
+
+    //sexto
+    $("#look-me4").click(function()
+    {
+      $("#show-me-three4:hidden").show('slow');
+     $("#show-me").hide();
+     $("#show-me-two").hide();
+     $("#show-me-three2").hide();
+     $("#show-me-three5").hide();
+     $("#show-me-three3").hide();
+     $("#show-me-three").hide();
+     });
+     $("#look-me4").click(function()
+    {
+      if($('see-me-three4').prop('checked')===false)
+     {
+      $('#show-me-three4').hide();
+     }
+    });
+
+    //septimo
+    $("#look-me5").click(function()
+    {
+      $("#show-me-three5:hidden").show('slow');
+     $("#show-me").hide();
+     $("#show-me-two").hide();
+     $("#show-me-three2").hide();
+     $("#show-me-three4").hide();
+     $("#show-me-three3").hide();
+     $("#show-me-three").hide();
+     });
+     $("#look-me4").click(function()
+    {
+      if($('see-me-three5').prop('checked')===false)
+     {
+      $('#show-me-three5').hide();
+     }
+    });
+
+
+   });
+
+
+  </script>
+
+<script>
+$(document).ready(function() {
+    $('#tabla2').DataTable();
+    $('#tabla3').DataTable();
+    $('#tabla4').DataTable();
+    $('#tabla5').DataTable();
+} );
+</script>
 
 
   </body>

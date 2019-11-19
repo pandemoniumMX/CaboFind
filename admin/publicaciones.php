@@ -85,9 +85,9 @@
 
 
               <li class="has-sub">
-                <a href="#">
+                <a href="registro.php">
                   <i class="fas fa-desktop"></i>
-                  <span class="bot-line"></span>Usuarios</a>
+                  <span class="bot-line"></span>Registro</a>
                 
               </li>
             </ul>
@@ -192,8 +192,8 @@
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-users"></i>Usuarios</a>
+              <a class="js-arrow" href="registro.php">
+                <i class="fas fa-users"></i>Registro</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                
 

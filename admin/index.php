@@ -110,9 +110,9 @@
 
 
               <li class="has-sub">
-                <a href="#">
+                <a href="registro.php">
                   <i class="fas fa-desktop"></i>
-                  <span class="bot-line"></span>Usuarios</a>
+                  <span class="bot-line"></span>Registro</a>
                 <ul class="header3-sub-list list-unstyled">
                  
                 </ul>
@@ -219,8 +219,8 @@
               </ul>
             </li>
             <li class="has-sub">
-              <a class="js-arrow" href="#">
-                <i class="fas fa-users"></i>Usuarios</a>
+              <a class="js-arrow" href="registro.php">
+                <i class="fas fa-users"></i>Registro</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                
 
@@ -277,6 +277,9 @@
     <!-- PAGE CONTAINER-->
     <div class="page-content--bgf7"></br>
           <div class="container">
+          <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
+                        Agregar negocio
+                        </button>
                     <div class="container-fluid">
 
                     <div class="tile">
@@ -347,6 +350,7 @@
       </tbody>
   </table>
 </div></div></div>
+
               </div>
         </div>
 

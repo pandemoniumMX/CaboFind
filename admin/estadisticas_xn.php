@@ -110,9 +110,9 @@
 
 
               <li class="has-sub">
-                <a href="#">
+                <a href="registro.php">
                   <i class="fas fa-desktop"></i>
-                  <span class="bot-line"></span>Usuarios</a>
+                  <span class="bot-line"></span>Registro</a>
                 
               </li>
             </ul>
