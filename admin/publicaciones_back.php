@@ -284,10 +284,10 @@
                                          <td><?php echo $fecha_pub ?></td>
                                          <td width="14%">
                                         <?php echo"
-                                        <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
+                                        <a href='#' onclick='editar_pub($id), get_pub($id)' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
                                         <a href='publicacion_notificacion_fn.php?id=$id' onclick='pregunta()' name='tuformulario' title='Enviar notificacion ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
                                         <a href='estadisticas_xp.php?id=$id' title='Estadisticas ' ><i class='btn-sm btn-info fa fa-eye'></i></a>   
-                                        <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
+                                        <a href='modificar_empresa_car_delete_fn.php?id=$id' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
                                             "
                                           ?>
 
@@ -635,8 +635,6 @@ $(document).ready(function(e){
    html:
    '<div class="col-lg-12"> <form action="publicacion_update_fn.php" method="post" name="data">'+
    '<input type="text" id="idps" name="idps"  readonly required  class="form-control"></br>' +
-   '<input type="hidden" id="id_g" name="id_g"  readonly required  class="form-control"></br>' +
-
    //'<input  type="text" id="idn"  name="idn" readonly class="form-control border-input maxlength="25" required>' +
     '<input type="text" id="titulos" placeholder="Título en español" required name="titulos" class="form-control"></br>'+
     '<input type="text" id="titulo_ings" required name="titulo_ings" placeholder="Título en inglés" class="form-control"></br>'+
@@ -669,14 +667,21 @@ $(document).ready(function(e){
                               '<label>Estatus</label></br>' +
                               '<select class="dropdown-toggle btn btn-info" type="button" required textalign="center" name="estatuss" id="estatuss"><option disabled selected>Selecciona estado</option><option value="A" >A</option><option value="B">B</option></select></br>'+   
                               '<label>Selecciona imagen esp</label></br>' +
-                              
-                              '<input name="img"  id="img" type="file" class="form-control"  />'+
+                              '<div class="image-upload">'+
+                                '<label for="file-input">'+
+                                  '<img id="blah" src="images/giphy.gif"  style="max-width: 30%;" />'+ 
+                                '</label>'+
+                              '<input id="file-input" name="file"  type="file" style="display:none" onchange="readURL(this);" />'+
+                              '</div>'+        
 
                               '<label>Selecciona imagen ing</label></br>' +
-
-                              
-                              '<input  name="img1"  id="img1"  type="file" class="form-control" />'+
-
+                              '<div class="image-upload">'+
+                                '<label for="file-input">'+
+                                  '<img id="blah1" src="images/giphy.gif"  style="max-width: 30%;" />'+ 
+                                '</label>'+
+                              '<input id="file-input1" name="file1"  type="file" style="display:none" onchange="readURL1(this);" />'+
+                              '</div>'+             
+                        
     '<button type="submit"  class="btn btn-success btn-lg btn-block">Actualizar</button>'+
    '</form></div>',
    showCancelButton: true,
@@ -714,8 +719,7 @@ $(document).ready(function(e){
         success : function(data) {
         //Manda Llamar id,nombre y apellido
        // $("#idp").val(data.data.id_car);
-        $("#idps").val(data.data.idp);  
-        $("#id_g").val(data.data.id_g);   
+        $("#idps").val(data.data.idp);             
         $("#titulos").val(data.data.titulo);
         $("#titulo_ings").val(data.data.titulo_ing);        
         $("#detalles").val(data.data.detalle);
@@ -724,8 +728,8 @@ $(document).ready(function(e){
         $("#publicacions").val(data.data.publicacion);
         $("#estatuss").val(data.data.estatus);
 	      $("#s_negs").val(data.data.s_neg);
-	      $("#file").val(data.data.img);
-        $("#file1").val(data.data.img1);
+	      $("#blah").val(data.data.img);
+        $("#blah1").val(data.data.img1);
 
         
       },

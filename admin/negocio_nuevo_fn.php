@@ -5,7 +5,6 @@ require 'conexion.php';
 //header('Content-type: admin_ctrl_empleados.php; charset=UTF-8');
 $response = array();
 
-if ($_POST['empresa']) {
 
   $emp = $_POST ['empresa'];
   $cor = $_POST ['correo']; 
@@ -77,5 +76,5 @@ $response['message'] = 'Ya existe un negocio con ese nombre, intenta uno diferen
    }
    echo json_encode($response);
 
-}
+
 ?>

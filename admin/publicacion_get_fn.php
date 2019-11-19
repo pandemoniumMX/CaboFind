@@ -19,16 +19,19 @@ if(isset($_POST['id'])){
   if($resultado->num_rows > 0){
    while($row = $resultado->fetch_assoc()) {
  $response['data'] = array (
-    "idp"       =>  $row["ID_PUBLICACION"],
-    "titulo"       =>  $row["PUB_TITULO"],
-    "titulo_ing"       =>  $row["PUB_TITULO_ING"],     
-    "detalle"       =>  $row["PUB_DETALLE"], 
-    "detalle_ing"        =>  $row["PUB_DETALLE_ING"],
-    "video"        =>  $row["PUB_VIDEO"],
-    "publicacion"        =>  $row["PUB_TIPO"],
-    "estatus"        =>  $row["PUB_ESTATUS"],
-    "s_neg"        =>  $row["negocios_ID_NEGOCIO"],
+    "idp"        =>  $row["ID_PUBLICACION"],
+    "titulo"     =>  $row["PUB_TITULO"],
+    "titulo_ing" =>  $row["PUB_TITULO_ING"],     
+    "detalle"    =>  $row["PUB_DETALLE"], 
+    "detalle_ing"=>  $row["PUB_DETALLE_ING"],
+    "video"      =>  $row["PUB_VIDEO"],
+    "publicacion"=>  $row["PUB_TIPO"],
+    "estatus"    =>  $row["PUB_ESTATUS"],
+    "s_neg"      =>  $row["negocios_ID_NEGOCIO"],
+    "id_g"       =>  $row["ID_GALERIA"],
     "img"        =>  $row["GAL_FOTO"],
+    "img1"       =>  $row["GAL_FOTO_ING"],
+
 
   );
    }

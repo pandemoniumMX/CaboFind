@@ -265,9 +265,7 @@
                                       $id_car       = $fila['ID_CARACTERISTICAS'];
                                       $nom       = $fila['CAR_NOMBRE'];
                                       $nom_ing       = $fila['CAR_NOMBRE_ING'];
-
                                       $esta       = $fila['CAR_ESTATUS'];
-                                      $fech       = $fila['CAR_FECHA'];
 
                                      ?>
                                      <tr>
@@ -276,7 +274,6 @@
                                          <td><?php echo $nom_ing ?></td>
 
                                          <td><?php echo $esta ?></td>
-                                         <td><?php echo $fech ?></td>
                                          <td class="text-right">
                                            <div class="table-data-feature">
                                              <button class="item" title="tooltip" onclick="window.location.href='galeria.php?id=<?php echo $id_car ?>'" data-original-title="Edit">
