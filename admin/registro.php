@@ -263,7 +263,11 @@
 
                       <label class="btn btn-success" id='look-me'>
                       <input name='test' type='radio' /> Visitas a negocios
-                    </label>
+                      </label>
+
+                      <label class="btn btn-primary" id='look-me2'>
+                      <input name='test' type='radio' /> Comentarios Facebook
+                     </label>
 
                       
 
@@ -378,33 +382,30 @@
                       <table id="tabla3" class="table table-dark table-hover table-responsive">
     <thead>
         <!--<th data-field="state" data-checkbox="true"></th>-->
-        <th data-field="id">id_equipo</th>
-      <th data-field="folio" data-sortable="true">Folio</th>
-      <th data-field="nombre" data-sortable="true">Nombre</th>
-      <th data-field="apellido" data-sortable="true">Apellidos</th>
+        <th data-field="id">ID</th>
+      <th data-field="folio" data-sortable="true">FECHA</th>
+      <th data-field="nombre" data-sortable="true">IDIOMA</th>
+      <th data-field="apellido" data-sortable="true">CODIGO</th>
 
-      <th data-field="marca" data-sortable="true">Marca</th>
-      <th data-field="modelo" data-sortable="true">Modelo</th>
+      <th data-field="marca" data-sortable="true">PLATAFORMA</th>
+      <th data-field="modelo" data-sortable="true">NEGOCIO</th>
 
-      <th data-field="fecha_entrega" data-sortable="true">Reparación</th>
-      <th data-field="costo" data-sortable="true">Restante</th>
-      <th data-field="ubicacion" data-sortable="true">Ubicacion</th>
+      
       <th data-field="garantia" data-sortable="true">Acción</th>
 
     </thead>
     <?php
-      $ejecutar = mysqli_query($conn, $sinsolucion);
+    $reparada = "SELECT * FROM trigger_visita_negocio ORDER BY ID_TVN DESC;";
+      $ejecutar = mysqli_query($conn, $reparada);
     while($fila=mysqli_fetch_array($ejecutar)){
-      $id_equipo          = $fila['id_equipo'];
-        $id           = $fila['id_folio'];
-        $nombre          = $fila['nombre'];
-        $apellidos        = $fila['apellidos'];
+      $id_equipo          = $fila['ID_TVN'];
+        $id           = $fila['FECHA_TVN'];
+        $nombre          = $fila['IDIOMA_TVN'];
+        $apellidos        = $fila['TVN_BOOT'];
 
-        $marca           = $fila['marca'];
-        $modelo           = $fila['modelo'];
-        $fecha_entregar        = $fila['fecha_entregar'];
-        $total        = $fila['restante'];
-        $ubicacion        = $fila['ubicacion'];
+        $marca           = $fila['TVN_SO'];
+        $modelo           = $fila['negocios_ID_NEGOCIO'];
+        
 ?>
                     <tr>
                     <td><?php echo $id_equipo ?></td>
@@ -415,9 +416,7 @@
 
                         <td><?php echo $marca ?></td>
                         <td><?php echo $modelo ?></td>
-                        <td><?php echo $fecha_entregar ?></td>
-                        <td><?php echo $total ?></td>
-                        <td><?php echo $ubicacion ?></td>
+                        
                         <td>
 
 
@@ -425,7 +424,7 @@
           </tr>
         <?php } ?>
         <tbody></br>
-            Resultado de equipos sin solucion
+            Registro visitas negocios
       </tbody>
   </table>
 </div></div></div>
@@ -437,33 +436,34 @@
           <table id="tabla4" class="table table-dark table-hover table-responsive">
     <thead>
         <!--<th data-field="state" data-checkbox="true"></th>-->
-        <th data-field="id">id_equipo</th>
-      <th data-field="folio" data-sortable="true">Folio</th>
-      <th data-field="nombre" data-sortable="true">Nombre</th>
-      <th data-field="apellido" data-sortable="true">Apellidos</th>
+        <th data-field="id">ID</th>
+      <th data-field="folio" data-sortable="true">FECHA</th>
+      <th data-field="nombre" data-sortable="true">NOMBRE</th>
+      <th data-field="apellido" data-sortable="true">APELLIDO</th>
 
-      <th data-field="marca" data-sortable="true">Marca</th>
-      <th data-field="modelo" data-sortable="true">Modelo</th>
+      <th data-field="marca" data-sortable="true">IDIOMA</th>
+      <th data-field="modelo" data-sortable="true">RESEÑA</th>
 
-      <th data-field="fecha_entrega" data-sortable="true">Reparación</th>
-      <th data-field="costo" data-sortable="true">Restante</th>
-      <th data-field="ubicacion" data-sortable="true">Ubicacion</th>
+      <th data-field="fecha_entrega" data-sortable="true">VALOR</th>
+      <th data-field="costo" data-sortable="true">ESTATUS</th>
+      <th data-field="ubicacion" data-sortable="true">NEGOCIO</th>
       <th data-field="garantia" data-sortable="true">Acción</th>
 
     </thead>
     <?php
+    $valorados = "SELECT * FROM com_neg ORDER BY ID_COMENT_NEG DESC;";
       $ejecutar = mysqli_query($conn, $valorados);
     while($fila=mysqli_fetch_array($ejecutar)){
-      $id_equipo          = $fila['id_equipo'];
-        $id           = $fila['id_folio'];
-        $nombre          = $fila['nombre'];
-        $apellidos        = $fila['apellidos'];
+      $id_equipo          = $fila['ID_COMENT_NEG'];
+        $id           = $fila['COM_FECHA'];
+        $nombre          = $fila['COM_NOMBRES'];
+        $apellidos        = $fila['COM_APELLIDOS'];
 
-        $marca           = $fila['marca'];
-        $modelo           = $fila['modelo'];
-        $fecha_entregar        = $fila['fecha_entregar'];
-        $total        = $fila['restante'];
-        $ubicacion        = $fila['ubicacion'];
+        $marca           = $fila['COM_IDIOMA'];
+        $modelo           = $fila['COM_RESENA'];
+        $fecha_entregar        = $fila['COM_VALOR'];
+        $total        = $fila['COM_ESTATUS'];
+        $ubicacion        = $fila['negocios_ID_NEGOCIO'];
 ?>
                     <tr>
                     <td><?php echo $id_equipo ?></td>
@@ -485,7 +485,7 @@
           </tr>
         <?php } ?>
         <tbody></br>
-            Resultado de valorados
+            Resultado de comentarios 
       </tbody>
   </table>
 </div></div></div>

@@ -83,5 +83,5 @@ if (mysqli_num_rows($resul)==0) {
 //}
 
 //echo "Titulo de publicación ya existente";
-//echo "<script> window.location='publicaciones.php'</script>;";
+echo "<script> window.location='publicaciones.php'</script>;";
 ?>
