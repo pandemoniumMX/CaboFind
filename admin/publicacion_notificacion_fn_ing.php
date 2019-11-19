@@ -34,8 +34,7 @@ $detalle_ing   = $fila['PUB_DETALLE_ING'];
 
 $curl = curl_init();
 
-$fields ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titu\",\r\n\t\"body\":\"$deta\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino2\",\r\n\t\"click_action\": \"FLUTTER_NOTIFICATION_CLICK\"\r\n },\r\n \"data\": {\r\n \t\"id_n\": \"$idn\",\r\n \t\"id\": \"$idp\" \r\n }\r\n \"to\" : \"/topics/Todos\",\r\n } \r\n";
-
+$fields ="{ \r\n \t\"notification\": { \r\n \t\"title\":\"$titulo_ing\",\r\n\t\"body\":\"$detalle_ing\",\r\n\t\"icon\":\"launcher_icon\",\r\n\t\"image\":\"$destino3\",\r\n\t\"click_action\": \"FLUTTER_NOTIFICATION_CLICK\"\r\n },\r\n \"data\": {\r\n \t\"id_n\": \"$idn\",\r\n \t\"id\": \"$idp\" \r\n }\r\n \"to\" : \"/topics/All\",\r\n } \r\n";
 
 
 
@@ -56,9 +55,9 @@ curl_setopt_array($curl, array(
     "Connection: keep-alive",
     "Content-Type: application/json",
     "Host: fcm.googleapis.com",
-    //"Postman-Token: 29c8d55a-0663-4535-bbe9-8b0635f20afc,ddbd8b29-05a5-4ac0-80d8-98a3f9d137c9",
-   // "User-Agent: PostmanRuntime/7.19.0",
-   // "cache-control: no-cache"
+    "Postman-Token: 29c8d55a-0663-4535-bbe9-8b0635f20afc,ddbd8b29-05a5-4ac0-80d8-98a3f9d137c9",
+    "User-Agent: PostmanRuntime/7.19.0",
+    "cache-control: no-cache"
   ),
 ));
 

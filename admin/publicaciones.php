@@ -254,30 +254,33 @@
                     <div class="card-header">
                     <button class="btn btn-primary" data-toggle="modal" data-target="#newPublic" >Nueva publicación</button>
                     </div>
-                      <div class="card-body">
-                          <div class="table-responsive table--no-card m-b-30">
-                              <table class="table table-borderless table-striped table-earning">
-                                  <thead>
-                                      <tr>
+                    <div class="container-fluid">
+
+<div class="tile">
+  <div class="tile-body">
+<table id="a-tables" class="table table-hover table-dark table-responsive">
+<thead>
+<tr>
                                           <th>id</th>
                                           <th>Titulo</th>
                                           <th>Negocio</th>
                                           <th class="text-right">Fecha</th>
                                           <th class="text-right">Acción</th>
                                       </tr>
-                                  </thead>
-                                  <tbody>
-                                    <?php
-                                    $public = "SELECT * FROM publicacion p, negocios n
-                                    WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO;";
-                                    $ejecutar = mysqli_query($conn, $public);
-                                  while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id       = $fila['ID_PUBLICACION'];
-                                      $titu_pub  = $fila['PUB_TITULO'];
-                                      $nom_neg   = $fila['NEG_NOMBRE'];
-                                      $fecha_pub  = $fila['PUB_FECHA'];
-                                     ?>
-                                     <tr>
+              </thead>
+<?php
+ $consulta = "SELECT * FROM publicacion p, negocios n
+ WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO;";
+ $ejecutar = mysqli_query($conn, $consulta);
+while($fila=mysqli_fetch_array($ejecutar)){
+  $id       = $fila['ID_PUBLICACION'];
+  $titu_pub  = $fila['PUB_TITULO'];
+  $nom_neg   = $fila['NEG_NOMBRE'];
+  $fecha_pub  = $fila['PUB_FECHA'];
+
+
+?>
+<tr>
                                          <td><?php echo $id ?></td>
                                          <td><?php echo $titu_pub ?></td>
                                          <td><?php echo $nom_neg ?></td>
@@ -285,18 +288,22 @@
                                          <td width="14%">
                                         <?php echo"
                                         <a href='#' onclick='editar_pub($id), get_pub($id);' title='Modificar ' ><i class='btn-sm btn-success fa fa-refresh'></i></a>
-                                        <a href='publicacion_notificacion_fn.php?id=$id' onclick='pregunta()' name='tuformulario' title='Enviar notificacion ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
+                                        <a href='publicacion_notificacion_fn.php?id=$id' onclick='pregunta()' name='tuformulario' title='Enviar notificacion esp ' ><i class='btn-sm btn-warning fa fa-bell'></i></a> 
+                                        <a href='publicacion_notificacion_fn_ing.php?id=$id' onclick='pregunta()' name='tuformulario' title='Enviar notificacion ing' ><i class='btn-sm btn-warning fa fa-bell'></i></a>  
                                         <a href='estadisticas_xp.php?id=$id' title='Estadisticas ' ><i class='btn-sm btn-info fa fa-eye'></i></a>   
                                         <a href='modificar_empresa_car_delete_fn.php?id=$id;' title='Eliminar ' ><i class='btn-sm btn-danger fa fa-trash'></i></a>   
                                             "
                                           ?>
 
                                       </tr>
-                                    <?php } ?>
-                                    <tbody></br>
-                              </table>
-              </div>
-              </div>
+<?php } ?>
+<tbody></br>
+Resultado de publicaciones
+</tbody>
+</table>
+</div></div></div>
+
+              <!--CIERRA TABLA -->
               </div>
 
         </div>
@@ -480,6 +487,11 @@
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
+
+   <!-- Data table plugin-->
+   <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
 
   <!-- sweetalert-->
 <script src="js/sweetalert2.all.min.js"></script>

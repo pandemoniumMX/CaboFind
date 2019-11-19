@@ -278,17 +278,11 @@
     <div class="page-content--bgf7"></br>
           <div class="container">
                     <div class="container-fluid">
-                    <div class="card">
 
-                      <div class="card-header">
-                        <button type="button" class="btn btn-primary mb-1" data-toggle="modal" data-target="#largeModal">
-                        Agregar negocio
-                        </button>
-                      </div>
-                      <div class="card-body">
-                          <div class="table-responsive table--no-card m-b-30">
-                              <table class="table table-borderless table-striped table-earning">
-                                  <thead>
+                    <div class="tile">
+                      <div class="tile-body">
+          <table id="a-tables" class="table table-hover table-dark table-responsive">
+          <thead>
                                       <tr>
                                           <th>id</th>
                                           <th>Nombre</th>
@@ -299,22 +293,21 @@
                                           <th class="text-right">Acción</th>
                                       </tr>
                                   </thead>
-                                  <tbody>
-                                    <?php
-                                    $public = "SELECT * from negocios ORDER BY ID_NEGOCIO ASC;";
-                                    $ejecutar = mysqli_query($conn, $public);
+    <?php
+    $consulta = "SELECT * from negocios ORDER BY ID_NEGOCIO ASC;";
+     $ejecutar = mysqli_query($conn, $consulta);
+    while($fila=mysqli_fetch_array($ejecutar)){
+      $id       = $fila['ID_NEGOCIO'];
+      $neg_nom      = $fila['NEG_NOMBRE'];
+      $neg_desc   = $fila['NEG_DESCRIPCION'];
+      $neg_tel   = $fila['NEG_TEL'];
+      $neg_correo   = $fila['NEG_CORREO'];
+      $neg_resp   = $fila['NEG_RESPONSABLE'];
+      $neg_status   = $fila['NEG_ESTATUS'];
 
-                                  while($fila=mysqli_fetch_array($ejecutar)){
-                                      $id       = $fila['ID_NEGOCIO'];
-                                      $neg_nom      = $fila['NEG_NOMBRE'];
-                                      $neg_desc   = $fila['NEG_DESCRIPCION'];
-                                      $neg_tel   = $fila['NEG_TEL'];
-                                      $neg_correo   = $fila['NEG_CORREO'];
-                                      $neg_resp   = $fila['NEG_RESPONSABLE'];
-                                      $neg_status   = $fila['NEG_ESTATUS'];
 
-                                     ?>
-                                     <tr>
+?>
+                    <tr>
                                          <td><?php echo $id ?></td>
                                          <td><?php echo $neg_nom ?></td>
                                          <td><?php echo $neg_tel ?></td>
@@ -348,12 +341,12 @@
                                       </div>
                                        </td>
                                        </tr>
-                                     <?php } ?>
-                                  </tbody>
-                              </table>
-              </div>
-              </div>
-              </div>
+        <?php } ?>
+        <tbody></br>
+            Resultado de clientes
+      </tbody>
+  </table>
+</div></div></div>
               </div>
         </div>
 
@@ -747,6 +740,12 @@
 
   <!-- Main JS-->
   <script src="js/main.js"></script>
+
+
+  <!-- Data table plugin-->
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">$('#a-tables').DataTable();</script>
 
   <script>
   $(document).ready(function(){
