@@ -10,6 +10,8 @@ $detalle_ing = $_POST ['detalle_ings'];
 $video = $_POST ['videos'];
 $publicacion = $_POST ['publicacions'];
 $estatus = $_POST ['estatuss'];
+$caducidad = $_POST ['caducidad1'];
+
 $id_g = $_POST ['id_g'];
 
 
@@ -66,7 +68,7 @@ if (mysqli_num_rows($resul)==0) {
   $res2 = $conn->query($sql3);
 }else{
  //inserta la publicación nueva
- $sql2 = "UPDATE publicacion SET PUB_TITULO ='$tit',PUB_TITULO_ING='$titulo_ing',PUB_DETALLE='$detalle',PUB_DETALLE_ING='$detalle_ing',PUB_VIDEO='$video',
+ $sql2 = "UPDATE publicacion SET PUB_TITULO ='$tit',PUB_TITULO_ING='$titulo_ing',PUB_DETALLE='$detalle',PUB_DETALLE_ING='$detalle_ing',PUB_FECHA_LIMITE='$caducidad',PUB_VIDEO='$video',
  PUB_TIPO='$publicacion',PUB_ESTATUS='$estatus',negocios_ID_NEGOCIO='$neg',galeria_ID_GALERIA ='$id_g' WHERE ID_PUBLICACION='$idp';";
  $res = $conn->query($sql2);
 //echo "<script> window.location='publicaciones.php'</script>;";

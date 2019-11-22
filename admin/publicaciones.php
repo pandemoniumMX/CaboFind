@@ -43,6 +43,21 @@
   <!-- Main CSS-->
   <link href="css/theme.css" rel="stylesheet" media="all">
 
+ <!-- Data picker -->
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+ <script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+
+
+ <script>
+			$('#demoDate').datepicker({
+      	format: "dd/mm/yyyy",
+      	autoclose: true,
+      	todayHighlight: true
+      });
+			</script>
+
+
 </head>
 
 <body class="animsition">
@@ -380,8 +395,29 @@ Resultado de publicaciones
                             </div>
                         </div>
 
-                            </br></br>
-                            <div class="row form-group">
+                                                    
+                            
+                        </br></br>
+                           
+
+                            <div class="row form-group">                              
+                              <div class="col col-md-9">
+                                  <div class="input-group">
+
+                                      <input type="text" id='publicacion' required name='publicacion' placeholder="Caducidad formato YYYY-MM-DD" disabled class="form-control">
+                                      <div class="input-group-btn">
+                                      <input class="form-control" name="caducidad" id="caducidad" type="text" placeholder="Formato YYYY-MM-DD">
+
+                                        
+                                      </div>
+
+                                      
+                                  </div>
+                              </div>
+                              </div>
+                              </br></br>
+
+                    <div class="row form-group">                              
 
                     <div class="col col-md-6">
                         <div class="input-group">
@@ -395,7 +431,11 @@ Resultado de publicaciones
                                 <option value="Eventos">Eventos</option>
 
                                </select>
+
+                               
                             </div>
+
+                             
                         </div>
                     </div>
                     </div>
@@ -466,7 +506,7 @@ Resultado de publicaciones
 
 
   <!-- Jquery JS-->
-  <script src="vendor/jquery-3.2.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Bootstrap JS-->
   <script src="vendor/bootstrap-4.1/popper.min.js"></script>
   <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -669,9 +709,11 @@ $(document).ready(function(e){
                         
                   '</select>'+
                  '</div>'+
+                 '<label>Fecha caducidad formato YYYY-MM-DD</label></br>'+
+                 '<input class="form-control btn-warning" name="caducidad1" id="caducidad1" type="text"  style="background-color:white;"placeholder="Formato YYYY-MM-DD">'+
     '<label>Tipo de publicacion</label></br>'+
     '            <div class="input-group-btn">'+
-                                        '<select id="publicacions" name="publicacions" class="dropdown-toggle btn btn-primary" type="button">'+
+                              '<select id="publicacions" name="publicacions" class="dropdown-toggle btn btn-primary" type="button">'+
                               '<option disabled selected>Selecciona tipo</option>'+
                               '<option value="Publicacion">Normal</option>'+
                                 '<option value="Promocion">Promoción</option>'+
@@ -735,6 +777,7 @@ $(document).ready(function(e){
         $("#videos").val(data.data.video);
         $("#publicacions").val(data.data.publicacion);
         $("#estatuss").val(data.data.estatus);
+        $("#caducidad1").val(data.data.caducidad);
 	      $("#s_negs").val(data.data.s_neg);
 	      $("#file").val(data.data.img);
         $("#file1").val(data.data.img1);
@@ -752,6 +795,11 @@ $(document).ready(function(e){
         });
         }
     </script>
+
+
+
+
+
 
 
   </body>

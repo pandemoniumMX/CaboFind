@@ -27,10 +27,12 @@ if(isset($_POST['id'])){
     "video"      =>  $row["PUB_VIDEO"],
     "publicacion"=>  $row["PUB_TIPO"],
     "estatus"    =>  $row["PUB_ESTATUS"],
+    "caducidad"       =>  $row["PUB_FECHA_LIMITE"],
     "s_neg"      =>  $row["negocios_ID_NEGOCIO"],
     "id_g"       =>  $row["ID_GALERIA"],
     "img"        =>  $row["GAL_FOTO"],
     "img1"       =>  $row["GAL_FOTO_ING"],
+
 
 
   );

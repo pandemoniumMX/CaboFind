@@ -8,6 +8,8 @@ $detalle_ing = $_POST['detalle_ing'];
 $video = $_POST['video'];
 $publicacion = $_POST['publicacion'];
 $id = $_POST['s_neg'];
+$caducidad = $_POST['caducidad'];
+
 $img_esp = $_FILES['file']['tmp_name'];
 $img_ing = $_FILES['file1']['tmp_name'];
 
@@ -38,7 +40,7 @@ while($fila=mysqli_fetch_array($ejecutar)){
 $id_g          = $fila['ID_GALERIA'];
 }
 //inserta datos de la publicacion
-$sql3 = "INSERT INTO publicacion(PUB_TITULO ,PUB_TITULO_ING, PUB_DETALLE, PUB_DETALLE_ING, PUB_VIDEO, PUB_TIPO, PUB_ESTATUS, negocios_ID_NEGOCIO, galeria_ID_GALERIA)
-VALUES ('$titu','$titulo_ing','$deta','$detalle_ing','$video','$publicacion','A', $id, $id_g);";
+$sql3 = "INSERT INTO publicacion(PUB_TITULO ,PUB_TITULO_ING, PUB_DETALLE, PUB_DETALLE_ING,PUB_FECHA_LIMITE, PUB_VIDEO, PUB_TIPO, PUB_ESTATUS, negocios_ID_NEGOCIO, galeria_ID_GALERIA)
+VALUES ('$titu','$titulo_ing','$deta','$detalle_ing','$caducidad','$video','$publicacion','A', $id, $id_g);";
 $res2 = $conn->query($sql3);
 }
