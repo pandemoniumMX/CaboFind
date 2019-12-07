@@ -29,7 +29,7 @@ if(isset($_POST['id'])){
     "estatus"    =>  $row["PUB_ESTATUS"],
     "s_neg"      =>  $row["negocios_ID_NEGOCIO"],
     "id_g"       =>  $row["ID_GALERIA"],
-    "img"        =>  $row["GAL_FOTO"],
+    "img"       =>  $row["GAL_FOTO"],
     "img1"       =>  $row["GAL_FOTO_ING"],
 
 

@@ -15,21 +15,21 @@ $id_g = $_POST ['id_g'];
 
 
 //if(!isset($_POST['img'])){
-  if ($_POST['img']) {
+  if ($_POST['img_up']) {
 
-$img_esp = $_FILES['img']['tmp_name'];
-$img_ing = $_FILES['img1']['tmp_name'];
+$img_esp = $_FILES['img_up']['tmp_name'];
+$img_ing = $_FILES['img_up2']['tmp_name'];
 
 
 
 //DESTINO DONDE SE GUARDA LA IMAGEN
-$destino1 = "../assets/galeria/empresas/$neg/".$_FILES['img']['name'];
+$destino1 = "../assets/galeria/empresas/$neg/".$_FILES['img_up']['name'];
 //DESTINO QUE SE GUARDA EN LA BD
-$destino2 = "http://cabofind.com.mx/assets/galeria/empresas/$neg/".$_FILES['img']['name'];
+$destino2 = "http://cabofind.com.mx/assets/galeria/empresas/$neg/".$_FILES['img_up']['name'];
 
-$destino1_ing = "../assets/galeria/empresas/$neg/".$_FILES['img1']['name'];
+$destino1_ing = "../assets/galeria/empresas/$neg/".$_FILES['img_up2']['name'];
 //DESTINO QUE SE GUARDA EN LA BD
-$destino2_ing = "http://cabofind.com.mx/assets/galeria/empresas/$neg/".$_FILES['img1']['name'];
+$destino2_ing = "http://cabofind.com.mx/assets/galeria/empresas/$neg/".$_FILES['img_up2']['name'];
 //crea directorio si no existe.
 $target_dir = "../assets/galeria/empresas/$neg/";
 if (!file_exists($target_dir)) {

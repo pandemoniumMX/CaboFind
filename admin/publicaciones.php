@@ -660,6 +660,28 @@ $(document).ready(function(e){
                     '<select id="s_negs" name="s_negs" class="dropdown-toggle btn btn-success" type="button">'+
                    '<option disabled selected>Selecciona una empresa</option>'+                   
                         <?php
+
+                          $empresa="SELECT n.ID_NEGOCIO, p.ID_PUBLICACION, g.GAL_FOTO,g.GAL_FOTO_ING, p.PUB_TITULO,p.PUB_DETALLE,p.PUB_TITULO_ING,p.PUB_DETALLE_ING
+                          FROM negocios n, subcategoria s, galeria g , categorias c, publicacion p
+                          WHERE n.ID_SUBCATEGORIA = s.ID_SUBCATEGORIA
+                          and c.ID_CATEGORIA =s.ID_CATEGORIA
+                          and p.negocios_ID_NEGOCIO = n.ID_NEGOCIO
+                          and n.ID_NEGOCIO = g.ID_NEGOCIO
+                          and p.galeria_ID_GALERIA = g.ID_GALERIA
+                          and g.GAL_TIPO='Publicacion'
+                          and p.PUB_TIPO is not null
+                          and n.NEG_ESTATUS='A'
+                          and p.PUB_ESTATUS='A'         ";
+
+                          //HConsulta y obtengo los datos
+                          $ejecutar = mysqli_query($conn, $empresa);
+                          while($fila=mysqli_fetch_array($ejecutar)){
+                          $idp           = $fila['ID_PUBLICACION'];
+                         
+
+                          }
+
+
                         $negocios = "SELECT * FROM negocios;";
                         $ejecutar = mysqli_query($conn, $negocios);
                       while($fila=mysqli_fetch_array($ejecutar)){?>                          
@@ -681,13 +703,36 @@ $(document).ready(function(e){
                               '<label>Estatus</label></br>' +
                               '<select class="dropdown-toggle btn btn-info" type="button" required textalign="center" name="estatuss" id="estatuss"><option disabled selected>Selecciona estado</option><option value="A" >A</option><option value="B">B</option></select></br>'+   
                               '<label>Selecciona imagen esp</label></br>' +
-                              
-                              '<input name="img"  id="img" type="file" class="form-control"  />'+
+                              <?php
+                              $venta = "SELECT n.ID_NEGOCIO, p.ID_PUBLICACION,n.NEG_NOMBRE, n.NEG_LUGAR,n.NEG_FACEBOOK,n.NEG_INSTAGRAM,n.NEG_WEB, c.CAT_NOMBRE,s.SUB_NOMBRE, g.GAL_FOTO,g.GAL_FOTO_ING, p.PUB_TITULO,p.PUB_DETALLE,p.PUB_FECHA,p.PUB_VIDEO,n.NEG_TEL, n.NEG_CORREO, n.NEG_HORARIO
+                              FROM negocios n, subcategoria s, galeria g , categorias c, publicacion p
+                              WHERE n.ID_SUBCATEGORIA = s.ID_SUBCATEGORIA
+                              and c.ID_CATEGORIA =s.ID_CATEGORIA
+                              and p.negocios_ID_NEGOCIO = n.ID_NEGOCIO
+                              and n.ID_NEGOCIO = g.ID_NEGOCIO
+                              and p.galeria_ID_GALERIA = g.ID_GALERIA
+                              and g.GAL_TIPO='Publicacion'
+                              and p.PUB_TIPO is not null
+                              and n.NEG_ESTATUS='A'
+                              and p.PUB_ESTATUS='A'
+                              and p.ID_PUBLICACION=$idp";
+                $ejec1 = mysqli_query($conn, $venta);
+                while($filas=mysqli_fetch_array($ejec1)){
+
+                  
+                   ?>
+                  '<?php echo '<img style="height: 350px; width: 100%; display: block;"  src="'.$filas["GAL_FOTO"].'"/>'; ?>'+
+                      
+                              '<input id="img_up" name="img_up" type="file"  value="" readonly class="form-control"  />'+
+                              '<input id="img" name="img" type="text"  value="" readonly class="form-control"  />'+
 
                               '<label>Selecciona imagen ing</label></br>' +
+                              '<?php echo '<img style="height: 350px; width: 100%; display: block;"  src="'.$filas["GAL_FOTO_ING"].'"/>'; ?>'+
+                      
+                      <?php } ?>
 
-                              
-                              '<input  name="img1"  id="img1"  type="file" class="form-control" />'+
+                              '<input id="img_up2" name="img_up2" type="file"  value="" readonly class="form-control"  />'+
+                              '<input  id="img1" name="img1" type="text" value="" readonly class="form-control" />'+
 
     '<button type="submit"  class="btn btn-success btn-lg btn-block">Actualizar</button>'+
    '</form></div>',
@@ -736,8 +781,8 @@ $(document).ready(function(e){
         $("#publicacions").val(data.data.publicacion);
         $("#estatuss").val(data.data.estatus);
 	      $("#s_negs").val(data.data.s_neg);
-	      $("#file").val(data.data.img);
-        $("#file1").val(data.data.img1);
+	      $("#img").val(data.data.img);
+        $("#img1").val(data.data.img1);
 
         
       },
