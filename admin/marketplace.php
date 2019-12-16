@@ -435,7 +435,7 @@ Resultado de marketplace
 
           <!-- modal new publicacion -->
           <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-    <form action="marketplace_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+          <form action="marketplace_nueva_fn.php" method="post" name="data">
     				<div class="modal-dialog modal-lg" role="document">
     					<div class="modal-content">
     						<div class="modal-header">
@@ -447,7 +447,7 @@ Resultado de marketplace
     						<div class="modal-body">
                   <!-- contenido del modal -->
 
-          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
+                  
             <div class="row">
               <div class="col-lg-6">
                 <div class="card">
@@ -545,6 +545,21 @@ Resultado de marketplace
                                     </div>
                                   </div>
                                 </div>
+
+                                <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <select require id='exposicion' name='exposicion' class="dropdown-toggle btn btn-primary" type="button">
+                                                <option disabled selected>Exposición</option>
+                                                  <option value="1">Baja</option>
+                                                  <option value="2">Alta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>
 
                               
                                   <div class="row form-group">
@@ -747,12 +762,12 @@ Resultado de marketplace
                                                   </div>
                                                   </div>
                                                     </div>
-                                                  </form>
+                                                  
 
                                                     </div>
     						<div class="modal-footer">
     							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+    							<button type="submit" class="btn btn-primary submitBtn">Confirm</button>
     						</div>
     					</div>
     				</div>
@@ -868,7 +883,7 @@ $(document).ready(function(e){
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'publicacion_nueva_fn.php',
+            url: 'marketplace_nueva_fn.php',
             data: new FormData(this),
             contentType: false,
             cache: false,
@@ -1113,40 +1128,7 @@ $(document).ready(function(e){
         });
         }
     </script>
-<script>
 
-function readURL(input) {
-     if (input.files && input.files[0]) {
-         var reader = new FileReader();
-
-         reader.onload = function (e) {
-             $('#blah')
-                 .attr('src', e.target.result);
-         }
-         reader.readAsDataURL(input.files[0]);
-     }
- }
- $("#file-input").change(function(){
-        readURL(this);
-    });
-</script>
-
-<script>
-function readURL1(input) {
-     if (input.files && input.files[0]) {
-         var reader = new FileReader();
-
-         reader.onload = function (e) {
-             $('#blah1')
-                 .attr('src', e.target.result);
-         }
-         reader.readAsDataURL(input.files[0]);
-     }
- }
- $("#file-input1").change(function(){
-        readURL1(this);
-    });
-</script>
 
 
 

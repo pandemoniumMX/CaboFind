@@ -1,6 +1,6 @@
 <?php
 require "conexion.php";
-if(!empty($_POST['titulo']) || !empty($_POST['titulo_ing']) || !empty($_POST['descripcion_ing'])){
+if(!empty($_POST['titulo']) || !empty($_POST['titulo_ing']) || !empty($_POST['descripcion_ing']) || !empty($_FILES['file']['name'])){
 
 //detalle anuncio
 $titulo = $_POST['titulo'];
@@ -8,11 +8,11 @@ $titulo_ing = $_POST['titulo_ing'];
 $descripcion = $_POST['descripcion'];
 $descripcion_ing = $_POST['descripcion_ing'];
 $categoria = $_POST['categoria'];
-$anunciante = $_POST['anunciante'];
-
+$id = $_POST['anunciante'];
+$exposicion = $_POST['exposicion'];
 
 $map = $_POST['map'];
-$map_ing = $_POST['map_ing'];
+$map_ing = $_POST['map_ios'];
 $ciudad = $_POST['ciudad'];
 $video = $_POST['video'];
 $precio = $_POST['precio'];
@@ -25,7 +25,7 @@ $estado = $_POST['estado'];
 $estado_ing = $_POST['estado_ing'];
 
 $precio = $_POST['precio'];
-$precio_usd = $_POST['precio_usd'];
+$precio_usd = $_POST['precio_ing'];
 
 $estatus = $_POST['estatus'];
 $ingles = $_POST['ingles'];
@@ -51,9 +51,9 @@ move_uploaded_file($img_ing, $destino1_ing);
 
 //inserta la imagen en la galeria
 $sql = "INSERT INTO galeria(GAL_FOTO ,GAL_FOTO_ING, GAL_TIPO, GAL_ESTATUS, anuncios_ID_ANUNCIOS)
-VALUES ('$destino2','$destino2_ing', 'Publicacion','A', $id);";
+VALUES ('$destino2','$destino2_ing', 'Logo','A', $id);";
 $res = $conn->query($sql);
-//consulta publicaci贸n recien insertada para anidarla a la imagen en galeria
+//consulta publicacion recien insertada para anidarla a la imagen en galeria
 $empresa="SELECT ID_GALERIA FROM galeria order by ID_GALERIA DESC limit 1";
 $ejecutar = mysqli_query($conn, $empresa);
 while($fila=mysqli_fetch_array($ejecutar)){
@@ -61,11 +61,13 @@ $id_g          = $fila['ID_GALERIA'];
 }
 //inserta datos de la publicacion
 $sql3 = "INSERT INTO anuncios(ANUN_TITULO ,ANUN_TITULO_ING, ANUN_DESCRIPCION, ANUN_DESCRIPCION_ING,ANUN_FECHA_CADUCIDAD, ANUN_VIDEO, ANUN_ESTADO, ANUN_ESTADO_ING, ANUN_ESTATUS, anunciante_ID_ANUNCIANTE, galeria_ID_GALERIA)
-VALUES ('$titu','$titulo_ing','$deta','$detalle_ing','$caducidad','$video','A', $id, $id_g);";
+VALUES ('$titulo','$titulo_ing','$descripcion','$descripcion_ing','$fecha_limite','$video','$estado','$estado_ing','A', $id, $id_g);";
 $res2 = $conn->query($sql3);
 
 $sql4 = "INSERT INTO anun_exp(NEG_EXP_ESTATUS, exposicion_ID_EXPOSICION, anuncios_ID_ANUNCIOS)
-VALUES ('A', $publicacion, $id);";
+VALUES ('A', $exposicion, $id);";
 $res3 = $conn->query($sql4);
 
+}else{
+    echo"error";
 }
