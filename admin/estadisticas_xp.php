@@ -106,6 +106,12 @@
                   <span class="bot-line"></span>Publicaciones</a>
                 
 </li>
+<li class="has-sub">
+                <a href="marketplace.php">
+                  <i class="fas fa-copy"></i>
+                  <span class="bot-line"></span>Marketplace</a>
+                
+</li>
 
 
               <li class="has-sub">

@@ -107,6 +107,12 @@
                   <span class="bot-line"></span>Publicaciones</a>
                 
 </li>
+<li class="has-sub">
+                <a href="marketplace.php">
+                  <i class="fas fa-copy"></i>
+                  <span class="bot-line"></span>Marketplace</a>
+                
+</li>
 
 
               <li class="has-sub">
@@ -213,6 +219,14 @@
             <li class="has-sub">
               <a class="js-arrow" href="publicaciones.php">
                 <i class="fas fa-tags"></i>Publicaciones</a>
+              <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+               
+
+              </ul>
+            </li>
+<li class="has-sub">
+              <a class="js-arrow" href="marketplace.php">
+                <i class="fas fa-tags"></i>Marketplace</a>
               <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                
 

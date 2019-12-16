@@ -281,7 +281,8 @@
           <div class="container">
                     <div class="card">
                     <div class="card-header">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#newPublic" >Nueva publicación</button>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#largeModal1" >Nuevo anunciante</button>
+                    <button class="btn btn-info" data-toggle="modal" data-target="#largeModal" >Nuevo anuncio</button>
                     </div>
                     <div class="container-fluid">
 
@@ -298,14 +299,14 @@
                                       </tr>
               </thead>
 <?php
- $consulta = "SELECT * FROM publicacion p, negocios n
- WHERE p.negocios_ID_NEGOCIO = n.ID_NEGOCIO;";
+ $consulta = "SELECT * FROM anuncios p, anunciante n
+ WHERE p.anunciante_ID_ANUNCIANTE = n.ID_ANUNCIANTE;";
  $ejecutar = mysqli_query($conn, $consulta);
 while($fila=mysqli_fetch_array($ejecutar)){
-  $id       = $fila['ID_PUBLICACION'];
-  $titu_pub  = $fila['PUB_TITULO'];
-  $nom_neg   = $fila['NEG_NOMBRE'];
-  $fecha_pub  = $fila['PUB_FECHA'];
+  $id       = $fila['ID_ANUNCIOS'];
+  $titu_pub  = $fila['ANUN_TITULO'];
+  $nom_neg   = $fila['ANUN_NOMBRE'];
+  $fecha_pub  = $fila['ANUN_FECHA'];
 
 
 ?>
@@ -327,7 +328,7 @@ while($fila=mysqli_fetch_array($ejecutar)){
                                       </tr>
 <?php } ?>
 <tbody></br>
-Resultado de publicaciones
+Resultado de marketplace
 </tbody>
 </table>
 </div></div></div>
@@ -341,165 +342,423 @@ Resultado de publicaciones
   
 
           <!-- fin del modal -->
+          <div class="modal fade" id="largeModal1" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <form action="marketplace_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+    				<div class="modal-dialog modal-lg" role="document">
+    					<div class="modal-content">
+    						<div class="modal-header">
+    							<h5 class="modal-title" id="largeModalLabel">Nuevo anuncio</h5>
+    							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    								<span aria-hidden="true">×</span>
+    							</button>
+    						</div>
+    						<div class="modal-body">
+                  <!-- contenido del modal -->
 
+          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card">
+                <div class="card-header">
+                <strong>Datos</strong>
+                <small> del anunciante</small>
+                </div>
+          <div class="card-body card-block">
+          <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <input type="text" id="nombre" name="nombre" required  placeholder="Nombre anunciante" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                                <div class="col col-md-12">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <input type="email" id="correo" name="correo" required placeholder="Correo" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <input type="number" id="telefono" name="telefono" required placeholder="telefono del anuncio" class="form-control">
+                                            </div>
+                                        </div>                                       
+                             </div>
+
+                             <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <input type="number" id="telefono_res" name="telefono_res" required placeholder="telefono del responsable" class="form-control">
+                                            </div>
+                                        </div>                                       
+                             </div>
+         
+                           
+                          
+
+                                </div>
+                              </div>
+                              </div>
+
+                                
+
+                                                </div>
+                                                  </div>
+                                                  </div>
+                                                    </div>
+                                                  </form>
+
+                                                    </div>
+    						<div class="modal-footer">
+    							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    							<button type="submit" value="submit" onclick="submitContactForm1()" class="btn btn-primary">Confirm</button>
+    						</div>
+    					</div>
+    				</div>
+    				</form>
+    			</div>
+<!-- modal end -->
 
 
           <!-- modal new publicacion -->
-          <div class="modal fade" id="newPublic" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="largeModalLabel">Nueva publicación</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- contenido del modal -->
-                          <form enctype="multipart/form-data" id="fupForm" form enctype="multipart/form-data">
-                          <div class="form-group">
+          <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <form action="marketplace_nueva_fn.php" method="post" name="data" content="text/html; charset=utf-8" >
+    				<div class="modal-dialog modal-lg" role="document">
+    					<div class="modal-content">
+    						<div class="modal-header">
+    							<h5 class="modal-title" id="largeModalLabel">Nuevo anuncio</h5>
+    							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    								<span aria-hidden="true">×</span>
+    							</button>
+    						</div>
+    						<div class="modal-body">
+                  <!-- contenido del modal -->
 
-                        <div class="input-group">
-                        <input type="text" id="titulo" required name="titulo" placeholder="Titulo de publicacion en español" class="form-control">  
-
-                        
-                        <i class="fa fa-text-height"></i>
-                      </div>
-                      </br>
-                      <div class="input-group">
-                        <input type="text" id="titulo_ing" required name="titulo_ing" placeholder="Titulo de publicacion en inglés" class="form-control"> 
-
-                        
-                        <i class="fa fa-text-height"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row form-group">
-                   
-
-                    <div class="col-12 col-md-9">
-                        <textarea name="detalle" required id="detalle" rows="9" placeholder="Información de la publicacion" class="form-control"></textarea>
-                        </br>
-                        <textarea name="detalle_ing" required id="detalle_ing" rows="9" placeholder="Información de la publicacion en inglés" class="form-control"></textarea>
-                        <input type="text" id="video"  name="video" value="https://www.youtube.com/watch?v=9k6tvyyowk0" placeholder="Link de youtube(Opcional)" class="form-control"> 
-
-                    </div>
-                  </div>
-                  <div class="row form-group">
-                    <div class="col col-md-12">
-                        <div class="input-group">
-
-                            <input type="text" id='s_neg' name='s_neg' required placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
-                            <div class="input-group-btn">
-                              <select id='s_neg' name='s_neg' class="dropdown-toggle btn btn-primary" type="button">
-                              <option disabled selected>Seleccionar negocio</option>
-                              <?php
-                              $negocios = "SELECT * FROM negocios;";
-                              $ejecutar = mysqli_query($conn, $negocios);
-                            while($fila=mysqli_fetch_array($ejecutar)){
-                                $neg_nom          = $fila['NEG_NOMBRE'];
-                                $id_neg            = $fila['ID_NEGOCIO'];
-                                echo "<option value='$id_neg'>$neg_nom</option>";
-                              }
-                                 ?>
-                               </select>
-
-
-                               
-                            </div>
-                        </div>
-
-                                                    
-                            
-                        </br></br>
-                           
-
-                            <div class="row form-group">                              
-                              <div class="col col-md-9">
+          <form id="registerSubmit" enctype="multipart/form-data" content="text/html; charset=utf-8" >
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="card">
+                <div class="card-header">
+                <strong>Datos</strong>
+                <small> del anunciante</small>
+                </div>
+          <div class="card-body card-block">
+          <div class="row form-group">
+                              <div class="col col-md-12">
                                   <div class="input-group">
-
-                                      <input type="text" id='publicacion' required name='publicacion' placeholder="Caducidad formato YYYY-MM-DD" disabled class="form-control">
-                                      <div class="input-group-btn">
-                                      <input class="form-control" name="caducidad" id="caducidad" type="text" placeholder="Formato YYYY-MM-DD">
-
-                                        
+                                      <div class="input-group-addon">
+                                      <i class="fa fa-location-arrow"></i>
                                       </div>
-
-                                      
+                                      <input type="text" required id="titulo" name="titulo" placeholder="Titulo esp" class="form-control">
                                   </div>
                               </div>
+                          </div>
+
+                          <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <div class="input-group-addon">
+                                              <i class="fa fa-location-arrow"></i>
+                                              </div>
+                                              <input type="text" required id="titulo_ing" name="titulo_ing" placeholder="Titulo inglés" class="form-control">
+                                          </div>
+                                      </div>
+                          </div>
+
+                                  <div class="row form-group">
+                              <div class="col col-md-12">
+                                  <div class="input-group">
+                                      <div class="input-group-addon">
+                                      <i class="fa fa-location-arrow"></i>
+                                      </div>
+                                      <input type="text" required id="descripcion" name="descripcion" placeholder="descripcion" class="form-control">
+                                  </div>
                               </div>
-                              </br></br>
+                          </div>
 
-                    <div class="row form-group">                              
+                          <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <div class="input-group-addon">
+                                              <i class="fa fa-location-arrow"></i>
+                                              </div>
+                                              <input type="text" required id="descripcion_ing" name="descripcion_ing" placeholder="descripcion inglés" class="form-control">
+                                          </div>
+                                      </div>
+                          </div>
 
-                    <div class="col col-md-6">
+
+                                    <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <input type="text" placeholder="Selecciona categoria" disabled class="form-control">
+                                              <div class="input-group-btn">
+                                              <select require id='categoria' name='categoria' class="dropdown-toggle btn btn-primary" type="button">
+                                          <option disabled selected>Seleccionar categoria</option>
+                                          <?php
+                                          $negocios = "SELECT * FROM anuncios_categoria;";
+                                          $ejecutar = mysqli_query($conn, $negocios);
+                                        while($fila=mysqli_fetch_array($ejecutar)){
+                                            $neg_nom          = $fila['ANUN_CATEGORIA'];
+                                            $id_neg            = $fila['ID_ANUNCIOS_CAT'];
+                                            echo "<option value='$id_neg'>$neg_nom</option>";
+                                          }
+                                            ?>
+                                          </select>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+
+                                <div class="row form-group">
+                                      <div class="col col-md-12">
+                                          <div class="input-group">
+                                              <input type="text" placeholder="Selecciona categoria" disabled class="form-control">
+                                              <div class="input-group-btn">
+                                              <select require id='anunciante' name='anunciante' class="dropdown-toggle btn btn-primary" type="button">
+                                          <option disabled selected>Seleccionar anunciante</option>
+                                          <?php
+                                          $negocios = "SELECT * FROM anunciante where ANUN_ESTATUS='A';";
+                                          $ejecutar = mysqli_query($conn, $negocios);
+                                        while($fila=mysqli_fetch_array($ejecutar)){
+                                            $neg_nom          = $fila['ANUN_NOMBRE'];
+                                            $id_neg            = $fila['ID_ANUNCIANTE'];
+                                            echo "<option value='$id_neg'>$neg_nom</option>";
+                                          }
+                                            ?>
+                                          </select>
+                                    </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              
+                                  <div class="row form-group">
+                              <div class="col col-md-12">
                         <div class="input-group">
-
-                            <input type="text" id='publicacion' required name='publicacion' placeholder="Selecciona la empresa que esta relacionada" disabled class="form-control">
-                            <div class="input-group-btn">
-                              <select id='publicacion' name='publicacion' class="dropdown-toggle btn btn-primary" type="button">
-                              <option disabled selected>Tipo de publicacion</option>
-                                <option value="Publicacion">Normal</option>
-                                <option value="Promocion">Promoción</option>
-                                <option value="Eventos">Eventos</option>
-
-                               </select>
-
-                               
+                       <div class="input-group-addon">
+                      <i class="fa fa-location-arrow"></i>
+                        </div>
+                          <input require type="text" id="map" name="map" required placeholder="URL Google Maps" class="form-control">
+                            </div>
+                              </div>
                             </div>
 
-                             
-                        </div>
-                    </div>
-                    </div>
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                <i class="fa fa-location-arrow"></i>
+                                                </div>
+                                                <input require type="text" id="map_ios" name="map_ios" required placeholder="URL Apple Maps"  class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <select required id="ciudad" name="ciudad"  class="form-control" >
+                                                <option disabled selected>Selecciona ciudad</option>
+                                                <option value="Cabo San Lucas">Cabo San Lucas</option>
+                                                <option value="San José del Cabo">San José del Cabo</option>
+                                                <option value="Los Barriles">Los Barriles</option>     
+                                                <option value="Miraflores">Miraflores</option>                                                  
+                                             
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                <i class="fab fa-youtube"></i>
+                                                </div>
+                                                <input type="text" id="video" required name="video" value="https://www.youtube.com/watch?v=9k6tvyyowk0" placeholder="Link de youtube(Opcional)" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+         
+                           
+                          
+
+                                </div>
+                              </div>
+                              </div>
+
+                                <div class="col-lg-6">
+                                <div class="card">
+                                  <div class="card-header">
+                                      <strong>Anuncio</strong>
+                                      <small> Detalles del anuncio</small>
+                                  </div>
+                                  <div class="card-body card-block">
+
+                                  
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-money"></i>
+                                                </div>
+                                                <input require type="text" id="precio" required name="precio" placeholder="Formato: $200.00 Pesos" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-money"></i>
+                                                </div>
+                                                <input require type="text" id="precio_ing" required name="precio_ing" placeholder="Formato: $200.00 USD" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <input require type="text" id="fecha_limite" required name="fecha_limite" placeholder="Formato YYYY-MM-DD" class="form-control">
+                                            </div>
+                                        </div>
+                            </div>
+                            
+                            
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <select require id='estado' name='estado' class="dropdown-toggle btn btn-primary" type="button">
+                                                <option disabled selected>Estado esp</option>
+                                                  <option value="Nuevo">Nuevo</option>
+                                                  <option value="Usado">Usado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-tag"></i>
+                                                </div>
+                                                <select require id='estado_ing' name='estado_ing' class="dropdown-toggle btn btn-primary" type="button">
+                                                <option disabled selected>Estado ing</option>
+                                                  <option value="New">New</option>
+                                                  <option value="Used">Used</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="row form-group">
+                            <div class="col col-md-12">
+                              <label for="file-input" class=" form-control-label">Imagen </label>
+                            </div>
+                                        <div class="col col-md-12">
+                                        <div class="image-upload">
+                                        <label for="file-input">
+                                          <img id="blah" src="images/giphy.gif" require style="max-width: 30%;" />
+                                        </label>
+
+                                        <input id="file-input" name="file" required type="file" style="display:none" onchange="readURL(this);" />
+                                      </div>
+                            </div> 
+                            </div>
+
+                            <div class="row form-group">
+                            <div class="col col-md-12">
+                              <label for="file-input" class=" form-control-label">Imagen ing </label>
+                            </div>
+                                        <div class="col col-md-12">
+                                        <div class="image-upload">
+                                        <label for="file-input1">
+                                          <img id="blah1" src="images/giphy.gif" require style="max-width: 30%;" />
+                                        </label>
+
+                                        <input id="file-input1" name="file1" required type="file" style="display:none" onchange="readURL1(this);" />
+                                      </div>
+                            </div> 
+                            </div>
 
 
-                    
-                    <div class="row form-group">
-                      <div class="col col-md-3">
-                        <label for="file-input" class=" form-control-label">Imagen esp</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                      <div class="image-upload">
-                        <label for="file-input">
-                          <img id="blah" src="images/giphy.gif" require style="max-width: 30%;" />
-                        </label>
-
-                        <input id="file-input" name="file" required type="file" style="display:none" onchange="readURL(this);" />
-                      </div>
-
-                    </div>
-
-                    <div class="row form-group">
-                      <div class="col col-md-3">
-                        <label for="file-input" class=" form-control-label">Imagen ing</label>
-                    </div>
-                    <div class="col-12 col-md-9">
-                      <div class="image-upload">
-                        <label for="file-input1">
-                          <img id="blah1" src="images/giphy.gif"  style="max-width: 30%;" />
-                        </label>
-
-                        <input id="file-input1" name="file1"  type="file" style="display:none" onchange="readURL1(this);" />
-                      </div>
-
-                    </div>
-                    
-                  </div>
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <select required id="estatus" name="estatus" class="form-control" >
+                                                <option disabled selected>Estatus</option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>                                                  
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div>   
+                            
+                            
+                            <div class="row form-group">
+                                        <div class="col col-md-12">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock"></i>
+                                                </div>
+                                                <select required id="ingles" name="ingles" class="form-control" >
+                                                <option disabled selected>¿Anuncio en inglés?</option>
+                                                <option value="True">SI</option>
+                                                <option value="False">NO</option>                                                  
+                                                </select>
+                                            </div>
+                                        </div>
+                            </div> 
 
 
+                                                </div>
+                                                  </div>
+                                                  </div>
+                                                    </div>
+                                                  </form>
 
-                                                          </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit"  class="btn btn-primary submitBtn" value="SAVE">Confirm</button>
-                      </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-                <!-- fin modal-->
+                                                    </div>
+    						<div class="modal-footer">
+    							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    							<button type="submit" value="submit" onclick="submitContactForm()" class="btn btn-primary">Confirm</button>
+    						</div>
+    					</div>
+    				</div>
+    				</form>
+    			</div>
+<!-- modal end -->
 
 
 
@@ -697,9 +956,9 @@ $(document).ready(function(e){
   //ventana de nuevo cliente
     function editar_pub(id){
    swal({
-   title: 'Editar Publicacion ',
+   title: 'Editar marketplace ',
    html:
-   '<div class="col-lg-12"> <form action="publicacion_update_fn.php" method="post" name="data">'+
+   '<div class="col-lg-12"> <form action="marketplace_update_fn.php" method="post" name="data">'+
    '<input type="text" id="idps" name="idps"  readonly required  class="form-control"></br>' +
    '<input type="hidden" id="id_g" name="id_g"  readonly required  class="form-control"></br>' +
 
@@ -854,11 +1113,79 @@ $(document).ready(function(e){
         });
         }
     </script>
+<script>
+
+function readURL(input) {
+     if (input.files && input.files[0]) {
+         var reader = new FileReader();
+
+         reader.onload = function (e) {
+             $('#blah')
+                 .attr('src', e.target.result);
+         }
+         reader.readAsDataURL(input.files[0]);
+     }
+ }
+ $("#file-input").change(function(){
+        readURL(this);
+    });
+</script>
+
+<script>
+function readURL1(input) {
+     if (input.files && input.files[0]) {
+         var reader = new FileReader();
+
+         reader.onload = function (e) {
+             $('#blah1')
+                 .attr('src', e.target.result);
+         }
+         reader.readAsDataURL(input.files[0]);
+     }
+ }
+ $("#file-input1").change(function(){
+        readURL1(this);
+    });
+</script>
 
 
 
+<script>
+function submitContactForm(){
+                $.ajax({
+                 url: 'marketplace_nueva_fn.php',
+                 type: 'POST',
+                 data: $("#registerSubmit").serialize(),
+                 dataType: 'json'
+               })
+               .done(function(response){
+                 swal('Agregado exitosamente!', response.message, response.status).then(function(){
+                  window.location.href='galeria_anuncio.php?id=<?php echo $id_plus = $id + 1; ?>'
+                 });
+               })
+               .fail(function(response){
+                 swal('Oops...', 'Something went wrong with ajax !',response.message);
+               });
+               };
+</script>
 
-
+<script>
+function submitContactForm1(){
+                $.ajax({
+                 url: 'marketplaceanun_nueva_fn.php',
+                 type: 'POST',
+                 data: $("#registerSubmit").serialize(),
+                 dataType: 'json'
+               })
+               .done(function(response){
+                 swal('Agregado exitosamente!', response.message, response.status).then(function(){
+                 });
+               })
+               .fail(function(response){
+                 swal('Oops...', 'Something went wrong with ajax !',response.message);
+               });
+               };
+</script>
 
 
   </body>
