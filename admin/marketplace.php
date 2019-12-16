@@ -435,7 +435,6 @@ Resultado de marketplace
 
           <!-- modal new publicacion -->
           <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
-          <form action="marketplace_nueva_fn.php" method="post" name="data">
     				<div class="modal-dialog modal-lg" role="document">
     					<div class="modal-content">
     						<div class="modal-header">
@@ -446,6 +445,8 @@ Resultado de marketplace
     						</div>
     						<div class="modal-body">
                   <!-- contenido del modal -->
+                  <form enctype="multipart/form-data" id="fupForm" form enctype="multipart/form-data">
+
 
                   
             <div class="row">
@@ -767,11 +768,11 @@ Resultado de marketplace
                                                     </div>
     						<div class="modal-footer">
     							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-    							<button type="submit" class="btn btn-primary submitBtn">Confirm</button>
-    						</div>
-    					</div>
-    				</div>
-    				</form>
+                  <button type="submit"  class="btn btn-primary submitBtn" value="SAVE">Confirm</button>
+                </div>
+              </form>
+              </div>
+    				</div>    				
     			</div>
 <!-- modal end -->
 
