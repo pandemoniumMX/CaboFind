@@ -291,10 +291,11 @@ include'consultas.php';
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <div class="world-catagory-slider owl-carousel wow fadeInUpBig" data-wow-delay="0.1s">
+                                        <!-- No te pierdas slider -->
                                       <?php
 
-                                      $ejec2 = mysqli_query($conn, $post);
-                                      while($fila=mysqli_fetch_array($ejec2)){
+                                      $ejesliderp = mysqli_query($conn, $sliderp);
+                                      while($fila=mysqli_fetch_array($ejesliderp)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
@@ -303,7 +304,7 @@ include'consultas.php';
                                       echo "
                                       <div class='single-blog-post'>
                                           <div class='post-thumbnail'>
-                                              <img src='$img'>
+                                              <img src='$img' style='height:300px; with:300px;'>
                                               <div class='post-cta'><a href='negocio.php?id=$id'>$n_nom</a></div>
                                           </div>
                                           <div class='post-content'>
@@ -325,11 +326,13 @@ include'consultas.php';
                                     </div>
                                     <!-- TERMINA SLIDER -->
 
+
+                                    <!-- Todo -->
                                     <div class="col-12 col-md-6">
                                       <?php
 
-                                      $ejec3 = mysqli_query($conn, $post2);
-                                      while($fila=mysqli_fetch_array($ejec3)){
+                                      $todoeje = mysqli_query($conn, $todop);
+                                      while($fila=mysqli_fetch_array($todoeje)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
@@ -361,20 +364,16 @@ include'consultas.php';
                         </div>
                         </div>
 
-
+                        <!-- Actividades turisticas -->
                         <div class="tab-pane fade" id="world-tab-2" role="tabpanel" aria-labelledby="tab2">
 
                               <div class="row">
                                   <div class="col-12 col-md-6">
                                     <div class="single-blog-post">
                                         <?php
-                                        $post3 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                        FROM publicacion p, galeria g, negocios n
-                                        WHERE g.GAL_TIPO = 'Publicacion'
-                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                      LIMIT 1;";
-                                        $ejec2 = mysqli_query($conn, $post3);
-                                        while($fila=mysqli_fetch_array($ejec2)){
+
+                                        $actve1 = mysqli_query($conn, $actvp1);
+                                        while($fila=mysqli_fetch_array($actve1)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
@@ -403,17 +402,13 @@ include'consultas.php';
                                         ?>
                                       </div>
                                       </div>
-                                      <!-- TERMINA SLIDER -->
+
 
                                       <div class="col-12 col-md-6">
                                         <?php
-                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                        FROM publicacion p, galeria g, negocios n
-                                        WHERE g.GAL_TIPO = 'Publicacion'
-                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                        LIMIT 4";
-                                        $ejec3 = mysqli_query($conn, $post2);
-                                        while($fila=mysqli_fetch_array($ejec3)){
+
+                                        $actve2 = mysqli_query($conn, $actvp2);
+                                        while($fila=mysqli_fetch_array($actve2)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
@@ -443,6 +438,7 @@ include'consultas.php';
                               </div>
                           </div>
                         </div>
+<!-- Actividades nocturnas -->
 
                         <div class="tab-pane fade" id="world-tab-3" role="tabpanel" aria-labelledby="tab3">
 
@@ -450,13 +446,9 @@ include'consultas.php';
                                 <div class="col-12 col-md-6">
                                   <div class="single-blog-post">
                                       <?php
-                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                      FROM publicacion p, galeria g, negocios n
-                                      WHERE g.GAL_TIPO = 'Publicacion'
-                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                     LIMIT 1;";
-                                      $ejec2 = mysqli_query($conn, $post);
-                                      while($fila=mysqli_fetch_array($ejec2)){
+
+                                      $actne = mysqli_query($conn, $actnp1);
+                                      while($fila=mysqli_fetch_array($actne)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
@@ -489,13 +481,9 @@ include'consultas.php';
 
                                       <div class="col-12 col-md-6">
                                         <?php
-                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                        FROM publicacion p, galeria g, negocios n
-                                        WHERE g.GAL_TIPO = 'Publicacion'
-                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                        LIMIT 4";
-                                        $ejec3 = mysqli_query($conn, $post2);
-                                        while($fila=mysqli_fetch_array($ejec3)){
+
+                                        $actne = mysqli_query($conn, $actnp2);
+                                        while($fila=mysqli_fetch_array($actne)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
@@ -525,20 +513,16 @@ include'consultas.php';
                               </div>
                           </div>
                         </div>
-
+                          <!-- Shopping -->
                         <div class="tab-pane fade" id="world-tab-4" role="tabpanel" aria-labelledby="tab4">
 
                               <div class="row">
                                 <div class="col-12 col-md-6">
                                   <div class="single-blog-post">
                                       <?php
-                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                      FROM publicacion p, galeria g, negocios n
-                                      WHERE g.GAL_TIPO = 'Publicacion'
-                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                       LIMIT 1;";
-                                      $ejec2 = mysqli_query($conn, $post);
-                                      while($fila=mysqli_fetch_array($ejec2)){
+
+                                      $shope = mysqli_query($conn, $shopp1);
+                                      while($fila=mysqli_fetch_array($shope)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
@@ -571,13 +555,9 @@ include'consultas.php';
 
                                       <div class="col-12 col-md-6">
                                         <?php
-                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                        FROM publicacion p, galeria g, negocios n
-                                        WHERE g.GAL_TIPO = 'Publicacion'
-                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                        LIMIT 4";
-                                        $ejec3 = mysqli_query($conn, $post2);
-                                        while($fila=mysqli_fetch_array($ejec3)){
+
+                                        $shope = mysqli_query($conn, $shopp2);
+                                        while($fila=mysqli_fetch_array($shope)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
@@ -607,19 +587,15 @@ include'consultas.php';
                               </div>
                           </div>
                         </div>
-
+                          <!-- Eventos -->
                         <div class="tab-pane fade" id="world-tab-5" role="tabpanel" aria-labelledby="tab5">
                               <div class="row">
                                 <div class="col-12 col-md-6">
                                   <div class="single-blog-post">
                                       <?php
-                                      $post = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                      FROM publicacion p, galeria g, negocios n
-                                      WHERE g.GAL_TIPO = 'Publicacion'
-                                      AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                       LIMIT 1;";
-                                      $ejec2 = mysqli_query($conn, $post);
-                                      while($fila=mysqli_fetch_array($ejec2)){
+
+                                      $evente = mysqli_query($conn, $eventp1);
+                                      while($fila=mysqli_fetch_array($evente)){
                                       $n_nom           = $fila['NEG_NOMBRE'];
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
@@ -652,13 +628,9 @@ include'consultas.php';
 
                                       <div class="col-12 col-md-6">
                                         <?php
-                                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
-                                        FROM publicacion p, galeria g, negocios n
-                                        WHERE g.GAL_TIPO = 'Publicacion'
-                                        AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
-                                        LIMIT 4";
-                                        $ejec3 = mysqli_query($conn, $post2);
-                                        while($fila=mysqli_fetch_array($ejec3)){
+
+                                        $evente = mysqli_query($conn, $eventp2);
+                                        while($fila=mysqli_fetch_array($evente)){
                                         $n_nom           = $fila['NEG_NOMBRE'];
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
