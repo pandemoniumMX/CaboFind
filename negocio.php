@@ -40,7 +40,8 @@ $n_nom         = $fila['NEG_NOMBRE'];
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/themify-icons.css">
 
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v5.0"></script>
 </head>
 
 <body>
@@ -53,7 +54,7 @@ $n_nom         = $fila['NEG_NOMBRE'];
     <!-- Preloader End -->
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area sticky">
+    <header class="header-area">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -376,71 +377,136 @@ $n_nom         = $fila['NEG_NOMBRE'];
                                         </div>
                                                 ";
                                               } ?>
+                                              <!-- Load More btn -->
+                                              <div class="row">
+                                                  <div class="col-12">
+                                                      <div class="load-more-btn mt-50 text-center">
+                                                          <a href="#" class="btn world-btn">Load More</a>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="600" data-numposts="5"></div>
                                             </div>
 
-                                            <div class="col-12 col-lg-4">
-                                                <div class="title">
-                                                    <h5>Most Popular Videos</h5>
-                                                </div>
 
-                                                <!-- Single Blog Post -->
-                                                <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.2s">
-                                                    <!-- Post Thumbnail -->
-                                                    <div class="post-thumbnail">
-                                                        <img src="assets/img/blog-img/b7.jpg" alt="">
-                                                        <!-- Catagory -->
-                                                        <div class="post-cta"><a href="#">travel</a></div>
-                                                        <!-- Video Button -->
-                                                        <a href="https://www.youtube.com/watch?v=IhnqEwFSJRg" class="video-btn"><i class="fa fa-play"></i></a>
-                                                    </div>
-                                                    <!-- Post Content -->
-                                                    <div class="post-content">
-                                                        <a href="#" class="headline">
-                                                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                                        </a>
-                                                        <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                                        <!-- Post Meta -->
-                                                        <div class="post-meta">
-                                                            <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <!-- contenido lateral derecha -->
+                                            <div class="col-12 col-md-8 col-lg-4">
+                                                                <div class="post-sidebar-area mb-100">
 
-                                                <!-- Single Blog Post -->
-                                                <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.4s">
-                                                    <!-- Post Thumbnail -->
-                                                    <div class="post-thumbnail">
-                                                        <img src="assets/img/blog-img/b8.jpg" alt="">
-                                                        <!-- Catagory -->
-                                                        <div class="post-cta"><a href="#">travel</a></div>
-                                                        <!-- Video Button -->
-                                                        <a href="https://www.youtube.com/watch?v=IhnqEwFSJRg" class="video-btn"><i class="fa fa-play"></i></a>
-                                                    </div>
-                                                    <!-- Post Content -->
-                                                    <div class="post-content">
-                                                        <a href="#" class="headline">
-                                                            <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
-                                                        </a>
-                                                        <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
-                                                        <!-- Post Meta -->
-                                                        <div class="post-meta">
-                                                            <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                                    <!-- Widget Area -->
+                                                                    <div class="sidebar-widget-area">
+                                                                        <h5 class="title">Top Stories</h5>
+                                                                        <div class="widget-content">
+                                                                            <!-- Single Blog Post -->
+                                                                            <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                                                                                <!-- Post Thumbnail -->
+                                                                                <div class="post-thumbnail">
+                                                                                    <img src="img/blog-img/b11.jpg" alt="">
+                                                                                </div>
+                                                                                <!-- Post Content -->
+                                                                                <div class="post-content">
+                                                                                    <a href="#" class="headline">
+                                                                                        <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Single Blog Post -->
+                                                                            <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                                                                                <!-- Post Thumbnail -->
+                                                                                <div class="post-thumbnail">
+                                                                                    <img src="img/blog-img/b13.jpg" alt="">
+                                                                                </div>
+                                                                                <!-- Post Content -->
+                                                                                <div class="post-content">
+                                                                                    <a href="#" class="headline">
+                                                                                        <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Single Blog Post -->
+                                                                            <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                                                                                <!-- Post Thumbnail -->
+                                                                                <div class="post-thumbnail">
+                                                                                    <img src="img/blog-img/b14.jpg" alt="">
+                                                                                </div>
+                                                                                <!-- Post Content -->
+                                                                                <div class="post-content">
+                                                                                    <a href="#" class="headline">
+                                                                                        <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Single Blog Post -->
+                                                                            <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                                                                                <!-- Post Thumbnail -->
+                                                                                <div class="post-thumbnail">
+                                                                                    <img src="img/blog-img/b10.jpg" alt="">
+                                                                                </div>
+                                                                                <!-- Post Content -->
+                                                                                <div class="post-content">
+                                                                                    <a href="#" class="headline">
+                                                                                        <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- Single Blog Post -->
+                                                                            <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
+                                                                                <!-- Post Thumbnail -->
+                                                                                <div class="post-thumbnail">
+                                                                                    <img src="img/blog-img/b12.jpg" alt="">
+                                                                                </div>
+                                                                                <!-- Post Content -->
+                                                                                <div class="post-content">
+                                                                                    <a href="#" class="headline">
+                                                                                        <h5 class="mb-0">How Did van Gogh’s Turbulent Mind Depict One of the Most</h5>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Widget Area -->
+                                                                    <div class="sidebar-widget-area">
+                                                                        <h5 class="title">Stay Connected</h5>
+                                                                        <div class="widget-content">
+                                                                            <div class="social-area d-flex justify-content-between">
+                                                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                                                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                                                                <a href="#"><i class="fa fa-vimeo"></i></a>
+                                                                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                                                                <a href="#"><i class="fa fa-google"></i></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- Widget Area -->
+                                                                    <div class="sidebar-widget-area">
+                                                                        <h5 class="title">Today’s Pick</h5>
+                                                                        <div class="widget-content">
+                                                                            <!-- Single Blog Post -->
+                                                                            <div class="single-blog-post todays-pick">
+                                                                                <!-- Post Thumbnail -->
+                                                                                <div class="post-thumbnail">
+                                                                                    <img src="img/blog-img/b22.jpg" alt="">
+                                                                                </div>
+                                                                                <!-- Post Content -->
+                                                                                <div class="post-content px-0 pb-0">
+                                                                                    <a href="#" class="headline">
+                                                                                        <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- contenido lateral derecha -->
 
-                                            </div>
                                         </div>
+
                                     </div>
 
-                                    <!-- Load More btn -->
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="load-more-btn mt-50 text-center">
-                                                <a href="#" class="btn world-btn">Load More</a>
-                                            </div>
-                                        </div>
-                                    </div>
+
+
                                 </div>
                             </div>
 
@@ -450,11 +516,16 @@ $n_nom         = $fila['NEG_NOMBRE'];
                                     <div class="row">
                                         <div class="col-12 col-md-4">
                                             <div class="footer-single-widget">
-                                                <a href="#"><img src="assets/img/core-img/logo.png" alt=""></a>
+                                                <h4 style="color:#FFFF;font-style: italic;";>CABOFIND</h4>
+                                                <h5 style="color:#FFFF;";>Siguenos en:</h5>
+                                                <a href="https://www.facebook.com/CaboFind" target="_blank"><img src="assets/img/fb.png" style="height: 40px; width: 40px;"></a>
+                                                <a href="https://www.youtube.com/CaboFind" target="_blank"><img src="assets/img/inst.png" style="height: 40px; width: 40px;"></a>
+                                                <a href="https://www.instagram.com/CaboFind" target="_blank"><img src="assets/img/tw.png" style="height: 40px; width: 40px;"></a>
+                                                <a href="https://www.twitter.com/CaboFind" target="_blank"><img src="assets/img/yt.png" style="height: 40px; width: 40px;"></a>
                                                 <div class="copywrite-text mt-30">
                                                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                        <p>Proudly distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
+                        <p>Proudly distributed by CABOFIND</p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                                                 </div>
                                             </div>
@@ -462,20 +533,20 @@ $n_nom         = $fila['NEG_NOMBRE'];
                                         <div class="col-12 col-md-4">
                                             <div class="footer-single-widget">
                                                 <ul class="footer-menu d-flex justify-content-between">
-                                                    <li><a href="#">Home</a></li>
-                                                    <li><a href="#">Fashion</a></li>
-                                                    <li><a href="#">Lifestyle</a></li>
-                                                    <li><a href="#">Contact</a></li>
-                                                    <li><a href="#">Gadgets</a></li>
-                                                    <li><a href="#">Video</a></li>
+                                                    <li><a href="#">Inicio</a></li>
+                                                    <li><a href="#">¿Qué hacer?</a></li>
+                                                    <li><a href="#">Restaurantes</a></li>
+                                                    <li><a href="#">Bares</a></li>
+                                                    <li><a href="#">Servicios</a></li>
+                                                    <li><a href="#">Comercios</a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-12 col-md-4">
                                             <div class="footer-single-widget">
-                                                <h5>Subscribe</h5>
+                                                <h5>Suscríbete</h5>
                                                 <form action="#" method="post">
-                                                    <input type="email" name="email" id="email" placeholder="Enter your mail">
+                                                    <input type="email" name="email" id="email" placeholder="Ingresa tu correo electronico">
                                                     <button type="button"><i class="fa fa-arrow-right"></i></button>
                                                 </form>
                                             </div>

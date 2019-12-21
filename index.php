@@ -301,6 +301,7 @@ include'consultas.php';
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
                                       $id         = $fila['ID_NEGOCIO'];
+                                      $fech         = $fila['PUB_FECHA'];
                                       echo "
                                       <div class='single-blog-post'>
                                           <div class='post-thumbnail'>
@@ -314,7 +315,7 @@ include'consultas.php';
                                           <p>$detalle</p>
 
                                           <div class='post-meta'>
-                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                              <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                           </div>
                                       </div>
                                   </div>
@@ -338,6 +339,7 @@ include'consultas.php';
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
                                       $id         = $fila['ID_NEGOCIO'];
+                                      $fech         = $fila['PUB_FECHA'];
 
                                       echo "
                                       <div class='single-blog-post post-style-2 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.2s'>
@@ -352,7 +354,7 @@ include'consultas.php';
                                           <p>$detalle</p>
 
                                           <div class='post-meta'>
-                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                              <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                           </div>
                                       </div>
                                       </div>
@@ -378,6 +380,7 @@ include'consultas.php';
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
                                         $img         = $fila['GAL_FOTO'];
+                                        $fech         = $fila['PUB_FECHA'];
 
                                         echo "
                                         <div class='single-blog-post'>
@@ -392,7 +395,7 @@ include'consultas.php';
                                             <p>$detalle</p>
 
                                             <div class='post-meta'>
-                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                                <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -413,7 +416,7 @@ include'consultas.php';
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
                                         $img         = $fila['GAL_FOTO'];
-
+                                        $fech         = $fila['PUB_FECHA'];
                                         echo "
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
                                             <div class='post-thumbnail'>
@@ -427,7 +430,7 @@ include'consultas.php';
                                             <p>$detalle</p>
 
                                             <div class='post-meta'>
-                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                                <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                             </div>
                                         </div>
                                         </div>
@@ -453,6 +456,7 @@ include'consultas.php';
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
+                                      $fech         = $fila['PUB_FECHA'];
 
                                       echo "
                                       <div class='single-blog-post'>
@@ -467,7 +471,7 @@ include'consultas.php';
                                           <p>$detalle</p>
 
                                           <div class='post-meta'>
-                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                              <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                           </div>
                                       </div>
                                   </div>
@@ -488,6 +492,7 @@ include'consultas.php';
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
                                         $img         = $fila['GAL_FOTO'];
+                                        $fech         = $fila['PUB_FECHA'];
 
                                         echo "
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
@@ -502,7 +507,7 @@ include'consultas.php';
                                             <p>$detalle</p>
 
                                             <div class='post-meta'>
-                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                                <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                             </div>
                                         </div>
                                         </div>
@@ -527,6 +532,7 @@ include'consultas.php';
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
+                                      $fech         = $fila['PUB_FECHA'];
 
                                       echo "
                                       <div class='single-blog-post'>
@@ -541,7 +547,7 @@ include'consultas.php';
                                           <p>$detalle</p>
 
                                           <div class='post-meta'>
-                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                              <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                           </div>
                                       </div>
                                   </div>
@@ -562,6 +568,7 @@ include'consultas.php';
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
                                         $img         = $fila['GAL_FOTO'];
+                                        $fech         = $fila['PUB_FECHA'];
 
                                         echo "
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
@@ -576,7 +583,7 @@ include'consultas.php';
                                             <p>$detalle</p>
 
                                             <div class='post-meta'>
-                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                                <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                             </div>
                                         </div>
                                         </div>
@@ -600,6 +607,7 @@ include'consultas.php';
                                       $titulo        = $fila['PUB_TITULO'];
                                       $detalle       = $fila['PUB_DETALLE'];
                                       $img         = $fila['GAL_FOTO'];
+                                      $fech         = $fila['PUB_FECHA'];
 
                                       echo "
                                       <div class='single-blog-post'>
@@ -614,7 +622,7 @@ include'consultas.php';
                                           <p>$detalle</p>
 
                                           <div class='post-meta'>
-                                              <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                              <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                           </div>
                                       </div>
                                   </div>
@@ -635,6 +643,7 @@ include'consultas.php';
                                         $titulo        = $fila['PUB_TITULO'];
                                         $detalle       = $fila['PUB_DETALLE'];
                                         $img         = $fila['GAL_FOTO'];
+                                        $fech         = $fila['PUB_FECHA'];
 
                                         echo "
                                         <div class='single-blog-post post-style-2 d-flex align-items-center' data-wow-delay='0.2s'>
@@ -649,7 +658,7 @@ include'consultas.php';
                                             <p>$detalle</p>
 
                                             <div class='post-meta'>
-                                                <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                                                <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                                             </div>
                                         </div>
                                         </div>
@@ -669,14 +678,15 @@ include'consultas.php';
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <div class="title">
-                            <h5>Latest Articles</h5>
+                            <h5>Últimos articulos</h5>
                         </div>
 
                         <?php
-                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO
+                        $post2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, p.PUB_FECHA, n.NEG_NOMBRE, g.GAL_FOTO
                         FROM publicacion p, galeria g, negocios n
                         WHERE g.GAL_TIPO = 'Publicacion'
                         AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
+                        AND g.ID_GALERIA = p.galeria_ID_GALERIA
                         LIMIT 4";
                         $ejec3 = mysqli_query($conn, $post2);
                         while($fila=mysqli_fetch_array($ejec3)){
@@ -684,6 +694,7 @@ include'consultas.php';
                         $titulo        = $fila['PUB_TITULO'];
                         $detalle       = $fila['PUB_DETALLE'];
                         $img         = $fila['GAL_FOTO'];
+                        $fech         = $fila['PUB_FECHA'];
                         echo "
                         <div class='single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig' data-wow-delay='0.3s'>
                         <div class='post-thumbnail'>
@@ -695,7 +706,7 @@ include'consultas.php';
                         </a>
                         <p>$detalle</p>
                         <div class='post-meta'>
-                            <p><a href='#' class='post-author'>Katy Liu</a> on <a href='#' class='post-date'>Sep 29, 2017 at 9:48 am</a></p>
+                            <p><a href='#' class='post-author'>CaboFind</a> on <a href='#' class='post-date'>$fech</a></p>
                         </div>
                     </div>
                 </div>
@@ -705,28 +716,28 @@ include'consultas.php';
 
                     <div class="col-12 col-lg-4">
                         <div class="title">
-                            <h5>Most Popular Videos</h5>
+                            <h5>Videos populares</h5>
                         </div>
 
                         <!-- Single Blog Post -->
                         <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.2s">
                             <!-- Post Thumbnail -->
                             <div class="post-thumbnail">
-                                <img src="assets/img/blog-img/b7.jpg" alt="">
+                                <img src="assets/galeria/loscabos.png" alt="">
                                 <!-- Catagory -->
                                 <div class="post-cta"><a href="#">travel</a></div>
                                 <!-- Video Button -->
-                                <a href="https://www.youtube.com/watch?v=IhnqEwFSJRg" class="video-btn"><i class="fa fa-play"></i></a>
+                                <a href="https://www.youtube.com/watch?v=khHJ-drkKhk" class="video-btn"><i class="fa fa-play"></i></a>
                             </div>
                             <!-- Post Content -->
                             <div class="post-content">
                                 <a href="#" class="headline">
-                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                                    <h5>Vive la aventura.</h5>
                                 </a>
-                                <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
+                                <p>Los Cabos is a magic land full of contrast, from breathtaking seas, to desert and mountains. Also known as “Land’s End” for being located at the tip of the southern Baja California Península. Step into the extraordinary world of Los Cabos where the unparalleled natural beauty, biodiversity and range of amenities will appeal to any personality. Scrolling down you will find everything you need to know to visit Los Cabos. </p>
                                 <!-- Post Meta -->
                                 <div class="post-meta">
-                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                    <p><a href="#" class="post-author">CaboFind</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
                                 </div>
                             </div>
                         </div>
@@ -735,21 +746,21 @@ include'consultas.php';
                         <div class="single-blog-post wow fadeInUpBig" data-wow-delay="0.4s">
                             <!-- Post Thumbnail -->
                             <div class="post-thumbnail">
-                                <img src="assets/img/blog-img/b8.jpg" alt="">
+                                <img src="assets/galeria/loscabos2.png" alt="">
                                 <!-- Catagory -->
                                 <div class="post-cta"><a href="#">travel</a></div>
                                 <!-- Video Button -->
-                                <a href="https://www.youtube.com/watch?v=IhnqEwFSJRg" class="video-btn"><i class="fa fa-play"></i></a>
+                                <a href="https://www.youtube.com/watch?v=qugQgzQMkcw" class="video-btn"><i class="fa fa-play"></i></a>
                             </div>
                             <!-- Post Content -->
                             <div class="post-content">
                                 <a href="#" class="headline">
-                                    <h5>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in Physics?</h5>
+                                    <h5>Visita los cabos</h5>
                                 </a>
-                                <p>How Did van Gogh’s Turbulent Mind Depict One of the Most Complex Concepts in...</p>
+                                <p>Cabo San Lucas es un balneario en el extremo sur de la península de Baja California en México, conocido por sus playas, actividades acuáticas y vida nocturna. </p>
                                 <!-- Post Meta -->
                                 <div class="post-meta">
-                                    <p><a href="#" class="post-author">Katy Liu</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
+                                    <p><a href="#" class="post-author">CaboFind</a> on <a href="#" class="post-date">Sep 29, 2017 at 9:48 am</a></p>
                                 </div>
                             </div>
                         </div>
@@ -775,11 +786,16 @@ include'consultas.php';
             <div class="row">
                 <div class="col-12 col-md-4">
                     <div class="footer-single-widget">
-                        <a href="#"><img src="assets/img/core-img/logo.png" alt=""></a>
+                        <h4 style="color:#FFFF;font-style: italic;";>CABOFIND</h4>
+                        <h5 style="color:#FFFF;";>Siguenos en:</h5>
+                        <a href="https://www.facebook.com/CaboFind" target="_blank"><img src="assets/img/fb.png" style="height: 40px; width: 40px;"></a>
+                        <a href="https://www.instagram.com/CaboFind" target="_blank"><img src="assets/img/inst.png" style="height: 40px; width: 40px;"></a>
+                        <a href="https://www.twitter.com/CaboFind" target="_blank"><img src="assets/img/tw.png" style="height: 40px; width: 40px;"></a>
+                        <a href="https://www.youtube.com/CaboFind" target="_blank"><img src="assets/img/yt.png" style="height: 40px; width: 40px;"></a>
                         <div class="copywrite-text mt-30">
                             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<p>Proudly distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a></p>
+<p>Proudly distributed by CABOFIND</p>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                         </div>
                     </div>
@@ -798,9 +814,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> | Mad
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="footer-single-widget">
-                        <h5>Subscribe</h5>
+                        <h5>Suscríbete</h5>
                         <form action="#" method="post">
-                            <input type="email" name="email" id="email" placeholder="Enter your mail">
+                            <input type="email" name="email" id="email" placeholder="Ingresa tu correo electronico">
                             <button type="button"><i class="fa fa-arrow-right"></i></button>
                         </form>
                     </div>

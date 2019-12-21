@@ -7,7 +7,7 @@ where n.ID_NEGOCIO = g.ID_NEGOCIO
 AND a.galeria_ID_GALERIA = g.ID_GALERIA
  LIMIT 4";
 
- $sliderp = "SELECT p.PUB_FECHA, p.PUB_TITULO, p.PUB_DETALLE, n.ID_NEGOCIO, n.NEG_NOMBRE, g.GAL_FOTO
+ $sliderp = "SELECT p.PUB_FECHA, p.PUB_FECHA, p.PUB_TITULO, p.PUB_DETALLE, n.ID_NEGOCIO, n.NEG_NOMBRE, g.GAL_FOTO
  FROM publicacion p, galeria g, negocios n
  WHERE g.GAL_TIPO = 'Publicacion'
  AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
@@ -16,7 +16,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
  ORDER BY PUB_FECHA ASC
   LIMIT 4;";
 
-  $todop = "SELECT p.PUB_FECHA, p.PUB_TITULO, p.PUB_DETALLE, n.ID_NEGOCIO, n.NEG_NOMBRE, g.GAL_FOTO
+  $todop = "SELECT p.PUB_FECHA, p.PUB_FECHA, p.PUB_TITULO, p.PUB_DETALLE, n.ID_NEGOCIO, n.NEG_NOMBRE, g.GAL_FOTO
  FROM publicacion p, galeria g, negocios n
  WHERE g.GAL_TIPO = 'Publicacion'
  AND n.ID_NEGOCIO = p.negocios_ID_NEGOCIO
@@ -25,7 +25,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
  ORDER BY PUB_FECHA ASC
   LIMIT 4";
 
-   $actvp1 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $actvp1 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n, subcategoria s, categorias c
    WHERE g.GAL_TIPO = 'Publicacion'
    AND s.ID_CATEGORIA = 63
@@ -37,7 +37,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 1";
 
-   $actvp2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $actvp2 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n, subcategoria s, categorias c
    WHERE g.GAL_TIPO = 'Publicacion'
    AND s.ID_CATEGORIA = 63
@@ -49,7 +49,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 4";
 
-   $actnp1 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $actnp1 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n, subcategoria s, categorias c
    WHERE g.GAL_TIPO = 'Publicacion'
    AND s.ID_CATEGORIA = 62
@@ -61,7 +61,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 1";
 
-   $actnp2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $actnp2 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n, subcategoria s, categorias c
    WHERE g.GAL_TIPO = 'Publicacion'
    AND s.ID_CATEGORIA = 62
@@ -73,7 +73,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 4";
 
-   $shopp1 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $shopp1 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n, subcategoria s, categorias c
    WHERE g.GAL_TIPO = 'Publicacion'
    AND s.ID_CATEGORIA = 61
@@ -85,7 +85,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 1";
 
-   $shopp2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $shopp2 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n, subcategoria s, categorias c
    WHERE g.GAL_TIPO = 'Publicacion'
    AND s.ID_CATEGORIA = 61
@@ -97,7 +97,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 4";
 
-   $eventp1 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $eventp1 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n
    WHERE g.GAL_TIPO = 'Publicacion'
    AND g.ID_NEGOCIO = n.ID_NEGOCIO
@@ -106,7 +106,7 @@ AND a.galeria_ID_GALERIA = g.ID_GALERIA
    ORDER BY PUB_FECHA ASC
    LIMIT 1";
 
-   $eventp2 = "SELECT p.PUB_TITULO, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
+   $eventp2 = "SELECT p.PUB_TITULO, p.PUB_FECHA, p.PUB_DETALLE, n.NEG_NOMBRE, g.GAL_FOTO, p.PUB_FECHA
    FROM publicacion p, galeria g, negocios n
    WHERE g.GAL_TIPO = 'Publicacion'
    AND g.ID_NEGOCIO = n.ID_NEGOCIO
