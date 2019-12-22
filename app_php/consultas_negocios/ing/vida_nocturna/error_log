@@ -1,0 +1,9 @@
+[26-Jun-2019 06:14:42 UTC] PHP Warning:  include(../../conn.php): failed to open stream: No such file or directory in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php on line 2
+[26-Jun-2019 06:14:42 UTC] PHP Warning:  include(../../conn.php): failed to open stream: No such file or directory in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php on line 2
+[26-Jun-2019 06:14:42 UTC] PHP Warning:  include(): Failed opening '../../conn.php' for inclusion (include_path='.:/opt/cpanel/ea-php70/root/usr/share/pear') in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php on line 2
+[26-Jun-2019 06:14:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php:3
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php on line 3
+[21-Aug-2019 06:22:28 UTC] PHP Parse error:  syntax error, unexpected 'A' (T_STRING), expecting ',' or ')' in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php on line 11
+[21-Aug-2019 06:23:36 UTC] PHP Parse error:  syntax error, unexpected 'A' (T_STRING), expecting ',' or ')' in /home4/cabofind/public_html/app_php/consultas_negocios/ing/vida_nocturna/list_vida_antros.php on line 11

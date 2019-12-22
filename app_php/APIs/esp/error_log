@@ -1,0 +1,1714 @@
+[23-Aug-2019 12:35:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[23-Aug-2019 12:36:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[23-Aug-2019 12:37:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 03:52:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 03:52:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 05:24:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 05:40:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 05:40:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 05:41:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 05:41:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 05:41:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 05:44:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:08:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:08:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:08:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:10:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:10:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 06:14:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:14:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:23:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:23:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 06:28:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:28:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 06:28:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 06:28:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 07:42:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 07:45:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 07:45:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 07:47:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[24-Aug-2019 07:48:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 09:36:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 10:21:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 10:22:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 14:01:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 14:01:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 14:01:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 15:52:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 16:25:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 16:25:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 16:26:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 18:56:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 18:56:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 18:56:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 18:56:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 18:56:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:30:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:31:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:33:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:33:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:34:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:35:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:37:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 19:38:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:01:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:02:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:12:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:12:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:20:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:21:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:23:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 21:27:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[24-Aug-2019 22:30:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 22:30:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 22:31:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 22:40:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 22:42:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 22:58:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 22:59:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 23:06:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 23:17:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 23:19:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertImei.php on line 14
+[24-Aug-2019 23:28:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 14
+[24-Aug-2019 23:33:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 14
+[24-Aug-2019 23:36:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:16
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 16
+[24-Aug-2019 23:38:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:16
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 16
+[24-Aug-2019 23:40:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:16
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 16
+[24-Aug-2019 23:44:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:16
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 16
+[24-Aug-2019 23:47:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 17
+[24-Aug-2019 23:48:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 17
+[24-Aug-2019 23:50:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 17
+[24-Aug-2019 23:52:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 17
+[25-Aug-2019 00:01:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:02:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:04:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:06:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:08:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:08:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:08:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:09:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:10:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:23:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:24:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:25:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:26:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:27:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:27:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:28:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:28:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:29:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:30:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:30:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:30:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:30:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:31:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:33:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:34:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:34:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:34:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:34:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:35:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:35:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:35:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:35:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:35:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:46:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:47:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:50:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php:19
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[25-Aug-2019 00:51:44 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 4
+[25-Aug-2019 00:51:50 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 4
+[25-Aug-2019 00:54:42 UTC] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 4
+[25-Aug-2019 01:02:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 01:14:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 01:32:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 01:57:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 01:58:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 01:58:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 02:39:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 02:40:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 02:41:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 02:43:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 03:08:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 03:09:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 03:11:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 06:01:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 06:16:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 06:16:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:12:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:12:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:12:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:12:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:12:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:13:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:13:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:26:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:33:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 15:58:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 16:02:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 16:17:13 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 17:20:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 17:21:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 17:26:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 18:02:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 18:05:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 18:07:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 18:07:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 18:59:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 19:03:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 19:24:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 19:24:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 19:31:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 20:42:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 21:30:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 21:30:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 21:31:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 21:32:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[25-Aug-2019 23:01:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:00:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:03:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:03:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:06:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:06:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:43:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:44:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:45:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:51:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 01:57:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 06:12:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 06:13:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 06:14:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 07:48:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 07:48:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 08:00:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 08:07:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 16:12:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 16:12:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 16:12:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 17:00:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 21:33:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 21:33:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 21:33:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 23:54:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 23:54:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[26-Aug-2019 23:56:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 23:56:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 23:56:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[26-Aug-2019 23:57:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 00:00:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 00:59:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 00:59:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 01:00:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 01:01:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 08:26:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 14:56:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 14:56:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 15:04:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 15:04:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 15:06:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 15:06:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 15:06:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 17:52:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 17:52:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 17:53:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 17:53:08 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 17:53:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 18:31:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 18:31:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 18:31:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 18:34:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 18:35:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 19:15:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 19:17:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 19:18:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 19:18:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 20:25:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[27-Aug-2019 20:26:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 23:27:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 23:28:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 23:28:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 23:50:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 23:57:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[27-Aug-2019 23:59:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:26:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:26:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:26:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 17:33:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:33:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 17:34:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:35:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 17:36:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:36:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 17:42:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 17:44:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 18:21:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 18:21:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 18:21:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 18:38:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 18:38:39 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 19:16:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 19:16:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 19:23:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 19:23:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 19:41:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 19:41:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 19:51:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 19:51:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 19:51:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 19:56:25 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 19:56:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 20:00:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 20:00:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 20:01:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 20:09:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 20:09:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 20:15:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 20:15:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 20:16:19 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 20:40:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 20:40:34 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 21:54:24 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 21:57:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 22:04:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 22:05:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 22:06:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 22:21:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 23:37:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 23:37:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[28-Aug-2019 23:52:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[28-Aug-2019 23:53:03 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 00:49:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 00:49:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 14:29:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 14:29:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 14:29:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 14:29:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 14:32:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 18:23:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 18:26:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 18:27:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 18:27:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 18:41:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 19:12:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 19:12:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 19:13:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 19:14:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 19:14:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 19:48:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:00:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:12:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:37:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:42:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:47:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:48:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:52:32 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 20:52:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:04:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:36:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:41:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 21:41:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:41:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 21:41:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:46:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:54:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:55:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 21:59:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 21:59:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 22:07:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 22:08:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 22:46:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 22:46:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 22:46:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 23:21:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 23:22:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 23:22:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 23:24:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[29-Aug-2019 23:24:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[29-Aug-2019 23:30:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 00:12:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 00:13:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 00:13:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 00:13:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 00:14:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 00:43:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 00:43:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 00:44:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 00:44:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 01:35:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:41:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:41:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:41:46 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:41:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:42:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:42:11 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:42:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 01:43:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 01:52:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 01:52:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 01:53:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 02:14:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 02:18:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 02:18:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 02:39:21 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 02:45:05 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 02:47:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 02:53:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 02:54:02 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 02:54:06 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 03:47:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 03:52:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 05:22:57 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 05:23:22 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 05:23:29 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 06:58:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 06:58:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 07:00:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 07:00:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 07:01:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 07:01:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 07:02:27 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 07:02:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 07:02:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 07:05:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 07:24:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 07:59:55 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 08:00:04 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 08:00:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 08:00:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 08:00:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 08:26:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 08:27:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 08:39:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 16:34:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 16:34:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 16:36:23 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 16:43:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 16:46:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 16:46:43 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 18:47:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 18:47:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 19:02:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 19:03:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 19:13:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 19:16:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 19:26:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 19:26:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 19:27:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 19:39:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 19:40:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 21:14:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 21:15:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[30-Aug-2019 21:40:14 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 21:40:26 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 21:40:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 21:40:53 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[30-Aug-2019 23:59:30 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 00:48:40 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 04:07:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 06:13:33 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 07:06:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 07:06:45 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 07:06:59 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 07:07:01 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 19:25:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 19:25:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 19:26:09 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 19:26:10 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 19:26:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 19:26:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[31-Aug-2019 19:27:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_publicacion.php on line 14
+[31-Aug-2019 19:27:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php:14
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/insert_visita_negocio.php on line 14
+[14-Sep-2019 07:14:33 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:33 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:40 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:15:39 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 14
+[14-Sep-2019 07:15:39 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 15
+[14-Sep-2019 07:15:39 UTC] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 19
+[14-Sep-2019 07:15:39 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home4/cabofind/public_html/app_php/APIs/esp/insertInfo.php on line 23
+[06-Oct-2019 09:44:10 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home4/cabofind/public_html/app_php/APIs/esp/insertar_resena.php on line 28
+[21-Oct-2019 19:25:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php:23
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php on line 23
+[21-Oct-2019 19:25:38 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php:23
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php on line 23
+[21-Oct-2019 19:25:44 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php:23
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php on line 23
+[21-Oct-2019 19:25:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php:23
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php on line 23
+[21-Oct-2019 19:25:49 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php:23
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/list_publicaciones_api_single.php on line 23
+[10-Dec-2019 17:50:20 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/APIs/esp/list_resena.php:13
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/APIs/esp/list_resena.php on line 13

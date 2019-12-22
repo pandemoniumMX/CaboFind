@@ -1,0 +1,16 @@
+[21-Aug-2019 14:05:31 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php on line 17
+[21-Aug-2019 14:05:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php on line 17
+[21-Aug-2019 14:06:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php on line 17
+[21-Aug-2019 14:06:18 UTC] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php:17
+Stack trace:
+#0 {main}
+  thrown in /home4/cabofind/public_html/app_php/consultas_negocios/esp/descubre/list_descubre_cultura.php on line 17

@@ -1,8 +1,7 @@
 <?php
-
-$servername = "162.241.2.107";
+$servername = "localhost";
 $username = "cabofind";
-$password = "6241543710";
+$password = "Hesoyam01.";
 $dbname = "cabofind_cabofind";
 // Crear connection
 $conn = @mysqli_connect($servername, $username, $password,$dbname) or die("Connect failed: %s\n". $conn -> error);
@@ -10,18 +9,10 @@ $conn = @mysqli_connect($servername, $username, $password,$dbname) or die("Conne
 if (!$conn) {
    die("Connection failed: " . mysqli_connect_error());
 }
-echo "Connected successfully";
 
-/*
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "cabofind_cabofind";
+mysqli_set_charset($conn,"utf8mb4");
 
-//$dbname = md5("electronicax");
 
-// Crear connection
-$conn = @mysqli_connect($servername, $username, $password, $dbname);
-return $conn;
-*/
+//echo "Connected successfully";
+
 ?>

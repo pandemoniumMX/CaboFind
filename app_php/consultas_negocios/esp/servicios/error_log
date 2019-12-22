@@ -1,0 +1,8 @@
+[14-Sep-2019 07:14:38 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:38 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:38 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:38 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:39 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:39 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15
+[14-Sep-2019 07:14:39 UTC] PHP Warning:  mysqli_set_charset() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 13
+[14-Sep-2019 07:14:39 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home4/cabofind/public_html/app_php/conn.php on line 15

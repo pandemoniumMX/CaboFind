@@ -1,6 +1,5 @@
 <?php
 require "conexion.php";
-if(!empty($_POST['titulo']) || !empty($_POST['titulo_ing']) || !empty($_POST['descripcion_ing']) || !empty($_FILES['file']['name'])){
 
 //detalle anuncio
 $titulo = $_POST['titulo'];
@@ -68,6 +67,3 @@ $sql4 = "INSERT INTO anun_exp(NEG_EXP_ESTATUS, exposicion_ID_EXPOSICION, anuncio
 VALUES ('A', $exposicion, $id);";
 $res3 = $conn->query($sql4);
 
-}else{
-    echo"error";
-}
