@@ -147,6 +147,7 @@ h1, h2, h3, h4, h5,
     .hover-bg-enlarge .bg-image-md-height {
       height: 300px !important; } }
 
+
 .bg-image {
   background-size: cover;
   background-position: center center;
@@ -1549,6 +1550,7 @@ h1, h2, h3, h4, h5,
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); }
+
 
 .post-meta {
   font-size: 13px;
